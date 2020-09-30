@@ -1,32 +1,56 @@
-\documentclass{amsart}
+\documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{fouriernc}
+\usepackage[T1]{fontenc}
 \usepackage{adjustbox}
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
 \hypersetup{colorlinks=true,linkcolor=blue,urlcolor=red}
-\newcommand{\bb}[1]{\textbf{#1}}
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 
-\title{Additività dell'entropia}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem*{thm*}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{prop*}{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{exa}{Example}
+\newtheorem{exe}{Exercise}
+
+\newcommand{\bb}[1]{\textbf{#1}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\eval}[1]{\Big{|}_{#1}}
+
+\title{The additivity of ignorance}
+%\author{Tommaso Lamma}
+%\nodate
 \begin{document}
 \maketitle
-    $\sigma(xy)=f(\sigma(x),\sigma(y))$\\
-    $\pd{f}{x_1}=g(x_1)$\\
-    $\pd{f}{x_2}=g(x_2)$\\
-    $f=G(x_1)+c(x_2)$\\
-    $f=G(x_2)+c(x_1)$\\
-    $f=G(x_1)+G(x_2)$\\
-    $\sigma(xy)=G(\sigma(x))+G(\sigma(y))$\\
-    $\pd{\sigma(xy)}{x}|_{y=1}=\frac{d\sigma(x)}{dx}=\frac{dG(x_1)}{dx_1}\frac{dx_1}{dx}
-        =\frac{dG(\sigma(x))}{d\sigma}\frac{d\sigma}{dx}$\\
-    $\frac{dG(\sigma)}{d\sigma}=1$\\
-    $G(\sigma)=\sigma+c$\\
-    $\sigma(xy)=\sigma(x)+\sigma(y)+2c$\\
-    $2c=-\sigma(1)$\\
-    $\sigma(1)=\sigma(1)+\sigma(1)+\sigma(1)+3c$\\
-    $3c=-2\sigma(1)$\\
-    $2c=\frac{3}{2}c$\\
-    $c=0$\\
-    
+\begin{prop*}{\bb{Additivity of ignorance}\\}
+Let $\sigma :\N\to[0,+\infty[$ be a possible ignorance function, if $\sigma(1)=0$ and $\sigma(xy)$ of type $f(\sigma(x),\sigma(y))$,\\ 
+where $f:[0,+\infty[\to[0,+\infty[$ is a differentiable function then $\sigma(xy)=\sigma(x)+\sigma(y)$.
+\end{prop*}
+\begin{proof}
+\begin{gather}
+    \sigma(xy)=f(\sigma(x),\sigma(y))\\
+    \pder{f}{x_1}=g(x_1)\\
+    \pder{f}{x_2}=g(x_2)\\
+    f=G(x_1)+c(x_2)+d_1\\
+    f=G(x_2)+c(x_1)+d_2\\
+    f=G(x_1)+G(x_2)+d\\
+    \sigma(xy)=G(\sigma(x))+G(\sigma(y))+d\\
+    \pder{\sigma(xy)}{x}\eval{y=1}=y\eval{y=1}\frac{d\sigma(x)}{dx}=\frac{dG(x_1)}{dx_1}\frac{dx_1}{dx}
+        =\frac{dG(\sigma(x))}{d\sigma}\frac{d\sigma}{dx}\\
+    \frac{dG(\sigma)}{d\sigma}=1\\
+    G(\sigma)=\sigma+c\\
+    \sigma(xy)=\sigma(x)+\sigma(y)+2c+d\\
+    \sigma(xy)=\sigma(x)+\sigma(y)+C\\
+    \sigma(x)=\sigma(1)+\sigma(x)+C=\sigma(x)+C\\
+    \sigma(1)=0\rightarrow C=0\\
+\end{gather}  
+\end{proof}
 \end{document}
