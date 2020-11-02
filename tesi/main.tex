@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fouriernc}
+\usepackage[T1]{fontenc}
+\usepackage{adjustbox}
+\usepackage[margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=red}
+
+\setlength{\parindent}{0pt}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem*{thm*}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{prop*}{Proposition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem*{defn*}{Definition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{exa}{Example}
+\newtheorem{exe}{Exercise}
+
+\newcommand{\bb}[1]{\textbf{#1}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\eval}[1]{\Big{|}_{#1}}
+
+\title{Geometric Deep Learning \\ Beyond Euclidean Domains}
+\author{}
+\date{}
+\begin{document}
+
+\maketitle
+\begin{section}{Geometric Priors}
+
+In this section we want to define the mathematical foundation of deep learning via CNN'S.
+
+\begin{defn}\underline{Our compact euclidean domain $\Omega$}\\
+$\Omega := \prod_{i \in I}[0,1]$.
+\end{defn}
+
+\begin{defn}\underline{Classification}\\
+Let $x \in L^2 := L^2(\Omega)$ then $f : L^2 \to \mathcal{C}$ surjective
+is said to be a classification of $L^2$ on the set $\mathcal{C}$.
+\end{defn}
+
+\begin{defn}\underline{Training Set}\\
+Let $f$ be a classification of $L^2$ on $\mathcal{C}$ and $\{x_i\}_{i \in I}\subset L^2$
+then the set $\{(x_i,f(x_i))\}_{i \in I}$ is called a training set for $f$.
+\end{defn}
+
+\begin{prop}\underline{$card(\mathcal{C})<card(L^2(\Omega))$}\\
+Let $f$ be a classification of $L^2$ on $\mathcal{C}$ then, given the inevitable noise acting on data,
+there exists a real positive $\eps$ such that $\forall (x,x_\eps) \in L^2\times L^2: \int\limits_\Omega{|x-x_\eps|^2}<\eps$
+we have that $f(x)=f(x_\eps)$.
+\end{prop}
+
+Given ideal data classification we can define two function $f$-equivalent if and only if 
+their images via the classification $f$ are equal according to an equivalence on $\mathcal{C}$.
+
+\begin{thm}\underline{$\simeq$ is an equivalence relation}\\
+Let $x,y,z \in L^2$ we define $x\simeq y \iff f(x)=f(y)$ where $f$ is a classification of $L^2$ on $\mathcal{C}$,
+then:\\
+(i) $x \simeq x$\\
+(ii) $x \simeq y \iff y \simeq x$\\
+(iii) $x \simeq y, y \simeq z \implies x \simeq z$
+\end{thm}
+\begin{proof}
+(i),(ii) and (iii) follow from the the equivalence on $\mathcal{C}$ by which they are defined.
+\end{proof}
+
+
+
+\end{section}
+
+\end{document}
