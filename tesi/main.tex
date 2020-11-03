@@ -40,8 +40,6 @@
 \maketitle
 \begin{section}{Geometric Priors}
 
-In this section we want to define the mathematical foundation of deep learning via CNN'S.
-
 \begin{defn}\underline{Our compact euclidean domain $\Omega$}\\
 $\Omega := \prod_{i \in I}[0,1]$.
 \end{defn}
@@ -56,22 +54,22 @@ Let $f$ be a classification of $L^2$ on $\mathcal{C}$ and $\{x_i\}_{i \in I}\sub
 then the set $\{(x_i,f(x_i))\}_{i \in I}$ is called a training set for $f$.
 \end{defn}
 
-\begin{prop}\underline{$card(\mathcal{C})<card(L^2(\Omega))$}\\
+\begin{prop}\underline{$f$ is not injective}\\
 Let $f$ be a classification of $L^2$ on $\mathcal{C}$ then, given the inevitable noise acting on data,
 there exists a real positive $\eps$ such that $\forall (x,x_\eps) \in L^2\times L^2: \int\limits_\Omega{|x-x_\eps|^2}<\eps$
 we have that $f(x)=f(x_\eps)$.
 \end{prop}
 
-Given ideal data classification we can define two function $f$-equivalent if and only if 
-their images via the classification $f$ are equal according to an equivalence on $\mathcal{C}$.
+Given ideal data classification we can define two functions $f$-equivalent if and only if 
+their images via the classification $f$ are equal according to an equivalence on $\mathcal{C}$ which so far can be any set.
 
-\begin{thm}\underline{$\simeq$ is an equivalence relation}\\
+\begin{prop}\underline{$\simeq$ is an equivalence relation}\\
 Let $x,y,z \in L^2$ we define $x\simeq y \iff f(x)=f(y)$ where $f$ is a classification of $L^2$ on $\mathcal{C}$,
 then:\\
 (i) $x \simeq x$\\
 (ii) $x \simeq y \iff y \simeq x$\\
 (iii) $x \simeq y, y \simeq z \implies x \simeq z$
-\end{thm}
+\end{prop}
 \begin{proof}
 (i),(ii) and (iii) follow from the the equivalence on $\mathcal{C}$ by which they are defined.
 \end{proof}
