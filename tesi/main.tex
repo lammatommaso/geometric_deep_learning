@@ -49,12 +49,12 @@ Let $x \in L^2 := L^2(\Omega)$ then $f : L^2 \to \mathcal{C}$ surjective
 is said to be a classification of $L^2$ on the set $\mathcal{C}$.
 \end{defn}
 
-\begin{defn}\underline{Training Set}\\
+\begin{defn}\underline{Training set}\\
 Let $f$ be a classification of $L^2$ on $\mathcal{C}$ and $\{x_i\}_{i \in I}\subset L^2$
 then the set $\{(x_i,f(x_i))\}_{i \in I}$ is called a training set for $f$.
 \end{defn}
 
-\begin{prop}\underline{$f$ is not injective}\\
+\begin{prop}\underline{The classification $f$ is not injective}\\
 Let $f$ be a classification of $L^2$ on $\mathcal{C}$ then, given the inevitable noise acting on data,
 there exists a real positive $\eps$ such that $\forall (x,x_\eps) \in L^2\times L^2: \int\limits_\Omega{|x-x_\eps|^2}<\eps$
 we have that $f(x)=f(x_\eps)$.
@@ -63,7 +63,7 @@ we have that $f(x)=f(x_\eps)$.
 Given ideal data classification we can define two functions $f$-equivalent if and only if 
 their images via the classification $f$ are equal according to an equivalence on $\mathcal{C}$ which so far can be any set.
 
-\begin{prop}\underline{$\simeq$ is an equivalence relation}\\
+\begin{prop}\underline{The relation $\simeq$ is an equivalence relation}\\
 Let $x,y,z \in L^2$ we define $x\simeq y \iff f(x)=f(y)$ where $f$ is a classification of $L^2$ on $\mathcal{C}$,
 then:\\
 (i) $x \simeq x$\\
@@ -74,6 +74,26 @@ then:\\
 (i),(ii) and (iii) follow from the the equivalence on $\mathcal{C}$ by which they are defined.
 \end{proof}
 
+\begin{defn}\underline{Translation operator}\\
+Let $x \in L^2$ and $\nu \in \Omega$ then $T_\nu:L^2 \to L^2$ such that $x(\xi) \mapsto x(\xi - \nu)$
+is said to be a translation operator.
+\end{defn}
+
+\begin{defn}\underline{Local deformation operator}\\
+Let $x \in L^2$ and $\tau \in C^\infty(\Omega,\Omega)$ then $L_\tau:L^2 \to L^2$ such that $x(\xi) \mapsto x(\xi-\tau(\xi))$
+is said to be a local deformation operator according to the smooth vector field $\tau$.
+\end{defn}
+
+\begin{defn}\underline{Invariance}\\
+A classification $f$ of $L^2$ on $\mathcal{C}$ is said to be $A$-invariant, where
+$A:L^2 \to L^2$, if and only if $f(A(x))=f(x)$  $\forall x \in L^2$.
+\end{defn}
+
+\begin{defn}\underline{Equivariance}\\
+A classification $f$ of $L^2$ on $\mathcal{C}$ is said to be $A$-equivariant, where
+$A:L^2 \to L^2$, if and only if $f(A(x))=A(f(x))$  $\forall x \in L^2$.
+\bb{Problem: A is not defined on $\mathcal{C}$.}
+\end{defn}
 
 
 \end{section}
