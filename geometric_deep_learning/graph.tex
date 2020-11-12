@@ -70,7 +70,7 @@
 	    $\sum_{\mc{A}} (divF)_i = \sum_{\partial_+^0 \mc{A}} F_{ij}$.
 	\end{thm}
 	\begin{proof}
-	    First of all we recall $\partial_+^0 \mc{A} := \{ (i,j) \in \mc{E}, i \in \mc{A}, j \in \mc{V \setminus A} \}$, then we see that
+	    First of all we recall $\partial_+^0 \mc{A} = \{ (i,j) \in \mc{E}, i \in \mc{A}, j \in \mc{V \setminus A} \}$, then we see that
             $\sum_{\mc{A}} (divF)_i = \sum_{i \in \mc{A}}\sum_{j \in \mc{V} : (i,j) \in \mc{E}} F_{ij} =
 	    \sum_{i \in \mc{A}}\sum_{j \in \mc{V \setminus A} : (i,j) \in \mc{E}} F_{ij} +
             \sum_{i \in \mc{A}}\sum_{j \in \mc{A} : (i,j) \in \mc{E}} F_{ij} = \sum_{\partial_+^0 \mc{A}} F_{ij} + \sum_{(i,j) \in \mc{A}^2} adj(\mc{A})_{ij} F_{ij}$
@@ -79,7 +79,7 @@
     
         \begin{defn}
 	    \bb{Graph laplacian}\\
-	    Let $f \in L^2(\mc{V})$ we have that $\scal{gradf}{gradf}=\scal{div(gradf)}{f} =: \scal{\Delta f}{f} = \scal{f}{\Delta f}$, where\\
+	    Let $f \in L^2(\mc{V})$ we have that $\scal{gradf}{gradf}=\scal{div(gradf)}{f} =: \scal{\Delta f}{f} = \scal{f}{\Delta f}$, where
 	    $\Delta : L^2(\mc{V}) \to L^2(\mc{V})$ is the Laplacian.
 	\end{defn}
     
