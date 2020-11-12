@@ -31,43 +31,57 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\eval}[1]{\Big{|}_{#1}}
+\newcommand{\scal}[2]{\langle #1 , #2 \rangle}
+\newcommand{\del}{\partial}
+\newcommand{\mc}{\mathcal}
 
-\title{Are Graphs Manifolds?}
+\title{Graphs}
 \author{}
 \date{}
 \begin{document}
     \maketitle
-    \begin{section}{Graphs}
-    \begin{defn}
-        Let $\mathcal{G}$ be a connected simplicial complex such that $dim\mathcal{G}=1$ and let $\mathcal{V}:=Vert\mathcal{G}$
-	and $\mathcal{E}:=\mathcal{G}^{(i)}$, let $F,G:\mathcal{V} \to \mathcal{E}$ and $f,g:\mathcal{V} \to \R$ we want to define
-	a scalar product on $L^2(\mathcal{E})$ and on $L^2(\mathcal{V})$:\\
-	$<f,g>_{\mathcal{V}}=\sum_{i \in \mathcal{V}}a_if_ig_i$\\
-	$<F,G>_{\mathcal{E}}=\sum_{\mathcal{E}}w_{ij}F_{ij}G_{ij}$ DO NOT COUNT THE EDGES TWICE!*
-    \end{defn}
-    \begin{defn}
-        $grad: L^2(\mathcal{V} \to L^2(\mathcal{E})$ such that $f \mapsto f_i-f_j$\\
-	$div: L^2(\mathcal{E}) \to L^2(\mathcal{V})$ such that $F \mapsto \frac{1}{a_i}\sum_{j:(i,j)\in\mathcal{E}}w_{ij}F_{ij}$
-    \end{defn}
-    \begin{prop}
-        $<divF,f>_{\mathcal{V}}=<F,gradf>_{\mathcal{E}}$ if $F_{ij}=-F_{ji}$
-    \end{prop}
-    \begin{proof}
-        $\sum_{i \in \mathcal{V}}a_if_idivF_i=\sum_{\mathcal{E}}w_{ij}F_{ij}(f_i-f_j)
-	=*\sum_{i,j:(i,j)\in\mathcal{E}}w_{ij}F_{ij}f_i$\\
-	then $a_idivF_i=\sum_{j:(i,j)\in\mathcal{E}}w_{ij}F_{ij}$
-    \end{proof}
-    \begin{defn}
-        $\partial\mathcal{A \subset V}:=\{(i,j)\in\mathcal{E}:i\in{\mathcal{A}}, j\notin{\mathcal{A}}\}$ 
-	the second condition is equivalent to outwards oriented surface
-    \end{defn}
-    \begin{prop}
-        $\sum_{i\in\mathcal{A}}divF_i=\sum_{i,j:(i,j)\in\partial\mathcal{A}}F_{ij}$ assuming $a_i=w_{ij}=1$
-    \end{prop}
-    \begin{proof}
-        $\sum_{i,j:i\in\mathcal{A},(i,j)\in\mathcal{E}}=\sum_{i,j:i\in\mathcal{A},(i,j)\in\mathcal{E},j\notin\mathcal{A}}
-	+\sum_{i,j:i\in\mathcal{A},(i,j)\in\mathcal{E},j\in\mathcal{A}}$\\
-	In the second sum the simmetric adjacency matrix kills the antisimmetric $F_{ij}$, so only the first one remains
-    \end{proof}
+    \begin{section}{Graph Operators}
+        
+	\begin{defn}
+            Let $\mc{G}$ be a graph where $\mc{V}$ are its vertexes and $\mc{E}$ are its edges, let $f,g : L^2(\mc{V})$ 
+	    and $F,G \in L^2(\mc{E})$ be real valued functions, we define
+	    $\scal{f}{g}_{L^2(\mc{V})} := \sum_\mc{V} a_i f_i g_i$, $a_i \in \R$ and
+	    $\scal{F}{G}_{L^2(\mc{E})} := \sum_\mc{E} w_{ij} F_{ij} G_{ij}$, $w_{ij} \in \R$.
+	\end{defn}
+        
+	\begin{defn}
+	    \bb{Graph gradient and divergence}\\ 
+	    Let $f \in L^2(\mc{V})$ and $F \in L^2(\mc{E})$ we define $grad : L^2(\mc{V}) \to L^2(\mc{E})$ and $div : L^2(\mc{E}) \to L^2(\mc{V})$,
+	    such that $(gradf)_{ij}=f_i-f_j$ and $(divF)_i=\frac{1}{a_i}\sum_{j \in \mc{V} : (i,j) \in \mc{E}} w_{ij} F_{ij}$.
+	\end{defn}
+
+	\begin{prop}
+	    Let $f \in L^2(\mc{V})$ and $F \in L^2(\mc{E}) : F_{ij}=-F_{ji}$ then $\scal{f}{divF}_{L^2(\mc{V})} = \scal{gradf}{F}_{L^2(\mc{E})}$,
+	    i.e. $divF^\dag = grad$.
+	\end{prop}
+	\begin{proof}
+	    $\sum_\mc{V} a_i f_i (divF)_i = \sum_{\mc{E}} w_{ij} F_{ij} (f_i-f_j) = \sum_{i \in \mc{V}}\sum_{j \in \mc{V} : (i,j) \in \mc{E}} w_{ij} F_{ij} f_i$
+	    thus $a_i (divF)_i = \sum_{j \in \mc{V} : (i,j) \in \mc{E}} w_{ij} F_{ij}$.
+	\end{proof}
+
+	\begin{thm}
+	    \bb{Gauss theorem}\\
+	    Let $F \in L^2(\mc{E}) : F_{ij}=-F_{ji}$, let $\mc{A} \subset \mc{V}$ then if $a_i = w_{ij} = 1$ we have
+	    $\sum_{\mc{A}} (divF)_i = \sum_{\partial_+^0 \mc{A}} F_{ij}$.
+	\end{thm}
+	\begin{proof}
+	    First of all we recall $\partial_+^0 \mc{A} := \{ (i,j) \in \mc{E}, i \in \mc{A}, j \in \mc{V \setminus A} \}$, then we see that
+            $\sum_{\mc{A}} (divF)_i = \sum_{i \in \mc{A}}\sum_{j \in \mc{V} : (i,j) \in \mc{E}} F_{ij} =
+	    \sum_{i \in \mc{A}}\sum_{j \in \mc{V \setminus A} : (i,j) \in \mc{E}} F_{ij} +
+            \sum_{i \in \mc{A}}\sum_{j \in \mc{A} : (i,j) \in \mc{E}} F_{ij} = \sum_{\partial_+^0 \mc{A}} F_{ij} + \sum_{(i,j) \in \mc{A}^2} adj(\mc{A})_{ij} F_{ij}$
+	    where since $adj(\mc{A})_{ij} = adj(\mc{A})_{ji}$ we have by renaming dummy indexes $adj(\mc{A})_{ij} F_{ij} = -adj(\mc{A})_{ij} F_{ij} = 0$.
+        \end{proof}
+    
+        \begin{defn}
+	    \bb{Graph laplacian}\\
+	    Let $f \in L^2(\mc{V})$ we have that $\scal{gradf}{gradf}=\scal{div(gradf)}{f} =: \scal{\Delta f}{f} = \scal{f}{\Delta f}$, where\\
+	    $\Delta : L^2(\mc{V}) \to L^2(\mc{V})$ is the Laplacian.
+	\end{defn}
+    
     \end{section}
 \end{document}
