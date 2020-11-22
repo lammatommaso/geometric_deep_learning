@@ -81,35 +81,35 @@ struct Error_Point_Array
 int main() 
 {
    std::ifstream input;
-   input.open("calibrazione.txt");
+   input.open("calibrazione/dati.txt");
    Error_Point_Array pydata;
    input>>pydata;
    input.close();
 
    std::ofstream output;
-   output.open("calibrazione.py");
+   output.open("calibrazione/dati.py");
    output<<pydata;
    output.close();
    
    std::ifstream input_1;
-   input_1.open("germanio.txt");
+   input_1.open("germanio/dati.txt");
    Error_Point_Array pydata_1;
    input_1>>pydata_1;
    input_1.close();
 
    std::ofstream output_1;
-   output_1.open("germanio.py");
+   output_1.open("germanio/dati.py");
    output_1<<pydata_1;
    output_1.close();
    
    std::ifstream input_2;
-   input_2.open("silicio.txt");
+   input_2.open("silicio/dati.txt");
    Error_Point_Array pydata_2;
    input_2>>pydata_2;
    input_2.close();
 
    std::ofstream output_2;
-   output_2.open("silicio.py");
+   output_2.open("silicio/dati.py");
    output_2<<pydata_2;
    output_2.close();
 }
