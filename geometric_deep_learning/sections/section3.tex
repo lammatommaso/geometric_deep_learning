@@ -22,9 +22,21 @@
 
 \begin{prop}
     \underline{Discrete "variational" problems related to the laplacian}\\
-    Let $\phi$ be a $k \times k$ matrix the variational problem minimizing the Dirichlet energy $Tr(\phi^T \Delta \phi)$ is equivalent to
-    the problem $\Delta \phi = 0$, while if we normalize the functions we get $\Delta \phi = \Lambda \phi$, where $\Lambda = diag(\lambda)$, 
-    with the k lowest eigenvalues.
+    Let $\phi$ be an $k \times k$ matrix, the variational problem minimizing the Dirichlet energy $Tr(\phi^T \Delta \phi)$ is equivalent to
+    the problem $\Delta \phi = 0$, while if we normalize the functions we get $\Delta \phi = \Lambda \phi$, where $\Lambda = diag(\lambda)$ with 
+    the k lowest eigenvalues.
 \end{prop}
+\begin{proof} As follows:\\
+    \begin{itemize}
+        \item
+	Let $min_{\phi}Tr(\phi^T \Delta \phi) = \phi_{li}\Delta_{lk}\phi_{ki} = \sum_i \phi_i^T \Delta \phi_i $ (Einstein notation) be our optimization problem,
+	since $\Delta > 0$ we can simply solve for all $\phi_i$ and minimize $\pder{\mc{L}_i}{\phi_j} = \pder{\phi_i^T \Delta \phi_i}{\phi_j}
+	 = 2\Delta\phi_i=0$.
+	 \item
+	Let $min_{\phi}Tr(\phi^T \Delta \phi) = \phi_{li}\Delta_{lk}\phi_{ki} = \sum_i \phi_i^T \Delta \phi_i $ (Einstein notation) be our optimization problem,
+        under the constraint $\phi^T \phi = I$(orthonormal) since $\Delta > 0$ we can simply solve for all $\phi_i$ and minimize $\pder{\mc{L}_i}{\phi_j} = \pder{(\phi_i^T \Delta \phi_i -\lambda_i(\phi_i^T\phi_i -1))}{\phi_j} = 2\Delta\phi_i-2\lambda_i\phi_i=0$. And since the initial trace is equal to the sum of our k positive eigenvalues we shall take the k lowest eigenvalues. The problem can be shown to be $\Delta \phi = \Lambda \phi$.
+
+	    \end{itemize}
+\end{proof}
 
 \end{document}
