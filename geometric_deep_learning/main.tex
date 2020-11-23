@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{fouriernc}
+%\usepackage{fouriernc}
 \usepackage[T1]{fontenc}
 \usepackage{adjustbox}
 \usepackage[margin=2cm]{geometry}
@@ -11,6 +11,7 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 \hypersetup{colorlinks=true,linkcolor=blue,urlcolor=red}
+\usepackage{subfiles}
 
 \setlength{\parindent}{0pt}
 
@@ -28,9 +29,12 @@
 \newcommand{\bb}[1]{\textbf{#1}}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\eval}[1]{\Big{|}_{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\scal}[2]{\langle #1, #2 \rangle}
 
 \title{Geometric Deep Learning \\ Beyond Euclidean Domains}
 \author{}
@@ -38,71 +42,17 @@
 \begin{document}
 
 \maketitle
+
 \begin{section}{Geometric Priors}
+    \subfile{sections/section1}
+\end{section}
 
-\begin{defn}\underline{Our compact euclidean domain $\Omega$}\\
-$\Omega := \prod_{i \in I}[0,1]$.
-\end{defn}
+\begin{section}{Graphs and Manifolds}
+    \subfile{sections/section2}
+\end{section}
 
-\begin{defn}\underline{Classification}\\
-Let $x \in L^2 := L^2(\Omega)$ then $f : L^2 \to \mathcal{C}$ surjective
-is said to be a classification of $L^2$ on the set $\mathcal{C}$.
-\end{defn}
-
-\begin{defn}\underline{Training set}\\
-Let $f$ be a classification of $L^2$ on $\mathcal{C}$ and $\{x_i\}_{i \in I}\subset L^2$
-then the set $\{(x_i,f(x_i))\}_{i \in I}$ is called a training set for $f$.
-\end{defn}
-
-\begin{prop}\underline{The classification $f$ is not injective}\\
-Let $f$ be a classification of $L^2$ on $\mathcal{C}$ then, given the inevitable noise acting on data,
-there exists a real positive $\eps$ such that $\forall (x,x_\eps) \in L^2\times L^2: \int\limits_\Omega{|x-x_\eps|^2}<\eps$
-we have that $f(x)=f(x_\eps)$.
-\end{prop}
-
-Given ideal data classification we can define two functions $f$-equivalent if and only if 
-their images via the classification $f$ are equal according to an equivalence on $\mathcal{C}$ which so far can be any set.
-
-\begin{prop}\underline{The relation $\simeq$ is an equivalence relation}\\
-Let $x,y,z \in L^2$ we define $x\simeq y \iff f(x)=f(y)$ where $f$ is a classification of $L^2$ on $\mathcal{C}$,
-then:\\
-(i) $x \simeq x$\\
-(ii) $x \simeq y \iff y \simeq x$\\
-(iii) $x \simeq y, y \simeq z \implies x \simeq z$
-\end{prop}
-\begin{proof}
-(i),(ii) and (iii) follow from the the equivalence on $\mathcal{C}$ by which they are defined.
-\end{proof}
-
-\begin{defn}\underline{Translation operator}\\
-Let $x \in L^2$ and $\nu \in \Omega$ then $T_\nu:L^2 \to L^2$ such that $x(\xi) \mapsto x(\xi - \nu)$
-is said to be a translation operator.
-\end{defn}
-
-\begin{defn}\underline{Local deformation operator}\\
-Let $x \in L^2$ and $\tau \in C^\infty(\Omega,\Omega)$ then $L_\tau:L^2 \to L^2$ such that $x(\xi) \mapsto x(\xi-\tau(\xi))$
-is said to be a local deformation operator according to the smooth vector field $\tau$.
-\end{defn}
-
-\begin{defn}\underline{Invariance}\\
-A classification $f$ of $L^2$ on $\mathcal{C}$ is said to be $A$-invariant, where
-$A:L^2 \to L^2$, if and only if $f(A(x))=f(x)$  $\forall x \in L^2$.
-\end{defn}
-
-\begin{defn}\underline{Equivariance}\\
-A classification $f$ of $L^2$ on $\mathcal{C}$ is said to be $A$-equivariant, where
-$A:L^2 \to L^2$, if and only if $f(A(x))=A(f(x))$  $\forall x \in L^2$.\\
-This is well defined only if $A$ is defined to act on $\mathcal{C}$
-\end{defn}
-
-\begin{prop}\underline{If $f$ is translation invariant then it is stable under local deformations}\\
-Let $f$ be a translation invariant classification of $L^2$ on $\mathcal{C}$
-then $|f(L_\tau(x))-f(x)|\approx |J_\tau|$ where $(J_\tau)_{ij}=(\pder{\tau_i}{\xi_j})$ under some misterious norm.
-\end{prop}
-\begin{proof}
-To be found...
-\end{proof}
-
+\begin{section}{Spectrum of the laplacian}
+    \subfile{sections/section3}
 \end{section}
 
 \end{document}

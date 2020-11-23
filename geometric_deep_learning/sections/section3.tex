@@ -1,0 +1,30 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\begin{prop}
+    \underline{Variational problems related to the laplacian}\\
+    Let $f \in L^2(M)$ the variational problem minimizing the Dirichlet energy functional $\int_M dx (gradf)^2$, 
+    admit as solution the kernel of the laplacian. Otherwise if we wish to have normalized functions only
+    to avoid uniformly vanishing functions i.e. $\int_M dx f^2 = 1$ we get as solution the eigenfunction of the laplacian
+    relative to its lowest eigenvalue. After this the same process can be applied to graphs.
+\end{prop}
+\begin{proof} The proof is splitted in two different problems:
+    \begin{itemize}
+        \item 
+	$\int f \Delta f = \int (gradf)^2$, the problem $\delta \int (gradf)^2 = 0$ is solved with the
+	Euler-Lagrange equations $div \pder{\mc{L}}{(gradf)}=\pder{\mc{L}}{f}$, which give $\Delta f = 0$.
+	\item
+	This time we have $\delta[\int (gradf)^2 - \lambda (\int f^2 -1)]=0$, which using the same equations
+	leads to $\Delta f = \lambda f$, and since for those functions $\int f \Delta f = \lambda$, we want to find
+	the minumum eigenvalue of the laplacian.
+    \end{itemize}
+\end{proof}
+
+\begin{prop}
+    \underline{Discrete "variational" problems related to the laplacian}\\
+    Let $\phi$ be a $k \times k$ matrix the variational problem minimizing the Dirichlet energy $Tr(\phi^T \Delta \phi)$ is equivalent to
+    the problem $\Delta \phi = 0$, while if we normalize the functions we get $\Delta \phi = \Lambda \phi$, where $\Lambda = diag(\lambda)$, 
+    with the k lowest eigenvalues.
+\end{prop}
+
+\end{document}
