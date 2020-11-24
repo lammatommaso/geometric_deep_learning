@@ -34,9 +34,15 @@
 	 = 2\Delta\phi_i=0$.
 	 \item
 	Let $min_{\phi}Tr(\phi^T \Delta \phi) = \phi_{li}\Delta_{lk}\phi_{ki} = \sum_i \phi_i^T \Delta \phi_i $ (Einstein notation) be our optimization problem,
-        under the constraint $\phi^T \phi = I$(orthonormal) since $\Delta > 0$ we can simply solve for all $\phi_i$ and minimize $\pder{\mc{L}_i}{\phi_j} = \pder{(\phi_i^T \Delta \phi_i -\lambda_i(\phi_i^T\phi_i -1))}{\phi_j} = 2\Delta\phi_i-2\lambda_i\phi_i=0$. And since the initial trace is equal to the sum of our k positive eigenvalues we shall take the k lowest eigenvalues. The problem can be shown to be $\Delta \phi = \Lambda \phi$.
-
-	    \end{itemize}
+        under the constraint $\phi^T \phi = I$(orthonormal) since $\Delta > 0$ we can simply solve for all $\phi_i$ and minimize 
+	$\pder{\mc{L}_i}{\phi_j} = \pder{(\phi_i^T \Delta \phi_i -\lambda_i(\phi_i^T\phi_i -1))}{\phi_j}$(non sostituisco l'1 perché non posso sostituire il vincolo 
+	nel vincolo)$ = 2\Delta\phi_i-2\lambda_i\phi_i=0$. And since the initial trace is equal to the sum of our k positive eigenvalues we shall take the
+	k lowest eigenvalues. The problem can be shown to be $\Delta \phi = \Lambda \phi$.
+   \end{itemize}
 \end{proof}
+
+% Secondo me la dimsotrazione con la Traccia è molto brutta
+% Aggiungere le condizioni al contorno per il problema variazionale continuo(Fomin)
+
 
 \end{document}
