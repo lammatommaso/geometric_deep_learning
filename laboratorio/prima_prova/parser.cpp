@@ -1,5 +1,6 @@
 #include<fstream>
 #include<cmath>
+#include<string>
 
 struct Error_Point
 {
@@ -20,6 +21,13 @@ struct Error_Point_Array
 {
     Error_Point el[10];
     Error_Point_Array(){}
+
+    double fit_value(std::string scale)
+    {
+
+    }
+
+
     friend std::istream& operator>>(std::istream& is, Error_Point_Array& arr)
     {
         for(int i=0;i<10;i++)
@@ -113,3 +121,5 @@ int main()
    output_2<<pydata_2;
    output_2.close();
 }
+
+
