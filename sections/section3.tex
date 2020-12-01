@@ -51,8 +51,8 @@
     So if the Fourier transform is invertible we have that $f(x') = \int_\Omega dp e^{i\scal{x'}{p}}\int_\Omega dx e^{-i\scal{x}{p}}f(x)$, 
     then by the definition of the shift functional we can represent it with its integral kernel $\int_\Omega dp e^{i\scal{x'-x}{p}}$, which
     is equal to $\delta(x-x') = \delta(x'-x)$. Trivially we have that our laplacian eigenfunctions are $\phi_p = e^{i\scal{x}{p}}$ of eigenvalue $p^2$, since 
-    $f(x) = \mc{F}^\dag \mc{F} = \int_\Omega dp (\mc{F}f)(p)e^{i\scal{x}{p}}$ we define our coefficients $c_p$. We just have to show that
-    $\int dx e^{i\scal{x}{p'-p}} = \delta(p'-p)$ that is true by definition.
+    $f(x) = \mc{F}^\dag \mc{F}f = \int_\Omega dp (\mc{F}f)(p)e^{i\scal{x}{p}}$ we define our coefficients $c_p$. We just have to show that
+    $\int dx e^{i\scal{x}{p'-p}} = \delta(p'-p)$ that is true by definition.\\
 \end{proof}
     
 
