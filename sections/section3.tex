@@ -8,7 +8,7 @@
     to avoid uniformly vanishing functions i.e. $\int_M dx f^2 = 1$ we get as solution the eigenfunction of the laplacian
     relative to its lowest eigenvalue. After this the same process can be applied to graphs.
 \end{prop}
-\begin{proof} The proof is split in two different problems:
+\begin{proof} \hfill \\
     \begin{itemize}
         \item 
 	$\int f \Delta f = \int (gradf)^2$, the problem $\delta \int (gradf)^2 = 0$ is solved with the
@@ -26,7 +26,7 @@
     the problem $\Delta \phi = 0$, while if we normalize the functions we get $\Delta \phi = \Lambda \phi$, where $\Lambda = diag(\lambda)$ with 
     the k lowest eigenvalues.
 \end{prop}
-\begin{proof} As follows:\\
+\begin{proof} \hfill \\
     \begin{itemize}
         \item
 	Let $min_{\phi}Tr(\phi^T \Delta \phi) = \phi_{li}\Delta_{lk}\phi_{ki} = \sum_i \phi_i^T \Delta \phi_i $ (Einstein notation) be our optimization problem,
@@ -47,7 +47,7 @@
     then we have that $\Delta \phi_p = p^2 \phi_p$, where $\forall f \in L^2$ we can write $f = \int_\Omega dp c_p \phi_p$
     and $\int_\Omega dx \phi_p \phi_{p'} = \delta(p-p')$, that is generalized Hilbert Base up to normalization.
 \end{prop}
-\begin{proof}:\\
+\begin{proof} \hfill  \\
     So if the Fourier transform is invertible we have that $f(x') = \int_\Omega dp e^{i\scal{x'}{p}}\int_\Omega dx e^{-i\scal{x}{p}}f(x)$, 
     then by the definition of the shift functional we can represent it with its integral kernel $\int_\Omega dp e^{i\scal{x'-x}{p}}$, which
     is equal to $\delta(x-x') = \delta(x'-x)$. Trivially we have that our laplacian eigenfunctions are $\phi_p = e^{i\scal{x}{p}}$ of eigenvalue $p^2$, since 
@@ -57,7 +57,7 @@
 
 \begin{prop}
     \underline{The heat kernel is a really well behaved local function}\\
-    
+
 \end{prop}
     
 
