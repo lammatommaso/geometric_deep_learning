@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fouriernc}
+\usepackage[T1]{fontenc}
+\usepackage{adjustbox}
+\usepackage[margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=red}
+\usepackage{subfiles}
+
+\setlength{\parindent}{0pt}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem*{thm*}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{prop*}{Proposition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem*{defn*}{Definition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{exa}{Example}
+\newtheorem{exe}{Exercise}
+
+\newcommand{\bb}[1]{\textbf{#1}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\eval}[1]{\Big{|}_{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\scal}[2]{\langle #1, #2 \rangle}
+
+\title{Geometric Deep Learning \\ Beyond Euclidean Domains}
+\author{}
+\date{}
+\begin{document}
+
+\tableofcontents
+\maketitle
+
+\begin{section}{Geometric Priors}
+    \subfile{sections/section1}
+\end{section}
+
+\begin{section}{Graphs and Manifolds}
+    \subfile{sections/section2}
+\end{section}
+
+\begin{section}{Spectrum of the laplacian}
+    \subfile{sections/section3}
+\end{section}
+
+\end{document}
