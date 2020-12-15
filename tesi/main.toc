@@ -1,7 +1,7 @@
 \babel@toc {english}{}
-\contentsline {chapter}{Contents}{1}{Doc-Start}
-\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
-\contentsline {section}{\numberline {1.1}Abstract simplicial complexes}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Differential forms on abstract simplicial complexes}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Integration on simplicial chains}{2}{section.1.3}
-\contentsline {section}{\numberline {1.4}Smooth real manifolds and abstract graphs}{2}{section.1.4}
+\contentsline {chapter}{Contents}{a}{Doc-Start}
+\contentsline {chapter}{\numberline {1}Introduction}{b}{chapter.1}
+\contentsline {section}{\numberline {1.1}Abstract simplicial complexes}{b}{section.1.1}
+\contentsline {section}{\numberline {1.2}Differential forms on abstract simplicial complexes}{b}{section.1.2}
+\contentsline {section}{\numberline {1.3}Integration on simplicial chains}{b}{section.1.3}
+\contentsline {section}{\numberline {1.4}Smooth real manifolds and abstract graphs}{b}{section.1.4}
