@@ -1,10 +1,10 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
     \begin{defn}
-        \bb{Abstract simplicial complex}\\
+        \bb{Abstract simplicial complex (finite)}\\
 	Let $\mc{F}$ be a family of sets we then define an abstract simplicial complex $\mc{A}$ to be 
-	\[\mc{A}:=\{\sigma_j=\{A_i\}_{i \in I_j} \subset \mc{F}: \tau_j \subset \sigma_j \Rightarrow \tau_j \in \mc{A}\}_{j \in J}\] 
-	where $I_j$ and $J$ are sets of indexes, we shall call $\sigma_j$ abstract simplexes of $\mc{A}$.
+	\[\mc{A}:=\{ \sigma = \{A_i\}_{i \in I_\sigma} \subset \mc{F}: \tau \subset \sigma \Rightarrow \tau \in \mc{A} \}\] 
+	where $I_\sigma$ is a finite set of indexes, we shall call $\sigma$ abstract simplexes of $\mc{A}$.
     \end{defn}
     \begin{defn}
         \bb{Dimension of an abstract simplicial complex}\\
@@ -22,4 +22,22 @@
     In Definition 1.1.1. we tacitly assumed the definition of the abstract simplex $\sigma_j$ invariant
     with respect to permutations of the indexes $I_j$, this assumption establishes the difference between
     directed and undirected graphs.
+    \begin{defn}
+        \bb{Convex envelop of points in $\R^n$}\\
+        Let $\{x_i\}_{i \in I} \subset \R^n$ we define the convex envelope of $\{x_i\}_{i \in I}$ to be 
+        \[ \langle x_i \rangle_{i \in I} := \{ a = \sum_{i \in I} \lambda_i x_i : \lambda_i \in \R,\ \lambda_i > 0,\  \sum_{i \in I} \lambda_i = 1 \},\]
+        which is the smallest convex set containing $\{x_i\}_{i \in I}$.
+    \end{defn}
+    \begin{defn}
+        \bb{Affine independency of points in $\R^n$}\\
+    \end{defn}
+    \begin{defn}
+        \bb{Geometric k-simplexes}\\
+    \end{defn}
+    \begin{defn}
+        \bb{Geometric Simplicial Complex}\\
+    \end{defn}
+    \begin{thm}
+        \bb{Geometric realization of an abstract simplicial complex}\\
+    \end{thm}
 \end{document}
