@@ -1,3 +1,25 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
+    \begin{defn}
+        \bb{Abstract simplicial complex}\\
+	Let $\mc{F}$ be a family of sets we then define an abstract simplicial complex $\mc{A}$ to be 
+	\[\mc{A}:=\{\sigma_j=\{A_i\}_{i \in I_j} \subset \mc{F}: \tau_j \subset \sigma_j \Rightarrow \tau_j \in \mc{A}\}_{j \in J}\] 
+	where $I_j$ and $J$ are sets of indexes, we shall call $\sigma_j$ abstract simplexes of $\mc{A}$.
+    \end{defn}
+    \begin{defn}
+        \bb{Dimension of an abstract simplicial complex}\\
+	Let $\mc{A} = \{\sigma_j\}_{j \in J}$ be an abstract simplicial complex we define its dimension to be
+	\[ dim \mc{A} := max_{\sigma_j \in \mc{A}}dim(\sigma_j), \]
+	where $dim(\sigma_j) := |\sigma_j|-1$.
+    \end{defn}
+    \begin{defn}
+        \bb{Abstract graph}\\
+	An abstract graph $\mc{G} = \{\sigma_j\}_{j \in J}$ is a 1-dimensional abstract simplicial complex whose 
+	vertexes and edges are respectively
+	\[ \mc{V} := \{ \sigma_j \in \mc{G} : dim(\sigma_j) = 0\} \ and \]
+	\[ \mc{E} := \{ \sigma_j \in \mc{G} : dim(\sigma_j) = 1\} \ .\]
+    \end{defn}
+    In Definition 1.1.1. we tacitly assumed the definition of the abstract simplex $\sigma_j$ invariant
+    with respect to permutations of the indexes $I_j$, this assumption establishes the difference between
+    directed and undirected graphs.
 \end{document}
