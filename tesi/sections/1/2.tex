@@ -1,3 +1,42 @@
 \documentclass[../1.tex]{subfiles}
+
 \begin{document}
+    \begin{defn}
+        \bb{p-forms on abstract simplicial complexes}\\
+        Let $\mc{A}$ be an abstract simplical complex we define the linear space of p-forms $\Lambda^p = \Lambda^p(\mc{A})$ to be 
+        \[ \Lambda^p := \{ \omega : Vert(\mc{A})^{p+1} \to \R \}, \]
+        \[ + : \Lambda^p \times \Lambda^p \to \Lambda^p\]
+        \[ (\omega + \eta)(x) = \omega(x) + \eta(x) \quad x \in Vert(\mc{A})^{p+1},\ \omega,\eta \in \Lambda^p, \]
+        \[ \cdot : \R \times \Lambda^p \to \Lambda^p \]
+        \[ (\lambda \omega)(x) = \lambda \omega(x) \quad x \in Vert(\mc{A})^{p+1},\ \omega \in \Lambda^p,\ \lambda \in \R, \]
+        where $dim(\Lambda^p) = |Vert(\mc{A})|^{p+1}$.
+    \end{defn}
+    Although this definition seems to stand apart from the concept of simplicial complex we might notice
+    that if we take the subset $\{ x \in Vert(\mc{A})^{p+1} :  \{x\} \in \mc{A} \}$ as the domain of our forms 
+    we are defining p-forms on p-simplexes of $\mc{A}$. For a lighter notation we shall define $\mc{V} := Vert(\mc{A})$.
+    \begin{prop}
+        A canonical base of elementary forms for $\Lambda^p$ is
+        \[ \{e^x \in \Lambda^p : x \in \mc{V}^{p+1},\ e^x(y) = \delta_{xy} \quad y \in \mc{V}^{p+1}\},\]
+        therefore giving us an expression for every other p-form
+        \[ \omega = \sum_{x \in \mc{V}^{p+1}} \omega_x e^x, \quad \omega_x \in \R. \]
+    \end{prop}
+    This basis, according to the restriction $\{ x \in Vert(\mc{A})^{p+1} :  \{x\} \in \mc{A} \}$, is the dual basis
+    of the basis of the linear space of simplicial p-chains.
+    \begin{defn}
+        \bb{Exterior derivative of a p-form}\\
+        Let $\omega \in \Lambda^p$ we define $d : \Lambda^p \to \Lambda^{p+1}$ such that
+        \[ (d \omega)_x = \sum_{i = 0}^{p+1} (-1)^i \omega_{\hat{x}_i} \ , \]
+        where if $ x = (x_0, ..., x_{p+1}) \in \mc{V}^{p+1} $ we define $\hat{x}_i := (x_0, ..., x_{i-1},x_{i+1}, ..., x_{p+1}) \in \mc{V}^p$.
+    \end{defn}
+    \begin{lem}
+        Let $\omega \in \Lambda^p$, $p \geq 0$ then $d^2 \omega = 0$.
+    \end{lem}
+    \begin{proof}
+        We have for $x \in \Lambda^{p+2}$
+        \begin{aligned}
+                (d^2 \omega)_x &= \sum_{i = 0}^{p+2} (-1)^i (d \omega)_{\hat{x}_i} \\
+                            &= \sum_{i = 0}^{p+2} (-1)^i \( \sum_{j = 0}^{i-1}(-1)^j \omega_{\hat{x}_{ij}} + 
+                            \sum_{j = i+1}^{p+2} (-1)^{j-1} \omega_{\hat{x}_{ij}} \)\\
+        \end{aligned}
+    \end{proof}
 \end{document}

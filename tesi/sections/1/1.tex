@@ -42,18 +42,26 @@
     \end{defn}
     \begin{defn}
         \bb{Faces and cofaces of geometric k-simplexes}\\
-        %We define a geometric k-simplex to be a convex envelop $\langle x_i \rangle_{i \in I}$
-        %where $\{x_i\}_{i \in I} \subset \R^n$ are affinely independent and $|I| = k + 1$.
+        Let $\sigma$ be a geometric k-simplex, we say that another t-simplex $\tau$ is a face of $\sigma$ or equivalently 
+        that $\sigma$ is a coface of $\tau$, by our notiation $\tau \leq \sigma$, if and only if $\tau \subset \sigma$, where $t \leq k$.
     \end{defn}
     \begin{defn}
         \bb{Geometric Simplicial Complex}\\
         We define a geometric simplicial complex $\mc{K}$ to be a collection of geometric simplexes such that
         \begin{enumerate}[(i)]
-            \item $ \tau \leq \sigma \in \mc{K} \Rightarrow \tau \in \mc{K} $
-            \item $ \sigma, \tau \in \mc{K} \Rightarrow \sigma \cup \tau \in \mc{K}  $
+            \item $ \tau \leq \sigma \in \mc{K} \Rightarrow \tau \in \mc{K} $,
+            \item $ \sigma, \tau \in \mc{K} \Rightarrow \sigma \cup \tau \in \mc{K}  $.
         \end{enumerate}
     \end{defn}
-    \begin{thm}
+    \newpage
+    \begin{defn}
         \bb{Geometric realization of an abstract simplicial complex}\\
+        Let $\mc{K}$ be a geometric simplicial complex, and let $Vert(\mc{K}) := \{\sigma \in \mc{K} : dim(\sigma) = 0\}$, we call
+        the abstract simplicial complex $\mc{A} := \{ \{x_i\}_{i \in I} \subset Vert(\mc{K}) : \langle x_i \rangle_{i \in I} \in \mc{K} \}$
+        a vertex scheme for $\mc{K}$ or equivalently we might say that $\mc{K}$ is a geometric realization of $\mc{A}$.
+    \end{defn}
+    \begin{thm}
+        Let $\mc{A}$ be a d-dimentional abstract simplicial complex, it admits a geometric realization in $\R^{2d+1}$.
     \end{thm}
+    Kuratowski theorem proves the prevuois statement to be also sharp.
 \end{document}
