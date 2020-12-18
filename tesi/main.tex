@@ -44,20 +44,18 @@
 \newcommand{\del}{\partial}
 
 \begin{document}
-\begin{titlepage}
-    \subfile{sections/front}
-\end{titlepage}
-\pagenumbering{roman}
-\begin{comment}
-    \subfile{sections/abstract_ita}
+    \begin{titlepage}
+        \subfile{sections/front}
+    \end{titlepage}
+    \pagenumbering{roman}
+        \subfile{sections/abstract_ita}
+        \newpage
+        \subfile{sections/abstract_eng}
+        \newpage
+    \tableofcontents
     \newpage
-    \subfile{sections/abstract_eng}
-    \newpage
-\end{comment}
-\tableofcontents
-\newpage
-\pagenumbering{arabic}
-\begin{section}{Introduction}
-    \subfile{sections/1}
-\end{section}
+    \pagenumbering{arabic}
+    \begin{section}{Introduction}
+        \subfile{sections/1}
+    \end{section}
 \end{document}
