@@ -2,41 +2,73 @@
 
 \begin{document}
     \begin{defn}
+        \bb{Linear space of simplicial p-chains}\\
+        Let $\mc{A}$ be an abstract simplicial complex, and let $\mc{A}_p := \{\sigma \in \mc{A} : dim(\sigma) = p\}$, 
+        we define the linear space $C_p = C_p(\mc{A})$ of simplicial p-chain on $\mc{A}$ to be 
+        \[ C_p = \{ \sum_{\sigma \in \mc{A}_p} \lambda^\sigma \sigma ,\quad \lambda^\sigma \in \Z_2\}, \]
+        where the formal operations of the linear space are given by the defitnition itself.
+    \end{defn}
+    The set $\mc{A}^p$ is a canonical base of p-simplexes for $C_p$.\\
+    \begin{defn}
+        \bb{Boundary operator on $C_{p+1}$}\\
+        Let $\sigma$ be an element of the canonical base of $C_{p+1}$ we define $\del : C_{p+1} \to C_p$ such that
+        \[ \del \sigma = \sum_{i = 0}^{p+1} (-1)^i \sigma_i, \]
+        where if $ \sigma = \{x_0, ..., x_{p+1}\} \in C_{p+1}$ we define $\sigma_i := \{x_0, ..., x_{i-1},x_{i+1}, ..., x_{p+1} \in C_p\}$.\\
+        Furthermore we extend this operator linearly on the whole space $C_{p+1}$
+        \[ \del \left( \sum_{\sigma \in \mc{A}_p} \lambda^\sigma \sigma \right) = \sum_{\sigma \in \mc{A}_p} \lambda^\sigma \del \sigma \ .\]
+    \end{defn}
+    \begin{lem}
+        Let $\sigma \in \mc{A}_{p+2}$, $p \geq 0$ then $\del^2 \sigma = 0$.
+    \end{lem}
+    \begin{proof}
+        We have \\
+        \begin{equation*}
+            \begin{aligned}
+                (\del^2 \sigma)_x &= \sum_{i = 0}^{p+2} (-1)^i (\del \sigma)_i \\
+                &= \sum_{i = 0}^{p+2} (-1)^i \left[ \sum_{j = 0}^{i-1}(-1)^j \sigma_{ij} + 
+                \sum_{j = i+1}^{p+2} (-1)^{j-1} \sigma_{ij} \right]\\
+                &= \sum_{i = 0}^{p+2} \sum_{j = 0}^{i-1} (-1)^{i+j} \sigma_{ij} -
+                \sum_{i = 0}^{p+2} \sum_{j = i+1}^{p+2} (-1)^{i+j} \sigma_{ij} = 0.
+            \end{aligned}
+        \end{equation*}
+    \end{proof}
+    \begin{defn}
         \bb{p-forms on abstract simplicial complexes}\\
         Let $\mc{A}$ be an abstract simplical complex we define the linear space of p-forms $\Lambda^p = \Lambda^p(\mc{A})$ to be 
-        \[ \Lambda^p := \{ \omega : Vert(\mc{A})^{p+1} \to \R \}, \]
-        \[ + : \Lambda^p \times \Lambda^p \to \Lambda^p\]
-        \[ (\omega + \eta)(x) = \omega(x) + \eta(x) \quad x \in Vert(\mc{A})^{p+1},\ \omega,\eta \in \Lambda^p, \]
-        \[ \cdot : \R \times \Lambda^p \to \Lambda^p \]
-        \[ (\lambda \omega)(x) = \lambda \omega(x) \quad x \in Vert(\mc{A})^{p+1},\ \omega \in \Lambda^p,\ \lambda \in \R, \]
+        \[ \Lambda^p := \{ \omega : C_{p+1} \to \R\}, such \ that\]
+        \[ \omega \left( \sum_{\sigma \in \mc{A}_{p+1}} \lambda^\sigma \sigma \right) = \sum_{\sigma \in \mc{A}_{p+1}} \lambda^\sigma \omega(\sigma)
+        \quad \forall \omega \in \Lambda^p , \ \lambda_\sigma \in \Z_2.\]
+        With the linear space operations defined as
+        \[ + : \Lambda^p \times \Lambda^p \to \Lambda^p \quad
+        \quad (\omega + \eta)(\sigma) = \omega(\sigma) + \eta(\sigma) \quad \sigma \in C_{p+1},\ \omega,\eta \in \Lambda^p, \]
+        \[ \cdot : \R \times \Lambda^p \to \Lambda^p \quad
+        \quad (\lambda \omega)(\sigma) = \lambda \omega(\sigma) \quad \sigma \in C_{p+1},\ \omega \in \Lambda^p,\ \lambda \in \R, \]
         where $dim(\Lambda^p) = |Vert(\mc{A})|^{p+1}$.
-    \end{defn}
-    Although this definition seems to stand apart from the concept of simplicial complex we might notice
-    that if we take the subset $\{ x \in Vert(\mc{A})^{p+1} :  \{x\} \in \mc{A} \}$ as the domain of our forms 
-    we are defining p-forms on p-simplexes of $\mc{A}$. For a lighter notation we shall define $\mc{V} := Vert(\mc{A})$.
+    \end{defn} 
     \begin{prop}
         A canonical base of elementary forms for $\Lambda^p$ is
-        \[ \{e^x \in \Lambda^p : x \in \mc{V}^{p+1},\ e^x(y) = \delta_{xy} \quad y \in \mc{V}^{p+1}\},\]
+        \[ \{e^\sigma \in \Lambda^p : \sigma \in \mc{A}_{p+1},\ e^\sigma(\tau) = \delta_{\sigma \tau} \quad \tau \in \mc{A}_{p+1}\},\]
         therefore giving us an expression for every other p-form
-        \[ \omega = \sum_{x \in \mc{V}^{p+1}} \omega_x e^x, \quad \omega_x \in \R. \]
+        \[ \omega = \sum_{\sigma \in \mc{A}_{p+1}} \omega_\sigma e^\sigma, \quad \omega_\sigma \in \R. \]
     \end{prop}
-    This basis, according to the restriction $\{ x \in Vert(\mc{A})^{p+1} :  \{x\} \in \mc{A} \}$, is the dual basis
-    of the basis of the linear space of simplicial p-chains.
     \begin{defn}
         \bb{Exterior derivative of a p-form}\\
-        Let $\omega \in \Lambda^p$ we define $d : \Lambda^p \to \Lambda^{p+1}$ such that
-        \[ (d \omega)_x = \sum_{i = 0}^{p+1} (-1)^i \omega_{\hat{x}_i} \ , \]
-        where if $ x = (x_0, ..., x_{p+1}) \in \mc{V}^{p+1} $ we define $\hat{x}_i := (x_0, ..., x_{i-1},x_{i+1}, ..., x_{p+1}) \in \mc{V}^p$.
+        Let $\omega \in \Lambda^p$ we define $d : \Lambda^p \to \Lambda^{p+1}$ on its coordinates to be 
+        \[ (d \omega)_\sigma = \sum_{i = 0}^{p+1} (-1)^i \omega_{\sigma_i} \ . \]
     \end{defn}
     \begin{lem}
         Let $\omega \in \Lambda^p$, $p \geq 0$ then $d^2 \omega = 0$.
     \end{lem}
     \begin{proof}
-        We have for $x \in \Lambda^{p+2}$
-        \begin{aligned}
-                (d^2 \omega)_x &= \sum_{i = 0}^{p+2} (-1)^i (d \omega)_{\hat{x}_i} \\
-                            &= \sum_{i = 0}^{p+2} (-1)^i \( \sum_{j = 0}^{i-1}(-1)^j \omega_{\hat{x}_{ij}} + 
-                            \sum_{j = i+1}^{p+2} (-1)^{j-1} \omega_{\hat{x}_{ij}} \)\\
-        \end{aligned}
+        We have for $\sigma \in C_{p+3}$\\
+        \begin{equation*}
+            \begin{aligned}
+                (d^2 \omega)_\sigma &= \sum_{i = 0}^{p+2} (-1)^i (d \omega)_{\sigma_i} \\
+                &= \sum_{i = 0}^{p+2} (-1)^i \left[ \sum_{j = 0}^{i-1}(-1)^j \omega_{\sigma_{ij}} + 
+                \sum_{j = i+1}^{p+2} (-1)^{j-1} \omega_{\sigma_{ij}} \right]\\
+                &= \sum_{i = 0}^{p+2} \sum_{j = 0}^{i-1} (-1)^{i+j} \omega_{\sigma_{ij}} -
+                \sum_{i = 0}^{p+2} \sum_{j = i+1}^{p+2} (-1)^{i+j} \omega_{\sigma_{ij}} = 0.
+            \end{aligned}
+        \end{equation*}
     \end{proof}
 \end{document}
