@@ -47,9 +47,9 @@
     \end{defn} 
     \begin{prop}
         A canonical base of elementary forms for $\Lambda^p$ is
-        \[ \{e^\sigma \in \Lambda^p : \sigma \in \mc{A}_p,\ e^\sigma(\tau) = \delta_{\sigma \tau} \quad \tau \in \mc{A}_p\},\]
+        \[ \{\sigma^* \in \Lambda^p : \sigma \in \mc{A}_p,\ \sigma^*(\tau) = \delta_{\sigma \tau} \quad \tau \in \mc{A}_p\},\]
         therefore giving us an expression for every other p-form
-        \[ \omega = \sum_{\sigma \in \mc{A}_p} \omega_\sigma e^\sigma, \quad \omega_\sigma \in \R. \]
+        \[ \omega = \sum_{\sigma \in \mc{A}_p} \omega_\sigma \sigma^*, \quad \omega_\sigma \in \R. \]
     \end{prop}
     \begin{defn}
         \bb{Exterior derivative of a p-form}\\
@@ -75,12 +75,12 @@
         \bb{Integration of p-forms on p-chains}\\
         Let $\omega \in \Lambda^p$ and $\tau \in C_p$ we define the integral of $\omega$ on $\tau$ to be a bilinear form $\Lambda^p \times C_p \to \R$
         \[ \left(\omega, \tau \right)_p := \sum_{\sigma \in \mc{A}_p} \omega_\sigma \tau^\sigma, \]
-        where $\omega = \sum_{\sigma \in \mc{A}_p} \omega_\sigma e^\sigma$ and $\tau = \sum_{\sigma \in \mc{A}_p} \tau^\sigma \sigma$.\\
+        where $\omega = \sum_{\sigma \in \mc{A}_p} \omega_\sigma \sigma^*$ and $\tau = \sum_{\sigma \in \mc{A}_p} \tau^\sigma \sigma$.\\
         (This might be extended by adding a non trivial permutation invariant measure on $\mc{A}_p$)
     \end{defn}
     \newpage
     \begin{thm}
-        Let $\omega = \sum_{\sigma \in \mc{A}_p} \omega_\sigma e^\sigma$ and $\tau = \sum_{\sigma \in \mc{A}_{p+1}} \tau^\sigma \sigma$ the following identity holds
+        Let $\omega = \sum_{\sigma \in \mc{A}_p} \omega_\sigma \sigma^*$ and $\tau = \sum_{\sigma \in \mc{A}_{p+1}} \tau^\sigma \sigma$ the following identity holds
         \[ \left(d \omega, \tau \right)_{p+1} = \left(\omega, \del \tau \right)_p, \]
         i.e. the operators $d : \Lambda^p \to \Lambda^{p+1}$ and $\del : C_{p+1} \to C_p$ are dual.
     \end{thm}
