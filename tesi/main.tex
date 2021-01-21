@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{report}
 \usepackage[english]{babel}
 \usepackage{newlfont}
 \usepackage{color}
@@ -21,18 +21,20 @@
 
 \setlength{\parindent}{0pt}
 
-\newtheorem{thm}{Theorem}[subsection]
-\newtheorem*{thm*}{Theorem}
-\newtheorem{prop}{Proposition}[subsection]
-\newtheorem*{prop*}{Proposition}
-\newtheorem{defn}{Definition}[subsection]
-\newtheorem*{defn*}{Definition}
-\newtheorem{lem}{Lemma}[subsection]
-\newtheorem{cor}{Corollary}[thm]
-\newtheorem{exa}{Example}
-\newtheorem{exe}{Exercise}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exa}[thm]{Example}
+
+\setcounter{secnumdepth}{0} % no section numbering displayed
+
 
 \newcommand{\bb}[1]{\textbf{#1}}
+\newcommand{\ii}[1]{\textit{#1}}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -50,17 +52,17 @@
         \subfile{sections/front}
     \end{titlepage}
     \pagenumbering{roman}
-        \subfile{sections/abstract_ita}
-        \newpage
-        \subfile{sections/abstract_eng}
-        \newpage
+    %   \subfile{sections/abstract_ita}
+    %    \newpage
+    %    \subfile{sections/abstract_eng}
+    %    \newpage
     \tableofcontents
     \newpage
     \pagenumbering{arabic}
-    Draft[Most of the deep learning techniques used today are based on models 
-    which learn a partition of the set of smooth functions defined on euclidean 
-    domains into human friendly equivalence classes]
-    \begin{section}{Preliminaries on topology}
+    %Draft[Most of the deep learning techniques used today are based on models 
+    %which learn a partition of the set of smooth functions defined on euclidean 
+    %domains into human friendly equivalence classes]
+    \begin{chapter}{Preliminaries on topology}
         \subfile{sections/1}
-    \end{section}
+    \end{chapter}
 \end{document}

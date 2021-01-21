@@ -2,26 +2,26 @@
 \begin{document}
 
     \begin{defn}
-        Let $\mc{V}$ be a finite set we define an \bb{abstract simplicial complex} $\mc{A}$ to be 
+        Let $\mc{V}$ be a finite set we define an \ii{abstract simplicial complex} $\mc{A}$ to be 
         \[\mc{A}:=\{ \sigma  \subset \mc{V} : \tau \subset \sigma \Rightarrow \tau \in \mc{A} \}\] 
-        where $\sigma$ are called \bb{abstract simplexes} of $\mc{A}$.
+        where $\sigma$ are called \ii{abstract simplexes} of $\mc{A}$.
     \end{defn}
     
-    One calls $\mc{V}$ the \bb{vertex set} of $\mc{A}$ and denotes it by $Vert(\mc{A})$; since the vertex
+    One calls $\mc{V}$ the \ii{vertex set} of $\mc{A}$ and denotes it by $Vert(\mc{A})$; since the vertex
     set is finite we expect every abstract simplex to be finite, therefore we might use the notation $\sigma = \{ v_i \}_{i \in I_\sigma}$,
     which so far we consider invariant under arbitrary permutations on the index set $I_\sigma$.
 
     \begin{defn}
-        Let $\mc{A}$ be an abstract simplicial complex we define its \bb{dimension} to be
+        Let $\mc{A}$ be an abstract simplicial complex we define its \ii{dimension} to be
         \[ dim \mc{A} := max_{\sigma \in \mc{A}}(|\sigma|-1), \]
         where $|\sigma|$ is the cardinality of $\sigma$.
     \end{defn}
 
-    One calls an abstract simplex of dimension $p$ an \bb{abstract p-simplex}, according to our
-    definition the empy set is a $(-1)$-simplex. A \bb{graph} is a one dimensional abstract simplicial complex.
+    One calls an abstract simplex of dimension $p$ an \ii{abstract p-simplex}, according to our
+    definition the empy set is a $(-1)$-simplex. A \ii{graph} is a one dimensional abstract simplicial complex.
 
     \begin{defn}
-        Let $\mc{A},\mc{B}$ be abstract simplicial complexes, then a \bb{simplicial map} $\phi : \mc{A} \to \mc{B}$ is a function 
+        Let $\mc{A},\mc{B}$ be abstract simplicial complexes, then a \ii{simplicial map} $\phi : \mc{A} \to \mc{B}$ is a function 
         such that whenever $\sigma = \{v_i\}_{i \in I_\sigma} \in \mc{A}$, then $\phi(\{v_i\}_{i \in I_\sigma}) = \{\phi(v_i)\}_{i \in I_\sigma} \in \mc{B}$,
         where $\phi(v_i) \in Vert(\mc{B}) \, \forall i \in I_\sigma$.
     \end{defn}
@@ -38,40 +38,38 @@
     We shall call those geometric simplicial complexes to avoid misunderstandings.
         
     \begin{defn}
-        Let $I$ be a finite set of indexes, we define the \bb{convex envelope} of the points $\{x_i\}_{i \in I} \subset \R^n$ to be 
+        Let $I$ be a finite set of indexes, we define the \ii{convex envelope} of the points $\{x_i\}_{i \in I} \subset \R^n$ to be 
         \[ \langle x_i \rangle_{i \in I} := \{ a = \sum_{i \in I} \lambda_i x_i : \lambda_i \in \R,\ \lambda_i > 0,\  \sum_{i \in I} \lambda_i = 1 \},\]
         which is the smallest convex set containing $\{x_i\}_{i \in I}$.
     \end{defn}
 
     \begin{defn}
-        Let $\{x_i\}_{i \in I} \subset \R^n$ we define the points $\{x_i\}_{i \in I}$ to be \bb{affinely independent} if and only if
+        Let $\{x_i\}_{i \in I} \subset \R^n$ we define the points $\{x_i\}_{i \in I}$ to be \ii{affinely independent} if and only if
         \[ \sum_{i \in I} \lambda_i x_i = \sum_{i \in I} \mu_i x_i \quad \Rightarrow \quad 
         \lambda_i = \mu_i \; \forall i \in I ,\]
         where $\sum_{i \in I} \lambda_i = \sum_{i \in I} \mu_i = 1$.
     \end{defn}
 
     \begin{defn}
-        We define a \bb{geometric p-simplex} to be a convex envelop $\langle x_i \rangle_{i \in I}$
+        We define a \ii{geometric p-simplex} to be a convex envelop $\langle x_i \rangle_{i \in I}$
         where $\{x_i\}_{i \in I} \subset \R^n$ are affinely independent and $|I| = p + 1$.
     \end{defn}
     
     \begin{defn}
-        Let $\sigma$ be a geometric p-simplex, we say that another t-simplex $\tau$ is a \bb{face} of $\sigma$ or equivalently 
-        that $\sigma$ is a \bb{coface} of $\tau$, by our notiation $\tau \leq \sigma$, if and only if $\tau \subset \sigma$, where $t \leq p$.
+        Let $\sigma$ be a geometric p-simplex, we say that another t-simplex $\tau$ is a \ii{face} of $\sigma$ or equivalently 
+        that $\sigma$ is a \ii{coface} of $\tau$, by our notiation $\tau \leq \sigma$, if and only if $\tau \subset \sigma$, where $t \leq p$.
     \end{defn}
 
     \begin{defn}
-        We define a \bb{geometric simplicial complex} $\mc{G}$ to be a collection of geometric simplexes such that
+        We define a \ii{geometric simplicial complex} $\mc{G}$ to be a collection of geometric simplexes such that
         \begin{enumerate}[(i)]
             \item $ \tau \leq \sigma \in \mc{G} \Rightarrow \tau \in \mc{G} $,
             \item $ \sigma, \tau \in \mc{G} \Rightarrow \sigma \cap \tau \in \mc{G}  $.
         \end{enumerate}
     \end{defn}
 
-    \newpage
-
     \begin{defn}
-        \bb{Geometric realization of an abstract simplicial complex}\\
+        \ii{Geometric realization of an abstract simplicial complex}\\
         Let $\mc{K}$ be a geometric simplicial complex, and let $Vert(\mc{K}) := \{\sigma \in \mc{K} : dim(\sigma) = 0\}$, we call
         the abstract simplicial complex $\mc{A} := \{ \{x_i\}_{i \in I} \subset Vert(\mc{K}) : \langle x_i \rangle_{i \in I} \in \mc{K} \}$
         a vertex scheme for $\mc{K}$ or equivalently we might say that $\mc{K}$ is a geometric realization of $\mc{A}$.
