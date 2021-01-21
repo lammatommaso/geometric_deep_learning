@@ -1,59 +1,75 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
+
     \begin{defn}
-        \bb{Abstract simplicial complex (finite)}\\
-	Let $\mc{F}$ be a family of sets we then define an abstract simplicial complex $\mc{A}$ to be 
-	\[\mc{A}:=\{ \sigma = \{A_i\}_{i \in I_\sigma} \subset \mc{F}: \tau \subset \sigma \Rightarrow \tau \in \mc{A} \}\] 
-	where $I_\sigma$ is a finite set of indexes, we shall call $\sigma$ abstract simplexes of $\mc{A}$.
+        Let $\mc{V}$ be a finite set we define an \bb{abstract simplicial complex} $\mc{A}$ to be 
+        \[\mc{A}:=\{ \sigma  \subset \mc{V} : \tau \subset \sigma \Rightarrow \tau \in \mc{A} \}\] 
+        where $\sigma$ are called \bb{abstract simplexes} of $\mc{A}$.
     \end{defn}
+    
+    One calls $\mc{V}$ the \bb{vertex set} of $\mc{A}$ and denotes it by $Vert(\mc{A})$; since the vertex
+    set is finite we expect every abstract simplex to be finite, therefore we might use the notation $\sigma = \{ v_i \}_{i \in I_\sigma}$,
+    which so far we consider invariant under arbitrary permutations on the index set $I_\sigma$.
+
     \begin{defn}
-        \bb{Dimension of an abstract simplicial complex}\\
-	Let $\mc{A}$ be an abstract simplicial complex we define its dimension to be
-	\[ dim \mc{A} := max_{\sigma \in \mc{A}}dim(\sigma), \]
-	where $dim(\sigma) := |\sigma|-1$.
+        Let $\mc{A}$ be an abstract simplicial complex we define its \bb{dimension} to be
+        \[ dim \mc{A} := max_{\sigma \in \mc{A}}(|\sigma|-1), \]
+        where $|\sigma|$ is the cardinality of $\sigma$.
     \end{defn}
+
+    One calls an abstract simplex of dimension $p$ an \bb{abstract p-simplex}, according to our
+    definition the empy set is a $(-1)$-simplex. A \bb{graph} is a one dimensional abstract simplicial complex.
+
     \begin{defn}
-        \bb{Abstract graph}\\
-	An abstract graph $\mc{G}$ is a 1-dimensional abstract simplicial complex whose 
-	vertexes and edges are respectively
-	\[ \mc{V} := \{ \sigma \in \mc{G} : dim(\sigma) = 0\} \ and \]
-	\[ \mc{E} := \{ \sigma \in \mc{G} : dim(\sigma) = 1\} \ .\]
+        Let $\mc{A},\mc{B}$ be abstract simplicial complexes, then a \bb{simplicial map} $\phi : \mc{A} \to \mc{B}$ is a function 
+        such that whenever $\sigma = \{v_i\}_{i \in I_\sigma} \in \mc{A}$, then $\phi(\{v_i\}_{i \in I_\sigma}) = \{\phi(v_i)\}_{i \in I_\sigma} \in \mc{B}$,
+        where $\phi(v_i) \in Vert(\mc{B}) \, \forall i \in I_\sigma$.
     \end{defn}
-    In Definition 1.1.1. we tacitly assumed the definition of the abstract simplex $\sigma$ invariant
-    with respect to permutations of the indexes $I_\sigma$, this assumption establishes the difference between
-    directed and undirected graphs.
+
+    Although the vertex to vertex mapping is a quite selective condition on the function we did not prevent it from cramming
+    abstract simplexes into lower dimensional ones.
+
+    \begin{thm}
+        All abstract simplicial complexes and simplicial maps are a category $\mf{A}$ whose identities are called isomorphisms.
+    \end{thm}
+
+    Although abstract simplicial complex can be used to model any kind of vertex interaction they lack of a topology, we wish
+    therefore to define some structures in a euclidean space that can be related unequivocally(i.e. via a functor) to abstract simplicial complexes.
+    We shall call those geometric simplicial complexes to avoid misunderstandings.
+        
     \begin{defn}
-        \bb{Convex envelop of points in $\R^n$}\\
-        Let $I$ be a finite set of indexes, we define the convex envelope of $\{x_i\}_{i \in I} \subset \R^n$ to be 
+        Let $I$ be a finite set of indexes, we define the \bb{convex envelope} of the points $\{x_i\}_{i \in I} \subset \R^n$ to be 
         \[ \langle x_i \rangle_{i \in I} := \{ a = \sum_{i \in I} \lambda_i x_i : \lambda_i \in \R,\ \lambda_i > 0,\  \sum_{i \in I} \lambda_i = 1 \},\]
         which is the smallest convex set containing $\{x_i\}_{i \in I}$.
     \end{defn}
+
     \begin{defn}
-        \bb{Affine independency of points in $\R^n$}\\
-        Let $\{x_i\}_{i \in I} \subset \R^n$ we define $\{x_i\}_{i \in I}$ to be affinely independent if and only if
+        Let $\{x_i\}_{i \in I} \subset \R^n$ we define the points $\{x_i\}_{i \in I}$ to be \bb{affinely independent} if and only if
         \[ \sum_{i \in I} \lambda_i x_i = \sum_{i \in I} \mu_i x_i \quad \Rightarrow \quad 
         \lambda_i = \mu_i \; \forall i \in I ,\]
         where $\sum_{i \in I} \lambda_i = \sum_{i \in I} \mu_i = 1$.
     \end{defn}
+
     \begin{defn}
-        \bb{Geometric k-simplexes}\\
-        We define a geometric k-simplex to be a convex envelop $\langle x_i \rangle_{i \in I}$
-        where $\{x_i\}_{i \in I} \subset \R^n$ are affinely independent and $|I| = k + 1$.
+        We define a \bb{geometric p-simplex} to be a convex envelop $\langle x_i \rangle_{i \in I}$
+        where $\{x_i\}_{i \in I} \subset \R^n$ are affinely independent and $|I| = p + 1$.
     \end{defn}
+    
     \begin{defn}
-        \bb{Faces and cofaces of geometric k-simplexes}\\
-        Let $\sigma$ be a geometric k-simplex, we say that another t-simplex $\tau$ is a face of $\sigma$ or equivalently 
-        that $\sigma$ is a coface of $\tau$, by our notiation $\tau \leq \sigma$, if and only if $\tau \subset \sigma$, where $t \leq k$.
+        Let $\sigma$ be a geometric p-simplex, we say that another t-simplex $\tau$ is a \bb{face} of $\sigma$ or equivalently 
+        that $\sigma$ is a \bb{coface} of $\tau$, by our notiation $\tau \leq \sigma$, if and only if $\tau \subset \sigma$, where $t \leq p$.
     \end{defn}
+
     \begin{defn}
-        \bb{Geometric Simplicial Complex}\\
-        We define a geometric simplicial complex $\mc{K}$ to be a collection of geometric simplexes such that
+        We define a \bb{geometric simplicial complex} $\mc{G}$ to be a collection of geometric simplexes such that
         \begin{enumerate}[(i)]
-            \item $ \tau \leq \sigma \in \mc{K} \Rightarrow \tau \in \mc{K} $,
-            \item $ \sigma, \tau \in \mc{K} \Rightarrow \sigma \cup \tau \in \mc{K}  $.
+            \item $ \tau \leq \sigma \in \mc{G} \Rightarrow \tau \in \mc{G} $,
+            \item $ \sigma, \tau \in \mc{G} \Rightarrow \sigma \cap \tau \in \mc{G}  $.
         \end{enumerate}
     \end{defn}
+
     \newpage
+
     \begin{defn}
         \bb{Geometric realization of an abstract simplicial complex}\\
         Let $\mc{K}$ be a geometric simplicial complex, and let $Vert(\mc{K}) := \{\sigma \in \mc{K} : dim(\sigma) = 0\}$, we call
