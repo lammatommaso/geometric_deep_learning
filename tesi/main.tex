@@ -30,8 +30,7 @@
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{exa}[thm]{Example}
 
-\setcounter{secnumdepth}{0} % no section numbering displayed
-
+\setcounter{secnumdepth}{0} % no section numbering displayed, no idea how
 
 \newcommand{\bb}[1]{\textbf{#1}}
 \newcommand{\ii}[1]{\textit{#1}}
@@ -59,9 +58,11 @@
     \tableofcontents
     \newpage
     \pagenumbering{arabic}
-    %Draft[Most of the deep learning techniques used today are based on models 
-    %which learn a partition of the set of smooth functions defined on euclidean 
-    %domains into human friendly equivalence classes]
+    \begin{section}{Introduction}
+        Most of the deep learning techniques used today are based on models 
+        which learn a partition of the set of smooth functions defined on euclidean 
+        domains into human friendly equivalence classes...
+    \end{section}
     \begin{chapter}{Preliminaries on topology}
         \subfile{sections/1}
     \end{chapter}
