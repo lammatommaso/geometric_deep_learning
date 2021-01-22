@@ -1,4 +1,5 @@
 \babel@toc {english}{}
+\contentsline {section}{Introduction}{i}{section*.1}
 \contentsline {chapter}{\numberline {1}Preliminaries on topology}{1}{chapter.1}
-\contentsline {section}{Simplicial complexes}{1}{section*.2}
-\contentsline {section}{Forms and integration on abstract simplicial complexes}{2}{section*.3}
+\contentsline {section}{Simplicial complexes}{1}{section*.3}
+\contentsline {section}{Forms and integration on abstract simplicial complexes}{2}{section*.4}
