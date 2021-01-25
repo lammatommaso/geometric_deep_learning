@@ -1,22 +1,31 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-    
-    Before discussing deep learning on graphs and manifolds we will give a definitions of
-    graph and higher dimensional structures called abstract simplicial complexes, in order 
-    to define convolutions on those structures we will define the Laplace operator by 
-    translating De Rham cohomology on oriented simplicial complexes.
-    Furthermore we shall discuss other possible definitions of convolution based on the invariance of 
-    oriented simplicial complexes under some group of transformations i.e. even permutations
-    of indexes.     
-    
+     
+    Given a point cloud in some $\R^n$ sampled from some meaningful subspace and the order of magnitude of the noise acting on the sample one can 
+    construct a suitable set in $\R^n$, i.e. a \ii{geometric simplicial complex}, homotopy equivalent to the sampled set, therefore recovering some
+    topological infromation about the set that was lost in the sampling. 
+    Although this approach provides simplicial complexes with the topology inherited from the metric space it hides the power of simplicial complexes 
+    to describe those networks and interactions which would happily live beside that topology, to make this distinction clear enough we will treat geometric 
+    simplicial complexes as a realization of more abstract objects called \ii{abstract simplicial complexes}.
+
+    {\color{red}
+    Geometric simplicial complexes are algebraic objects that can in general be contructed
+    from a point cloud in some $\R^n$ in a way that preserves the topological information (e.g. the homotopy) of the ideal space
+    sampled by the cloud. Although this approach provides simplicial complexes with the topology inherited from the metric space 
+    it hides the power of simplicial complexes to describe those networks and interactions which would happily live beside that topology,
+    to make this distinction clear enough we will treat geometric simplicial complexes as a realization of more abstract objects called
+    abstract simplicial complexes.}
+       
     \begin{section}{Simplicial complexes}
-        In this section we shall define simplicial complexes, which, as abstract as they might look, can 
+        {\color{red} In this section we shall define simplicial complexes, which, as abstract as they might look, can 
         be used to model interactions among individuals, traffic and road networks, as well as shapes, and 
-        to approximate functions on some compact manifold.
+        to approximate functions on some compact manifold.}
         \subfile{sections/1/1}    
     \end{section}
     \begin{section}{Forms and integration on abstract simplicial complexes}
         \subfile{sections/1/2}    
+    \end{section}
+    \begin{section}{The Laplace Operator}
     \end{section}
 \end{document}
