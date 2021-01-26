@@ -9,15 +9,18 @@
 \usepackage{adjustbox}
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
+\usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\hypersetup{colorlinks=true,linkcolor=black,urlcolor=black}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=black, citecolor=black}
 \usepackage{subfiles}
 \usepackage{comment}
 \usepackage{enumerate}
+\usepackage[style=numeric, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
 
 \setlength{\parindent}{0pt}
 
@@ -69,4 +72,6 @@
     \begin{chapter}{Preliminaries on topology}
         \subfile{sections/1}
     \end{chapter}
+    \newpage
+    \printbibliography[heading = bibintoc]
 \end{document}

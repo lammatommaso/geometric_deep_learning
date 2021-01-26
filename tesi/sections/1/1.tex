@@ -1,16 +1,22 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
-
+    One simple problem which might lead to simplicial complexes is the following, let A and B be to 
+    point clouds is some space, is there a way to say that they represent the same data?
+    One can see simplcial complexes as sets constructed from 
+    topological infromation about the set that was lost in the sampling, this set shall . 
+    Although this approach provides simplicial complexes with the topology inherited from the metric space it hides the power of simplicial complexes 
+    to describe those networks and interactions which would happily live beside that topology, to make this distinction clear enough we will treat geometric 
+    simplicial complexes as a realization of more abstract objects called \ii{abstract simplicial complexes} \cite{rotman}.
+    
     \begin{defn}
         Let $\mc{V}$ be a finite set we define an \ii{abstract simplicial complex} $\mc{A}$ to be 
         \[\mc{A}:=\{ \sigma  \subset \mc{V} : \tau \subset \sigma \Rightarrow \tau \in \mc{A} \}\] 
         where $\sigma$ are called \ii{abstract simplexes} of $\mc{A}$.
     \end{defn}
     
-    {\color{red}
     One calls $\mc{V}$ the \ii{vertex set} of $\mc{A}$ and denotes it by $Vert(\mc{A})$; since the vertex
     set is finite we expect every abstract simplex to be also finite, therefore we might use the notation $\sigma = \{ v_i \}_{i \in I_\sigma}$,
-    which so far we consider invariant under arbitrary permutations on the finite index set $I_\sigma$.}
+    which so far we consider invariant under arbitrary permutations on the finite index set $I_\sigma$.
 
     \begin{defn}
         Let $\mc{A}$ be an abstract simplicial complex we define its \ii{dimension} to be
