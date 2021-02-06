@@ -1,12 +1,84 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
-    One simple problem which might lead to simplicial complexes is the following, let A and B be to 
-    point clouds is some space, is there a way to say that they represent the same data?
-    One can see simplcial complexes as sets constructed from 
-    topological infromation about the set that was lost in the sampling, this set shall . 
+
+    The essential idea in algebraic topology is to convert problems about topological spaces and continuous functions into
+    problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
+    In this section we shall introduce algebraic objects called simplicial complexes and see how they are related to compact
+    topological spaces.
+
+    \begin{defn}
+        Let $I$ be a finite set of indexes, we define the \ii{convex envelope} of the points $\{x_i\}_{i \in I} \subset \R^n$ to be 
+        \[ [ x_i ]_{i \in I} := \{ \sum_{i \in I} \lambda_i x_i : \lambda_i \in \R,\ \lambda_i > 0,\  \sum_{i \in I} \lambda_i = 1 \}.\]
+    \end{defn}
+
+    From now, if not otherwise specified, we shall assume $I$ to be a finite set of indexes.
+
+    \begin{prop}
+        Let $\{x_i\}_{i \in I} \subset \R^n$ then $[ x_i ]_{i \in I}$ is the smallest convex set containing $X$.
+    \end{prop}
+
+    The order by which we define the smallest convex set is the one give by the relation $\subset$.
+
+    \begin{defn}
+        Let $\{x_i\}_{i \in I} \subset \R^n$ we define the points $\{x_i\}_{i \in I}$ to be \ii{affinely independent} if and only if
+        \[ \sum_{i \in I} \lambda_i x_i = \sum_{i \in I} \mu_i x_i \quad \Rightarrow \quad 
+        \lambda_i = \mu_i \; \forall i \in I ,\]
+        whenever $\sum_{i \in I} \lambda_i = \sum_{i \in I} \mu_i = 1$.
+    \end{defn}
+
+    \begin{defn}
+        We define a \ii{p-simplex} to be a convex envelop $[ x_i ]_{i \in I}$
+        where $\{x_i\}_{i \in I} \subset \R^n$ are affinely independent and $|I| = p + 1$.
+    \end{defn}
+    
+    One denotes the vertex set $\{ x_i \}_{i \in I}$ of a simplex $\sigma = [ x_i ]_{i \in I}$ by $Vert(\sigma)$.
+    
+    \begin{defn}
+        Let $\sigma$ be a p-simplex, we say that another t-simplex $\tau$ is a \ii{face} of $\sigma$ or equivalently 
+        that $\sigma$ is a \ii{coface} of $\tau$, by our notiation $\tau \leq \sigma$, if and only if $\tau \subset \sigma$, where $t \leq p$.
+    \end{defn}
+
+    \begin{defn}
+        We define a \ii{simplicial complex} $\mc{G}$ to be a collection of simplexes such that
+        \begin{enumerate}[(i)]
+            \item $ \tau \leq \sigma \in \mc{G} \Rightarrow \tau \in \mc{G} $,
+            \item $ \sigma, \tau \in \mc{G} \Rightarrow \sigma \cap \tau \in \mc{G}  $.
+        \end{enumerate}
+    \end{defn}
+
+    \begin{defn}
+        Let $\mc{G},\mc{H}$ be simplicial complexes, then a \ii{simplicial map} $\phi : \mc{G} \to \mc{H}$ is a function 
+        such that whenever $[ x_i ]_{i \in I} \in \mc{G}$, then $\phi([ x_i ]_{i \in I}) = [ \phi(v_i) ]_{i \in I} \in \mc{H}$,
+        where $\phi(x_i) \in Vert(\mc{H}) \, \forall i \in I$.
+    \end{defn}
+
+    \begin{thm}[ $\bb{G}$ is a category]
+    \end{thm}
+
+    \begin{defn}
+        Let $\mc{G}$ be a simplicial complex, we define its \ii{underlying space} $|\mc{G}| = \bigcup_{\sigma in \mc{G}} \sigma$, provided with
+        the standard topology inherited from $\R^n$.
+    \end{defn}
+
+    \begin{defn}
+        A topological space $X$ is called \ii{polyhedron} if there exists a simplicial complex $\mc{G}$ and a homeomorphism
+        $h : |\mc{G}| \to X$. The ordered pair $(\mc{G}, h)$ is called a \ii{triangulation} of $X$.
+    \end{defn}
+
+    \begin{lem}[gluing lemma, Rotman]
+    \end{lem}
+
+    \begin{defn}[ $|\phi|$, piecewise linear map]
+    \end{defn}
+
+    \begin{thm}[ | | : \bb{G} $\to$ \bb{Top} is a functor]
+    \end{thm}
+
+    (The directionality of this functor gives a direction to implications reguarding identities)
+
     Although this approach provides simplicial complexes with the topology inherited from the metric space it hides the power of simplicial complexes 
-    to describe those networks and interactions which would happily live beside that topology, to make this distinction clear enough we will treat geometric 
-    simplicial complexes as a realization of more abstract objects called \ii{abstract simplicial complexes} \cite{rotman}.
+    to describe those networks and interactions which would happily exist without that topology, to make this distinction clear enough we will treat
+    simplicial complexes as a realization of more abstract objects called abstract simplicial complexes \cite{rotman}.
     
     \begin{defn}
         Let $\mc{V}$ be a finite set we define an \ii{abstract simplicial complex} $\mc{A}$ to be 
@@ -16,7 +88,7 @@
     
     One calls $\mc{V}$ the \ii{vertex set} of $\mc{A}$ and denotes it by $Vert(\mc{A})$; since the vertex
     set is finite we expect every abstract simplex to be also finite, therefore we might use the notation $\sigma = \{ v_i \}_{i \in I_\sigma}$,
-    which so far we consider invariant under arbitrary permutations on the finite index set $I_\sigma$.
+    which so far we consider invariant under arbitrary permutations of the finite index set $I_\sigma$.
 
     \begin{defn}
         Let $\mc{A}$ be an abstract simplicial complex we define its \ii{dimension} to be
@@ -37,43 +109,12 @@
     abstract simplexes into lower dimensional ones.
 
     \begin{thm}
-        All abstract simplicial complexes and simplicial maps are a category $\mf{A}$ whose identities are called isomorphisms.
+        All abstract simplicial complexes and simplicial maps are a category $\bb{A}$ whose identities are called isomorphisms.
     \end{thm}
 
     Although abstract simplicial complex can be used to model any kind of vertex interaction they lack of a topology, we wish
     therefore to define some structures in a euclidean space that can be related unequivocally(i.e. via a functor) to abstract simplicial complexes.
     We shall call those geometric simplicial complexes to avoid misunderstandings.
-        
-    \begin{defn}
-        Let $I$ be a finite set of indexes, we define the \ii{convex envelope} of the points $\{x_i\}_{i \in I} \subset \R^n$ to be 
-        \[ \langle x_i \rangle_{i \in I} := \{ a = \sum_{i \in I} \lambda_i x_i : \lambda_i \in \R,\ \lambda_i > 0,\  \sum_{i \in I} \lambda_i = 1 \},\]
-        which is the smallest convex set containing $\{x_i\}_{i \in I}$.
-    \end{defn}
-
-    \begin{defn}
-        Let $\{x_i\}_{i \in I} \subset \R^n$ we define the points $\{x_i\}_{i \in I}$ to be \ii{affinely independent} if and only if
-        \[ \sum_{i \in I} \lambda_i x_i = \sum_{i \in I} \mu_i x_i \quad \Rightarrow \quad 
-        \lambda_i = \mu_i \; \forall i \in I ,\]
-        where $\sum_{i \in I} \lambda_i = \sum_{i \in I} \mu_i = 1$.
-    \end{defn}
-
-    \begin{defn}
-        We define a \ii{geometric p-simplex} to be a convex envelop $\langle x_i \rangle_{i \in I}$
-        where $\{x_i\}_{i \in I} \subset \R^n$ are affinely independent and $|I| = p + 1$.
-    \end{defn}
-    
-    \begin{defn}
-        Let $\sigma$ be a geometric p-simplex, we say that another t-simplex $\tau$ is a \ii{face} of $\sigma$ or equivalently 
-        that $\sigma$ is a \ii{coface} of $\tau$, by our notiation $\tau \leq \sigma$, if and only if $\tau \subset \sigma$, where $t \leq p$.
-    \end{defn}
-
-    \begin{defn}
-        We define a \ii{geometric simplicial complex} $\mc{G}$ to be a collection of geometric simplexes such that
-        \begin{enumerate}[(i)]
-            \item $ \tau \leq \sigma \in \mc{G} \Rightarrow \tau \in \mc{G} $,
-            \item $ \sigma, \tau \in \mc{G} \Rightarrow \sigma \cap \tau \in \mc{G}  $.
-        \end{enumerate}
-    \end{defn}
 
     \begin{defn}
         \ii{Geometric realization of an abstract simplicial complex}\\

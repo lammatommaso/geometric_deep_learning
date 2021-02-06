@@ -7,7 +7,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Simplicial complexes}{1}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Forms and integration on abstract simplicial complexes}{2}{section*.4}
+\contentsline {section}{Forms and integration on abstract simplicial complexes}{3}{section*.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{The Laplace Operator}{5}{section*.5}
 \defcounter {refsection}{0}\relax 
