@@ -3,21 +3,29 @@
 
     The essential idea in algebraic topology is to convert problems about topological spaces and continuous functions into
     problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
-    In this section we shall introduce algebraic objects called simplicial complexes and see how they are related to compact
-    topological spaces.
+    The language of category theory, the discussion of which can be found in \cite{rotman}, shall be our main tool to formally
+    describe this conversion process, i.e. via functors. Functors are a formal way to transpose equivalences from one world to another, 
+    if for instance two objects in the world A are A-equal and one can define a functor to the world B, then the images of those two objects 
+    must be B-equal in the world B and this implication is strictly directed. Usually, though, one moves to the world B because he has no idea
+    whether the two objects in A are equal or not, therefore from a knowledge of the B-equivalence classes in B, one can use the contrapositive implication 
+    to understand if the objects in A are not equal.\\
+    \hfill \\
+    First of all we shall introduce algebraic objects called simplicial complexes and see how they are related to compact
+    topological spaces. In order to do that we require the definitions of convex envelopes and affine independence of points in $\R^n$.
 
     \begin{defn}
         Let $I$ be a finite set of indexes, we define the \ii{convex envelope} of the points $\{x_i\}_{i \in I} \subset \R^n$ to be 
-        \[ [ x_i ]_{i \in I} := \{ \sum_{i \in I} \lambda_i x_i : \lambda_i \in \R,\ \lambda_i > 0,\  \sum_{i \in I} \lambda_i = 1 \}.\]
+        \[ [ x_i ]_{i \in I} := \{ \sum_{i \in I} \lambda_i x_i : \lambda_i \in \R,\ \lambda_i \geq 0,\  \sum_{i \in I} \lambda_i = 1 \}.\]
     \end{defn}
 
+    It is easy to see that compact envelopes are convex and compact sets with respect to the standard topology in $\R^n$.
     From now, if not otherwise specified, we shall assume $I$ to be a finite set of indexes.
 
     \begin{prop}
         Let $\{x_i\}_{i \in I} \subset \R^n$ then $[ x_i ]_{i \in I}$ is the smallest convex set containing $X$.
     \end{prop}
 
-    The order by which we define the smallest convex set is the one give by the relation $\subset$.
+    The order by which we define the smallest convex set is the one give by the relation $\subseteq$.
 
     \begin{defn}
         Let $\{x_i\}_{i \in I} \subset \R^n$ we define the points $\{x_i\}_{i \in I}$ to be \ii{affinely independent} if and only if
@@ -25,6 +33,12 @@
         \lambda_i = \mu_i \; \forall i \in I ,\]
         whenever $\sum_{i \in I} \lambda_i = \sum_{i \in I} \mu_i = 1$.
     \end{defn}
+
+    \begin{exa}
+        Let ${A,B,C,D} \subset \R^n$ representing the four vertxes of a square and let $A,D$ be opposite vertxes, one can easily see that 
+        \[ D = A + (B-A) + (C-A) = (-1)A + (1)B + (1)C + (0)D = (0)A + (0)B + (0)C + (1)D \, ,\]
+        therefore $A,B,C,D$ are not affinely independent.
+    \end{exa}
 
     \begin{defn}
         We define a \ii{p-simplex} to be a convex envelop $[ x_i ]_{i \in I}$
@@ -41,8 +55,8 @@
     \begin{defn}
         We define a \ii{simplicial complex} $\mc{G}$ to be a collection of simplexes such that
         \begin{enumerate}[(i)]
-            \item $ \tau \leq \sigma \in \mc{G} \Rightarrow \tau \in \mc{G} $,
-            \item $ \sigma, \tau \in \mc{G} \Rightarrow \sigma \cap \tau \in \mc{G}  $.
+            \item $ \tau \leq \sigma \in \mc{G} \Rightarrow \tau \in \mc{G}$ (inheritance property),
+            \item $ \sigma, \tau \in \mc{G} \Rightarrow \sigma \cap \tau \in \mc{G}$ (intersection property).
         \end{enumerate}
     \end{defn}
 
@@ -60,15 +74,20 @@
         the standard topology inherited from $\R^n$.
     \end{defn}
 
+    Since the union of compact sets is compact the underlying space of a simplicial complex in $\R^n$ is a compact topological subspace of $\R^n$.
+
     \begin{defn}
         A topological space $X$ is called \ii{polyhedron} if there exists a simplicial complex $\mc{G}$ and a homeomorphism
         $h : |\mc{G}| \to X$. The ordered pair $(\mc{G}, h)$ is called a \ii{triangulation} of $X$.
     \end{defn}
 
+    One understands that in order to have a homeomorphism between the compact underlying space of a simplcial complex and another topological
+    space, this other space has to be compact too.
+
     \begin{lem}[gluing lemma, Rotman]
     \end{lem}
 
-    \begin{defn}[ $|\phi|$, piecewise linear map]
+    \begin{defn}[Piecewise linear map]
     \end{defn}
 
     \begin{thm}[ | | : \bb{G} $\to$ \bb{Top} is a functor]

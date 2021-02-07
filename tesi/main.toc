@@ -9,6 +9,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Forms and integration on abstract simplicial complexes}{3}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{The Laplace Operator}{5}{section*.5}
+\contentsline {section}{The Laplace Operator}{6}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{6}{chapter*.6}
+\contentsline {chapter}{Bibliography}{7}{chapter*.6}
