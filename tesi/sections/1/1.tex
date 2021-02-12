@@ -4,14 +4,14 @@
     The essential idea in algebraic topology is to convert problems about topological spaces and continuous functions into
     problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
     The language of category theory, the discussion of which can be found in \cite{rotman}, shall be our main tool to formally
-    describe this conversion process, i.e. via functors. Functors are a formal way to transpose equivalences from one world to another, 
+    describe this conversion, i.e. via functors. Functors are a formal way to transport equivalences from one world to another, 
     if for instance two objects in the world A are A-equal and one can define a functor to the world B, then the images of those two objects 
-    must be B-equal in the world B and this implication is strictly directed. Usually, though, one moves to the world B because he has no idea
-    whether the two objects in A are equal or not, therefore from a knowledge of the B-equivalence classes in B, one can use the contrapositive implication 
+    must be B-equal in the world B and this implication is strictly directed. Usually, though, one moves to the world B because the A-equivalence
+    classes are unknown, then from a knowledge of the B-equivalence classes in B, one can use the contrapositive implication 
     to understand if the objects in A are not equal.\\
     \hfill \\
     First of all we shall introduce algebraic objects called simplicial complexes and see how they are related to compact
-    topological spaces. In order to do that we require the definitions of convex envelopes and affine independence of points in $\R^n$.
+    topological spaces. In order to do that we require the definitions of convex envelope and affine independence of points in $\R^n$.
 
     \begin{defn}
         Let $I$ be a finite set of indexes, we define the \ii{convex envelope} of the points $\{x_i\}_{i \in I} \subset \R^n$ to be 
@@ -25,7 +25,9 @@
         Let $\{x_i\}_{i \in I} \subset \R^n$ then $[ x_i ]_{i \in I}$ is the smallest convex set containing $X$.
     \end{prop}
 
-    The order by which we define the smallest convex set is the one give by the relation $\subseteq$.
+    The order by which we define the smallest convex set is the one given by the relation $\subseteq$.
+
+    % Possible example with some image
 
     \begin{defn}
         Let $\{x_i\}_{i \in I} \subset \R^n$ we define the points $\{x_i\}_{i \in I}$ to be \ii{affinely independent} if and only if
@@ -34,15 +36,20 @@
         whenever $\sum_{i \in I} \lambda_i = \sum_{i \in I} \mu_i = 1$.
     \end{defn}
 
+    For a more intuitive understanding of this definition one can say that $n$ points in some euclidean space are affinely independent if and only if they do
+    not belong to the same $n-2$ dimensional affine space.
+
     \begin{exa}
         Let ${A,B,C,D} \subset \R^n$ representing the four vertxes of a square and let $A,D$ be opposite vertxes, one can easily see that 
         \[ D = A + (B-A) + (C-A) = (-1)A + (1)B + (1)C + (0)D = (0)A + (0)B + (0)C + (1)D \, ,\]
         therefore $A,B,C,D$ are not affinely independent.
+        In fact the $4$ vertexes of a square are coplanar, i.e. they belong to the same $2$ dimensional affine space.
     \end{exa}
 
     \begin{defn}
         We define a \ii{p-simplex} to be a convex envelop $[ x_i ]_{i \in I}$
-        where $\{x_i\}_{i \in I} \subset \R^n$ are affinely independent and $|I| = p + 1$.
+        where $\{x_i\}_{i \in I} \subset \R^n$ are affinely independent and $|I| = p + 1$, where $|I|$ is the cardinality
+        of $I$.
     \end{defn}
     
     One denotes the vertex set $\{ x_i \}_{i \in I}$ of a simplex $\sigma = [ x_i ]_{i \in I}$ by $Vert(\sigma)$.
@@ -52,13 +59,22 @@
         that $\sigma$ is a \ii{coface} of $\tau$, by our notiation $\tau \leq \sigma$, if and only if $\tau \subset \sigma$, where $t \leq p$.
     \end{defn}
 
+    Simplexes can therefore be points, segments, triangles, tetrahedra or higher dimensional sets which I cannot name, if these particularly simple
+    sets can describe topological spaces we can stop complicating things and try to define a category of simplexes. Unfortunately convex spaces are
+    not able to describe topological spaces with holes.
+
     \begin{defn}
         We define a \ii{simplicial complex} $\mc{G}$ to be a collection of simplexes such that
         \begin{enumerate}[(i)]
-            \item $ \tau \leq \sigma \in \mc{G} \Rightarrow \tau \in \mc{G}$ (inheritance property),
-            \item $ \sigma, \tau \in \mc{G} \Rightarrow \sigma \cap \tau \in \mc{G}$ (intersection property).
+            \item $ \tau \leq \sigma \in \mc{G} \Rightarrow \tau \in \mc{G}$,
+            \item $ \sigma, \tau \in \mc{G} \Rightarrow \sigma \cap \tau \in \mc{G}$.
         \end{enumerate}
     \end{defn}
+
+    Let $A,B,C$ be vertexes of a triangle, with the simplicial complex $\{[A],[B],[C],[A,B],[B,C],[C,A]\}$ one can describe the boundary of a triangle, which has
+    a hole that could not be described by any simplex.\\
+    \hfill \\
+    Simplicial complexes are the objects of our category, we now look for appropriate morphisms.
 
     \begin{defn}
         Let $\mc{G},\mc{H}$ be simplicial complexes, then a \ii{simplicial map} $\phi : \mc{G} \to \mc{H}$ is a function 
@@ -66,11 +82,16 @@
         where $\phi(x_i) \in Vert(\mc{H}) \, \forall i \in I$.
     \end{defn}
 
-    \begin{thm}[ $\bb{G}$ is a category]
+    In the beginning of the section we said that in some world A there are A-equivalence classes, in the language of category theory we might say that
+    from the morphisms of some category A one can define an A-equivalence as invertible morphism between two objects, and let there be a functor to another category 
+    B, then the image via this functor of the A-equivalence is a B-equivalence.
+
+    \begin{thm}
+        Simplicial complexes and simplicial maps are a category $\bb{G}$.
     \end{thm}
 
     \begin{defn}
-        Let $\mc{G}$ be a simplicial complex, we define its \ii{underlying space} $|\mc{G}| = \bigcup_{\sigma in \mc{G}} \sigma$, provided with
+        Let $\mc{G}$ be a simplicial complex, we define its \ii{underlying space} $|\mc{G}| = \bigcup_{\sigma \in \mc{G}} \sigma$, provided with
         the standard topology inherited from $\R^n$.
     \end{defn}
 
@@ -82,22 +103,33 @@
     \end{defn}
 
     One understands that in order to have a homeomorphism between the compact underlying space of a simplcial complex and another topological
-    space, this other space has to be compact too.
+    space, this other space has to be compact.
 
-    \begin{lem}[gluing lemma, Rotman]
+    \begin{lem}
+        Let a topological space $X$ be a finite union of closed subsets $X = \bigcup_{i \in I} X_i$. If, for some space Y, there are continuous
+        maps $f_i : X_i \to Y$ that agree on overlaps $f_i |_{X_i \cap X_j} = f_j |_{X_i \cap X_j}$, there there exist a unique continuous
+        function $f : X \to Y$ such that $f |_{X_i} = f_i \, \forall i \in I$.
     \end{lem}
 
-    \begin{defn}[Piecewise linear map]
+    \begin{defn}
+        Let $\phi : \mc{G} \to \mc{H}$ be a simplicial map, let then $\sigma \in \mc{G}$ we define $f_\sigma : \sigma \to |\mc{H}|$ to be 
+        $\sum_{v \in Vert(\sigma)} \lambda_v v \mapsto \sum_{v \in Vert(\sigma)} \lambda_v \phi(v)$. The continuity of this functions in $\sigma$ and the
+        intersection property of the definition of simplicial complex allow us to use the previous lemma to uniquely define a function $|\phi| : |\mc{G}| \to |\mc{H}|$
+        which we shall name \ii{piecewise linear map}.
     \end{defn}
 
-    \begin{thm}[ | | : \bb{G} $\to$ \bb{Top} is a functor]
+    The unique association of simplicial complexes and their underlying spaces and of simlicial maps and piecewise linear maps leads to the definition
+    of a functor from the category of simplicial complexes and maps to the category of topological spaces and continuous functions.
+
+    \begin{thm}
+        $|\;| : \bb{G} \to \bb{Top}$ is a functor.
     \end{thm}
 
-    (The directionality of this functor gives a direction to implications reguarding identities)
-
+    Notice that there is no obvious functor from $\bb{Top}$ to $\bb{G}$, therefore the implications reguarding equivalences are strictly directed.\\
+    \hfill \\
     Although this approach provides simplicial complexes with the topology inherited from the metric space it hides the power of simplicial complexes 
     to describe those networks and interactions which would happily exist without that topology, to make this distinction clear enough we will treat
-    simplicial complexes as a realization of more abstract objects called abstract simplicial complexes \cite{rotman}.
+    simplicial complexes as a realization of more abstract objects called abstract simplicial complexes.
     
     \begin{defn}
         Let $\mc{V}$ be a finite set we define an \ii{abstract simplicial complex} $\mc{A}$ to be 
@@ -128,21 +160,31 @@
     abstract simplexes into lower dimensional ones.
 
     \begin{thm}
-        All abstract simplicial complexes and simplicial maps are a category $\bb{A}$ whose identities are called isomorphisms.
+        Abstract simplicial complexes and simplicial maps are a category $\bb{A}$.
     \end{thm}
 
-    Although abstract simplicial complex can be used to model any kind of vertex interaction they lack of a topology, we wish
-    therefore to define some structures in a euclidean space that can be related unequivocally(i.e. via a functor) to abstract simplicial complexes.
-    We shall call those geometric simplicial complexes to avoid misunderstandings.
+    One can show that under some dimensional conditions one can define a functor from the category of abstract simplicial complexes
+    to the category of simplicial complexes.
 
     \begin{defn}
-        \ii{Geometric realization of an abstract simplicial complex}\\
-        Let $\mc{K}$ be a geometric simplicial complex, and let $Vert(\mc{K}) := \{\sigma \in \mc{K} : dim(\sigma) = 0\}$, we call
-        the abstract simplicial complex $\mc{A} := \{ \{x_i\}_{i \in I} \subset Vert(\mc{K}) : \langle x_i \rangle_{i \in I} \in \mc{K} \}$
-        a vertex scheme for $\mc{K}$ or equivalently we might say that $\mc{K}$ is a geometric realization of $\mc{A}$.
+        Let $\mc{G}$ be a simplicial complex,  we call the abstract simplicial complex 
+        \[ \mc{A} := \{ \{x_i\}_{i \in I} \subset Vert(\mc{G}) : [x_i]_{i \in I} \in \mc{G} \} \]
+        a vertex scheme for $\mc{G}$ or equivalently we might say that $\mc{G}$ is a \ii{geometric realization} of $\mc{A}$.
     \end{defn}
+
     \begin{thm}
         Let $\mc{A}$ be a d-dimentional abstract simplicial complex, it admits a geometric realization in $\R^{2d+1}$.
     \end{thm}
-    Kuratowski theorem proves the prevuois statement to be also sharp.
+    Kuratowski theorem proves the prevuois statement to be also sharp.\\
+    \hfill \\
+    The geometric realization of a simplicial complex is not unique in the simplicial complexes, but it is in their
+    equivalence classes, which we still denote as $\mc{G}$ for simplicity.
+
+    \begin{thm}
+        The geometric realization is a functor $\bb{A} \to \bb{G}$.
+    \end{thm}
+
+    Since the composition of functors is a functor, the functor $\bb{A} \to \bb{G} \to \bb{Top}$ implies that the underlying spaces
+    of any geometric realization of the same $\bb{A}$-equivalence class are homeomorphic.
+
 \end{document}
