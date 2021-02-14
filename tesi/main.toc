@@ -7,8 +7,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Simplicial complexes}{1}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Forms and integration on abstract simplicial complexes}{4}{section*.4}
+\contentsline {section}{Simplicial chains and cochains}{4}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{The Laplace Operator}{7}{section*.5}
+\contentsline {section}{Laplacian operators}{4}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{8}{chapter*.6}
+\contentsline {chapter}{Bibliography}{5}{chapter*.6}

@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
+  \datalist[entry]{none/global//global/global}
     \entry{rotman}{book}{}
       \name{author}{1}{}{%
         {{hash=9c0331116e9475d360c20810da1e70f4}{%
@@ -36,13 +36,80 @@
       \strng{authorbibnamehash}{9c0331116e9475d360c20810da1e70f4}
       \strng{authornamehash}{9c0331116e9475d360c20810da1e70f4}
       \strng{authorfullhash}{9c0331116e9475d360c20810da1e70f4}
-      \field{sortinit}{R}
-      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{series}{Graduate Texts in Mathematics}
       \field{title}{An Introduction to Algebraic Topology}
       \field{year}{1988}
+    \endentry
+    \entry{simplicialNN}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=2571ca5855ae04e0f17f7ea73a4669af}{%
+           family={Ebli},
+           familyi={E\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e9f077c5e430013d034bf8adb5e80faf}{%
+           family={Defferrard},
+           familyi={D\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cd593f2626600c8a559dc8d40a63026a}{%
+           family={Spreemann},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{fullhash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{bibnamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{authorbibnamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{authornamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{authorfullhash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Simplicial Neural Networks}
+      \field{year}{2020}
+    \endentry
+    \entry{DEC}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=9278725cbb633e8ac6ff3865add025df}{%
+           family={Desbrun},
+           familyi={D\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1b3363616b7e44cb48b5d22f43d8e85f}{%
+           family={Hirani},
+           familyi={H\bibinitperiod},
+           given={A.\bibnamedelimi N.},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=d98b290503ff8e19e1d2b0ad8f28c00a}{%
+           family={Leok},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=188fb97a3246efef85c651d85a0798dd}{%
+           family={Marsden},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
+      \strng{fullhash}{bb3d8518ea0a72f45b483042cbd3b98f}
+      \strng{bibnamehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
+      \strng{authorbibnamehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
+      \strng{authornamehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
+      \strng{authorfullhash}{bb3d8518ea0a72f45b483042cbd3b98f}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Discrete Exterior Calculus}
+      \field{year}{2005}
     \endentry
   \enddatalist
 \endrefsection

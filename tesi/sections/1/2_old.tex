@@ -1,0 +1,96 @@
+\documentclass[../1.tex]{subfiles}
+
+\begin{document}
+    \begin{defn}
+        \bb{Linear space of simplicial p-chains}\\
+        Let $\mc{A}$ be an abstract simplicial complex, and let $\mc{A}_p := \{\sigma \in \mc{A} : dim(\sigma) = p\}$, 
+        we define the linear space $C_p = C_p(\mc{A})$ of simplicial p-chain on $\mc{A}$ to be 
+        \[ C_p = \{ \sum_{\sigma \in \mc{A}_p} \lambda^\sigma \sigma ,\quad \lambda^\sigma \in \Z_2\}, \]
+        where the formal operations of the linear space are given by the defitnition itself.\\
+        (Possible extension from $\Z_2$ to $\R$, naming $C_p$ by the dual notation $\Lambda_p$)
+    \end{defn}
+    The set $\mc{A}^p$ is a canonical base of p-simplexes for $C_p$.\\
+    \begin{defn}
+        \bb{Boundary operator on $C_{p+1}$}\\
+        Let $\sigma$ be an element of the canonical base of $C_{p+1}$ we define $\del : C_{p+1} \to C_p$ such that
+        \[ \del \sigma = \sum_{i = 0}^{p+1} (-1)^i \sigma_i, \]
+        where if $ \sigma = \{x_0, ..., x_{p+1}\} \in C_{p+1}$ we define $\sigma_i := \{x_0, ..., x_{i-1},x_{i+1}, ..., x_{p+1} \in C_p\}$.\\
+        Furthermore we extend this operator linearly on the whole space $C_{p+1}$
+        \[ \del \left( \sum_{\sigma \in \mc{A}_p} \lambda^\sigma \sigma \right) = \sum_{\sigma \in \mc{A}_p} \lambda^\sigma \del \sigma \ .\]
+    \end{defn}
+    \begin{lem}
+        Let $\sigma \in \mc{A}_{p+2}$, $p \geq 0$ then $\del^2 \sigma = 0$.
+    \end{lem}
+    \begin{proof}
+        We have \\
+        \begin{equation*}
+            \begin{aligned}
+                (\del^2 \sigma)_x &= \sum_{i = 0}^{p+2} (-1)^i (\del \sigma)_i \\
+                &= \sum_{i = 0}^{p+2} (-1)^i \left[ \sum_{j = 0}^{i-1}(-1)^j \sigma_{ij} + 
+                \sum_{j = i+1}^{p+2} (-1)^{j-1} \sigma_{ij} \right]\\
+                &= \sum_{i = 0}^{p+2} \sum_{j = 0}^{i-1} (-1)^{i+j} \sigma_{ij} -
+                \sum_{i = 0}^{p+2} \sum_{j = i+1}^{p+2} (-1)^{i+j} \sigma_{ij} = 0.
+            \end{aligned}
+        \end{equation*}
+    \end{proof}
+    \begin{defn}
+        \bb{p-forms on abstract simplicial complexes}\\
+        Let $\mc{A}$ be an abstract simplical complex we define the linear space of p-forms $\Lambda^p = \Lambda^p(\mc{A})$ to be 
+        \[ \Lambda^p := \{ \omega : C_p \to \R\}, such \ that\]
+        \[ \omega \left( \sum_{\sigma \in \mc{A}_p} \lambda^\sigma \sigma \right) = \sum_{\sigma \in \mc{A}_p} \lambda^\sigma \omega(\sigma)
+        \quad \forall \omega \in \Lambda^p , \ \lambda_\sigma \in \Z_2 \ ,\]
+        with linear space operations defined as
+        \[ + : \Lambda^p \times \Lambda^p \to \Lambda^p \quad
+        \quad (\omega + \eta)(\sigma) = \omega(\sigma) + \eta(\sigma) \quad \sigma \in C_p,\ \omega,\eta \in \Lambda^p, \]
+        \[ \cdot : \R \times \Lambda^p \to \Lambda^p \quad
+        \quad (\lambda \omega)(\sigma) = \lambda \omega(\sigma) \quad \sigma \in C_p,\ \omega \in \Lambda^p,\ \lambda \in \R. \]
+    \end{defn} 
+    \begin{prop}
+        A canonical base of elementary forms for $\Lambda^p$ is
+        \[ \{\sigma^* \in \Lambda^p : \sigma \in \mc{A}_p,\ \sigma^*(\tau) = \delta_{\sigma \tau} \quad \tau \in \mc{A}_p\},\]
+        therefore giving us an expression for every other p-form
+        \[ \omega = \sum_{\sigma \in \mc{A}_p} \omega_\sigma \sigma^*, \quad \omega_\sigma \in \R. \]
+    \end{prop}
+    \begin{defn}
+        \bb{Exterior derivative of a p-form}\\
+        Let $\omega \in \Lambda^p$ we define $d : \Lambda^p \to \Lambda^{p+1}$ on its coordinates to be 
+        \[ (d \omega)_\sigma = \sum_{i = 0}^{p+2} (-1)^i \omega_{\sigma_i} \ . \]
+    \end{defn}
+    \begin{lem}
+        Let $\omega \in \Lambda^p$, $p \geq 0$ then $d^2 \omega = 0$.
+    \end{lem}
+    \begin{proof}
+        We have for $\sigma \in \mc{A}_{p+2}$\\
+        \begin{equation*}
+            \begin{aligned}
+                (d^2 \omega)_\sigma &= \sum_{i = 0}^{p+2} (-1)^i (d \omega)_{\sigma_i} \\
+                &= \sum_{i = 0}^{p+2} (-1)^i \left[ \sum_{j = 0}^{i-1}(-1)^j \omega_{\sigma_{ij}} + 
+                \sum_{j = i+1}^{p+2} (-1)^{j-1} \omega_{\sigma_{ij}} \right]\\
+                &= \sum_{i = 0}^{p+2} \sum_{j = 0}^{i-1} (-1)^{i+j} \omega_{\sigma_{ij}} -
+                \sum_{i = 0}^{p+2} \sum_{j = i+1}^{p+2} (-1)^{i+j} \omega_{\sigma_{ij}} = 0.
+            \end{aligned}
+        \end{equation*}
+    \end{proof}
+    \begin{defn}
+        \bb{Integration of p-forms on p-chains}\\
+        Let $\omega \in \Lambda^p$ and $\tau \in C_p$ we define the integral of $\omega$ on $\tau$ to be a bilinear form $\Lambda^p \times C_p \to \R$
+        \[ \left(\omega, \tau \right)_p := \sum_{\sigma \in \mc{A}_p} \omega_\sigma \tau^\sigma, \]
+        where $\omega = \sum_{\sigma \in \mc{A}_p} \omega_\sigma \sigma^*$ and $\tau = \sum_{\sigma \in \mc{A}_p} \tau^\sigma \sigma$.\\
+        (This might be extended by adding a non trivial permutation invariant measure on $\mc{A}_p$)
+    \end{defn}
+    \newpage
+    \begin{thm}
+        Let $\omega = \sum_{\sigma \in \mc{A}_p} \omega_\sigma \sigma^*$ and $\tau = \sum_{\sigma \in \mc{A}_{p+1}} \tau^\sigma \sigma$ the following identity holds
+        \[ \left(d \omega, \tau \right)_{p+1} = \left(\omega, \del \tau \right)_p, \]
+        i.e. the operators $d : \Lambda^p \to \Lambda^{p+1}$ and $\del : C_{p+1} \to C_p$ are dual.
+    \end{thm}
+    \begin{proof}
+        We have\\
+        \[ \left( d \omega, \tau \right)_{p+1} = \sum_{\sigma \in \mc{A}_{p+1}} \tau^\sigma \left( d \omega, \sigma \right)_{p+1} \ , \quad
+        \quad \left( d \omega, \sigma \right)_{p+1} = (d \omega)_\sigma = \sum_{i = 0}^{p+1} (-1)^i \omega_{\sigma_i}, \]
+        while
+        \[ \left( \omega, \del \tau \right)_p = \sum_{\sigma \in \mc{A}_{p+1}} \tau^\sigma \left( \omega, \del \sigma \right)_p \ , \quad
+        \quad \left( \omega, \del \sigma \right)_p = \left( \omega, \sum_{i = 0}^{p+1} (-1)^i \sigma_i \right)_p = \sum_{i = 0}^{p+1} (-1)^i \omega_{\sigma_i} \ . \]
+    \end{proof}
+    This theorem can be seen as the generalized Stokes' theorem on abstract simplicial complexes.
+\end{document}
