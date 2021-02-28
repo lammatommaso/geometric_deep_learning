@@ -1,52 +1,168 @@
 \documentclass[../1.tex]{subfiles}
-
 \begin{document}
-    
-    \begin{defn}[Chain complex]
+
+    We shall now introduce algebraic objects called simplicial complexes and see how they are related to compact
+    topological spaces. In order to do that we require the definitions of convex envelope and affine independence of points in $\R^n$.
+
+    \begin{defn}
+        Let $I$ be a finite set of indexes, we define the \ii{convex envelope} of the points $\{x_i\}_{i \in I} \subset \R^n$ to be 
+        \[ [ x_i ]_{i \in I} := \{ \sum_{i \in I} \lambda_i x_i : \lambda_i \in \R,\ \lambda_i \geq 0,\  \sum_{i \in I} \lambda_i = 1 \}.\]
     \end{defn}
 
-    \begin{prop}[Chain complexes are categories]
+    It is easy to see that convex envelopes are convex and compact sets with respect to the standard topology in $\R^n$.
+    From now, if not otherwise specified, we shall assume $I$ to be a finite set of indexes.
+
+    \begin{prop}
+        Let $\{x_i\}_{i \in I} \subset \R^n$ then $[ x_i ]_{i \in I}$ is the smallest convex set containing $X$.
     \end{prop}
 
-    \begin{defn}[Group of oriented simplicial chains]
+    The order by which we define the smallest convex set is the one given by the relation $\subseteq$.
+
+    % Possible example with some image
+
+    \begin{defn}
+        Let $\{x_i\}_{i \in I} \subset \R^n$ we define the points $\{x_i\}_{i \in I}$ to be \ii{affinely independent} if and only if
+        \[ \sum_{i \in I} \lambda_i x_i = \sum_{i \in I} \mu_i x_i \quad \Rightarrow \quad 
+        \lambda_i = \mu_i \; \forall i \in I ,\]
+        whenever $\sum_{i \in I} \lambda_i = \sum_{i \in I} \mu_i = 1$.
     \end{defn}
 
-    \begin{defn}[Boundary operator]
+    For a more intuitive understanding of this definition one can say that $n$ points in some euclidean space are affinely independent if and only if they do
+    not belong to the same $n-2$ dimensional affine space.
+
+    \begin{exa}
+        Let ${A,B,C,D} \subset \R^n$ representing the four vertxes of a square and let $A,D$ be opposite vertxes, one can easily see that 
+        \[ D = A + (B-A) + (C-A) = (-1)A + (1)B + (1)C + (0)D = (0)A + (0)B + (0)C + (1)D \, ,\]
+        therefore $A,B,C,D$ are not affinely independent.
+        In fact the $4$ vertexes of a square are coplanar, i.e. they belong to the same $2$ dimensional affine space.
+    \end{exa}
+
+    \begin{defn}
+        We define a \ii{p-simplex} to be a convex envelop $[ x_i ]_{i \in I}$
+        where $\{x_i\}_{i \in I} \subset \R^n$ are affinely independent and $|I| = p + 1$, where $|I|$ is the cardinality
+        of $I$.
+    \end{defn}
+    
+    One denotes the vertex set $\{ x_i \}_{i \in I}$ of a simplex $\sigma = [ x_i ]_{i \in I}$ by $Vert(\sigma)$.
+    
+    \begin{defn}
+        Let $\sigma$ be a $p-simplex$, we say that another t-simplex $\tau$ is a \ii{face} of $\sigma$ or equivalently 
+        that $\sigma$ is a \ii{coface} of $\tau$, by our notiation $\tau \leq \sigma$, if and only if $\tau \subset \sigma$, where $t \leq p$.
     \end{defn}
 
-    \begin{thm}[Simplicial chains with the boundary are a chain complex]
+    Simplexes can therefore be points, segments, triangles, tetrahedra or higher dimensional sets which I cannot name, if these particularly simple
+    sets can describe topological spaces we can stop complicating things and try to define a category of simplexes. Unfortunately convex spaces are
+    not able to describe topological spaces with holes.
+
+    \begin{defn}
+        We define a \ii{simplicial complex} $\mc{G}$ to be a collection of simplexes such that
+        \begin{enumerate}[(i)]
+            \item $ \tau \leq \sigma \in \mc{G} \Rightarrow \tau \in \mc{G}$,
+            \item $ \sigma, \tau \in \mc{G} \Rightarrow \sigma \cap \tau \in \mc{G}$.
+        \end{enumerate}
+    \end{defn}
+
+    Let $A,B,C$ be vertexes of a triangle, with the simplicial complex $\{[A],[B],[C],[A,B],[B,C],[C,A]\}$ one can describe the boundary of a triangle, which has
+    a hole that could not be described by any simplex.\\
+    \hfill \\
+    Simplicial complexes are the objects of our category, we now look for appropriate morphisms.
+
+    \begin{defn}
+        Let $\mc{G},\mc{H}$ be simplicial complexes, then a \ii{simplicial map} $\phi : \mc{G} \to \mc{H}$ is a function 
+        such that whenever $[ x_i ]_{i \in I} \in \mc{G}$, then $\phi([ x_i ]_{i \in I}) = [ \phi(v_i) ]_{i \in I} \in \mc{H}$,
+        where $\phi(x_i) \in Vert(\mc{H}) \, \forall i \in I$.
+    \end{defn}
+
+    \begin{thm}
+        Simplicial complexes and simplicial maps are a category $\bb{G}$, whose equivalences are called isomorphisms..
     \end{thm}
 
-    \begin{defn}[Homology group]
+    \begin{defn}
+        Let $\mc{G}$ be a simplicial complex, we define its \ii{underlying space} $|\mc{G}| = \bigcup_{\sigma \in \mc{G}} \sigma$, provided with
+        the standard topology inherited from $\R^n$.
     \end{defn}
 
-    \begin{thm}[Homology functor]
+    Since the union of compact sets is compact the underlying space of a simplicial complex in $\R^n$ is a compact topological subspace of $\R^n$.
+
+    \begin{defn}
+        A topological space $X$ is called \ii{polyhedron} if there exists a simplicial complex $\mc{G}$ and a homeomorphism
+        $h : |\mc{G}| \to X$. The ordered pair $(\mc{G}, h)$ is called a \ii{triangulation} of $X$.
+    \end{defn}
+
+    One understands that in order to have a homeomorphism between the compact underlying space of a simplcial complex and another topological
+    space, this other space has to be compact.
+
+    \begin{lem}
+        Let a topological space $X$ be a finite union of closed subsets $X = \bigcup_{i \in I} X_i$. If, for some space Y, there are continuous
+        maps $f_i : X_i \to Y$ that agree on overlaps $f_i |_{X_i \cap X_j} = f_j |_{X_i \cap X_j}$, there there exist a unique continuous
+        function $f : X \to Y$ such that $f |_{X_i} = f_i \, \forall i \in I$.
+    \end{lem}
+
+    \begin{defn}
+        Let $\phi : \mc{G} \to \mc{H}$ be a simplicial map, let then $\sigma \in \mc{G}$ we define $f_\sigma : \sigma \to |\mc{H}|$ to be 
+        $\sum_{v \in Vert(\sigma)} \lambda_v v \mapsto \sum_{v \in Vert(\sigma)} \lambda_v \phi(v)$. The continuity of this functions in $\sigma$ and the
+        intersection property of the definition of simplicial complex allow us to use the previous lemma to uniquely define a function $|\phi| : |\mc{G}| \to |\mc{H}|$
+        which we shall name \ii{piecewise linear map}.
+    \end{defn}
+
+    The unique association of simplicial complexes and their underlying spaces and of simlicial maps and piecewise linear maps leads to the definition
+    of a functor from the category of simplicial complexes and maps to the category of topological spaces and continuous functions.
+
+    \begin{thm}
+        $|\;| : \bb{G} \to \bb{Top}$ is a functor.
     \end{thm}
 
-    \begin{defn}[Dual contravariant functor]
+    Notice that there is no obvious functor from $\bb{Top}$ to $\bb{G}$, therefore the implications reguarding equivalences are strictly directed.\\
+    \hfill \\
+    Although this approach provides simplicial complexes with the topology inherited from the metric space it hides the power of simplicial complexes 
+    to describe those networks and interactions which would happily exist without that topology, to make this distinction clear enough we will treat
+    simplicial complexes as a realization of more abstract objects called abstract simplicial complexes.
+    
+    \begin{defn}
+        Let $\mc{V}$ be a finite set we define an \ii{abstract simplicial complex} $\mc{A}$ to be 
+        \[\mc{A}:=\{ \sigma  \subset \mc{V} : \tau \subset \sigma \Rightarrow \tau \in \mc{A} \}\] 
+        where $\sigma$ are called \ii{abstract simplexes} of $\mc{A}$.
+    \end{defn}
+    
+    One calls $\mc{V}$ the \ii{vertex set} of $\mc{A}$ and denotes it by $Vert(\mc{A})$; since the vertex
+    set is finite we expect every abstract simplex to be also finite, therefore we might use the notation $\sigma = \{ v_i \}_{i \in I_\sigma}$,
+    which so far we consider invariant under arbitrary permutations of the finite index set $I_\sigma$.
+
+    \begin{defn}
+        Let $\mc{A}$ be an abstract simplicial complex we define its \ii{dimension} to be
+        \[ dim \mc{A} := max_{\sigma \in \mc{A}}(|\sigma|-1), \]
+        where by $|\sigma|$ we denote the cardinality of $\sigma$.
     \end{defn}
 
-    \begin{defn}[Forms on simplicial complexes( The dual of chains )]
+    One calls an abstract simplex of dimension $p$ an \ii{abstract p-simplex}, according to our
+    definition the empy set is a $(-1)$-simplex. A \ii{graph} is a one dimensional abstract simplicial complex.
+
+    \begin{defn}
+        Let $\mc{A},\mc{B}$ be abstract simplicial complexes, then a \ii{simplicial map} $\phi : \mc{A} \to \mc{B}$ is a function 
+        such that whenever $\sigma = \{v_i\}_{i \in I_\sigma} \in \mc{A}$, then $\phi(\{v_i\}_{i \in I_\sigma}) = \{\phi(v_i)\}_{i \in I_\sigma} \in \mc{B}$,
+        where $\phi(v_i) \in Vert(\mc{B}) \, \forall i \in I_\sigma$.
     \end{defn}
 
-    \begin{defn}[Coboundary operator]
-    \end{defn}
+    Although the vertex to vertex mapping is a quite selective condition on the function we did not prevent it from cramming
+    abstract simplexes into lower dimensional ones.
 
-    \begin{defn}[Cohomology group]
-    \end{defn}
-
-    \begin{thm}[Homomorphism between homology and cohomology groups]
+    \begin{thm}
+        Abstract simplicial complexes and simplicial maps are a category $\bb{A}$, whose equivalences are called isomorphisms.
     \end{thm}
 
-    \begin{defn}[Integration on chains as a scalar product]
+    One can show that under some dimensional conditions one can define a functor from the category of abstract simplicial complexes
+    to the category of simplicial complexes.
+
+    \begin{defn}
+        Let $\mc{G}$ be a simplicial complex,  we call the abstract simplicial complex 
+        \[ \mc{A} := \{ \{x_i\}_{i \in I} \subset Vert(\mc{G}) : [x_i]_{i \in I} \in \mc{G} \} \]
+        a vertex scheme for $\mc{G}$ or equivalently we might say that $\mc{G}$ is a \ii{geometric realization} of $\mc{A}$.
     \end{defn}
 
-    \begin{defn}[Exterior discrete derivative as a dual representation of the coboundary operator]
-    \end{defn}
-
-    \begin{defn}[Adjoint exterior derivative]
-    \end{defn}
-
-    \cite{simplicialNN}
-
+    \begin{thm}
+        Let $\mc{A}$ be a d-dimentional abstract simplicial complex, it admits a geometric realization in $\R^{2d+1}$.
+    \end{thm}
+    Kuratowski theorem proves the prevuois statement to be also sharp.\\
+    \hfill \\
+    One could also show that that geometric realizations of isomorphic abstract simplicial complexes are themselves isomorphic.
 \end{document}

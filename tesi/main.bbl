@@ -44,6 +44,30 @@
       \field{title}{An Introduction to Algebraic Topology}
       \field{year}{1988}
     \endentry
+    \entry{hatcher}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
+           family={Hatcher},
+           familyi={H\bibinitperiod},
+           given={Allen},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge Univ. Press}%
+      }
+      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Algebraic Topology}}
+      \field{year}{2000}
+    \endentry
     \entry{simplicialNN}{misc}{}
       \name{author}{3}{}{%
         {{hash=2571ca5855ae04e0f17f7ea73a4669af}{%
@@ -68,8 +92,8 @@
       \strng{authorbibnamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
       \strng{authornamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
       \strng{authorfullhash}{d80e2458f423d2ffa5e1d077f33a8a77}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Simplicial Neural Networks}
@@ -104,8 +128,8 @@
       \strng{authorbibnamehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
       \strng{authornamehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
       \strng{authorfullhash}{bb3d8518ea0a72f45b483042cbd3b98f}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Discrete Exterior Calculus}
