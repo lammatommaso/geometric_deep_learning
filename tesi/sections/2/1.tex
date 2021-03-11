@@ -1,4 +1,39 @@
 \documentclass[../2.tex]{subfiles}
 \begin{document}
+    The goal of machine learning is teaching machines to approximate expert observers.
+    Thinking of the space of possible machines as possibly convex and compact, we can say that we are able to define every possible machine
+    via a finite number of parameters and that by varying those parameters we can be able to find a unique best approximation of this observer.
+    In a world where technology leads and science can hardly keep up with the new technological discoveries, we are sad to claim that a clear mathematical
+    explanation of the reason why such deep learning architectures are so successful is missing.
     
+    \begin{defn}
+        Let $\sigma : \R \to [0,1]$ be a function,
+        $\sigma$ is said to be \ii{sigmoidal} if and only if
+        \[ \sigma(t) \to 
+            \begin{cases}
+                1 & t \to +\infty\\
+                0 & t \to -\infty\\
+            \end{cases}. \]
+    \end{defn}
+    It was proven in \cite{}.
+    \begin{thm}
+        Let $\sigma$ be a continuous sigmoidal function, let $I_n = [0,1]^n$ and $\mc{C}(I_n)$ the space of continuous functions on the compact
+        euclidean domain $I_n$, then the finite sums of the form 
+        \[ S(x) = \sum_{i \in I} \alpha_i \sigma(\scal{y_i}{x}+\theta_i)\]
+        are dense in $\mc{C}(I_n)$, where $\alpha_i,\theta_i \in \R$, $x \in I_n$ and $y_i \in \R_n$.
+    \end{thm}
+    \begin{defn}[fully connected layer]
+    \end{defn}
+    \begin{defn}[multilayer abstraction]
+    \end{defn}    
+    \begin{defn}[convolutional layer]
+    \end{defn}
+    \begin{defn}[pooling layer]
+    \end{defn}
+    \begin{defn}[drop out]
+    \end{defn}
+    \begin{defn}[CNN]
+    \end{defn}
+    \begin{defn}[gradient descent]
+    \end{defn}
 \end{document}
