@@ -1,17 +1,52 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
     
-    \begin{defn}[Laplacian]
+    \begin{defn}
+        We define the \ii{p-Laplacian} operator to be 
+        \[ \Delta_p = \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p =: \Delta^+_p + \Delta^-_p.\]
     \end{defn}
 
-    \begin{prop}[The laplacian is self adjoint]
+    \begin{prop}
+        $\Delta^\dagger_p = \Delta_p.$
     \end{prop}
+    \begin{proof}
+        Let $\ket{\sigma}, \ket{\tau} \in C_p$ 
+        \[ \braket{\sigma}{\Delta_p\tau}=\braket{\sigma}{(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\tau} = \]
+        \[ = \braket{(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)^\dagger\sigma}{\tau} = \]
+        \[ = \braket{(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\sigma}{\tau} = \braket{\Delta_p\sigma}{\tau}. \]
+    \end{proof}
+    According to the spectral theorem there exists a basis of eigenchains of the Laplacian, and since all $\Delta_p, \Delta^+_p, \Delta^-_p$
+    are self-adjoint we can say that they all admit a basis of eigenchains.
 
-    \begin{prop}[The laplacian is positive definite]
+    \begin{prop}
+        Let $\Delta_p\ket{\sigma} = \lambda_\sigma\ket{\sigma}$ then $\lambda_\sigma \geq 0$.
     \end{prop}
+    \begin{proof}
+        Let $\Delta^+_p\ket{\sigma} = \lambda^+_\sigma \ket{\sigma}$, we see that
+        \[ \braket{\sigma}{\Delta^+_p\sigma} = \braket{\del^\dagger_{p+1}\sigma}{\del^\dagger_{p+1}\sigma} \geq 0 \]
+        \[ \braket{\sigma}{\Delta^+_p\sigma} = \lambda^+_\sigma\braket{\sigma}{\sigma} \geq 0 \implies \lambda+_\sigma \geq 0.\]
+        Let then $\Delta^-_p\ket{\sigma} = \lambda^-_\sigma \ket{\sigma}$, we see that
+        \[ \braket{\sigma}{\Delta^-_p\sigma} = \braket{\del_p\sigma}{\del_p\sigma} \geq 0 \]
+        \[ \braket{\sigma}{\Delta^-_p\sigma} = \lambda^-_\sigma\braket{\sigma}{\sigma} \geq 0 \implies \lambda-_\sigma \geq 0.\]
+        Furthermore, since $\Delta^+_p\Delta-_p = \Delta^-_p\Delta^+_p = 0$ we have that $[\Delta^+_p,\Delta^-_p] = 0$, thence
+        $[\Delta_p, \Delta^\pm_p] = 0$, therefore $\Delta_p, \Delta^+_p, \Delta^-_p$ share a basis of eigenchains.
+        Let $\ket{\sigma}$ be in that common basis then $\Delta_p\ket{\sigma} = \lambda_\sigma\ket{\sigma}$, where
+        $\lambda_\sigma = \lambda^+_\sigma + \lambda^-_\sigma \geq 0$.
+    \end{proof}
 
-    \begin{thm}[The kernel of the laplacian is isomorphic to the reduced homology group]
+    \begin{thm}[Eckmann's Theorem]
+        $ker\Delta_p \simeq H_p$.
     \end{thm}
+    \begin{proof}
+        \[ \Delta_p = \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p =: \Delta^+_p + \Delta^-_p\]
+        \[  \Delta^+_p\Delta-_p = \Delta^-_p\Delta^+_p = 0 (hom.lem.) \implies ker\Delta^{\pm}_p \subset im\Delta^{\mp}_p  \]
+        \[ ker\Delta_p = ker\Delta^+_p \cap ker\Delta^-_p \]
+        \[ ker\del^\dagger_{p+1} \cap ker\del_p \subset ker\Delta_p(trivial) \]
+        \[ \del^\dagger_{p+1}\sigma \in im\del^\dagger_{p+1},\sigma \in ker\Delta_p \implies \del^\dagger_{p+1}\sigma \in ker\del_{p+1} = (im\del^\dagger_{p+1})^\perp\]
+        \[ \del_p\sigma \in im\del_p,\sigma \in ker\Delta_p \implies \del_p\sigma \in ker\del^\dagger_p= (im\del_p)^\perp\]
+        \[ \del_p\sigma = \del^\dagger_{p+1}\sigma \subset im\del^\dagger_{p+1} \cap (im\del^\dagger_{p+1})^\perp = im\del_p \cap (im\del_p)^\perp = 0\]
+        \[ ker\Delta_p = ker\del^\dagger_{p+1} \cap ker\del_p = (im\del_{p+1})^\perp \cap ker\del_p \simeq H_p\]
+    \end{proof}
     \cite{DEC}
 
 \end{document}

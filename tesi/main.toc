@@ -7,7 +7,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Category Theory}{1}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial complexes}{2}{section*.4}
+\contentsline {section}{Simplicial Complexes}{2}{section*.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Simplicial Homology}{4}{section*.5}
 \defcounter {refsection}{0}\relax 
@@ -15,12 +15,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Laplacian Operators}{6}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Simplicial Neural Networks}{7}{chapter.2}
+\contentsline {chapter}{\numberline {2}Simplicial Neural Networks}{8}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Convolutional Neural Networks}{7}{section*.8}
+\contentsline {section}{Convolutional Neural Networks}{8}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Graph Neural Networks}{7}{section*.9}
+\contentsline {section}{Graph Neural Networks}{8}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial Neural Networks}{7}{section*.10}
+\contentsline {section}{Simplicial Neural Networks}{8}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{8}{chapter*.11}
+\contentsline {chapter}{Bibliography}{9}{chapter*.11}

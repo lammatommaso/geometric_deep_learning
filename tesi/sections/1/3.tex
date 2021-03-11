@@ -25,8 +25,8 @@
         (where $\hat{v_i}$ means delete the vertex $v_i$) and extending by linearity.
     \end{defn}
 
-    The action boundary operator can be visually interpreted as in the following figure.\\
-    \includegraphics[width = 12cm, height = 6cm]{sections/1/boundary}
+    % The action boundary operator can be visually interpreted as in the following figure.\\
+    % \includegraphics[width = 12cm, height = 6cm]{sections/1/boundary}
 
     \begin{thm}
         $\del^2 = 0$.
@@ -37,7 +37,9 @@
     \end{proof}
 
     \begin{defn}
-        We define the \ii{p-homology group} to be $H_p := \frac{im\del_{p+1}}{ker\del_p}$, where $im\del_{p+1}$ is the group of simplicial p-cycles and
+        We define the \ii{p-homology group} to be 
+        \[H_p := \frac{ker\del_p}{im\del_{p+1}},\] 
+        where $im\del_{p+1}$ is the group of simplicial p-cycles and
         $ker\del_p$ is the group of simplicial p-boundaries.
     \end{defn}
 

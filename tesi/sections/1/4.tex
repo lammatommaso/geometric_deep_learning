@@ -1,31 +1,58 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
 
-    \begin{defn}[Dual contravariant functor]
+    \begin{defn}
+        Let \bb{V} be the category of vector spaces and linear transformations between them, we define the \ii{dual
+        contravariant functor} by
+        \[ V \in Obj(\bb{V}) \mapsto V^* \in Obj(\bb{V}) \]
+        \[ \del \in Hom(U,V) \mapsto \del^* \in Hom(V^*,U^*) : \del^*(\phi)=\phi \circ \del . \]
     \end{defn}
 
-    \begin{defn}[Forms on simplicial complexes( The dual of chains )]
+    \begin{defn}
+        Let $C_p$ be the space of simplicial p-chains, we define the space of \ii{simplicial cochains} to 
+        be $C^p := Hom(C_p, \R)$, i.e. the dual space of $C_p$.
     \end{defn}
 
-    \begin{defn}[Coboundary operator]
+    \begin{defn}
+        By means of the dual functor we are able to define the dual of the boundary operator which we shall call
+        \ii{coboundary operator}, which is defined to be 
+        \[ d_{p+1} : C^p \to C^{p+1} \quad d_p(\sigma^*) = \sigma^* \circ \del_{p+1} .\]
     \end{defn}
 
-    \begin{defn}[Cohomology group]
+    \begin{defn}
+        We define the \ii{p-cohomology group} to be 
+        \[H^p := \frac{ker d_{p+1}}{im d_{p}},\] 
+        where $im d_{p-1}$ is the group of simplicial p-cocycles and
+        $ker d_p$ is the group of simplicial p-coboundaries.
     \end{defn}
 
-    \begin{thm}[Homomorphism between homology and cohomology groups]
+    \begin{defn}
+        We define the scalar product called \ii{integration} $\langle, \rangle : C_p \times C_p \to \R$ on the canonical basis of $C_p$ to be 
+        \[ \langle i, j \rangle = \delta_{ij} ,\] 
+        where $i,j$ are any two p-simplexes in the canonical basis of $C_p$ and $\delta_{ij}$ is the Kronecker Delta.
+    \end{defn}
+    It is convenient, from now on,  to write cochains $\sigma^*$ as bra vectors $\bra{\sigma}$, chains $\sigma$ as ket vectors $\ket{\sigma}$,
+    and the scalar product $\scal{i}{j}$ as the bra-ket product $\braket{i}{j}$.
+
+    \begin{defn}
+        Let $d_{p+1} : C^p \to C^{p+1}$ be the coboundary operator, then for any $\sigma^* \in C^p, \tau \in C_{p+1}$ we can define its dual representation $\del^\dagger_{p+1}$ by
+        \[ (d_{p+1} \sigma^*)(\tau) = (d_{p+1} \bra{\sigma})\ket{\tau} = \braket{\del^\dagger_{p+1} \sigma}{\tau}. \]
+    \end{defn}
+    It is easy to notice that our definitions lead to the restatement of the equivalent of the generalized Stokes' theorem on simplicial complexes
+    according to the integration previously defined, i.e. $(d\bra{\sigma})\ket{\tau} = \braket{\sigma}{\del\tau}$.
+   
+    \begin{thm}
+        $H_p \simeq H^p$
     \end{thm}
-
-    \begin{defn}[Integration on chains as a scalar product]
-    \end{defn}
-
-    \begin{defn}[Exterior discrete derivative as a dual representation of the coboundary operator]
-    \end{defn}
-    % genralized Stokes theorem
-
-    \begin{defn}[Adjoint exterior derivative]
-    \end{defn}
-
-    \cite{simplicialNN}
+    % \begin{proof}
+    %     Let $A_p, A_{p+1}$ be the real matrices associated to the boundary operators $\del_p, \del_{p+1}$ on the canonical basis of p-simplexes,
+    %     then we have that since $\langle \sigma, A_{p+1} \tau \rangle = \langle \sigma, A^\dagger_{p+1} \tau \rangle$ also have that
+    %     \[ H_p =: \frac{ker\del_p}{im\del_{p+1}} = \frac{kerA_p}{imA_{p+1}},\]
+    %     \[ H^p =: \frac{kerd_{p+1}}{imd_p} = \]
+    %     Let's now write the dimensional equations for $A_p, A_{p+1}$,
+    %     \[ n_{p+1} := dim(C_{p+1}) = dim(imA_{p+1}) + dim(kerA_{p+1}) \]
+    %     \[ n_p := dim(C_p) = dim(imA_p) + dim(kerA_p) \]
+    %     \[ dim(H_p) = n_p - dim(imA_p) - (n_{p+1}-dim(kerA_{p+1})) \]
+    % \end{proof}
 
 \end{document}

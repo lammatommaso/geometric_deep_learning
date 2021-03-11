@@ -7,13 +7,13 @@
 
     \begin{defn}
         A \ii{category} $\bb{C}$ consists of three ingerdients:\\
-        a class of \ii{objects} $obj\bb{C}$; sets of \ii{morphisms}
-        $Hom(A,B)$ for every ordered pair $(A,B) \in obj\bb{C}$; a composition $Hom(A,B) \times Hom(B,C) \to Hom(A,C)$, denoted
-        by $(f,g) \mapsto f \circ g$ for every $A,B,C \in obj\bb{C}$, satisfying the following axioms:
+        a class of \ii{objects} $Obj(\bb{C})$; sets of \ii{morphisms}
+        $Hom(A,B)$ for every ordered pair $(A,B) \in Obj(\bb{C})$; a composition $Hom(A,B) \times Hom(B,C) \to Hom(A,C)$, denoted
+        by $(f,g) \mapsto f \circ g$ for every $A,B,C \in Obj(\bb{C})$, satisfying the following axioms:
         \begin{enumerate}[(i)]
             \item the family of $Hom(A,B)$ is pairwise disjoint,
             \item the composition, when defined, is associative,
-            \item for each $A \in obj\bb{C}$ there exists an \ii{identity} $1_A \in Hom(A,A)$ such that for $f \in Hom(A,B)$ and $g \in Hom(C,A)$
+            \item for each $A \in Obj(\bb{C})$ there exists an \ii{identity} $1_A \in Hom(A,A)$ such that for $f \in Hom(A,B)$ and $g \in Hom(C,A)$
                   we have that $1_A \circ f = f$ and $g \circ 1_A = g$.
         \end{enumerate}
     \end{defn}
@@ -27,8 +27,8 @@
     \begin{defn}
         Let $\bb{A}$ and $\bb{C}$ be categories, a \ii{functor} $T : \bb{A} \to \bb{C}$ is a function, that is, 
         \begin{enumerate}[(i)]
-            \item $A \in obj\bb{A} \implies TA \in obj\bb{C}$,
-            \item $f:A \to A' \implies Tf: TA \to TA' \quad A,A' \in obj\bb{A}$,
+            \item $A \in Obj(\bb{A}) \implies TA \in Obj(\bb{C})$,
+            \item $f:A \to A' \implies Tf: TA \to TA' \quad A,A' \in Obj(\bb{A})$,
             \item if $f,g$ are morphisms in $\bb{A}$ for which $g \circ f$ is defined, then $T(g \circ f) = (Tg) \circ (Tf)$,
             \item $T(1_A)= 1_{TA} \quad \forall A \in \bb{A}$.
         \end{enumerate}
