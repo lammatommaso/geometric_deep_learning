@@ -19,6 +19,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Convolutional Neural Networks}{8}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial Neural Networks}{9}{section*.9}
+\contentsline {section}{Simplicial Neural Networks}{8}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{10}{chapter*.10}
+\contentsline {chapter}{Bibliography}{9}{chapter*.10}
