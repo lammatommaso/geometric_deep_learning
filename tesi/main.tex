@@ -9,6 +9,7 @@
 \usepackage{adjustbox}
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{amsmath}
@@ -19,6 +20,7 @@
 \usepackage{subfiles}
 \usepackage{comment}
 \usepackage{enumerate}
+\usepackage[title]{appendix}
 \usepackage[style=numeric, backend=biber, sorting=none]{biblatex}
 \addbibresource{bibliography.bib}
 
@@ -66,9 +68,13 @@
     %    \subfile{sections/abstract_eng}
     %    \newpage
     \begin{section}{Introduction}
-        Most of the deep learning techniques used today are based on models 
-        which learn a partition of the set of smooth functions defined on euclidean 
-        domains into human friendly equivalence classes...
+        Most of the deep learning techniques used today are based on models which learn a partition of the set of smooth functions defined on euclidean 
+        domains into human friendly equivalence classes. Although this approach has been successful in modern machine learning, it only deals with a really 
+        small set of domains. The goal of geometric deep learning is to extend this method to data defined on manifolds and simplicial complexes.\\
+        Convolution on euclidean domains is itself based on the translation invariance of such domains. In fact the convolution of a function $f : \R^n \to \R$,
+        with some filter $g:\R^n \to \R$ is $(f * g)(x) = \scal{f}{g \circ T^{-1}}_{L^2}$, where $T:\R^n \to \R^n$ is a translation represented by the vector $x$.
+        % Luckily convolutions can be define for functions define on groups with a measure, therefore we could also see the $\R^n$ with the measure $dx$ as a representation of the
+        % group of translations $\bb{T}$ with measure $dT$, i.e. $(f * g)(x) = \int_{\bb{T}}dTf(T)g(x-T)$.
     \end{section}
     \tableofcontents
     \newpage
@@ -79,6 +85,11 @@
     \begin{chapter}{Simplicial Neural Networks}
         \subfile{sections/2}
     \end{chapter}
+    % \begin{appendices}
+    %     \begin{chapter}{Category Theory}
+    %         \subfile{sections/appendixA/main}
+    %     \end{chapter}
+    % \end{appendices}
     \newpage
     \printbibliography[heading = bibintoc]
 \end{document}

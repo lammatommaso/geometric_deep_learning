@@ -1,0 +1,58 @@
+\documentclass[../1.tex]{subfiles}
+\begin{document}
+
+    The essential idea in algebraic topology is to convert problems about topological spaces and continuous functions into
+    problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
+    The language of category theory shall be our main tool to formally describe this conversion.
+
+    \begin{defn}
+        A \ii{category} $\bb{C}$ consists of three ingerdients:\\
+        a class of \ii{objects} $Obj(\bb{C})$; sets of \ii{morphisms}
+        $Hom(A,B)$ for every ordered pair $(A,B) \in Obj(\bb{C}) \times Obj(\bb{C})$; a composition $Hom(A,B) \times Hom(B,C) \to Hom(A,C)$, denoted
+        by $(f,g) \mapsto f \circ g$ for every $A,B,C \in Obj(\bb{C})$, satisfying the following axioms:
+        \begin{enumerate}[(i)]
+            \item the family of $Hom(A,B)$ is pairwise disjoint,
+            \item the composition, when defined, is associative,
+            \item for each $A \in Obj(\bb{C})$ there exists an \ii{identity} $1_A \in Hom(A,A)$ such that for $f \in Hom(A,B)$ and $g \in Hom(C,A)$
+                  we have that $1_A \circ f = f$ and $g \circ 1_A = g$.
+        \end{enumerate}
+    \end{defn}
+
+    Instead of writing $f \in Hom(A,B)$, we usually write $f : A \to B$. 
+
+    \begin{defn}
+        Let $\bb{A}$ and $\bb{C}$ be categories, a \ii{functor} $T : \bb{A} \to \bb{C}$ is a function, that is, 
+        \begin{enumerate}[(i)]
+            \item $A \in Obj(\bb{A}) \implies TA \in Obj(\bb{C})$,
+            \item $f:A \to A' \implies Tf: TA \to TA' \quad A,A' \in Obj(\bb{A})$,
+            \item if $f,g$ are morphisms in $\bb{A}$ for which $g \circ f$ is defined, then $T(g \circ f) = (Tg) \circ (Tf)$,
+            \item $T(1_A)= 1_{TA} \quad \forall A \in \bb{A}$.
+        \end{enumerate}
+    \end{defn}
+
+    The property $(iii)$ of the previous definition actually defines what we shall call \ii{covariant functors}.
+    If instead we require $T(g \circ f) = (Tf) \circ (Tg)$, we are defining a so called \ii{contravariant functor}.
+
+    \begin{defn}
+        An \ii{equivalence} in a category $\bb{C}$ is a morphism $f : A \to B$ for which there exists a morphism $g : B \to A$ such that
+        $ f \circ g = 1_B$ and $ g \circ f = 1_A$.
+    \end{defn}
+
+    \begin{thm}
+        If $\bb{A}$ and $\bb{C}$ are categories and $T : \bb{A} \to \bb{C}$ is a functor of either variance, then whenever $f$ is 
+        an equivalence on $\bb{A}$ then $Tf$ is an equivalence on $\bb{C}$.
+    \end{thm}
+    \begin{proof}
+        We apply $T$ to the equations $ f \circ g = 1_B$ and $ g \circ f = 1_A$, that for a covariant functor leads to 
+        $(Tf) \circ (Tg) = T(1_B) = 1_{TB}$ and $(Tg) \circ (Tf) = T(1_A) = 1_{TA}$.
+    \end{proof}
+
+    A category that will be used in the following section is the category of topological spaces and continuous functions.
+
+    \begin{thm}
+        Topological spaces and continuous functions are a category \bb{Top}, whose equivalences are called homeomorphisms.
+    \end{thm}
+
+    Other examples of categories can be found in \cite{rotman}.
+
+\end{document}

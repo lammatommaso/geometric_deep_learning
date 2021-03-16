@@ -1,62 +1,78 @@
 \documentclass[../1.tex]{subfiles}
-
 \begin{document}
 
-    An important field in algebraic topology is homology theory. We shall discuss homology theory to the extent
-    that allows us to define the laplacian operator on simplicial complexes, for further readings see \cite{hatcher}.
-    Firstly we want to equip our simplicial complexes with an orientation.
+    In order to define data on simplicial complexes we are interested in studying the dual of the simplicial chain complex
+    which we shall call a  simplicial cochain complex.
+    % The cochain complex is the image of the chain complex via a special functor,
+    % i.e. the dual contravariant functor.
 
+    % \begin{defn}
+    %     Let \bb{V} be the category of vector spaces and linear transformations between them, we define the \ii{dual
+    %     contravariant functor} by
+    %     \[ V \in Obj(\bb{V}) \mapsto V^* := Hom(V,\R) \in Obj(\bb{V}) \]
+    %     \[ \del \in Hom(U,V) \mapsto \del^* \in Hom(V^*,U^*) : \del^*(\phi)=\phi \circ \del . \]
+    % \end{defn}
+
+    % By applying this functor to the spaces of simplicial chains we are able to define the space of simplicial cochains, 
+    % and their respective coboundary operator.
+    
     \begin{defn}
-        An \ii{oriented} simplicial complex $\mc{A}$ is a simplicial complex and a partial order on $Vert(\mc{A})$ whose
-        restriction to the vertices of any simplex in $\mc{A}$ is a linear order.
+        Let $C_p$ be the space of simplicial p-chains, we define the space of \ii{simplicial cochains} to 
+        be $C^p := Hom(C_p, \R)$, i.e. the dual space of $C_p$.
     \end{defn}
 
-    Secondly we define on the simplicial complex a vector space structure.
-
     \begin{defn}
-        Let $\mc{A}$ be an oriented simplicial complex, on $\mc{A}$ we define a formal sum in order
-        to obtain a vector space on the real numbers, that is
-        \[ C_p(\mc{A}) := \{ \sum_i \lambda_i \sigma_i^p \quad \lambda_i \in \R \},\]
-        where $\sigma_i^p$ are oriented p-simplexes of $\mc{A}$.\\ % The action boundary operator can be visually interpreted as in the following figure.\\
-        % \includegraphics[width = 12cm, height = 6cm]{sections/1/boundary}
-        All $\sigma_i^p = [v_0,\dots,v_p]$ can have two possible orientations that satisfy
-        $ [v_0,\dots,v_p] = sgn (\pi)[v_{\pi 0},\dots,v_{\pi p}]$,
-        where $\pi$ is a permutation of $\{0,\dots,p\}$.  
-        We shall call $C_p$ the space of \ii{simplicial p-chains}.      
+        The dual of the boundary operator which we shall call
+        \ii{coboundary operator}, is defined to be 
+        \[ d_{p+1} : C^p \to C^{p+1} \quad d_p(\sigma^*) = \sigma^* \circ \del_{p+1} .\]
     \end{defn}
 
-    In the study of chains' spaces a special role is played by a particular linear operator called
-    boundary operator.
+    One could also show that the property $d^2 = 0$ is verified in the so defined cochain complex.
+    The homology group could in general be define for any chain complex, in particulare for the simplicial cochain
+    complex it takes the name of cohomology group.
 
     \begin{defn}
-        We define the \ii{boundary} operator $\del_{p+1} : C_{p+1} \to C_p$ by setting
-        \[ \del_{p+1}([v_0,\dots,v_p]) = \sum_{i=0}^p (-1)^i[v_0,\dots,\hat{v_i},\dots,v_p] \]
-        (where $\hat{v_i}$ means delete the vertex $v_i$) and extending by linearity.
+        We define the \ii{p-cohomology group} to be 
+        \[H^p := \frac{ker d_{p+1}}{im d_{p}},\] 
+        where $im d_{p-1}$ is the group of simplicial p-cocycles and
+        $ker d_p$ is the group of simplicial p-coboundaries.
     \end{defn}
 
-   The set of all chains' spaces with their respective boundary operators is a special category that we call a \ii{chain complex},
-   the property that defines a chain complex is the following.
-
-    \begin{thm}
-        $\del^2 = 0$.
-    \end{thm}
-    \begin{proof}
-        Let $\del_{p+1}([v_0,\dots,v_{p+1}]) = \sum_{i=0}^{p+1} (-1)^i[v_0,\dots,\hat{v_i},\dots,v_{p+1}]$ then 
-        \[\del_p(\del_{p+1}([v_0,\dots,v_{p+1}])) =\sum_{j=0, j \neq i}^{p+1} \sum_{i=0}^{p+1} (-1)^{i+j}[v_0,\dots,\hat{v_i},\dots,\hat{v_j},\dots,v_{p+1}] = 0.\]     
-    \end{proof}
-
-    We are interested in boundary operators because they allow us to define the p-holes, which mathematically can be thought as the
-    p-cycles, p-chains that have no boundary, that are not boundary of any higher dimensional simplex. It is possible to show that the
-    p-holes form a vector space and if two simplicial complex are isomorphic also their p-holes' spaces are. This, given what we said in the previous section,
-    allows us to decide if two topological spaces are not homeomorphic by looking at the p-holes' spaces of their triangulations.
+    To have a mirrored intuition of what the coboundary operator actually does we equipe our simplicial chain spaces with
+    an inner product. This finite dimensional Hilbert space structure shall allow us to represent the action of a cochain $\sigma^*$ on the chain $\tau$ 
+    as the scalar product $\scal{\sigma}{\tau}$.
 
     \begin{defn}
-        We define the \ii{p-homology group} to be 
-        \[H_p := \frac{ker\del_p}{im\del_{p+1}},\] 
-        where $im\del_{p+1}$ is the group of simplicial p-cycles and
-        $ker\del_p$ is the group of simplicial p-boundaries.
+        We define the scalar product called \ii{integration} $\langle, \rangle : C_p \times C_p \to \R$ on the canonical basis of $C_p$ to be 
+        \[ \langle i, j \rangle = \delta_{ij} ,\] 
+        where $i,j$ are any two p-simplexes in the canonical basis of $C_p$ and $\delta_{ij}$ is the Kronecker Delta.
+    \end{defn}
+    It is convenient, from now on,  to write cochains $\sigma^*$ as bra vectors $\bra{\sigma}$, chains $\sigma$ as ket vectors $\ket{\sigma}$,
+    and the scalar product $\scal{i}{j}$ as the bra-ket product $\braket{i}{j}$.
+
+    The same Hilbert space structure allows us to represent the coboundary operator $d$ in the space of chains with its integral kernel $\del^\dagger$.
+
+    \begin{defn}
+        Let $d_{p+1} : C^p \to C^{p+1}$ be the coboundary operator, then for any $\sigma^* \in C^p, \tau \in C_{p+1}$ we can define its dual representation $\del^\dagger_{p+1}$ by
+        \[ (d_{p+1} \sigma^*)(\tau) = (d_{p+1} \bra{\sigma})\ket{\tau} = \braket{\del^\dagger_{p+1} \sigma}{\tau}. \]
     \end{defn}
 
-    The homology group is therefore the space of cycles that are not boundaries.
+    It is easy to notice that our definitions lead to the restatement of the equivalent of the generalized Stokes' theorem on simplicial complexes
+    according to the integration previously defined, i.e. $(d\bra{\sigma})\ket{\tau} = \braket{\sigma}{\del\tau}$. One can therefore think of the coboundary
+    operator as a discrete exterior derivative acting on cochains.
+   
+    % \begin{thm}
+    %     $H_p \simeq H^p$
+    % \end{thm}
+    % \begin{proof}
+    %     Let $A_p, A_{p+1}$ be the real matrices associated to the boundary operators $\del_p, \del_{p+1}$ on the canonical basis of p-simplexes,
+    %     then we have that since $\langle \sigma, A_{p+1} \tau \rangle = \langle \sigma, A^\dagger_{p+1} \tau \rangle$ also have that
+    %     \[ H_p =: \frac{ker\del_p}{im\del_{p+1}} = \frac{kerA_p}{imA_{p+1}},\]
+    %     \[ H^p =: \frac{kerd_{p+1}}{imd_p} = \]
+    %     Let's now write the dimensional equations for $A_p, A_{p+1}$,
+    %     \[ n_{p+1} := dim(C_{p+1}) = dim(imA_{p+1}) + dim(kerA_{p+1}) \]
+    %     \[ n_p := dim(C_p) = dim(imA_p) + dim(kerA_p) \]
+    %     \[ dim(H_p) = n_p - dim(imA_p) - (n_{p+1}-dim(kerA_{p+1})) \]
+    % \end{proof}
 
 \end{document}
