@@ -1923,7 +1923,13 @@
     <bcf:datasource type="file" datatype="bibtex">bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">hatcher</bcf:citekey>
+    <bcf:citekey order="1">singerthorpe</bcf:citekey>
+    <bcf:citekey order="1">rotman</bcf:citekey>
+    <bcf:citekey order="2">singerthorpe</bcf:citekey>
+    <bcf:citekey order="3">rotman</bcf:citekey>
+    <bcf:citekey order="4">hatcher</bcf:citekey>
+    <bcf:citekey order="5">laplacian</bcf:citekey>
+    <bcf:citekey order="6">rotman</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

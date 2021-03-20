@@ -7,16 +7,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Simplicial Complexes}{1}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial Homology}{3}{section*.4}
+\contentsline {section}{Simplicial Homology}{4}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial Cohomology}{4}{section*.5}
+\contentsline {section}{Simplicial Cohomology}{5}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Laplacian Operators}{5}{section*.6}
+\contentsline {section}{Laplacian Operators}{6}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Simplicial Neural Networks}{7}{chapter.2}
+\contentsline {chapter}{\numberline {2}Simplicial Neural Networks}{8}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Convolutional Neural Networks}{7}{section*.7}
+\contentsline {section}{Convolutional Neural Networks}{8}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial Neural Networks}{7}{section*.8}
+\contentsline {section}{Simplicial Neural Networks}{8}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{8}{chapter*.9}
+\contentsline {chapter}{\numberline {A}Category Theory}{9}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Construction of Simplicial Complexes from Point Clouds}{11}{Appendix.1.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{12}{chapter*.9}

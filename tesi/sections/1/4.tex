@@ -1,8 +1,8 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
 
-    An important role in the definition of a convolution on simplicial complexes is played by the Laplaciano operator,
-    especially by its eigenfunctions and spectrum.
+    An important role in the definition of a convolution on simplicial complexes is played by the Laplacian operator,
+    especially by its eigenfunctions and spectrum. A more thorough discussion of this operator can be found in \cite{laplacian}.
     
     \begin{defn}
         We define the \ii{p-Laplacian} operator to be 
@@ -48,7 +48,7 @@
     \end{thm}
     \begin{proof}
         We have \[ \Delta_p = \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p =: \Delta^+_p + \Delta^-_p.\]
-        According to Theorem 1.29 it is true that
+        It is true that
         \[  \Delta^+_p\Delta-_p = \Delta^-_p\Delta^+_p = 0\implies ker\Delta^{\pm}_p \subset im\Delta^{\mp}_p.\]
         It is trivial to see that since $ker\Delta_p = ker\Delta^+_p \cap ker\Delta^-_p $
         \[ ker\del^\dagger_{p+1} \cap ker\del_p \subset ker\Delta_p,\] less trivial is the opposite inclusion:

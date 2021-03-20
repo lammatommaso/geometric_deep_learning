@@ -11,12 +11,11 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{tikz}
-\usepackage{hyperref}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black, citecolor=black]{hyperref}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\hypersetup{colorlinks=true,linkcolor=black,urlcolor=black, citecolor=black}
 \usepackage{subfiles}
 \usepackage{comment}
 \usepackage{enumerate}
@@ -25,6 +24,10 @@
 \addbibresource{bibliography.bib}
 
 \setlength{\parindent}{0pt}
+\makeatletter
+\renewcommand{\fnum@figure}{Fig. \thefigure}
+\makeatother
+
 
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[chapter]
@@ -57,6 +60,8 @@
 \newcommand{\ket}[1]{| #1 \rangle}
 \newcommand{\braket}[2]{\langle #1 | #2 \rangle}
 \newcommand{\del}{\partial}
+\newcommand{\then}{\Rightarrow}
+\newcommand{\hull}[1]{\langle #1 \rangle}
 
 \begin{document}
     \begin{titlepage}
@@ -73,23 +78,31 @@
         small set of domains. The goal of geometric deep learning is to extend this method to data defined on manifolds and simplicial complexes.\\
         Convolution on euclidean domains is itself based on the translation invariance of such domains. In fact the convolution of a function $f : \R^n \to \R$,
         with some filter $g:\R^n \to \R$ is $(f * g)(x) = \scal{f}{g \circ T^{-1}}_{L^2}$, where $T:\R^n \to \R^n$ is a translation represented by the vector $x$.
-        % Luckily convolutions can be define for functions define on groups with a measure, therefore we could also see the $\R^n$ with the measure $dx$ as a representation of the
-        % group of translations $\bb{T}$ with measure $dT$, i.e. $(f * g)(x) = \int_{\bb{T}}dTf(T)g(x-T)$.
+        Moreover, one could also consider such a convolution to be defined on the translation group itself, represented by some $\R^n$. 
+        In the same way one can define a convolution on the group $(\Z,+)$ as $(a * b)_n = \sum_{i \in \Z}a_i b_{n-i}$.
+        Such definitions of convolution operators are equivariant with respect to the action of the group they are defined upon.
+        In image recognition translation invariance is necessary, but graphs and simplicial complexes do not in general need this simmetry.
     \end{section}
     \tableofcontents
     \newpage
     \pagenumbering{arabic}
     \begin{chapter}{Preliminaries on topology}
+        The essential idea in algebraic topology is to convert problems about topological spaces and continuous functions into
+        problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
         \subfile{sections/1}
     \end{chapter}
     \begin{chapter}{Simplicial Neural Networks}
         \subfile{sections/2}
     \end{chapter}
-    % \begin{appendices}
-    %     \begin{chapter}{Category Theory}
-    %         \subfile{sections/appendixA/main}
-    %     \end{chapter}
-    % \end{appendices}
+    \begin{appendices}
+        \begin{chapter}{Category Theory}
+            \subfile{sections/appendixA/main}
+        \end{chapter}
+        \begin{chapter}{Construction of Simplicial Complexes from Point Clouds}
+            Cech, Alpha and Delauney complexes.
+            Nerve Theorem.
+        \end{chapter}
+    \end{appendices}
     \newpage
     \printbibliography[heading = bibintoc]
 \end{document}

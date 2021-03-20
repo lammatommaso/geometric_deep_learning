@@ -19,6 +19,35 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{singerthorpe}{book}{}
+      \name{author}{2}{}{%
+        {{hash=2bfe1ae6a67220812cd58d875f51aa4b}{%
+           family={Singer},
+           familyi={S\bibinitperiod},
+           given={I.\bibnamedelimi M.},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=466995fce622065eb2feffcab59df856}{%
+           family={Thorpe},
+           familyi={T\bibinitperiod},
+           given={J.\bibnamedelimi A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, New York, NY}%
+      }
+      \strng{namehash}{b5719416db87e0ac8afa8ac9e0dd6c43}
+      \strng{fullhash}{b5719416db87e0ac8afa8ac9e0dd6c43}
+      \strng{bibnamehash}{b5719416db87e0ac8afa8ac9e0dd6c43}
+      \strng{authorbibnamehash}{b5719416db87e0ac8afa8ac9e0dd6c43}
+      \strng{authornamehash}{b5719416db87e0ac8afa8ac9e0dd6c43}
+      \strng{authorfullhash}{b5719416db87e0ac8afa8ac9e0dd6c43}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lecture Notes on Elementary Topology and Geometry}
+      \field{year}{1976}
+    \endentry
     \entry{rotman}{book}{}
       \name{author}{1}{}{%
         {{hash=9c0331116e9475d360c20810da1e70f4}{%
@@ -61,79 +90,38 @@
       \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
       \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
       \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Algebraic Topology}}
-      \field{year}{2000}
-    \endentry
-    \entry{simplicialNN}{misc}{}
-      \name{author}{3}{}{%
-        {{hash=2571ca5855ae04e0f17f7ea73a4669af}{%
-           family={Ebli},
-           familyi={E\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=e9f077c5e430013d034bf8adb5e80faf}{%
-           family={Defferrard},
-           familyi={D\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=cd593f2626600c8a559dc8d40a63026a}{%
-           family={Spreemann},
-           familyi={S\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-      }
-      \strng{namehash}{d80e2458f423d2ffa5e1d077f33a8a77}
-      \strng{fullhash}{d80e2458f423d2ffa5e1d077f33a8a77}
-      \strng{bibnamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
-      \strng{authorbibnamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
-      \strng{authornamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
-      \strng{authorfullhash}{d80e2458f423d2ffa5e1d077f33a8a77}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Simplicial Neural Networks}
-      \field{year}{2020}
-    \endentry
-    \entry{DEC}{misc}{}
-      \name{author}{4}{}{%
-        {{hash=9278725cbb633e8ac6ff3865add025df}{%
-           family={Desbrun},
-           familyi={D\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=1b3363616b7e44cb48b5d22f43d8e85f}{%
-           family={Hirani},
-           familyi={H\bibinitperiod},
-           given={A.\bibnamedelimi N.},
-           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-        {{hash=d98b290503ff8e19e1d2b0ad8f28c00a}{%
-           family={Leok},
-           familyi={L\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=188fb97a3246efef85c651d85a0798dd}{%
-           family={Marsden},
-           familyi={M\bibinitperiod},
-           given={J.\bibnamedelimi E.},
-           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-      }
-      \strng{namehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
-      \strng{fullhash}{bb3d8518ea0a72f45b483042cbd3b98f}
-      \strng{bibnamehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
-      \strng{authorbibnamehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
-      \strng{authornamehash}{dcd2c56289c4b2d672b9e7377ad4d3af}
-      \strng{authorfullhash}{bb3d8518ea0a72f45b483042cbd3b98f}
       \field{sortinit}{4}
       \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Discrete Exterior Calculus}
-      \field{year}{2005}
+      \field{title}{Algebraic Topology}
+      \field{year}{2000}
+    \endentry
+    \entry{laplacian}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=3493db22ce6eaad9626a9b10529869ba}{%
+           family={Horak},
+           familyi={H\bibinitperiod},
+           given={Danijela},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0da1cd02a83e8af4aa26b2ee24fa2850}{%
+           family={Jost},
+           familyi={J\bibinitperiod},
+           given={Juergen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{fullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{bibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{authorbibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{authornamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{authorfullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Spectra of combinatorial Laplace operators on simplicial complexes}
+      \field{year}{2011}
     \endentry
   \enddatalist
 \endrefsection
