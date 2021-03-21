@@ -2,8 +2,7 @@
 \begin{document}
 
     In this section we shall define structures called simplicial complexes and discuss some of their properties. In order to define these structures
-    we need the definitions of convex hull and affine independence in $\R^n$. For a deeper insight into simplicial complexes we refer the reader to 
-    \cite{singerthorpe,rotman}.    
+    we need the definitions of convex hull and affine independence in $\R^n$. For a deeper insight into simplicial complexes we refer to \cite{singerthorpe,rotman}.    
 
     \begin{defn}
         Let $A \subset \R^n$, we define $A$ to be \ii{convex} if
@@ -13,18 +12,23 @@
 
     \begin{defn}
         Let $\sigma := \{x_i\}_{i \in I}$ be a finite subset of $\R^n$, we define $\sigma$ to be \ii{affinely independent} if 
-        $\{ x_0 - x_i\}_{i \in I - \{0\}}$ is linearly independent.
+        $\{ x_0 - x_i\}_{i \in I \m \{0\}}$ is linearly independent.
     \end{defn}
 
     For the definition of affine independence of $\sigma = \{x_i\}_{i \in I} \subset \R^n$ to be well stated we need it to be independent of the choice of $x_0$.
       
     \begin{prop}
-        Let $\sigma := \{x_i\}_{i \in I}$ be a finite subset of $\R^n$, let $j \in I$ then, if $\{ x_j - x_i\}_{i \in I-\{j\}}$ is linearly independent,
-        also $\{ x_0 - x_i\}_{i \in I-\{0\}}$ is. 
+        Let $\sigma := \{x_i\}_{i \in I}$ be a finite subset of $\R^n$, let $j \in I$ then, if $\{ x_j - x_i\}_{i \in I \m \{j\}}$ is linearly independent,
+        also $\{ x_0 - x_i\}_{i \in I \m \{0\}}$ is. 
     \end{prop}
     \begin{proof}
-        If $j=0$ the statement is trivially true. Let $j \neq 0$ and for the hypotheisis
-        \[ \sum_{i \in I, i \neq j} \lambda_i (x_j - x_i) = 0 \then \lambda_i = 0 \forall i \in I-\{j\}\]
+        If $j=0$ the statement is trivially true. Let $j \neq 0$ and $\lambda_i \in \R$ for all $i \neq j$, then
+        \[ \sum_{i \in I \m \{j\}} \lambda_i (x_j - x_i) = 0 \then \lambda_i = 0 \quad \forall i \in I-\{j\}.\]
+        Let then $\mu_i \in \R$ for all $i \neq 0$, and suppose 
+        \[ \sum_{i \in I \m \{0\}} \mu_i (x_0 - x_i) = (x_0 - x_j) \sum_{i \in I \m \{0\}} \mu_i + \sum_{i \in I \m \{0\}} \mu_i (x_j - x_i) = 0.\]
+        If we define $\mu_0 := -\sum_{i \in I \m \{0\}} \mu_i$ we have that
+        \[ 0 = \sum_{i \in I} \mu_i (x_j - x_i) = \sum_{i \in I \m \{j\}} \mu_i (x_j - x_i) \then \mu_i = 0 \quad \forall i \in I \m \{j\},\]
+        therefore the definition of affine independence is well stated.
     \end{proof}
 
     \begin{defn}
@@ -47,7 +51,7 @@
     \begin{proof}
         Let $C := \{ \bigcap_\alpha C_\alpha : \sigma \in C_\alpha, C_\alpha$ convex$\}$, we want to show that:
         \begin{enumerate}[(i)]
-            \item $C \subset [\sigma]$\\
+            \item $C \subset [\sigma]$.\\
             This is true if $[\sigma]$ is convex and contains $\sigma$.
             The proof that it contains $\sigma$ is trivial. In fact for every vertex $x_j = \sum_{i \in I} \delta_{ij} x_i$,
             and $\sum_{i \in I}\delta_{ij} = 1$.\\
@@ -56,8 +60,9 @@
             \[ ta+(1-t)b = t\sum_{i \in I} a_i x_i + (1-t) \sum_{i \in I} b_i x_i = \sum_{i \in I} (ta_i + (1-t)b_i)x_i.\]
             It follows that $ta_i + (1-t)b_i \geq 0$ and $\sum_{i \in I} (ta_i + (1-t)b_i) = t\sum_{i \in I}a_i + (1-t)\sum_{i \in I}b_i = 1$ for all $i \in I$,
             therefore (i) is proven.
-
-            \item $[\sigma] \subset C$
+            \item $[\sigma] \subset C$.\\
+            If all but one the $\lambda_i$ are zero certaintly $\sum_{i \in I} \lambda_i x_i \in C$, since $C$ contains all the vertexes.
+            The inuctive hypothesis, by relabeling, is that if the first n $\lambda_i$ are non-zero, hence not even $1$, then $\sum_{i \in I} \lambda_i x_i \in C$.
             \item $\sum_{i \in I} \lambda_i x_i = \sum_{i \in I} \mu_i x_i \then \lambda_i = \mu_i \forall i \in I$
         \end{enumerate}
     \end{proof}
