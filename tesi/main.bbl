@@ -73,6 +73,35 @@
       \field{title}{An Introduction to Algebraic Topology}
       \field{year}{1988}
     \endentry
+    \entry{comptop}{book}{}
+      \name{author}{2}{}{%
+        {{hash=a32d61ef7947b60c5805e6dd35fa4fa7}{%
+           family={Edelsbrunner},
+           familyi={E\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f7016154766fb29a7cbdae6dad5d1220}{%
+           family={Harer},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society}%
+      }
+      \strng{namehash}{ba8cf6064332e63fbdb7abdd70fb7f61}
+      \strng{fullhash}{ba8cf6064332e63fbdb7abdd70fb7f61}
+      \strng{bibnamehash}{ba8cf6064332e63fbdb7abdd70fb7f61}
+      \strng{authorbibnamehash}{ba8cf6064332e63fbdb7abdd70fb7f61}
+      \strng{authornamehash}{ba8cf6064332e63fbdb7abdd70fb7f61}
+      \strng{authorfullhash}{ba8cf6064332e63fbdb7abdd70fb7f61}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Computational Topology - an Introduction.}
+      \field{year}{2010}
+    \endentry
     \entry{hatcher}{book}{}
       \name{author}{1}{}{%
         {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
