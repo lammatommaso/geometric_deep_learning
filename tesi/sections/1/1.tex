@@ -49,7 +49,7 @@
     \end{thm}
 
     \begin{proof}
-        Let $C := \{ \bigcap_\alpha C_\alpha : \sigma \in C_\alpha, C_\alpha$ convex$\}$, we want to show that:
+        Let $C := \{ \bigcap_\alpha C_\alpha : \sigma \in C_\alpha, C_\alpha$ convex$\}$, we divide the proof in three steps:
         \begin{enumerate}[(i)]
             \item $C \subset [\sigma]$.\\
             This is true if $[\sigma]$ is convex and contains $\sigma$.
@@ -77,11 +77,9 @@
             x_0\sum_{i \in I} \mu_i +\sum_{i \in I} \mu_i (x_i - x_0)$, and since both $\lambda_i$ and $\mu_i$ are normalised we have that
             \[ \sum_{i \in I} (\lambda_i - \mu_i) (x_0 - x_i) = \sum_{i \in I \m \{0\}} (\lambda_i - \mu_i) (x_0 - x_i) = 0 \then \lambda_i = \mu_i \quad \forall i \in I \m \{0\},\]
             because of the affine independence. \qedhere
-
         \end{enumerate}
     \end{proof}
 
-    A proof of theorem \ref{thm:1} can be found in \cite{singerthorpe}.
     The set $[\sigma]$ is often called \ii{covex hull} of $\sigma$.
     
     % \begin{exa}
@@ -134,7 +132,7 @@
         \label{fig:2}
     \end{figure}
 
-    We can see in Fig. \ref{fig:2} that the intersection property of simplicial complexes is not satisfied.\\
+    In fact, in \autoref{fig:2} that the intersection property of simplicial complexes is not satisfied.\\
     \hfill \\
     % Simplicial complexes are the objects of our category, we now look for appropriate morphisms.
 
@@ -189,7 +187,7 @@
     In this first part we analysed simplicial complexes as peculiar subsets of $\R^n$, namely \ii{geometric simplicial complexes}.
     Although this approach provides simplicial complexes with the topology inherited from the metric space, it hides the power of simplicial complexes 
     to describe those networks and interactions which would happily exist without that topology. To make this distinction clear enough we will treat
-    simplicial complexes as a realization of more abstract objects called \ii{abstract simplicial complexes}. The discussion of abstract simplicial complexes
+    simplicial complexes as a realization of more abstract objects called \ii{abstract simplicial complexes}. A richer discussion of abstract simplicial complexes
     can be found in \cite{rotman,comptop}.
     
     \begin{defn}
@@ -221,9 +219,10 @@
 
     A proof of this theorem can be found in \cite{comptop}.\\
     \hfill \\
-    Both for abstract and geometric simplicial complexes one can define maps called \ii{simplicial maps} in order to obtain a category (\ref{app:A}) whose
+    Both for abstract and geometric simplicial complexes one can define maps called \ii{simplicial maps} in order to obtain a category whose
     equivalences are called isomorphisms. The geometric realisation is unluckily not a functor on the whole category of abstract simplicial complexes due to the
-    limitation imposed by theorem \ref{thm:2}. Nevertheless, when they exist, the geometric realizations of isomorphic abstract simplicial complexes are theirselves isomorphic.\\
+    limitation imposed by \autoref{thm:2}. Nevertheless, when they exist, the geometric realizations of isomorphic abstract simplicial complexes are theirselves isomorphic.
+    A short discussion of category theory can be found in Appendix \ref{app:A}.\\
     \hfill \\
     In the following sections we shall use abstract simplicial complexes, which can be always thought geometrically in the appropriate euclidean space.
     % Furthermore, the \ii{simplicial approximation theorem}, which can be found in \cite{singerthorpe,rotman,comptop}, allows us to define a functor from the category of 

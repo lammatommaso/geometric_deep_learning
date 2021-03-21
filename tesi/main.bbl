@@ -119,8 +119,8 @@
       \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
       \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
       \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Algebraic Topology}
@@ -145,8 +145,8 @@
       \strng{authorbibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
       \strng{authornamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
       \strng{authorfullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Spectra of combinatorial Laplace operators on simplicial complexes}
