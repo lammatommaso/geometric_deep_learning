@@ -19,6 +19,32 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{gcnn}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=0b1aedbf6412c5f6de619d2d9974b158}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Taco\bibnamedelima S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=53d2880ad8047b61cdae2c6b2803e763}{%
+           family={Welling},
+           familyi={W\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{456f0769252a10a7a86d016f786e118c}
+      \strng{fullhash}{456f0769252a10a7a86d016f786e118c}
+      \strng{bibnamehash}{456f0769252a10a7a86d016f786e118c}
+      \strng{authorbibnamehash}{456f0769252a10a7a86d016f786e118c}
+      \strng{authornamehash}{456f0769252a10a7a86d016f786e118c}
+      \strng{authorfullhash}{456f0769252a10a7a86d016f786e118c}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Group Equivariant Convolutional Networks}
+      \field{year}{2016}
+    \endentry
     \entry{singerthorpe}{book}{}
       \name{author}{2}{}{%
         {{hash=2bfe1ae6a67220812cd58d875f51aa4b}{%
@@ -41,8 +67,8 @@
       \strng{authorbibnamehash}{b5719416db87e0ac8afa8ac9e0dd6c43}
       \strng{authornamehash}{b5719416db87e0ac8afa8ac9e0dd6c43}
       \strng{authorfullhash}{b5719416db87e0ac8afa8ac9e0dd6c43}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Lecture Notes on Elementary Topology and Geometry}
@@ -65,13 +91,37 @@
       \strng{authorbibnamehash}{9c0331116e9475d360c20810da1e70f4}
       \strng{authornamehash}{9c0331116e9475d360c20810da1e70f4}
       \strng{authorfullhash}{9c0331116e9475d360c20810da1e70f4}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{series}{Graduate Texts in Mathematics}
       \field{title}{An Introduction to Algebraic Topology}
       \field{year}{1988}
+    \endentry
+    \entry{hatcher}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
+           family={Hatcher},
+           familyi={H\bibinitperiod},
+           given={Allen},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge Univ. Press}%
+      }
+      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic Topology}
+      \field{year}{2000}
     \endentry
     \entry{comptop}{book}{}
       \name{author}{2}{}{%
@@ -101,56 +151,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Computational Topology - an Introduction.}
       \field{year}{2010}
-    \endentry
-    \entry{hatcher}{book}{}
-      \name{author}{1}{}{%
-        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
-           family={Hatcher},
-           familyi={H\bibinitperiod},
-           given={Allen},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge Univ. Press}%
-      }
-      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Algebraic Topology}
-      \field{year}{2000}
-    \endentry
-    \entry{laplacian}{misc}{}
-      \name{author}{2}{}{%
-        {{hash=3493db22ce6eaad9626a9b10529869ba}{%
-           family={Horak},
-           familyi={H\bibinitperiod},
-           given={Danijela},
-           giveni={D\bibinitperiod}}}%
-        {{hash=0da1cd02a83e8af4aa26b2ee24fa2850}{%
-           family={Jost},
-           familyi={J\bibinitperiod},
-           given={Juergen},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{fullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{bibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{authorbibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{authornamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{authorfullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \field{sortinit}{6}
-      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Spectra of combinatorial Laplace operators on simplicial complexes}
-      \field{year}{2011}
     \endentry
   \enddatalist
 \endrefsection

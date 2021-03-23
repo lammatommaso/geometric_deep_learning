@@ -2,7 +2,7 @@
 \begin{document}
 
     In this section we shall define structures called simplicial complexes and discuss some of their properties. In order to define these structures
-    we need the definitions of convex hull and affine independence in $\R^n$. For a deeper insight into simplicial complexes we refer to \cite{singerthorpe,rotman}.    
+    we need the definitions of convex hull and affine independence in $\R^n$. For a deeper insight into simplicial complexes we refer to \cite{singerthorpe,rotman,hatcher}.    
 
     \begin{defn}
         Let $A \subset \R^n$, we define $A$ to be \ii{convex} if
@@ -23,7 +23,7 @@
     \end{prop}
     \begin{proof}
         If $j=0$ the statement is trivially true. Let $j \neq 0$ and $\lambda_i \in \R$ for all $i \neq j$, then
-        \[ \sum_{i \in I \m \{j\}} \lambda_i (x_j - x_i) = 0 \then \lambda_i = 0 \quad \forall i \in I-\{j\}.\]
+        \[ \sum_{i \in I \m \{j\}} \lambda_i (x_j - x_i) = 0 \then \lambda_i = 0 \quad \forall i \in I \m \{j\}.\]
         Let then $\mu_i \in \R$ for all $i \neq 0$, and suppose 
         \[ \sum_{i \in I \m \{0\}} \mu_i (x_0 - x_i) = (x_0 - x_j) \sum_{i \in I \m \{0\}} \mu_i + \sum_{i \in I \m \{0\}} \mu_i (x_j - x_i) = 0.\]
         If we define $\mu_0 := -\sum_{i \in I \m \{0\}} \mu_i$ we have that
@@ -56,15 +56,15 @@
             The proof that it contains $\sigma$ is trivial. In fact for every vertex $x_j = \sum_{i \in I} \delta_{ij} x_i$,
             and $\sum_{i \in I}\delta_{ij} = 1$.\\
             To prove that it is convex we chose two points $a = \sum_{i \in I} a_i x_i, b = \sum_{i \in I} b_i x_i$ \\
-            where $a_i,b_i \geq 0 \forall i \in I$ and $\sum_{i \in I} a_i = \sum_{i \in I} b_i = 1$. For $t \in [0,1]$
+            where $a_i,b_i \geq 0 \; \forall i \in I$ and $\sum_{i \in I} a_i = \sum_{i \in I} b_i = 1$. For $t \in [0,1]$
             \[ ta+(1-t)b = t\sum_{i \in I} a_i x_i + (1-t) \sum_{i \in I} b_i x_i = \sum_{i \in I} (ta_i + (1-t)b_i)x_i.\]
-            It follows that $ta_i + (1-t)b_i \geq 0$ and $\sum_{i \in I} (ta_i + (1-t)b_i) = t\sum_{i \in I}a_i + (1-t)\sum_{i \in I}b_i = 1$ for all $i \in I$,
-            which proves our statement.
+            Since $ta_i + (1-t)b_i \geq 0$ and $\sum_{i \in I} (ta_i + (1-t)b_i) = t\sum_{i \in I}a_i + (1-t)\sum_{i \in I}b_i = 1$ for all $i \in I$,
+            our statement is proven.
 
             \item $[\sigma] \subset C$.\\
             If all but one the $\lambda_i$ are zero certaintly $\sum_{i \in I} \lambda_i x_i \in C$, since $C$ contains all the vertexes.
             The inuctive hypothesis, by relabeling, is that if the first $\lambda_0,...,\lambda_{n-1}$ are non-zero, hence not even $1$, then $\sum_{i \in I} \lambda_i x_i \in C$.
-            We want to show that whenever $\lambda_0,...,\lambda_n$ are non-zero then also $\sum_{i \in I} \lambda_i x_i \in C$, since $\lambda_n \neq 0$ we have that
+            We want to show that whenever $\lambda_0,...,\lambda_n$ are non-zero then also $\sum_{i \in I} \lambda_i x_i \in C$, since $\lambda_n \neq 1$ we have that
             \[ \sum_{i \in I} \lambda_i x_i =  \sum_{i = 0}^n \lambda_i x_i = \lambda_n x_n + \sum_{i = 0}^{n-1} \lambda_i x_i =
                \lambda_n x_n + (1 - \lambda_n) \sum_{i = 0}^{n-1} \frac{\lambda_i}{1 - \lambda_n} x_i.\]
             Since $\sum_{i = 0}^{n-1} \frac{\lambda_i}{1 - \lambda_n} = 1$, for the inductive hypothesis $\sum_{i = 0}^{n-1} \frac{\lambda_i}{1 - \lambda_n} x_i \in C$.
@@ -118,14 +118,14 @@
     \end{defn}
 
     
-    \begin{figure}[h]
+    \begin{figure}[H]
         \centering
         \includegraphics[width=4cm, height=4cm]{sections/1/complex}
         \caption{Example of simplicial complex.}
         \label{fig:1}
     \end{figure} 
 
-    \begin{figure}[h]
+    \begin{figure}[H]
         \centering
         \includegraphics[width=3cm, height=5cm]{sections/1/noncomplex}
         \caption{Set of simplexes which is not a simplicial complex.}
@@ -222,7 +222,7 @@
     Both for abstract and geometric simplicial complexes one can define maps called \ii{simplicial maps} in order to obtain a category whose
     equivalences are called isomorphisms. The geometric realisation is unluckily not a functor on the whole category of abstract simplicial complexes due to the
     limitation imposed by \autoref{thm:2}. Nevertheless, when they exist, the geometric realizations of isomorphic abstract simplicial complexes are theirselves isomorphic.
-    A short discussion of category theory can be found in Appendix \ref{app:A}.\\
+    A short discussion of category theory can be found in Appendix \autoref{app:A}.\\
     \hfill \\
     In the following sections we shall use abstract simplicial complexes, which can be always thought geometrically in the appropriate euclidean space.
     % Furthermore, the \ii{simplicial approximation theorem}, which can be found in \cite{singerthorpe,rotman,comptop}, allows us to define a functor from the category of 

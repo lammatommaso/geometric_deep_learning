@@ -18,6 +18,7 @@
 \usepackage{mathtools}
 \usepackage{subfiles}
 \usepackage{comment}
+\usepackage{float}
 \usepackage{enumerate}
 \usepackage[title]{appendix}
 \usepackage[style=numeric, backend=biber, sorting=none]{biblatex}
@@ -81,8 +82,11 @@
         with some filter $g:\R^n \to \R$ is \[(f * g)(x) = \scal{f}{g \circ T^{-1}}_{L^2},\] where $T:\R^n \to \R^n$ is a translation represented by the vector $x$.
         Moreover, one could also consider such a convolution to be defined on the translation group itself, represented by some $\R^n$. 
         In the same way one can define a convolution on the group $(\Z,+)$ as $(a * b)_n = \sum_{i \in \Z}a_i b_{n-i}$.
+        Similarly an intersting example is that of images, which are samples ad grids, any image can be thought as a function defined on the group $(\Z \times \Z, +)$.
         Such definitions of convolution operators are equivariant with respect to the action of the group they are defined upon.
-        In image recognition translation invariance is necessary, but graphs and simplicial complexes do not in general need this simmetry.
+        In image recognition translation equivariance is necessary, nevertheless the most common CNN's need to learn the rotations of the same filter as different 
+        filters in order to become rotation equivariant. Although manifolds and simplicial complexes are not in general groups, G-equivariant CNN's (see \cite{gcnn})
+        could be the key to reveal the secrets behind the success of such architectures.
     \end{section}
     \tableofcontents
     \newpage

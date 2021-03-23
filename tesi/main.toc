@@ -7,6 +7,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Simplicial Complexes}{1}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{5}{Appendix.1.A}
+\contentsline {section}{Simplicial Homology}{5}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{7}{chapter*.4}
+\contentsline {chapter}{\numberline {A}Category Theory}{6}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{8}{chapter*.5}
