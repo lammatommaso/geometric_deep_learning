@@ -1,12 +1,12 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Introduction}{i}{section*.1}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Preliminaries on topology}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial Complexes}{1}{section*.3}
+\contentsline {section}{Simplicial Complexes}{1}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{5}{Appendix.1.A}
+\contentsline {section}{Conclusion}{6}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{7}{chapter*.4}
+\contentsline {chapter}{\numberline {A}Category Theory}{7}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{9}{chapter*.4}

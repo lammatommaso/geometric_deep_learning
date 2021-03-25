@@ -21,7 +21,7 @@
 \usepackage{float}
 \usepackage{enumerate}
 \usepackage[title]{appendix}
-\usepackage[style=numeric, backend=biber, sorting=none]{biblatex}
+\usepackage[style=numeric, backend=biber, sorting=nty]{biblatex}
 \addbibresource{bibliography.bib}
 
 \setlength{\parindent}{0pt}
@@ -74,7 +74,20 @@
     %    \newpage
     %    \subfile{sections/abstract_eng}
     %    \newpage
-    \begin{section}{Introduction}
+    \tableofcontents
+    \newpage
+    \pagenumbering{arabic}
+    \begin{chapter}{Preliminaries on topology}
+        \label{ch:1}
+        The essential idea in algebraic topology is to convert problems about topological spaces and continuous functions into
+        problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
+        \subfile{sections/1}
+    \end{chapter}
+    % \begin{chapter}{Simplicial Neural Networks}
+    %     \subfile{sections/2}
+    % \end{chapter}
+    \newpage
+    \begin{section}{Conclusion}
         Most of the deep learning techniques used today are based on models which learn a partition of the set of smooth functions defined on euclidean 
         domains into human friendly equivalence classes. Although this approach has been successful in modern machine learning, it only deals with a really 
         small set of domains. The goal of geometric deep learning is to extend this method to data defined on manifolds and simplicial complexes.\\
@@ -88,18 +101,6 @@
         filters in order to become rotation equivariant. Although manifolds and simplicial complexes are not in general groups, G-equivariant CNN's (see \cite{gcnn})
         could be the key to reveal the secrets behind the success of such architectures.
     \end{section}
-    \tableofcontents
-    \newpage
-    \pagenumbering{arabic}
-    \begin{chapter}{Preliminaries on topology}
-        \label{ch:1}
-        The essential idea in algebraic topology is to convert problems about topological spaces and continuous functions into
-        problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
-        \subfile{sections/1}
-    \end{chapter}
-    % \begin{chapter}{Simplicial Neural Networks}
-    %     \subfile{sections/2}
-    % \end{chapter}
     \begin{appendices}
         \begin{chapter}{Category Theory}
             \label{app:A}
