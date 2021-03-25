@@ -1924,11 +1924,12 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">hatcher</bcf:citekey>
-    <bcf:citekey order="2">rotman</bcf:citekey>
     <bcf:citekey order="2">comptop</bcf:citekey>
-    <bcf:citekey order="3">comptop</bcf:citekey>
-    <bcf:citekey order="4">gcnn</bcf:citekey>
-    <bcf:citekey order="5">rotman</bcf:citekey>
+    <bcf:citekey order="3">rotman</bcf:citekey>
+    <bcf:citekey order="4">comptop</bcf:citekey>
+    <bcf:citekey order="5">gcnn</bcf:citekey>
+    <bcf:citekey order="6">rotman</bcf:citekey>
+    <bcf:citekey order="7">mclane</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

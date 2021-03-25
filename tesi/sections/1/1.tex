@@ -143,7 +143,7 @@
     Although this approach provides simplicial complexes with the topology inherited from the metric space, it hides the power of simplicial complexes 
     to describe networks and interactions which exist independently of that topology. To make this distinction clear we will treat
     simplicial complexes as a realization of more abstract objects called \ii{abstract simplicial complexes}. A richer discussion of abstract simplicial complexes
-    can be found in \cite{rotman,comptop}.
+    can be found in \cite{comptop} at 3.1 or in \cite{rotman} at 7.3.
     
     \begin{defn}
         Let $\mc{V}$ be a finite set, we define an \ii{abstract simplicial complex} $\mc{A}$ to be 
@@ -155,9 +155,8 @@
         We call the member of this family \ii{abstract simplexes}.
     \end{defn}
     
-    One calls $\mc{V}$ the \ii{vertex set} of $\mc{A}$ and denotes it by $Vert(\mc{A})$; since the vertex
-    set is finite we expect every abstract simplex to be also finite, therefore we might use the notation $\sigma = \{ v_i \}_{i \in I_\sigma}$,
-    which so far we consider invariant under arbitrary permutations of the finite index set $I_\sigma$.
+    We call $\mc{V}$ the \ii{vertex set} of $\mc{A}$ and denote it by $Vert(\mc{A})$; since the vertex
+    set is finite, every abstract simplex is finite, therefore we can use the notation $\sigma = \{ v_i \}_{i \in I}$, to denote a simplex in $\mc{A}$.
     
     \begin{defn}
         Let $\mc{A}$ be an abstract simplicial complex and $\mc{G}$ a geometric simplicial complex, if for all $\{x_i\}_{i \in I} \in \mc{A}$ also $[x_i]_{i \in I} \in \mc{G}$
@@ -172,14 +171,15 @@
         Let $\mc{A}$ be an $n$-dimensional abstract simplicial complex, then it admits a geometric realization in $\R^{2n+1}$.
     \end{thm}
 
-    A proof of this theorem can be found in \cite{comptop}.\\
+    A proof of this theorem can be found in \cite{comptop} at 3.1.\\
     \hfill \\
-    Both for abstract and geometric simplicial complexes one can define maps called \ii{simplicial maps} in order to obtain a category whose
-    equivalences are called isomorphisms. The geometric realisation is unluckily not a functor on the whole category of abstract simplicial complexes due to the
-    limitation imposed by \autoref{thm:2}. Nevertheless, when they exist, the geometric realizations of isomorphic abstract simplicial complexes are theirselves isomorphic.
+    Both for abstract and geometric simplicial complexes one can define maps called \ii{simplicial maps}. We obtain a category whose
+    equivalences are called isomorphisms. 
+    % The geometric realisation is unluckily not a functor on the whole category of abstract simplicial complexes due to the
+    % limitation imposed by \autoref{thm:2}. Nevertheless, when they exist, the geometric realizations of isomorphic abstract simplicial complexes are theirselves isomorphic.
     A short discussion of category theory can be found in Appendix \autoref{app:A}.\\
     \hfill \\
-    In the following sections we shall use abstract simplicial complexes, which can be always thought geometrically in the appropriate euclidean space.
+    In the following sections we shall use abstract simplicial complexes, which can be always thought geometrically in the appropriate $\R^{2d+1}$.
     % Furthermore, the \ii{simplicial approximation theorem}, which can be found in \cite{singerthorpe,rotman,comptop}, allows us to define a functor from the category of 
     % simplicial complexes and maps to that of topological spaces and contnuous functions. The preimage of a topological space via this functor is called its \ii{triangulation}.
     % \hfill \\

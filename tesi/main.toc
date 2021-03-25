@@ -9,4 +9,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Category Theory}{7}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{9}{chapter*.4}
+\contentsline {chapter}{Bibliography}{8}{chapter*.4}
