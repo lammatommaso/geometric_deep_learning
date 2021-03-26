@@ -5,8 +5,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Simplicial Complexes}{1}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Conclusion}{6}{section*.3}
+\contentsline {section}{Simplicial Homology}{6}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{7}{Appendix.1.A}
+\contentsline {section}{Simplicial Cohomology}{8}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{8}{chapter*.4}
+\contentsline {section}{Laplacian Operators}{9}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Graphs}{11}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Conclusion}{12}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Category Theory}{13}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{14}{chapter*.8}

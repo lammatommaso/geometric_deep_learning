@@ -18,7 +18,7 @@
         Let $\ket{\sigma}, \ket{\tau} \in C_p$ 
         \[ \braket{\sigma}{\Delta_p\tau}=\braket{\sigma}{(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\tau} = \]
         \[ = \braket{(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)^\dagger\sigma}{\tau} = \]
-        \[ = \braket{(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\sigma}{\tau} = \braket{\Delta_p\sigma}{\tau}. \]
+        \[ = \braket{(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\sigma}{\tau} = \braket{\Delta_p\sigma}{\tau}. \qedhere \]
     \end{proof}
 
     According to the spectral theorem there exists a basis of eigenchains of the Laplacian, and since all $\Delta_p, \Delta^+_p, \Delta^-_p$
@@ -37,10 +37,8 @@
         Furthermore, since $\Delta^+_p\Delta^-_p = \Delta^-_p\Delta^+_p = 0$ we have that $[\Delta^+_p,\Delta^-_p] = 0$, thence
         $[\Delta_p, \Delta^\pm_p] = 0$, therefore $\Delta_p, \Delta^+_p, \Delta^-_p$ share a basis of eigenchains.
         Let $\ket{\sigma}$ be in that common basis then $\Delta_p\ket{\sigma} = \lambda_\sigma\ket{\sigma}$, where
-        $\lambda_\sigma = \lambda^+_\sigma + \lambda^-_\sigma \geq 0$.
+        $\lambda_\sigma = \lambda^+_\sigma + \lambda^-_\sigma \geq 0$. \qedhere
     \end{proof}
-
-    \newpage
 
     Another really interesting property that was first proven by Beno Eckmann in 1944, is that the kernel of the p-Laplacian
     is isomorphic to the p-homology group.
@@ -58,7 +56,7 @@
         \[ \del_p\sigma \in im\del_p,\sigma \in ker\Delta_p \implies \del_p\sigma \in ker\del^\dagger_p= (im\del_p)^\perp,\]
         \[ \del_p\sigma = \del^\dagger_{p+1}\sigma \in im\del^\dagger_{p+1} \cap (im\del^\dagger_{p+1})^\perp = im\del_p \cap (im\del_p)^\perp = 0,\]
         therefore $ker\del^\dagger_{p+1} \cap ker\del_p \subset ker\Delta_p$. Finally we notice that
-        \[ ker\Delta_p = ker\del^\dagger_{p+1} \cap ker\del_p = (im\del_{p+1})^\perp \cap ker\del_p \simeq H_p.\]
+        \[ ker\Delta_p = ker\del^\dagger_{p+1} \cap ker\del_p = (im\del_{p+1})^\perp \cap ker\del_p \simeq H_p. \qedhere\]
     \end{proof}
 
 \end{document}

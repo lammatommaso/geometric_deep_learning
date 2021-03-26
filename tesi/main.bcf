@@ -1927,9 +1927,12 @@
     <bcf:citekey order="2">comptop</bcf:citekey>
     <bcf:citekey order="3">rotman</bcf:citekey>
     <bcf:citekey order="4">comptop</bcf:citekey>
-    <bcf:citekey order="5">gcnn</bcf:citekey>
-    <bcf:citekey order="6">rotman</bcf:citekey>
-    <bcf:citekey order="7">mclane</bcf:citekey>
+    <bcf:citekey order="5">singerthorpe</bcf:citekey>
+    <bcf:citekey order="5">hatcher</bcf:citekey>
+    <bcf:citekey order="6">laplacian</bcf:citekey>
+    <bcf:citekey order="7">gcnn</bcf:citekey>
+    <bcf:citekey order="8">rotman</bcf:citekey>
+    <bcf:citekey order="9">mclane</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
