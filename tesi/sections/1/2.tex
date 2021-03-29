@@ -8,9 +8,9 @@
     unchanged under abritrary reorderings of the index set $I$, but in the most of the application this is not the case.
 
     \begin{prop}
-        Let $\{x_i\}_{i \in I}$ be a $p$-simplex, then
+        Let $\{x_i\}_{i \in I}$ be a $p$-simplex and
         \[ \{x_i\}_{i \in I} \sim \{x_i\}_{i \in \pi(I)} \iff sgn(\pi) = 1,\]
-        where $\pi : I \to I$ is a permutation of the indexes and $sgn\pi$ its sign,
+        where $\pi : I \to I$ is a permutation of the indexes and $sgn\pi$ its sign, then $\sim$
         is an equivalence relation.
     \end{prop}
     \begin{rem}
@@ -21,7 +21,7 @@
         We divide the proof in three steps:
         \begin{enumerate}[(i)]
             \item Since $sgn(id_I) = 1$ we have that $\{x_i\}_{i \in I} \sim \{x_i\}_{i \in id_I(I)} = \{x_i\}_{i \in I} $.
-            \item Since $sgn(\pi)sgn(\pi^{-1}) = sgn(\pi\pi^{-1})=sgn(id_I)=1$ we have that $sgn(\pi) = sgn(\pi^-1)$, therefore
+            \item Since $sgn(\pi)sgn(\pi^{-1}) = sgn(\pi\pi^{-1})=sgn(id_I)=1$ we have that $sgn(\pi) = sgn(\pi^{-1})$, therefore
                   $ \{x_i\}_{i \in I} \sim \{x_i\}_{i \in \pi(I)} \iff \{x_i\}_{i \in \pi(I)} \sim \{x_i\}_{i \in I}$.
             \item The transitivity is a consequence of the fact that the product of two even permutations is also even.\qedhere
         \end{enumerate}
@@ -29,7 +29,7 @@
   
     \begin{defn}
         We define an \ii{oriented simplex} $\ket{x_i}_{i \in I}$ to be a simplex $\{x_i\}_{i \in I}$ together with the choice of
-        an equivalence class of $\sim$.
+        one out of the two equivalence classs with respect to $\sim$.
     \end{defn}
 
     \begin{defn}
@@ -37,8 +37,7 @@
         \[ C_p(\mc{A},G) := \frac{\{ \sum_{i \in I} g_i \ket{\sigma_i} : g_i \in G \}}{\{g_i\ket{x_0,x_1,...,x_p}+g_i\ket{x_1,x_0,...x_p} : g_i \in G\} }.\]
     \end{defn}
     {\color{red} Devo pensarci un po' a questo modo di definirlo, ma credo che intenda semplicemente di indicarle due orientazioni opposte mettendo come fattore 
-    l'inverso. Cercherò di approfondire i free abelian groups dal Lang.}
-
+    l'inverso. Cercherò di approfondire i free abelian groups dal Lang ed aggiungere una descrizione più dettagliata.}
 
     For the most of the applications the groups $\Z,\R,\Z_2$ are considered. To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},G)$.
 
@@ -50,7 +49,7 @@
 
     \begin{defn}
         Let $\ket{\sigma} = \ket{x_0,...,x_{p+1}}$ be an oriented $(p+1)$-simplex. The boundary $\del\ket{\sigma}$ of $\ket{\sigma}$ is the $p$-chain
-        defined by \[ \del_{p+1}\ket{\sigma} = \sum_{i = 0}^{p+1}(-1)^i\ket{x_0,...,\hat{x_i},...,x_{p+1}}\]
+        defined by \[ \del_{p+1}\ket{\sigma} := \sum_{i = 0}^{p+1}(-1)^i\ket{x_0,...,\hat{x_i},...,x_{p+1}}\]
         where the  $\hat{}$  over a symbol means that symbol is deleted.
     \end{defn}
 
@@ -58,20 +57,26 @@
         Note that whenever we are able to construct a geometric realization for the oriented simplicial complex, the set $\bigcup_{i = 0}^{p+1}[x_0,...,\hat{x_i},...,x_p+1]$
         is the topological boundary of $[\sigma]$.
     \end{rem}
+
+    Furthermore we are able to extend the boundary from simplexes to chains.
     
     \begin{defn}
         We define the \ii{boundary map} $\del_{p+1} : C_{p+1} \to C_p$ to be the group homomorphism defined by
-        \[ \del_{p+1}(\sum_{i \in I}g_i\ket{\sigma_i}) = \sum_{i \in I}g_i\del_{p+1}\ket{\sigma_i} .\]
+        \[ \del_{p+1}(\sum_{i \in I}g_i\ket{\sigma_i}) := \sum_{i \in I}g_i\del_{p+1}\ket{\sigma_i} .\]
     \end{defn}
 
-    \begin{thm}
+    An important property of boundary maps is the following, which we shall denote as \ii{homology lemma}.
+
+    \begin{lem}
         The boundary maps satisfy $\del_p \circ \del_{p+1} = 0$.
-    \end{thm}
+    \end{lem}
     \begin{proof}
         Since the boundary maps are linear it is sufficient to check this on the generators.
         Let $\del_{p+1}\ket{v_0,\dots,v_{p+1}} = \sum_{i=0}^{p+1} (-1)^i\ket{v_0,\dots,\hat{v_i},\dots,v_{p+1}}$ then 
         \[(\del_p \circ \del_{p+1})\ket{v_0,\dots,v_{p+1}} = \sum_{j=0, j \neq i}^{p+1} \sum_{i=0}^{p+1} (-1)^{i+j}\ket{v_0,\dots,\hat{v_i},\dots,\hat{v_j},\dots,v_{p+1}} = 0. \qedhere \]     
     \end{proof}
+
+    The homology lemma is necessary to define the \ii{homology group}.
 
     \begin{defn}
         We define the \ii{p-homology group} to be 
@@ -80,6 +85,7 @@
         $ker\del_p$ is called the group of simplicial \ii{p-boundaries}.
     \end{defn}
 
-    The homology group is therefore the space of cycles that are not boundaries.
+    The homology group is therefore, intuitively,  the space of cycles that are not boundaries. Without the
+    homology lemma the quotient would not well defined since $im\del_{p+1} \subset ker\del_p$ would not be satisfied.
 
 \end{document}

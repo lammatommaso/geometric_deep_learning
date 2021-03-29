@@ -11,10 +11,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Laplacian Operators}{9}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Graphs}{11}{section*.6}
+\contentsline {section}{Graphs}{10}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Conclusion}{12}{section*.7}
+\contentsline {section}{Conclusion}{11}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{13}{Appendix.1.A}
+\contentsline {chapter}{\numberline {A}Category Theory}{12}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{14}{chapter*.8}
+\contentsline {chapter}{Bibliography}{13}{chapter*.8}
