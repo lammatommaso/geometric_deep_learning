@@ -1,20 +1,59 @@
-\documentclass[../2.tex]{subfiles}
+\documentclass[../1.tex]{subfiles}
 \begin{document}
-    The goal of machine learning is teaching machines to approximate expert observers.
-    Thinking of the space of possible machines as possibly convex and compact, one is able by varying a
-    finite number of parameters to find a unique best approximation of any expert observer.
-    The rappresentation of a random initialized machine is 
+
+    An important role in the definition of a convolution on simplicial complexes is played by the Laplacian operator,
+    especially by its eigenfunctions and spectrum. A more thorough discussion of this operator can be found in \cite{laplacian}.
     
-    \begin{defn}[relu]
+    \begin{defn}
+        We define the \ii{p-Laplacian} operator to be 
+        \[ \Delta_p := \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p =: \Delta^+_p + \Delta^-_p.\]
     \end{defn}
-    \begin{defn}[convolutional layer]
-    \end{defn}
-    \begin{defn}[pooling layer]
-    \end{defn}
-    \begin{defn}[drop out]
-    \end{defn}
-    \begin{defn}[CNN]
-    \end{defn}
-    \begin{defn}[gradient descent]
-    \end{defn}
+
+    The Laplacian operator is defined to be self-adjoint and positive definite.
+
+    \begin{prop}
+        Let $\Delta_p$ be a laplacian operator, then $\Delta^\dagger_p = \Delta_p.$
+    \end{prop}
+    \begin{proof}
+        Let $\ket{\sigma}, \ket{\tau} \in C_p$ 
+        \[ \bra{\sigma}\Delta_p\ket{\tau}=\bra{\sigma}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\ket{\tau} = \]
+        \[ = \bra{\tau}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)^\dagger\ket{\sigma} = \]
+        \[ = \bra{\tau}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\ket{\sigma} = \bra{\sigma}\Delta_p\ket{\tau}. \qedhere \]
+    \end{proof}
+
+    According to the spectral theorem there exists a basis of eigenchains of the Laplacian, and since all $\Delta_p, \Delta^+_p, \Delta^-_p$
+    are self-adjoint we can say that they all admit a basis of eigenchains.
+
+    \begin{prop}
+        Let $\Delta_p\ket{\sigma} = \lambda_\sigma\ket{\sigma}$ then $\lambda_\sigma \geq 0$.
+    \end{prop}
+    \begin{proof}
+        Let $\Delta^+_p\ket{\sigma} = \lambda^+_\sigma \ket{\sigma}$, we see that $\bra{\sigma}\Delta^+_p\ket{\sigma} = | \del_{p+1}\ket{\sigma} |^2 \geq 0$, and since
+        $\bra{\sigma}\Delta^+_p\ket{\sigma} = \lambda^+_\sigma\braket{\sigma}{\sigma}$ we have that $\lambda+_\sigma \geq 0.$\\
+        Let then $\Delta^-_p\ket{\sigma} = \lambda^-_\sigma \ket{\sigma}$, we see that $\bra{\sigma}\Delta^-_p\ket{\sigma} = | \del_p \ket{\sigma} |^2 \geq 0$, and since
+        $\bra{\sigma}\Delta^-_p\ket{\sigma} = \lambda^-_\sigma\braket{\sigma}{\sigma}$, we also have that $\lambda-_\sigma \geq 0.$\\
+        Furthermore, since $\Delta^+_p\Delta^-_p = \Delta^-_p\Delta^+_p = 0$ we have that $[\Delta^+_p,\Delta^-_p] = 0$, thence
+        $[\Delta_p, \Delta^\pm_p] = 0$, therefore $\Delta_p, \Delta^+_p, \Delta^-_p$ share a basis of eigenchains.
+        Let $\ket{\sigma}$ be in that common basis then $\Delta_p\ket{\sigma} = \lambda_\sigma\ket{\sigma}$, where
+        $\lambda_\sigma = \lambda^+_\sigma + \lambda^-_\sigma \geq 0$. \qedhere
+    \end{proof}
+
+    Another really interesting property that was first proven by Beno Eckmann in 1944, is that the kernel of the p-Laplacian
+    is isomorphic to the p-homology group.
+
+    \begin{thm}
+        Let $\Delta_p$ be a laplacian operator, then $ker\Delta_p \simeq H_p$.
+    \end{thm}
+    \begin{proof}
+        {\color{red}We have \[ \Delta_p =: \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p =: \Delta^+_p + \Delta^-_p.\]
+        Because of the homology lemma $\Delta^+_p\Delta-_p = \Delta^-_p\Delta^+_p = 0$, therefore $ker\Delta^{\pm}_p \subset im\Delta^{\mp}_p.$\\
+        It is trivial to see that, since $ker\Delta_p = ker\Delta^+_p \cap ker\Delta^-_p $, we have that $ker\del^\dagger_{p+1} \cap ker\del_p \subset ker\Delta_p.$ \\
+        Less trivial is the opposite inclusion
+        \[ \del^\dagger_{p+1}\sigma \in im\del^\dagger_{p+1},\sigma \in ker\Delta_p \implies \del^\dagger_{p+1}\sigma \in ker\del_{p+1} = (im\del^\dagger_{p+1})^\perp,\]
+        \[ \del_p\sigma \in im\del_p,\sigma \in ker\Delta_p \implies \del_p\sigma \in ker\del^\dagger_p= (im\del_p)^\perp,\]
+        \[ \del_p\sigma = \del^\dagger_{p+1}\sigma \in im\del^\dagger_{p+1} \cap (im\del^\dagger_{p+1})^\perp = im\del_p \cap (im\del_p)^\perp = 0,\]
+        therefore $ker\Delta_p \subset ker\del^\dagger_{p+1} \cap ker\del_p $. Finally we notice that
+        \[ ker\Delta_p = ker\del^\dagger_{p+1} \cap ker\del_p = (im\del_{p+1})^\perp \cap ker\del_p \simeq H_p. \qedhere\]}
+    \end{proof}
+
 \end{document}

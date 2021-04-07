@@ -43,7 +43,7 @@
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
 
-\setcounter{secnumdepth}{0} % no section numbering displayed, no idea how
+%\setcounter{secnumdepth}{0} % no section numbering displayed, no idea how
 
 \newcommand{\bb}[1]{\textbf{#1}}
 \newcommand{\ii}[1]{\textit{#1}}
@@ -83,11 +83,11 @@
         problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
         \subfile{sections/1}
     \end{chapter}
-    % \begin{chapter}{Simplicial Neural Networks}
-    %     \subfile{sections/2}
-    % \end{chapter}
+    \begin{chapter}{Geometric Deep Learning}
+        \subfile{sections/2}
+    \end{chapter}
     \newpage
-    \begin{section}{Conclusion}
+   \chapter*{Conclusion}
         Most of the deep learning techniques used today are based on models which learn a partition of the set of smooth functions defined on euclidean 
         domains into human friendly equivalence classes. Although this approach has been successful in modern machine learning, it only deals with a really 
         small set of domains. The goal of geometric deep learning is to extend this method to data defined on manifolds and simplicial complexes.\\
@@ -100,7 +100,7 @@
         In image recognition translation equivariance is necessary, nevertheless the most common CNN's need to learn the rotations of the same filter as different 
         filters in order to become rotation equivariant. Although manifolds and simplicial complexes are not in general groups, G-equivariant CNN's (see \cite{gcnn})
         could be the key to reveal the secrets behind the success of such architectures.
-    \end{section}
+    \addcontentsline{toc}{chapter}{Conclusion}
     \begin{appendices}
         \begin{chapter}{Category Theory}
             \label{app:A}

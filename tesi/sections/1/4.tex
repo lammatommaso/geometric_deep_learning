@@ -1,59 +1,53 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
 
-    An important role in the definition of a convolution on simplicial complexes is played by the Laplacian operator,
-    especially by its eigenfunctions and spectrum. A more thorough discussion of this operator can be found in \cite{laplacian}.
-    
+    In order to define data on simplicial complexes we are interested in studying the dual of the chains $\ket{\sigma}$,
+    which we shall call cochains $\bra{\sigma}$.
+       
     \begin{defn}
-        We define the \ii{p-Laplacian} operator to be 
-        \[ \Delta_p := \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p =: \Delta^+_p + \Delta^-_p.\]
+        Let $C_p$ be the group p-chains, we define the group of \ii{p-cochains} to 
+        be $C^p := Hom(C_p, G)$, i.e. the dual space of $C_p$.
     \end{defn}
 
-    The Laplacian operator is defined to be self-adjoint and positive definite.
+    As well as with for chains, we have also for cochains a sequence of homeomorphisms called \ii{coboundary maps}. The coboundary maps are defined
+    to be the dual of the boundary maps, hence satisfying a dual version of the homology lemma called \ii{cohomology lemma}.
 
-    \begin{prop}
-        Let $\Delta_p$ be a laplacian operator, then $\Delta^\dagger_p = \Delta_p.$
-    \end{prop}
-    \begin{proof}
-        Let $\ket{\sigma}, \ket{\tau} \in C_p$ 
-        \[ \bra{\sigma}\Delta_p\ket{\tau}=\bra{\sigma}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\ket{\tau} = \]
-        \[ = \bra{\tau}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)^\dagger\ket{\sigma} = \]
-        \[ = \bra{\tau}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\ket{\sigma} = \bra{\sigma}\Delta_p\ket{\tau}. \qedhere \]
-    \end{proof}
+    \begin{defn}
+        The dual of the boundary maps which we shall call
+        \ii{coboundary maps}, is the group homomorphsm defined by
+        \[ d_{p+1} : C^p \to C^{p+1} \quad d_p(\bra{\sigma}) := \bra{\sigma} \del_{p+1} \quad \forall \bra{\sigma} \in C^p.\]
+        Therefore $(d_{p+1}\bra{\sigma})\ket{\tau} = \bra{\sigma} \del_{p+1} \ket{\tau} \quad \forall \ket{\tau} \in C_p$.
+    \end{defn}
 
-    According to the spectral theorem there exists a basis of eigenchains of the Laplacian, and since all $\Delta_p, \Delta^+_p, \Delta^-_p$
-    are self-adjoint we can say that they all admit a basis of eigenchains.
+    The proof of $d^p+1 \circ d_p$ follow directly from the homology lemma. The cohomology lemma allows us to define the \ii{cohomology group}.
+    
+    \begin{defn}
+        We define the \ii{p-cohomology group} to be 
+        \[H^p := \frac{ker d_{p+1}}{im d_{p}},\] 
+        where $im d_{p-1}$ is the group of simplicial p-cocycles and
+        $ker d_p$ is the group of simplicial p-coboundaries.
+    \end{defn}
 
-    \begin{prop}
-        Let $\Delta_p\ket{\sigma} = \lambda_\sigma\ket{\sigma}$ then $\lambda_\sigma \geq 0$.
-    \end{prop}
-    \begin{proof}
-        Let $\Delta^+_p\ket{\sigma} = \lambda^+_\sigma \ket{\sigma}$, we see that $\bra{\sigma}\Delta^+_p\ket{\sigma} = | \del_{p+1}\ket{\sigma} |^2 \geq 0$, and since
-        $\bra{\sigma}\Delta^+_p\ket{\sigma} = \lambda^+_\sigma\braket{\sigma}{\sigma}$ we have that $\lambda+_\sigma \geq 0.$\\
-        Let then $\Delta^-_p\ket{\sigma} = \lambda^-_\sigma \ket{\sigma}$, we see that $\bra{\sigma}\Delta^-_p\ket{\sigma} = | \del_p \ket{\sigma} |^2 \geq 0$, and since
-        $\bra{\sigma}\Delta^-_p\ket{\sigma} = \lambda^-_\sigma\braket{\sigma}{\sigma}$, we also have that $\lambda-_\sigma \geq 0.$\\
-        Furthermore, since $\Delta^+_p\Delta^-_p = \Delta^-_p\Delta^+_p = 0$ we have that $[\Delta^+_p,\Delta^-_p] = 0$, thence
-        $[\Delta_p, \Delta^\pm_p] = 0$, therefore $\Delta_p, \Delta^+_p, \Delta^-_p$ share a basis of eigenchains.
-        Let $\ket{\sigma}$ be in that common basis then $\Delta_p\ket{\sigma} = \lambda_\sigma\ket{\sigma}$, where
-        $\lambda_\sigma = \lambda^+_\sigma + \lambda^-_\sigma \geq 0$. \qedhere
-    \end{proof}
+    To have a specular intuition of what the coboundary operator actually does, we equipe our simplicial chain groups with
+    an inner product. This finite dimensional Hilbert space structure shall allow us to represent the cochain $\bra{\sigma}$ evaluated on the chain $\ket{\tau}$ 
+    as the inner product $\braket{\sigma}{\tau}$.
 
-    Another really interesting property that was first proven by Beno Eckmann in 1944, is that the kernel of the p-Laplacian
-    is isomorphic to the p-homology group.
+    \begin{defn}
+        We define the scalar product $\braket{}{} : C_p \times C_p \to \R$ on the canonical basis of $C_p$ to be 
+        \[ \braket{i}{j} = \delta_{ij} ,\]  
+        where $i,j$ are any two p-simplexes in the canonical basis of $C_p$ and $\delta_{ij}$ is the Kronecker Delta.
+    \end{defn}
 
-    \begin{thm}
-        Let $\Delta_p$ be a laplacian operator, then $ker\Delta_p \simeq H_p$.
-    \end{thm}
-    \begin{proof}
-        {\color{red}We have \[ \Delta_p =: \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p =: \Delta^+_p + \Delta^-_p.\]
-        Because of the homology lemma $\Delta^+_p\Delta-_p = \Delta^-_p\Delta^+_p = 0$, therefore $ker\Delta^{\pm}_p \subset im\Delta^{\mp}_p.$\\
-        It is trivial to see that, since $ker\Delta_p = ker\Delta^+_p \cap ker\Delta^-_p $, we have that $ker\del^\dagger_{p+1} \cap ker\del_p \subset ker\Delta_p.$ \\
-        Less trivial is the opposite inclusion
-        \[ \del^\dagger_{p+1}\sigma \in im\del^\dagger_{p+1},\sigma \in ker\Delta_p \implies \del^\dagger_{p+1}\sigma \in ker\del_{p+1} = (im\del^\dagger_{p+1})^\perp,\]
-        \[ \del_p\sigma \in im\del_p,\sigma \in ker\Delta_p \implies \del_p\sigma \in ker\del^\dagger_p= (im\del_p)^\perp,\]
-        \[ \del_p\sigma = \del^\dagger_{p+1}\sigma \in im\del^\dagger_{p+1} \cap (im\del^\dagger_{p+1})^\perp = im\del_p \cap (im\del_p)^\perp = 0,\]
-        therefore $ker\Delta_p \subset ker\del^\dagger_{p+1} \cap ker\del_p $. Finally we notice that
-        \[ ker\Delta_p = ker\del^\dagger_{p+1} \cap ker\del_p = (im\del_{p+1})^\perp \cap ker\del_p \simeq H_p. \qedhere\]}
-    \end{proof}
+    The same Hilbert space structure allows us to represent the coboundary operator $d$ acting on a cochain with its cochain representative.
+
+    \begin{defn}
+        Let $d_{p+1} : C^p \to C^{p+1}$ be the coboundary operator, then for any \\ $\bra{\sigma} \in C^p, \tau \in C_{p+1}$ we can define its dual representation $\del^\dagger_{p+1}$ by
+        \[(d_{p+1}\bra{\sigma})\ket{\tau} = \bra{\sigma} \del_{p+1} \ket{\tau} = \bra{\tau} \del^\dagger_{p+1} \ket{\sigma} \quad \forall \ket{\tau} \in C_p. \]
+    \end{defn}
+
+    We can notice that our definitions lead to the restatement of the equivalent of the generalized Stokes' theorem on simplicial complexes
+    according to the integration previously defined, i.e. $(d\bra{\sigma})\ket{\tau} = \bra{\sigma}\del\ket{\tau}$. One can therefore think of the coboundary
+    operator as a discrete exterior derivative acting on cochains. Similarly we name the inner product \ii{integration} due to the analogy previously stated, the
+    choice of a measure of integration is equivalent to a choice of a basis for the chain group.
 
 \end{document}

@@ -1,53 +1,91 @@
 \documentclass[../1.tex]{subfiles}
+
 \begin{document}
 
-    In order to define data on simplicial complexes we are interested in studying the dual of the chains $\ket{\sigma}$,
-    which we shall call cochains $\bra{\sigma}$.
-       
+    An important field in algebraic topology is homology theory. We shall discuss homology theory to the extent
+    that allows us to define the laplacian operator on simplicial complexes, for supplementary readings see \cite{singerthorpe,hatcher}.
+    First we want to equip our simplicial complexes with an orientation. So far we have considered the simplex $\{x_i\}_{i \in I}$ to remain
+    unchanged under abritrary reorderings of the index set $I$, but in the most of the application this is not the case.
+
+    \begin{prop}
+        Let $\{x_i\}_{i \in I}$ be a $p$-simplex and
+        \[ \{x_i\}_{i \in I} \sim \{x_i\}_{i \in \pi(I)} \iff sgn(\pi) = 1,\]
+        where $\pi : I \to I$ is a permutation of the indexes and $sgn(\pi)$ its sign, then $\sim$
+        is an equivalence relation.
+    \end{prop}
+    \begin{rem}
+        Let $S_{p+1}$ be the group of permutations of a $p$-simplex, and $\{\m1,1\}$ a multiplicative group,
+        we recall the fact that $sgn: S_{p+1} \to \{\m1,1\}$ is a group homomorphism, that is \[sgn(\pi\eta) = sgn(\pi)sgn(\eta) \quad \forall \pi,\eta \in S_{p+1}.\]
+    \end{rem}
+    \begin{proof}
+        We divide the proof in three steps:
+        \begin{enumerate}[(i)]
+            \item Since $sgn(id_I) = 1$ we have that $\{x_i\}_{i \in I} \sim \{x_i\}_{i \in id_I(I)} = \{x_i\}_{i \in I} $.
+            \item Since $sgn(\pi)sgn(\pi^{-1}) = sgn(\pi\pi^{-1})=sgn(id_I)=1$ we have that $sgn(\pi) = sgn(\pi^{-1})$, therefore
+                  $ \{x_i\}_{i \in I} \sim \{x_i\}_{i \in \pi(I)} \iff \{x_i\}_{i \in \pi(I)} \sim \{x_i\}_{i \in I}$.
+            \item The transitivity is a consequence of the fact that the product of two even permutations is also even.\qedhere
+        \end{enumerate}
+    \end{proof}
+  
     \begin{defn}
-        Let $C_p$ be the group p-chains, we define the group of \ii{p-cochains} to 
-        be $C^p := Hom(C_p, G)$, i.e. the dual space of $C_p$.
+        We define an \ii{oriented simplex} $\ket{x_i}_{i \in I}$ to be a simplex $\{x_i\}_{i \in I}$ together with the choice of
+        one out of the two equivalence classs with respect to $\sim$.
     \end{defn}
 
-    As well as with for chains, we have also for cochains a sequence of homeomorphisms called \ii{coboundary maps}. The coboundary maps are defined
-    to be the dual of the boundary maps, hence satisfying a dual version of the homology lemma called \ii{cohomology lemma}.
+    \begin{defn}
+        Let $\mc{A}$ be a simplicial complex and let $G$ denote an arbitrary additive abelian group. We define the \ii{group of p-chains} 
+        \[ C_p(\mc{A},G) := \frac{\{ \sum_{i \in I} g_i \ket{\sigma_i} : g_i \in G \}}{\{g_i\ket{x_0,x_1,...,x_p}+g_i\ket{x_1,x_0,...x_p} : g_i \in G\} }.\]
+    \end{defn}
+    {\color{red} Devo pensarci un po' a questo modo di definirlo, ma credo che intenda semplicemente di indicarle due orientazioni opposte mettendo come fattore 
+    l'inverso. Cercherò di approfondire i free abelian groups dal Lang ed aggiungere una descrizione più dettagliata.}
+
+    For the most of the applications the groups $\Z,\R,\Z_2$ are considered. To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},G)$.
+
+    \begin{prop}
+        $C_p(\mc{A},G)$ is an abelian group.
+    \end{prop}
+
+    A particularly relevant role in homology theory is played by the \ii{boundary map}. First we define the boundary of an oriented simplex.
 
     \begin{defn}
-        The dual of the boundary maps which we shall call
-        \ii{coboundary maps}, is the group homomorphsm defined by
-        \[ d_{p+1} : C^p \to C^{p+1} \quad d_p(\bra{\sigma}) := \bra{\sigma} \del_{p+1} \quad \forall \bra{\sigma} \in C^p.\]
-        Therefore $(d_{p+1}\bra{\sigma})\ket{\tau} = \bra{\sigma} \del_{p+1} \ket{\tau} \quad \forall \ket{\tau} \in C_p$.
+        Let $\ket{\sigma} = \ket{x_0,...,x_{p+1}}$ be an oriented $(p+1)$-simplex. The boundary $\del\ket{\sigma}$ of $\ket{\sigma}$ is the $p$-chain
+        defined by \[ \del_{p+1}\ket{\sigma} := \sum_{i = 0}^{p+1}(-1)^i\ket{x_0,...,\hat{x_i},...,x_{p+1}}\]
+        where the  $\hat{}$  over a symbol means that symbol is deleted.
     \end{defn}
 
-    The proof of $d^p+1 \circ d_p$ follow directly from the homology lemma. The cohomology lemma allows us to define the \ii{cohomology group}.
+    \begin{rem}
+        Note that whenever we are able to construct a geometric realization for the oriented simplicial complex, the set $\bigcup_{i = 0}^{p+1}[x_0,...,\hat{x_i},...,x_p+1]$
+        is the topological boundary of $[\sigma]$.
+    \end{rem}
+
+    Furthermore we are able to extend the boundary from simplexes to chains.
     
     \begin{defn}
-        We define the \ii{p-cohomology group} to be 
-        \[H^p := \frac{ker d_{p+1}}{im d_{p}},\] 
-        where $im d_{p-1}$ is the group of simplicial p-cocycles and
-        $ker d_p$ is the group of simplicial p-coboundaries.
+        We define the \ii{boundary map} $\del_{p+1} : C_{p+1} \to C_p$ to be the group homomorphism defined by
+        \[ \del_{p+1}(\sum_{i \in I}g_i\ket{\sigma_i}) := \sum_{i \in I}g_i\del_{p+1}\ket{\sigma_i} .\]
     \end{defn}
 
-    To have a specular intuition of what the coboundary operator actually does, we equipe our simplicial chain groups with
-    an inner product. This finite dimensional Hilbert space structure shall allow us to represent the cochain $\bra{\sigma}$ evaluated on the chain $\ket{\tau}$ 
-    as the inner product $\braket{\sigma}{\tau}$.
+    An important property of boundary maps is the following, which we shall denote as \ii{homology lemma}.
+
+    \begin{lem}
+        The boundary maps satisfy $\del_p \circ \del_{p+1} = 0$.
+    \end{lem}
+    \begin{proof}
+        Since the boundary maps are linear it is sufficient to check this on the generators.
+        Let $\del_{p+1}\ket{v_0,\dots,v_{p+1}} = \sum_{i=0}^{p+1} (-1)^i\ket{v_0,\dots,\hat{v_i},\dots,v_{p+1}}$ then 
+        \[(\del_p \circ \del_{p+1})\ket{v_0,\dots,v_{p+1}} = \sum_{j=0, j \neq i}^{p+1} \sum_{i=0}^{p+1} (-1)^{i+j}\ket{v_0,\dots,\hat{v_i},\dots,\hat{v_j},\dots,v_{p+1}} = 0. \qedhere \]     
+    \end{proof}
+
+    The homology lemma is necessary to define the \ii{homology group}.
 
     \begin{defn}
-        We define the scalar product $\braket{}{} : C_p \times C_p \to \R$ on the canonical basis of $C_p$ to be 
-        \[ \braket{i}{j} = \delta_{ij} ,\]  
-        where $i,j$ are any two p-simplexes in the canonical basis of $C_p$ and $\delta_{ij}$ is the Kronecker Delta.
+        We define the \ii{p-homology group} to be 
+        \[H_p := \frac{ker\del_p}{im\del_{p+1}},\] 
+        where $im\del_{p+1}$ is called the group of simplicial \ii{p-cycles} and
+        $ker\del_p$ is called the group of simplicial \ii{p-boundaries}.
     \end{defn}
 
-    The same Hilbert space structure allows us to represent the coboundary operator $d$ acting on a cochain with its cochain representative.
-
-    \begin{defn}
-        Let $d_{p+1} : C^p \to C^{p+1}$ be the coboundary operator, then for any \\ $\bra{\sigma} \in C^p, \tau \in C_{p+1}$ we can define its dual representation $\del^\dagger_{p+1}$ by
-        \[(d_{p+1}\bra{\sigma})\ket{\tau} = \bra{\sigma} \del_{p+1} \ket{\tau} = \bra{\tau} \del^\dagger_{p+1} \ket{\sigma} \quad \forall \ket{\tau} \in C_p. \]
-    \end{defn}
-
-    We can notice that our definitions lead to the restatement of the equivalent of the generalized Stokes' theorem on simplicial complexes
-    according to the integration previously defined, i.e. $(d\bra{\sigma})\ket{\tau} = \bra{\sigma}\del\ket{\tau}$. One can therefore think of the coboundary
-    operator as a discrete exterior derivative acting on cochains. Similarly we name the inner product \ii{integration} due to the analogy previously stated, the
-    choice of a measure of integration is equivalent to a choice of a basis for the chain group.
+    The homology group is therefore, intuitively,  the space of cycles that are not boundaries. Without the
+    homology lemma the quotient would not well defined since $im\del_{p+1} \subset ker\del_p$ would not be satisfied.
 
 \end{document}

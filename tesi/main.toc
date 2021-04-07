@@ -3,18 +3,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Preliminaries on topology}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial Complexes}{1}{section*.2}
+\contentsline {section}{\numberline {1.1}Simplicial Complexes}{1}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial Homology}{6}{section*.3}
+\contentsline {section}{\numberline {1.2}Abstract Simplicial Complexes}{5}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Simplicial Cohomology}{8}{section*.4}
+\contentsline {section}{\numberline {1.3}Simplicial Homology}{6}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Laplacian Operators}{9}{section*.5}
+\contentsline {section}{\numberline {1.4}Simplicial Cohomology}{8}{section.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Graphs}{10}{section*.6}
+\contentsline {chapter}{\numberline {2}Geometric Deep Learning}{9}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Conclusion}{11}{section*.7}
+\contentsline {section}{\numberline {2.1}Laplacian Operators}{9}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{12}{Appendix.1.A}
+\contentsline {section}{\numberline {2.2}Graphs}{11}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{13}{chapter*.8}
+\contentsline {chapter}{Conclusion}{12}{chapter*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Category Theory}{13}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{14}{chapter*.3}
