@@ -3,9 +3,9 @@
 \begin{document}
 
     An important field in algebraic topology is homology theory. We shall discuss homology theory to the extent
-    that allows us to define the laplacian operator on simplicial complexes, for supplementary readings see \cite{singerthorpe,hatcher}.
+    that allows us to define the laplacian operator on simplicial complexes, for supplementary readings see \cite{singerthorpe} at 6.1 or \cite{hatcher} at 2.1.
     First we want to equip our simplicial complexes with an orientation. So far we have considered the simplex $\{x_i\}_{i \in I}$ to remain
-    unchanged under abritrary reorderings of the index set $I$, but in the most of the application this is not the case.
+    unchanged under reorderings of the index set $I$, but in most applications this is not the case.
 
     \begin{prop}
         Let $\{x_i\}_{i \in I}$ be a $p$-simplex and
@@ -29,17 +29,16 @@
   
     \begin{defn}
         We define an \ii{oriented simplex} $\ket{x_i}_{i \in I}$ to be a simplex $\{x_i\}_{i \in I}$ together with the choice of
-        one out of the two equivalence classs with respect to $\sim$.
+        one of the two equivalence classs with respect to $\sim$.
     \end{defn}
 
     \begin{defn}
         Let $\mc{A}$ be a simplicial complex and let $G$ denote an arbitrary additive abelian group. We define the \ii{group of p-chains} 
         \[ C_p(\mc{A},G) := \frac{\{ \sum_{i \in I} g_i \ket{\sigma_i} : g_i \in G \}}{\{g_i\ket{x_0,x_1,...,x_p}+g_i\ket{x_1,x_0,...x_p} : g_i \in G\} }.\]
     \end{defn}
-    {\color{red} Devo pensarci un po' a questo modo di definirlo, ma credo che intenda semplicemente di indicarle due orientazioni opposte mettendo come fattore 
-    l'inverso. Cercherò di approfondire i free abelian groups dal Lang ed aggiungere una descrizione più dettagliata.}
 
     For the most of the applications the groups $\Z,\R,\Z_2$ are considered. To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},G)$.
+    In the previous definition the sum $\sum_{i \in I} g_i \ket{\sigma_i}$ is a formal sum, for a deeper insight into free abelian groups see \cite{lang} at 1.7.
 
     \begin{prop}
         $C_p(\mc{A},G)$ is an abelian group.

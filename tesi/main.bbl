@@ -45,6 +45,37 @@
       \field{title}{Group Equivariant Convolutional Networks}
       \field{year}{2016}
     \endentry
+    \entry{simplicialNN}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=2571ca5855ae04e0f17f7ea73a4669af}{%
+           family={Ebli},
+           familyi={E\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e9f077c5e430013d034bf8adb5e80faf}{%
+           family={Defferrard},
+           familyi={D\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cd593f2626600c8a559dc8d40a63026a}{%
+           family={Spreemann},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{fullhash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{bibnamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{authorbibnamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{authornamehash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \strng{authorfullhash}{d80e2458f423d2ffa5e1d077f33a8a77}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Simplicial Neural Networks}
+      \field{year}{2020}
+    \endentry
     \entry{comptop}{book}{}
       \name{author}{2}{}{%
         {{hash=a32d61ef7947b60c5805e6dd35fa4fa7}{%
@@ -123,6 +154,30 @@
       \field{labeltitlesource}{title}
       \field{title}{Spectra of combinatorial Laplace operators on simplicial complexes}
       \field{year}{2011}
+    \endentry
+    \entry{lang}{book}{}
+      \name{author}{1}{}{%
+        {{hash=88c92ddced8d93c4ed4df52ee477b0c6}{%
+           family={Lang},
+           familyi={L\bibinitperiod},
+           given={Serge},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, New York, NY}%
+      }
+      \strng{namehash}{88c92ddced8d93c4ed4df52ee477b0c6}
+      \strng{fullhash}{88c92ddced8d93c4ed4df52ee477b0c6}
+      \strng{bibnamehash}{88c92ddced8d93c4ed4df52ee477b0c6}
+      \strng{authorbibnamehash}{88c92ddced8d93c4ed4df52ee477b0c6}
+      \strng{authornamehash}{88c92ddced8d93c4ed4df52ee477b0c6}
+      \strng{authorfullhash}{88c92ddced8d93c4ed4df52ee477b0c6}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebra}
+      \field{year}{1955}
     \endentry
     \entry{mclane}{book}{}
       \name{author}{1}{}{%
