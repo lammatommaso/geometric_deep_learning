@@ -20,8 +20,9 @@
 \usepackage{comment}
 \usepackage{float}
 \usepackage{enumerate}
-\usepackage[title]{appendix}
+\usepackage[toc,page]{appendix}
 \usepackage[style=numeric, backend=biber, sorting=nty]{biblatex}
+\usepackage{chngcntr}
 \addbibresource{bibliography.bib}
 
 \setlength{\parindent}{0pt}
@@ -42,6 +43,16 @@
 
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
+
+% \AtAppendix{
+%     \renewtheorem{thm}{Theorem}[chapter]
+%     \renewtheorem{lem}[thm]{Lemma}
+%     \renewtheorem{prop}[thm]{Proposition}
+%     \renewtheorem{cor}[thm]{Corollary}
+%     \renewtheorem{defn}[thm]{Definition}
+%     \renewtheorem{exa}[thm]{Example}
+%     \renewtheorem{rem}[thm]{Remark}
+% }
 
 %\setcounter{secnumdepth}{0} % no section numbering displayed, no idea how
 
@@ -101,7 +112,9 @@
         filters in order to become rotation equivariant. Although manifolds and simplicial complexes are not in general groups, G-equivariant CNN's (see \cite{gcnn})
         could be the key to reveal the secrets behind the success of such architectures.
     \addcontentsline{toc}{chapter}{Conclusion}
-    \begin{appendices}
+    % \begin{appendices}
+    \appendix
+    \counterwithin{thm}{chapter}
         \begin{chapter}{Category Theory}
             \label{app:A}
             \subfile{sections/appendixA/main}
@@ -111,7 +124,7 @@
         %     Cech, Alpha and Delauney complexes.
         %     Nerve Theorem.
         % \end{chapter}
-    \end{appendices}
+    % \end{appendices}
     \newpage
     \printbibliography[heading = bibintoc]
 \end{document}
