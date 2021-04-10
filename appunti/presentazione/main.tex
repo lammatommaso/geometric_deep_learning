@@ -1,0 +1,198 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+\useoutertheme{infolines}
+
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \begin{beamercolorbox}[sep=0.3cm,wd=\paperwidth]{section in head/foot}%
+  \usebeamercolor[fg]{structure}\large\insertsectionhead%  
+  \end{beamercolorbox}%
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ii}[1]{\textit{#1}}
+\newcommand{\req}[1]{\stackrel{#1}{=}}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+
+
+\title{Group Equivariant CNN's}
+
+\begin{document}
+
+\frame{\titlepage}
+\section{Mathematical foundation of G-equivariance}
+\begin{frame}
+\frametitle{Classification of data}
+    \begin{block}{Definition}
+        Let $X$ be a compact topological space, let $\Phi = \{ f : X \to \R^d \quad continuous \}$ and
+        $\mc{L} = \{1,...,L\}$ a set of labels, we call \ii{classification} a function
+        \[ \mc{C}: \Phi \to \mc{L}. \]
+    \end{block}
+    This classification fuction defines an equivalence relation in $\Phi$.
+    \begin{block}{Definition}
+        Let $f,\varphi \in \Phi$ we say that $f \req{\mc{C}} \varphi \stackrel{def}{\iff} \mc{C}(f) = \mc{C}(\varphi)$.
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Classification of data}
+        Every equivalence relation on $\Phi$ fully determines a symmetry group.
+        \begin{block}{Definition}
+            Let $\simeq$ be an equivalence relation on $\Phi$, then the \ii{symmetry group} defined by $\simeq$ is 
+            \[ G := \{ g \in Homeo(X) : \forall f \in \Phi \quad f \circ g \simeq f \}. \]
+        \end{block}
+        Conversely, any group also defines an equivalence relation on $\Phi$.
+        \begin{block}{Definition}
+            Let $f,\varphi \in \Phi$, let $G$ be a subgroup of $Homeo(X)$,\\
+            we say that $f \req{G} \varphi \stackrel{def}{\iff} \exists g \in G : f \circ g = \varphi$.
+        \end{block}
+    \end{frame}
+
+\begin{frame}
+    \frametitle{Natural pseudodistance}
+    Our understanding of data is based on the distinction of such data with respect to a symmetry group G, i.e. a distance on $\Phi$.\\
+    Every data recognition task is therefore based on the pair $(\Phi,G)$ which we call \ii{perception pair}.
+    \begin{block}{Definition}
+        Let $(\Phi,G)$ be a perception pair, we define the \ii{natural pseudodistance} $d_G : \Phi \times \Phi \to \R$ to be 
+        \[ d_G(f,\varphi) := inf_{g \in G} |f - \varphi \circ g|_{\infty}. \]
+    \end{block}
+    While $\Phi$ is not Hausdorff with respect to $d_G$, we have that $[\Phi]_{\req{G}}$ is.
+\end{frame}
+
+\begin{frame}
+    \frametitle{$G$-equivalence and $\mc{C}$-equivalence}
+    The two equivalences are related if $G$ is the symmetry group of $\Phi$ with respect to a classification $\mc{C}$
+    \begin{alertblock}{Proposition}
+        Let $f,\varphi \in \Phi$ and let $G := \{ g \in Homeo(X) : \forall f \in \Phi \quad f \circ g \req{\mc{C}} f \}$, then
+        \[ f \req{G} \varphi \implies f \req{\mc{C}} \varphi .\]
+    \end{alertblock}
+    The problem with this approach is that we need to know the symmetry group of our recognition task a priori. And that if two pieces of data
+    are equally labeled by $\mc{C}$ we are not sure that there exists a transformation in $Homeo(X)$ that maps one into the other.
+\end{frame}
+
+% \begin{frame}
+%     \frametitle{Representation of a symmetry group}
+%     The action of $g \in Homeo(X)$ can be represented in $\Phi$ via a group homomorphism.
+%     \begin{block}{Definition}
+%         Let $f \in \Phi$ and $g,h \in Homeo(X)$ we define $R_g,R_h : \Phi \to \Phi$ such that
+%         \[ R_gf := f \circ g^{-1}, \quad R_hf := f \circ h^{-1},\]
+%         Where the map $g \mapsto R_g$ is a group homomorphism
+%         \[ f \circ (g \circ h)^{-1} = f \circ h^{-1} \circ g^{-1}= R_g(f \circ h^{-1}) = (R_g \circ R_h)f, \]
+%         therefore $R_{(g \circ h)} = R_g \circ R_h$.
+%     \end{block}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{Weyl's Principle}
+%     The properties of objects are what allows a distinction, i.e. two pieces of data represent the same object if they have the same properties. 
+%     \begin{alertblock}{Proposition (Weyl's principle)}
+%         The elementary properties ofa system are the irreducible representations of the symmetry group of the system
+%     \end{alertblock}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{Example}
+%     Since our definition of objects comes after the understanding of their symmetries, I shall start from an abstract point of view.
+%     \begin{examples}
+        
+%     \end{examples}
+% \end{frame}
+
+\begin{frame}
+    \frametitle{G-equivariant network}
+    Let's start from a known symmetry of the data.
+    In order to have a neural network able to classify objects, we need it to learn G-invariance and G-equivariance.
+    \begin{block}{Definition(G-equivariant neural network)}
+        A G-equivariant neural network is a sequence of operators $\{C_j : \Phi \to \Phi \}$ such that 
+        \[ \forall f \in \Phi, g \in G \quad \exists g' \in G : C_jR_gf = R_{g'}C_jf.\]
+    \end{block}
+    The G-equivariant operators preserve G-equivalences.
+    \begin{alertblock}{Proposition}
+        Let $f,\varphi \in \Phi$, $\{C_j : \Phi \to \Phi \}$ a G-CNN, then $f \req{G} \varphi \implies C_jf \req{G} C_j\varphi$.
+    \end{alertblock}
+    We want data equal in the first layers to be equal also in the following layers.
+\end{frame}
+
+\begin{frame}
+    \frametitle{G-equivariant network}
+    Nevertheless some distinguishable data will become indistinguishable in the following layer, this non-expansiveness is the key for abstraction.
+    The last layer must obviously be G-invariant.\\
+    \hfill \\
+    Let's see how to construct G-equivariant layers.
+\end{frame}
+
+\section{Group Equivariant Convolutional Networks}
+
+\begin{frame}
+    \frametitle{G-equivariant convolution}
+    \begin{block}{Definition(G-convolution first layer)}
+        Let $f \in \Phi$, i.e. $f_i : X \to \R \quad i \in I=\{1,...,d\}$, let $\psi_j^i : X \to \R \quad j \in I, i = 1,...,n$ be the filters, then the first convolutional layer is 
+        \[ [f*\psi^i](g) = \sum_{x \in X}\sum_{j \in I}f_j(x)\psi_j^i(g^{-1}x).\]   
+    \end{block}
+    \begin{block}{Definition(G-convolution hiddel layers)}
+        Let $f_i : G \to \R \quad i \in I=\{1,...,n\}$, let $\psi_j^i : G \to \R \quad j \in I, i = 1,...,m$ be the filters, then the first convolutional layer is 
+        \[ [f*\psi^i](g) = \sum_{h \in G}\sum_{j \in I}f_j(h)\psi_j^i(g^{-1}h).\]   
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{G-equivariant convolution}
+    \begin{alertblock}{Proposition}
+        G-convolution is G-equivariant.
+    \end{alertblock}
+    Similarly also pooling and non-linearities are.
+\end{frame}
+
+\section{Graph neural networks}
+
+\begin{frame}
+    \frametitle{Graph Neural Networks}
+    Let $C_0$ be the space of 0-chains, and $C_1$ the space of 1-chains of a graph.
+    The graph layers are defined as low degree polynomials of local aggregation functions.
+    \begin{block}{Definition}
+        We call a local aggregation function a linear function $L : C_0 \to C_0$ such that
+        \[ L_{ij} = M_{ij} \odot A_{ij}, \]
+        where $A_{ij}$ is the adjacency matrix and $M_{ij}$ is any matrix. 
+    \end{block}
+    \begin{block}{Definition}
+        We call \ii{diffusion group} $\mc{D_A}$ w.r.t. $A : C_0 \to C_0$, the image of the $(\R,+)$ homomorphism
+        \[ t \mapsto e^{At} : C_0 \to C_0. \]
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Diffusion Law}
+    \begin{block}{Definition}
+        We call \ii{diffusion law} w.r.t. $A : C_0 \to C_0$ the equation
+        \[ \frac{d}{dt}\ket{f(t)} = -A\ket{f(t)}.\]
+    \end{block}
+    \begin{alertblock}{Proposition}
+        The solution of the diffusion equation is
+        \[  \ket{f(t)} = e^{-At}\ket{f(0)}.\]
+    \end{alertblock}
+    \begin{alertblock}{Proposition}
+        Let $pol(A)$ be any polynomial of $A$, then
+        \[ [pol(A),e^{-At}] = 0.\]
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conclusion}
+    Since the diffusion law is learnable, we have that the GNN learns a diffusion law for any feature.
+    And a diffusion equivariant layers do not distinguish between a chain and its diffusion at a time t.
+    \begin{block}{Proposition}
+        $\ket{f} \req{\mc{D_A}} \ket{g}$ if g is a diffusion of f.
+    \end{block}
+\end{frame}
+
+
+
+
+\end{document}

@@ -18,7 +18,7 @@
         Let $\ket{\sigma}, \ket{\tau} \in C_p$ 
         \[ \bra{\sigma}\Delta_p\ket{\tau}=\bra{\sigma}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\ket{\tau} = \]
         \[ = \bra{\tau}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)^\dagger\ket{\sigma} = \]
-        \[ = \bra{\tau}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\ket{\sigma} = \bra{\sigma}\Delta_p\ket{\tau}. \qedhere \]
+        \[ = \bra{\tau}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\ket{\sigma} = \bra{\tau}\Delta_p\ket{\sigma}. \qedhere \]
     \end{proof}
 
     According to the spectral theorem there exists a basis of eigenchains of the Laplacian, and since all $\Delta_p, \Delta^+_p, \Delta^-_p$
@@ -48,9 +48,9 @@
         We recall the definition of laplacian $\Delta_p =: \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p$.\\
         Because of the homology lemma $\Delta^+_p\Delta-_p = \Delta^-_p\Delta^+_p = 0$, therefore $ker\Delta^{\pm}_p \subset im\Delta^{\mp}_p.$\\
         It is trivial to see that, since $ker\Delta_p = ker\Delta^+_p \cap ker\Delta^-_p $, we have that $ker\del^\dagger_{p+1} \cap ker\del_p \subset ker\Delta_p.$ \\
-        Less trivial is the opposite inclusion, in fact, let $\sigma \in ker\Delta_p$, we have that $\del_{p+1}^\dagger\sigma \in ker\del_{p+1} = (im\del_{p+1}^\dagger)^\perp$ 
-        and of course that $\del_{p+1}^\dagger\sigma \in im\del_{p+1}^\dagger$.\\
-         Therefore, since our integration is an inner product, because of the adjunction relation we have that the chain $\sigma$ must
+        Less trivial is the opposite inclusion, in fact, let $\ket{\sigma} \in ker\Delta_p$, we have that $\del_{p+1}^\dagger\ket{\sigma} \in ker\del_{p+1} = (im\del_{p+1}^\dagger)^\perp$ 
+        and of course that $\del_{p+1}^\dagger\ket{\sigma} \in im\del_{p+1}^\dagger$.\\
+        Therefore, since our integration is an inner product, because of the adjunction relation we have that the chain $\del_{p+1}^\dagger\ket{\sigma}$ must
         be the null chain, hence the inclusion $\ker\Delta_p \subset \ker\del_{p+1}^\dagger$. Similarly we can see that $\ker\Delta_p \subset \ker\del_p$,        
         therefore $ker\Delta_p \subset ker\del^\dagger_{p+1} \cap ker\del_p $. Now, since $ker\Delta_p = ker\del^\dagger_{p+1} \cap ker\del_p$, we conclude that 
         $ker\Delta_p = (im\del_{p+1}^\dagger)^\perp \cap ker\del_p \simeq H_p$. \qedhere
