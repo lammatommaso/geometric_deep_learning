@@ -1,0 +1,84 @@
+\documentclass[../2.tex]{subfiles}
+\begin{document}
+    In \autoref{ch:1} we studied homology and cohomology on abstract simplicial complexes, in this chapter we shall discuss in detail
+    $1$-dimensional abstract simplicial complexes.
+
+    \begin{defn}
+        A \ii{graph} is a $1$-dimensional abstract simplicial complex.
+    \end{defn}
+
+    In a graph $\mc{G}$ the non trivial chain groups are therefore $C_0(\mc{G})$ and $C_1(\mc{G})$, also called vertex and edge spaces. 
+    The canonical basis of the vertex space is the set of vertexes $\{\ket{e_i}\}_{i \in I}$, and that of edges $\{\ket{e_i,e_j} : e_i \sim e_j\}$, where $e_i \sim e_j$ means $e_i$ is adjacent to $e_j$.
+
+    \begin{defn}
+        Let $\mc{G}$ be a graph, we define the \ii{adjacency matrix} $A$ of $\mc{G}$ on the canical vertex basis by
+        \[a_{ij} = 
+        \begin{cases}
+            1 & e_i \sim e_j \\
+            0 & otherwise \\
+        \end{cases}
+        \]
+        
+        
+    \end{defn}
+    Only one boundary and one coboundary can be defined on graphs, we shall name those gradient and divergence respectively.
+
+    \begin{defn}
+        Let $\mc{G}$ be a graph, we define the \ii{gradient} $\del_1 : C_1 \to C_0$ by 
+        \[ \del_1\ket{e_i,e_j} := e_i - e_j \quad \forall \ket{e_i,e_j} \in C_1.\]
+    \end{defn}
+    
+    \begin{defn}
+        Let $\mc{G}$ be a graph, we define the \ii{divergence} $\del^\dagger_1 : C_0 \to C_1$ by 
+        \[ d_1\ket{e_i} := \sum_{\ket{e_i,e_j} : x_i \sim x_j} \ket{e_i,e_j}.\]
+    \end{defn}
+
+    {\color{red} Disegno che mostra il cobordo di un nodo}
+
+    The prevously defined generalizd Stokes' theorem is on graphs a discrete version of the divergence theorem.
+
+    \begin{thm}
+        Let $\mc{G}$ be a graph, let $x \in C_0, v \in C_1$ then $\bra{x}\del^\dagger\ket{v} = \bra{v}\del\ket{x}$.
+    \end{thm}
+
+    {\color{red} Disegno che mostra il teorema della divergenza discreto}
+
+    On a graph that admits non trivial gradient and divergence, we can define a non trivial laplacian operator as the gradient of the divergence.
+    Although this might sound strange, the inversion of gradient and divergence in the definition of laplacian is due to the fact that we are representing
+    the functions on the graph (cochains) by their dual chains.
+
+    \begin{defn}
+        Let $\mc{G}$ be a graph, we define the \ii{laplacian} $\Delta_1 : C_0 \to C_0$ by 
+        \[ \Delta_1 := \del_1 \circ \del^\dagger_1.\]
+    \end{defn}
+
+    An intersting property of the laplacian is that the dimension of its kernel equals the connected components of the graph.
+
+    {\color{red} Esempio con un grafo piccolo e disegno \\
+
+    Let $G$ be the graph illustrated 
+    
+    then the laplacian expressed in terms of the canoncal vertex basis is 
+
+    \[\begin{pmatrix}
+            2 & -1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            -1 & 2 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            -1 & -1 & 2 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & -1 & 3 & -1 & -1 & 0 & 0 \\
+            0 & 0 & 0 & 0 & -1 & 1 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 0 & -1 & 0 & -1 & 0 & 0 \\
+            0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -1 \\
+            0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 
+        \end{pmatrix} \] 
+
+    Three invariant subspaces emerge from the laplacian, that determine three different laplacians, namely
+    \[ \Delta = \Delta_A \oplus \Delta_B \oplus \Delta_C \]
+
+    Furthermore any of those three blocks has a 1-dimensional kernel.
+        
+        
+        }
+
+    This theorem will be proven in \autoref{ch:3}.
+\end{document}

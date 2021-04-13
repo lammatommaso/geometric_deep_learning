@@ -31,17 +31,18 @@
         We define an \ii{oriented simplex} $\ket{x_i}_{i \in I}$ to be a simplex $\{x_i\}_{i \in I}$ together with the choice of
         one of the two equivalence classs with respect to $\sim$.
     \end{defn}
-
+    Mathematical Foundation of CNN's
     \begin{defn}
-        Let $\mc{A}$ be a simplicial complex and let $G$ denote an arbitrary additive abelian group. We define the \ii{group of p-chains} 
-        \[ C_p(\mc{A},G) := \frac{\{ \sum_{i \in I} g_i \ket{\sigma_i} : g_i \in G \}}{\{g_i\ket{x_0,x_1,...,x_p}+g_i\ket{x_1,x_0,...x_p} : g_i \in G\} }.\]
+        Let $\mc{A}$ be a simplicial complex, we define the \ii{group of p-chains} 
+        \[ C_p(\mc{A},\R) := \frac{\{ \sum_{i \in I} \lambda_i \ket{\sigma_i} : \lambda_i \in \R \}}{\{\ket{x_0,x_1,...,x_p}+\ket{x_1,x_0,...x_p}\} }.\]
     \end{defn}
 
-    For the most of the applications the groups $\Z,\R,\Z_2$ are considered. To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},G)$.
-    In the previous definition the sum $\sum_{i \in I} g_i \ket{\sigma_i}$ is a formal sum, for a deeper insight into free abelian groups see \cite{lang} at 1.7.
-
+    In the previous definition the sum $\sum_{i \in I} \lambda_i \ket{\sigma_i}$ is a formal sum that can be generalized from $\R$ to an arbitrary abelian group $G$, for a deeper insight into free abelian groups see \cite{lang} at 1.7.
+    Nevertheless, for the most of the applications the groups $\Z,\R,\Z_2$ are considered. To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},\R)$.
+    
     \begin{prop}
-        $C_p(\mc{A},G)$ is an abelian group.
+        $C_p(\mc{A},\R)$ is an abelian group.
+        In particular it is a vector space on $\R$.
     \end{prop}
 
     A particularly relevant role in homology theory is played by the \ii{boundary map}. First we define the boundary of an oriented simplex.
@@ -61,7 +62,7 @@
     
     \begin{defn}
         We define the \ii{boundary map} $\del_{p+1} : C_{p+1} \to C_p$ to be the group homomorphism defined by
-        \[ \del_{p+1}(\sum_{i \in I}g_i\ket{\sigma_i}) := \sum_{i \in I}g_i\del_{p+1}\ket{\sigma_i} .\]
+        \[ \del_{p+1}(\sum_{i \in I}\lambda_i\ket{\sigma_i}) := \sum_{i \in I}\lambda_i\del_{p+1}\ket{\sigma_i} .\]
     \end{defn}
 
     An important property of boundary maps is the following, which we shall denote as \ii{homology lemma}.
@@ -71,8 +72,8 @@
     \end{lem}
     \begin{proof}
         Since the boundary maps are linear it is sufficient to check this on the generators.
-        Let $\del_{p+1}\ket{v_0,\dots,v_{p+1}} = \sum_{i=0}^{p+1} (-1)^i\ket{v_0,\dots,\hat{v_i},\dots,v_{p+1}}$ then 
-        \[(\del_p \circ \del_{p+1})\ket{v_0,\dots,v_{p+1}} = \sum_{j=0, j \neq i}^{p+1} \sum_{i=0}^{p+1} (-1)^{i+j}\ket{v_0,\dots,\hat{v_i},\dots,\hat{v_j},\dots,v_{p+1}} = 0. \qedhere \]     
+        Let $\del_{p+1}\ket{x_0,\dots,x_{p+1}} = \sum_{i=0}^{p+1} (-1)^i\ket{x_0,\dots,\hat{x_i},\dots,x_{p+1}}$ then 
+        \[(\del_p \circ \del_{p+1})\ket{x_0,\dots,x_{p+1}} = \sum_{j=0, j \neq i}^{p+1} \sum_{i=0}^{p+1} (-1)^{i+j}\ket{x_0,\dots,\hat{x_i},\dots,\hat{x_j},\dots,x_{p+1}} = 0. \qedhere \]     
     \end{proof}
 
     The homology lemma is necessary to define the \ii{homology group}.

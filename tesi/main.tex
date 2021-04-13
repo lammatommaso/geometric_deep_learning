@@ -20,7 +20,7 @@
 \usepackage{comment}
 \usepackage{float}
 \usepackage{enumerate}
-\usepackage[toc,page]{appendix}
+\usepackage{appendix}
 \usepackage[style=numeric, backend=biber, sorting=nty]{biblatex}
 \usepackage{chngcntr}
 \addbibresource{bibliography.bib}
@@ -94,8 +94,12 @@
         problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
         \subfile{sections/1}
     \end{chapter}
-    \begin{chapter}{Geometric Deep Learning}
+    \begin{chapter}{Graphs}
         \subfile{sections/2}
+    \end{chapter}
+    \begin{chapter}{Geometric Deep Learning}
+        \label{ch:3}
+        \subfile{sections/3}
     \end{chapter}
     \newpage
    \chapter*{Conclusion}
@@ -113,7 +117,7 @@
         could be the key to reveal the secrets behind the success of such architectures.
     \addcontentsline{toc}{chapter}{Conclusion}
     % \begin{appendices}
-    \appendix
+    \begin{appendices}
     \counterwithin{thm}{chapter}
         \begin{chapter}{Category Theory}
             \label{app:A}
@@ -124,7 +128,7 @@
         %     Cech, Alpha and Delauney complexes.
         %     Nerve Theorem.
         % \end{chapter}
-    % \end{appendices}
+    \end{appendices}
     \newpage
     \printbibliography[heading = bibintoc]
 \end{document}

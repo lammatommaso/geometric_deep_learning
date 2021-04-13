@@ -11,18 +11,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.4}Simplicial Cohomology}{6}{section.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Geometric Deep Learning}{8}{chapter.2}
+\contentsline {chapter}{\numberline {2}Graphs}{8}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Convolutional Neural Networks}{8}{section.2.1}
+\contentsline {section}{\numberline {2.1}Homology and cohomology on graphs}{8}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Mathematical Foundation of CNN's}{8}{section.2.2}
+\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{10}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Laplacian Operators}{8}{section.2.3}
+\contentsline {section}{\numberline {3.1}Group Equivariant Neural Networks}{10}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Graphs}{9}{section.2.4}
+\contentsline {section}{\numberline {3.2}Convolutional Neural Networks}{10}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusion}{10}{chapter*.2}
+\contentsline {section}{\numberline {3.3}Simplicial Neural Networks}{10}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{11}{appendix.A}
+\contentsline {section}{\numberline {3.4}Message Passing Neural Networks}{12}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{12}{appendix*.3}
+\contentsline {chapter}{Conclusion}{13}{chapter*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Category Theory}{14}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{15}{chapter*.3}
