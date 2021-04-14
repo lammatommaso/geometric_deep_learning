@@ -53,9 +53,9 @@
 
     {\color{red} Esempio con un grafo piccolo e disegno \\
 
-    Let $G$ be the graph illustrated 
+    Let $\mc{G}$ be the graph illustrated 
     
-    then the laplacian expressed in terms of the canoncal vertex basis is 
+    then the laplacian expressed in terms of the canoncal vertex basis $¬\{\ket{i}\}_{i \in I}$ is
 
     \[\begin{pmatrix}
             2 & -1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -67,10 +67,15 @@
             0 & 0 & 0 & 0 & -1 & 0 & -1 & 0 & 0 \\
             0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -1 \\
             0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 
-        \end{pmatrix} \] 
+        \end{pmatrix}. \] 
+
+    It can be calculated by:
+    \[ \Delta_1 \ket{1} = \del_1\ket{1,2} + \del_1\ket{1,3} = 2\ket{1}-\ket{2}-\ket{3},\]
+    \[ \Delta_1 \ket{2} = \del_1\ket{2,1} + \del_1\ket{2,3} = -\ket{1}+2\ket{2}-\ket{3},\]
+    \[ \Delta_1 \ket{3} = \del_1\ket{3,1} + \del_1\ket{3,2} = -\ket{1}+-\ket{2}+2\ket{3},\]
 
     Three invariant subspaces emerge from the laplacian, that determine three different laplacians, namely
-    \[ \Delta = \Delta_A \oplus \Delta_B \oplus \Delta_C \]
+    \[ \Delta = \Delta_\mc{A} \oplus \Delta_\mc{B} \oplus \Delta_\mc{C} \]
 
     Furthermore any of those three blocks has a 1-dimensional kernel.
         
