@@ -87,7 +87,7 @@
 
     Furthermore any of those three blocks has a 1-dimensional kernel, in fact the dimensional equiation for the laplacians is
 
-    \[dim(ker\Delta_1^\mc{A}) = 3 - rank
+    \[dim(ker\Delta_1^\mc{A}) =dimC_0(\mc{A}) - rank
     \begin{pmatrix}
         2 & -1 & -1  \\
         -1 & 2 & -1  \\
@@ -99,7 +99,7 @@
         0 & 0 & 0 
     \end{pmatrix} = 3 - 2 =  1, \]
 
-    \[ dim(ker\Delta_1^\mc{B}) = 4 - rank
+    \[ dim(ker\Delta_1^\mc{B}) =dimC_0(\mc{B}) - rank
     \begin{pmatrix}
         1 & -1 & 0 & 0  \\
         -1 & 3 & -1 & -1 \\
@@ -113,7 +113,7 @@
         0 & 0 & 0 & 0 
     \end{pmatrix} = 4 - 3 = 1,\]
     
-    \[ dim(ker\Delta_1^\mc{C}) = 2 - rank
+    \[ dim(ker\Delta_1^\mc{C}) =dimC_0(\mc{C}) - rank
     \begin{pmatrix}
         1 & -1 \\
         -1 & 1
@@ -123,14 +123,22 @@
         0 & 0
     \end{pmatrix} = 2-1 = 1.\]
         
-    Then we can also observe the $\Delta_2$ acting on the triangle on the basis $\{\ket{1,2},\ket{2,3},\ket{1,3}\}$ as
+    Then we can also observe the $\Delta_2^\mc{A}$ acting on the triangle on the basis $\{\ket{1,2},\ket{2,3},\ket{3,1}\}$ as
     \[\begin{pmatrix}
-        2 & -1 & 1  \\
-        -1 & 2 & 1  \\
-        1& 1 & 2 
+        2 & -1 & -1  \\
+        -1 & 2 & -1  \\
+        -1& -1 & 2 
     \end{pmatrix}.\] 
+    It can be calculated by:
+    \[\Delta_2^\mc{A}\ket{1,2} = \del_1^\dagger(\ket{1}-\ket{2}) = 2\ket{1,2}-\ket{3,1}-\ket{2,3},\]
+    \[\Delta_2^\mc{A}\ket{2,3} = \del_1^\dagger(\ket{2}-\ket{3}) = -\ket{1,2}+2\ket{2,3}-\ket{3,1},\]
+    \[\Delta_2^\mc{A}\ket{3,1} = \del_1^\dagger(\ket{3}-\ket{1}) = -\ket{1,2}+2\ket{3,1}-\ket{2,3}.\]
+
+
+
+
     Then we see that is has a 1-dimensional kernel
-    \[ dim(ker\Delta_2) = 3 - rank
+    \[ dim(ker\Delta_2^\mc{A}) = dimC_1(\mc{A}) - rank
         \begin{pmatrix}
             2 & -1 & 1  \\
             -1 & 2 & 1  \\
@@ -141,8 +149,7 @@
             0 & 1 & -1  \\
             0 & 0 & 0 
         \end{pmatrix} = 3 - 2 =  1. \]
-    Therefore there is only one cycle and since if we change the sign of the third raws and coloumns, then the sum 
-    of the three raws is 0, the cycle is $\ket{1,2}+\ket{2,3}+\ket{3,1}$.
+    Since the sum of the three raws is 0 we can say that the only linearly independent $1$-cycle is $\ket{1,2}+\ket{2,3}+\ket{3,1}$. 
     
     
 
