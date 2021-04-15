@@ -8,13 +8,13 @@
     \end{defn}
 
     In a graph $\mc{G}$ the non trivial chain groups are therefore $C_0(\mc{G})$ and $C_1(\mc{G})$, also called vertex and edge spaces. 
-    The canonical basis of the vertex space is the set of vertexes $\{\ket{e_i}\}_{i \in I}$, and that of edges $\{\ket{e_i,e_j} : e_i \sim e_j\}$, where $e_i \sim e_j$ means $e_i$ is adjacent to $e_j$.
+    The canonical basis of the vertex space is the set of vertexes $\{\ket{e_i}\}_{i \in I}$, and that of edges which is a subset of $\{\ket{e_i,e_j}\}_{(i,j)\in I\times I}$
 
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{adjacency matrix} $A$ of $\mc{G}$ on the canical vertex basis by
         \[a_{ij} = 
         \begin{cases}
-            1 & e_i \sim e_j \\
+            1 & \ket{e_i,e_j} \in C_1 \\
             0 & otherwise \\
         \end{cases} \]        
     \end{defn}
@@ -27,7 +27,7 @@
     
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{divergence} $\del^\dagger_1 : C_0 \to C_1$ by 
-        \[ \del^\dagger_1\ket{e_i} := \sum_{\ket{e_i,e_j} : x_i \sim x_j} \ket{e_i,e_j}.\]
+        \[ \del^\dagger_1\ket{e_i} := \sum_{\ket{e_i,e_j} \in C_1} \ket{e_i,e_j}.\]
     \end{defn}
 
     {\color{red} Disegno che mostra il cobordo di un nodo}
