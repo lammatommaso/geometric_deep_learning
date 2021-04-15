@@ -1,0 +1,57 @@
+\documentclass[../1.tex]{subfiles}
+\begin{document}
+    An important role in the definition of a convolution on simplicial complexes is played by the Laplacian operator,
+    especially by its eigenfunctions and spectrum. A more thorough discussion of this operator can be found in \cite{laplacian}.
+    
+    \begin{defn}
+        We define the \ii{p-Laplacian} operator to be 
+        \[ \Delta_p := \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p =: \Delta^+_p + \Delta^-_p.\]
+    \end{defn}
+
+    The Laplacian operator is defined to be self-adjoint and positive definite.
+
+    \begin{prop}
+        Let $\Delta_p$ be a laplacian operator, then $\Delta^\dagger_p = \Delta_p.$
+    \end{prop}
+    \begin{proof}
+        Let $\ket{\sigma}, \ket{\tau} \in C_p$ 
+        \[ \bra{\sigma}\Delta_p\ket{\tau}=\bra{\sigma}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\ket{\tau} = \]
+        \[ = \bra{\tau}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)^\dagger\ket{\sigma} = \]
+        \[ = \bra{\tau}(\del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p)\ket{\sigma} = \bra{\tau}\Delta_p\ket{\sigma}. \qedhere \]
+    \end{proof}
+
+    According to the spectral theorem there exists a basis of eigenchains of the Laplacian, and since all $\Delta_p, \Delta^+_p, \Delta^-_p$
+    are self-adjoint we can say that they all admit a basis of eigenchains.
+
+    \begin{prop}
+        Let $\Delta_p\ket{\sigma} = \lambda_\sigma\ket{\sigma}$ then $\lambda_\sigma \geq 0$.
+    \end{prop}
+    \begin{proof}
+        Let $\Delta^+_p\ket{\sigma} = \lambda^+_\sigma \ket{\sigma}$, we see that $\bra{\sigma}\Delta^+_p\ket{\sigma} = | \del_{p+1}\ket{\sigma} |^2 \geq 0$, and since
+        $\bra{\sigma}\Delta^+_p\ket{\sigma} = \lambda^+_\sigma\braket{\sigma}{\sigma}$ we have that $\lambda+_\sigma \geq 0.$\\
+        Let then $\Delta^-_p\ket{\sigma} = \lambda^-_\sigma \ket{\sigma}$, we see that $\bra{\sigma}\Delta^-_p\ket{\sigma} = | \del_p \ket{\sigma} |^2 \geq 0$, and since
+        $\bra{\sigma}\Delta^-_p\ket{\sigma} = \lambda^-_\sigma\braket{\sigma}{\sigma}$, we also have that $\lambda-_\sigma \geq 0.$\\
+        Furthermore, since $\Delta^+_p\Delta^-_p = \Delta^-_p\Delta^+_p = 0$ we have that $[\Delta^+_p,\Delta^-_p] = 0$, thence
+        $[\Delta_p, \Delta^\pm_p] = 0$, therefore $\Delta_p, \Delta^+_p, \Delta^-_p$ share a basis of eigenchains.
+        Let $\ket{\sigma}$ be in that common basis then $\Delta_p\ket{\sigma} = \lambda_\sigma\ket{\sigma}$, where
+        $\lambda_\sigma = \lambda^+_\sigma + \lambda^-_\sigma \geq 0$. \qedhere
+    \end{proof}
+
+    Another really interesting property that was first proven by Beno Eckmann in 1944, is that the kernel of the p-Laplacian
+    is isomorphic to the p-homology group.
+
+    \begin{thm}
+        Let $\Delta_p$ be a laplacian operator, then $ker\Delta_p \simeq H_p$.
+    \end{thm}
+    \begin{proof}
+        We recall the definition of laplacian $\Delta_p =: \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p$.\\
+        Because of the homology lemma $\Delta^+_p\Delta-_p = \Delta^-_p\Delta^+_p = 0$, therefore $ker\Delta^{\pm}_p \subset im\Delta^{\mp}_p.$\\
+        It is trivial to see that, since $ker\Delta_p = ker\Delta^+_p \cap ker\Delta^-_p $, we have that $ker\del^\dagger_{p+1} \cap ker\del_p \subset ker\Delta_p.$ \\
+        Less trivial is the opposite inclusion, in fact, let $\ket{\sigma} \in ker\Delta_p$, we have that $\del_{p+1}^\dagger\ket{\sigma} \in ker\del_{p+1} = (im\del_{p+1}^\dagger)^\perp$ 
+        and of course that $\del_{p+1}^\dagger\ket{\sigma} \in im\del_{p+1}^\dagger$.\\
+        Therefore, since our integration is an inner product, because of the adjunction relation we have that the chain $\del_{p+1}^\dagger\ket{\sigma}$ must
+        be the null chain, hence the inclusion $\ker\Delta_p \subset \ker\del_{p+1}^\dagger$. Similarly we can see that $\ker\Delta_p \subset \ker\del_p$,        
+        therefore $ker\Delta_p \subset ker\del^\dagger_{p+1} \cap ker\del_p $. Now, since $ker\Delta_p = ker\del^\dagger_{p+1} \cap ker\del_p$, we conclude that 
+        $ker\Delta_p = (im\del_{p+1}^\dagger)^\perp \cap ker\del_p \simeq H_p$. \qedhere
+    \end{proof}
+\end{document}
