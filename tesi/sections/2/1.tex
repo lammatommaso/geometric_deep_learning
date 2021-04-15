@@ -27,7 +27,7 @@
     
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{divergence} $\del^\dagger_1 : C_0 \to C_1$ by 
-        \[ d_1\ket{e_i} := \sum_{\ket{e_i,e_j} : x_i \sim x_j} \ket{e_i,e_j}.\]
+        \[ \del^\dagger_1\ket{e_i} := \sum_{\ket{e_i,e_j} : x_i \sim x_j} \ket{e_i,e_j}.\]
     \end{defn}
 
     {\color{red} Disegno che mostra il cobordo di un nodo}
@@ -51,11 +51,13 @@
 
     An intersting property of the laplacian is that the dimension of its kernel equals the connected components of the graph.
 
+    \newpage
+
     {\color{red} Esempio con un grafo piccolo e disegno \\
 
     Let $\mc{G}$ be the graph illustrated 
     
-    then the laplacian expressed in terms of the canoncal vertex basis $¬\{\ket{i}\}_{i \in I}$ is
+    then the laplacian expressed in terms of the canoncal vertex basis, which I now denote $\{\ket{i}\}_{i \in I}$, is
 
     \[\begin{pmatrix}
             2 & -1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -73,13 +75,79 @@
     \[ \Delta_1 \ket{1} = \del_1\ket{1,2} + \del_1\ket{1,3} = 2\ket{1}-\ket{2}-\ket{3},\]
     \[ \Delta_1 \ket{2} = \del_1\ket{2,1} + \del_1\ket{2,3} = -\ket{1}+2\ket{2}-\ket{3},\]
     \[ \Delta_1 \ket{3} = \del_1\ket{3,1} + \del_1\ket{3,2} = -\ket{1}+-\ket{2}+2\ket{3},\]
+    \[ \Delta_1 \ket{4} = \del_1\ket{4,5} = \ket{4}-\ket{5},\]
+    \[ \Delta_1 \ket{5} = \del_1\ket{5,4}+\del_1\ket{5,6}+\del_1\ket{5,7} = -\ket{4}+3\ket{5}-\ket{6}-\ket{7},\]
+    \[ \Delta_1 \ket{6} = \del_1\ket{6,5} = -\ket{5}+\ket{6},\]
+    \[ \Delta_1 \ket{7} = \del_1\ket{7,5} = -\ket{5}+\ket{7},\]
+    \[ \Delta_1 \ket{8} = \del_1\ket{8,9} = \ket{8}-\ket{9},\]
+    \[ \Delta_1 \ket{9} = \del_1\ket{9,8} = -\ket{8}+\ket{9}.\] 
 
     Three invariant subspaces emerge from the laplacian, that determine three different laplacians, namely
-    \[ \Delta = \Delta_\mc{A} \oplus \Delta_\mc{B} \oplus \Delta_\mc{C} \]
+    \[ \Delta_1 = \Delta_1^\mc{A} \oplus \Delta_1^\mc{B} \oplus \Delta_1^\mc{C}. \]
 
-    Furthermore any of those three blocks has a 1-dimensional kernel.
+    Furthermore any of those three blocks has a 1-dimensional kernel, in fact the dimensional equiation for the laplacians is
+
+    \[dim(ker\Delta_1^\mc{A}) = 3 - rank
+    \begin{pmatrix}
+        2 & -1 & -1  \\
+        -1 & 2 & -1  \\
+        -1 & -1 & 2 
+    \end{pmatrix} = 3 - rank
+    \begin{pmatrix}
+        2 & 0 & -1  \\
+        0 & 1 & -1  \\
+        0 & 0 & 0 
+    \end{pmatrix} = 3 - 2 =  1, \]
+
+    \[ dim(ker\Delta_1^\mc{B}) = 4 - rank
+    \begin{pmatrix}
+        1 & -1 & 0 & 0  \\
+        -1 & 3 & -1 & -1 \\
+        0 & -1 & 1 & 0  \\
+        0 & -1 & 0 & 1 
+    \end{pmatrix} = 4 - rank
+    \begin{pmatrix}
+        1 & -1 & 0 & 0  \\
+        0 & 2 & 0 & -1 \\
+        0 & 0 & 1 & -1  \\
+        0 & 0 & 0 & 0 
+    \end{pmatrix} = 4 - 3 = 1,\]
+    
+    \[ dim(ker\Delta_1^\mc{C}) = 2 - rank
+    \begin{pmatrix}
+        1 & -1 \\
+        -1 & 1
+    \end{pmatrix} = 2 - rank
+    \begin{pmatrix}
+        1 & -1 \\
+        0 & 0
+    \end{pmatrix} = 2-1 = 1.\]
         
-        
+    Then we can also observe the $\Delta_2$ acting on the triangle on the basis $\{\ket{1,2},\ket{2,3},\ket{1,3}\}$ as
+    \[\begin{pmatrix}
+        2 & -1 & 1  \\
+        -1 & 2 & 1  \\
+        1& 1 & 2 
+    \end{pmatrix}.\] 
+    Then we see that is has a 1-dimensional kernel
+    \[ dim(ker\Delta_2) = 3 - rank
+        \begin{pmatrix}
+            2 & -1 & 1  \\
+            -1 & 2 & 1  \\
+            1& 1 & 2 
+        \end{pmatrix} = 3 - rank
+        \begin{pmatrix}
+            2 & 0 & -1  \\
+            0 & 1 & -1  \\
+            0 & 0 & 0 
+        \end{pmatrix} = 3 - 2 =  1. \]
+    Therefore there is only one cycle and since if we change the sign of the third raws and coloumns, then the sum 
+    of the three raws is 0, the cycle is $\ket{1,2}+\ket{2,3}+\ket{3,1}$.
+    
+    
+
+
+
         }
 
     This theorem will be proven in \autoref{ch:3}.
