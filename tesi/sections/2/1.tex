@@ -8,7 +8,7 @@
     \end{defn}
 
     In a graph $\mc{G}$ the non trivial chain groups are therefore $C_0(\mc{G})$ and $C_1(\mc{G})$, also called vertex and edge spaces. 
-    The canonical basis of the vertex space is the set of vertexes $\{\ket{i}\}_{i \in I}$, and that of edges which is a subset of $\{\ket{i,j}\}_{(i,j)\in I\times I}$
+    The canonical basis of the vertex space is the set of vertexes $\{\ket{i}\}_{i \in I}$, and that of edges which is a subset of $\{\ket{i,j}\}_{(i,j)\in I\times I}$.
 
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{adjacency matrix} $A$ of $\mc{G}$ on the canical vertex basis by
@@ -18,7 +18,7 @@
             0 & otherwise \\
         \end{cases} \]        
     \end{defn}
-    Only one boundary $\del_1$ and one coboundary $\del_1^\dagger$ can be defined on graphs, we shall name their dual representatives gradient $d_1^\dagger$ and divergence $d_1$ respectively.
+    Only one boundary $\del_1$ and one coboundary $\del_1^\dagger$ can be defined on graphs, we shall name their dual representatives  respectively gradient $d_1^\dagger$ and divergence $d_1$.
 
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{boundary} $\del_1 : C_1 \to C_0$ by 
@@ -48,7 +48,7 @@
 
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{$0$-laplacian} $\Delta_0 : C_0 \to C_0$ by 
-        \[ \Delta_0 := \del_1 \circ \del^\dagger_1.\]
+        \[ \Delta_0 := \del_1 \del^\dagger_1.\]
     \end{defn}
 
     One intersting propertiy of the $1$-laplacian is that the dimension of its kernel equals the connected components of the graph.
@@ -124,7 +124,7 @@
 
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{$1$-laplacian} $\Delta_1 : C_1 \to C_1$ by 
-        \[ \Delta_1 := \del_1^\dagger \circ \del_1.\]
+        \[ \Delta_1 := \del_1^\dagger \del_1.\]
     \end{defn}
 
     One intersting propertiy of the $1$-laplacian is that the dimension of its kernel equals the number of independent cycles.

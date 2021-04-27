@@ -11,7 +11,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.4}Simplicial Cohomology}{6}{section.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Laplacian Operators}{7}{section.1.5}
+\contentsline {section}{\numberline {1.5}Laplacian Operators}{8}{section.1.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Graphs}{9}{chapter.2}
 \defcounter {refsection}{0}\relax 

@@ -4,32 +4,32 @@
     In \autoref{ch:1} at \autoref{sec:1:5} we discussed laplacian operators, in this section we use the laplacian 
     eigenchains to define convolutional layers as in \cite{simplicialNN} in a so called \ii{simplicial neural network}. 
 
-    Let $\{\ket{e_i}\}_{i \in I}$ be the canonical basis of chains for $C_p$, namely the chains corresponding to the $p$-simplexes of the simplicial complex.
-    Nevertheless can also choose the laplacian eigenchains $\{\ket{i}\}_{i \in I}$, such that $\Delta_p\ket{i} = \lambda_i\ket{i}$, as a basis for $C_p$. This change of basis
+    Let $\{\ket{i}\}_{i \in I}$ be the canonical basis of chains for $C_p$, namely the chains corresponding to the $p$-simplexes of the simplicial complex.
+    Nevertheless can also choose the laplacian eigenchains $\{\ket{e_i}\}_{i \in I}$, such that $\Delta_p\ket{e_i} = \lambda_i\ket{e_i}$, as a basis for $C_p$. This change of basis
     is reflected on a change of coordinates called \ii{simplicial Fourier transform}.
 
     \begin{defn}
-        Let $\ket{f} \in C_p$, where $dimC_p = n_p$, we define the \ii{simplicial Fourier transform} $\mc{F}_p : \R^{n_p} \to \R^{n_p}$ to be
-        \[ (\braket{e_i}{f})_{i \in I} \mapsto (\braket{i}{f})_{i \in I},\]
+        Let $\ket{f} \in C_p$ and $dimC_p = n_p$, we define the \ii{simplicial Fourier transform} $\mc{F}_p : \R^{n_p} \to \R^{n_p}$ to be
+        \[ (\braket{i}{f})_{i \in I} \mapsto (\braket{e_i}{f})_{i \in I},\]
         where $I = \{1,...,n_p\}$.
     \end{defn}
 
-    This transform only defines a change of basis since $\ket{f} = \sum_{i \in I}\braket{e_i}{f}\ket{e_i} = \sum_{i \in I}\braket{i}{f}\ket{i}$, and therefore is invertible.
-    We can in fact represent the simplicial Fourier transform with the matrix $F^{-1}_{ij} = F^\dagger_{ij} := \braket{i}{e_j}$, and its inverse $F_{ij} := \braket{e_i}{j}$.
-    To define a convolution between two $p$-chains we use the famous convolution theorem $\mc{F}(f * \psi) = \mc{F}(f)\mc{F}(\psi)$. The laplacian is diagonalized by the simplicial
-    Fourier transform, i.e. $\Delta_p = F diag(\lambda_i)_{i \in I} F^\dagger$.
+    This transform only defines a change of basis since $\ket{f} = \sum_{i \in I}\braket{i}{f}\ket{i} = \sum_{i \in I}\braket{e_i}{f}\ket{e_i}$, and therefore is invertible.
+    We can in fact represent the simplicial Fourier transform with the matrix $F^{-1}_{ij} = F^\dagger_{ij} := \braket{e_i}{j}$, and its inverse $F_{ij} := \braket{i}{e_j}$.
+    To define a convolution between two $p$-chains we use the famous convolution theorem $\mc{F}(f * \psi) = \mc{F}(f)\mc{F}(\psi)$. 
+    % The laplacian is diagonalized by the simplicial Fourier transform, i.e. $\Delta_p = F diag(\lambda_i)_{i \in I} F^\dagger$.
 
     \begin{defn}
-        Let $\{\ket{i}\}_{i \in I}$ be a basis such that $\Delta_p\ket{i} = \lambda_i\ket{i}$, let $\ket{f},\ket{\psi} \in C_p$, we define the representatives of $\ket{f * \psi}$ on
+        Let $\{\ket{e_i}\}_{i \in I}$ be a basis such that $\Delta_p\ket{e_i} = \lambda_i\ket{e_i}$, let $\ket{f},\ket{\psi} \in C_p$, we define the representatives of $\ket{f * \psi}$ on
         the laplacian eigenchains to be 
-        \[ \braket{i}{f * \psi} := \braket{i}{f}\braket{i}{\psi} \quad \forall i \in I.\]
-        Therefore $\ket{f * \psi} = \sum_{i \in I}\braket{i}{f}\braket{i}{\psi}\ket{i}$.
+        \[ \braket{e_i}{f * \psi} := \braket{e_i}{f}\braket{e_i}{\psi} \quad \forall i \in I.\]
+        Therefore $\ket{f * \psi} = \sum_{i \in I}\braket{e_i}{f}\braket{e_i}{\psi}\ket{e_i}$.
     \end{defn}
 
     The filters used in \cite{simplicialNN} are low degree polynomials in the frequency domain, for instance a filter defined by $\braket{i}{\psi_\mu} = \sum_{n = 0}^N \mu_n \lambda_i^n$.
     This way one can easily define the convolution on the canonical basis as 
-    \[\braket{e_i}{f * \psi_\mu} = \sum_{j \in I}\braket{e_i}{j}\braket{j}{f*\psi_\mu} = \sum_{n = 0}^N\mu_n \bra{e_i}(\sum_{j \in I}\ket{j}\lambda_j^n\bra{j})\ket{f}
-     = \sum_{n=0}^N \mu_n \bra{e_i}\Delta_p^n\ket{f},\]
+    \[\braket{i}{f * \psi_\mu} = \sum_{j \in I}\braket{i}{e_j}\braket{e_j}{f*\psi_\mu} = \sum_{n = 0}^N\mu_n \bra{i}(\sum_{j \in I}\ket{e_j}\lambda_j^n\bra{e_j})\ket{f}
+     = \sum_{n=0}^N \mu_n \bra{i}\Delta_p^n\ket{f},\]
     therefore $\ket{f*\psi_\mu} = \sum_{n = 0}^N \mu_n \Delta_p^n\ket{f}$.
 
 \end{document}
