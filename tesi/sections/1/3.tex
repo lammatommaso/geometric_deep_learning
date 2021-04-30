@@ -2,66 +2,37 @@
 
 \begin{document}
 
-    An important field in algebraic topology is homology theory. We shall discuss homology theory to the extent
+    Homology and cohomology are key concepts in algebraic topology. We shall discuss homology theory to the extent
     that allows us to define the laplacian operator on simplicial complexes, for supplementary readings see \cite{singerthorpe} at 6.1 or \cite{hatcher} at 2.1.
-    First we want to equip our simplicial complexes with an orientation. So far we have considered the simplex $\{x_i\}_{i \in I}$ up to reorderings of the index set $I$, but in most applications this is not the case.
-
-    \begin{prop}
-        Let $\{x_i\}_{i \in I}$ be a $p$-simplex and
-        \[ \{x_i\}_{i \in I} \sim \{x_i\}_{i \in \pi(I)} \iff sgn(\pi) = 1,\]
-        where $\pi : I \to I$ is a permutation of the indexes and $sgn(\pi)$ its sign, then $\sim$
-        is an equivalence relation.
-    \end{prop}
-    \begin{rem}
-        Let $S_{p+1}$ be the group of permutations of a $p$-simplex, and $\{\m1,1\}$ a multiplicative group,
-        we recall the fact that $sgn: S_{p+1} \to \{\m1,1\}$ is a group homomorphism, that is \[sgn(\pi\eta) = sgn(\pi)sgn(\eta) \quad \forall \pi,\eta \in S_{p+1}.\]
-    \end{rem}
-    % \begin{proof}
-    %     We divide the proof in three steps:
-    %     \begin{enumerate}[(i)]
-    %         \item Since $sgn(id_I) = 1$ we have that $\{x_i\}_{i \in I} \sim \{x_i\}_{i \in id_I(I)} = \{x_i\}_{i \in I} $.
-    %         \item Since $sgn(\pi)sgn(\pi^{-1}) = sgn(\pi\pi^{-1})=sgn(id_I)=1$ we have that $sgn(\pi) = sgn(\pi^{-1})$, therefore
-    %               $ \{x_i\}_{i \in I} \sim \{x_i\}_{i \in \pi(I)} \iff \{x_i\}_{i \in \pi(I)} \sim \{x_i\}_{i \in I}$.
-    %         \item The transitivity is a consequence of the fact that the product of two even permutations is also even.\qedhere
-    %     \end{enumerate}
-    % \end{proof}
-  
-    \begin{defn}
-        We define an \ii{oriented simplex} $\ch{x_i}_{i \in I}$ to be a simplex $\{x_i\}_{i \in I}$ together with the choice of
-        one of the two equivalence classs with respect to $\sim$.
-    \end{defn}
-    
-    We denote by $\{\ch{\sigma_i}\}_{i \in I}$, where $I = \{1,...,n_p\}$, the set of all $p$-simplexes of the complex each one with a choice
+    First we want to equip our simplicial complexes with an orientation. So far we have considered the simplex $\{x_i\}_{i \in I}$ up to reorderings of the index set $I$, but in most applications this is not the case.\\
+   
+    We denote by $\{\sigma_i\}_{i \in I}$, where $I = \{1,...,n_p\}$, the set of all $p$-simplexes of the complex each one with a choice
     of orientation.
 
     \begin{defn}
+        \label{chaingroup}
         Let $\mc{A}$ be a simplicial complex, we define the \ii{group of p-chains} 
-        \[ C_p(\mc{A},\R) := \frac{\{ \sum_{i \in I} \lambda_i \ch{\sigma_i} : \lambda_i \in \R \}}{\{\ch{x_0,x_1,...,x_p}+\ch{x_1,x_0,...x_p}\} }.\]
+        \[ C_p(\mc{A},\R) := \{ \sum_{i \in I} \lambda_i \{\sigma_i\} : \lambda_i \in \R \}.\]
     \end{defn}
 
-    \begin{rem}
-        The quotient in the definition of the group of chains allows us to identify the equivalence classes $[\ch{\pi(\sigma)}]_\sim=sgn(\pi)[\ch{\sigma}]_\sim$.
-    \end{rem}
-
-    In the previous definition the sum $\sum_{i \in I} \lambda_i \ch{\sigma_i}$ is a formal sum that can be generalized from $\R$ to an arbitrary abelian group $G$, for a deeper insight into free abelian groups see \cite{lang} at 1.7.
-    Nevertheless, for the most of the applications the groups $\Z,\R,\Z_2$ are considered. To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},\R)$.
+    In the definition\autoref{chaingroup} the sum $\sum_{i \in I} \lambda_i \{\sigma_i\}$ is the formal sum of the free abelian group on $\R$, see \cite{lang} at 1.7.
+    This can be generalized from $\R$ to an arbitrary abelian group, nevertheless, for the most of the applications, the groups $\Z,\R,\Z_2$ are considered. To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},\R)$.
     
     \begin{prop}
         $C_p$ is an abelian group.
-        In particular it is a vector space on $\R$.
     \end{prop}
 
     A particularly relevant role in homology theory is played by the \ii{boundary map}. First we define the boundary of an oriented simplex.
 
     \begin{defn}
         Let $\ch{\sigma} = \ch{x_0,...,x_{p+1}}$ be an oriented $(p+1)$-simplex. The boundary $\del\ch{\sigma}$ of $\ch{\sigma}$ is the $p$-chain
-        defined by \[ \del_{p+1}\ch{\sigma} := \sum_{i = 0}^{p+1}(-1)^i\ch{x_0,...,\hat{x_i},...,x_{p+1}}\]
-        where the  $\hat{}$  over a symbol means that symbol is deleted.
+        defined by \[ \del_{p+1}\ch{\sigma} := \sum_{i = 0}^{p+1}(-1)^i\ch{x_0,...,\widehat{x_i},...,x_{p+1}}\]
+        where the  $\widehat{\color{white} a}$  over a symbol means that symbol is deleted.
     \end{defn}
 
     \begin{rem}
-        Note that whenever we are able to construct a geometric realization for the oriented simplicial complex, the set $\bigcup_{i = 0}^{p+1}\ch{x_0,...,\hat{x_i},...,x_{p+1}}$
-        is the topological boundary of $\ch{\sigma}$.
+        Note that whenever we are able to construct a geometric realization for the oriented simplicial complex, the set $\bigcup_{i = 0}^{p+1}[x_0,...,\widehat{x_i},...,x_{p+1}]$
+        is the topological boundary of $[\sigma]$.
     \end{rem}
 
     Furthermore we are able to extend the boundary from simplexes to chains.
@@ -78,11 +49,13 @@
     \end{lem}
     \begin{proof}
         Since the boundary maps are linear it is sufficient to check this on the generators.
-        Let $\del_{p+1}\ch{x_0,\dots,x_{p+1}} = \sum_{i=0}^{p+1} (-1)^i\ch{x_0,\dots,\hat{x_i},\dots,x_{p+1}}$ then 
-        \[(\del_p \circ \del_{p+1})\ch{x_0,\dots,x_{p+1}} = \sum_{j=0, j \neq i}^{p+1} \sum_{i=0}^{p+1} (-1)^{i+j}\ch{x_0,\dots,\hat{x_i},\dots,\hat{x_j},\dots,x_{p+1}} = 0. \qedhere \]     
+        Let $\del_{p+1}\ch{x_0,\dots,x_{p+1}} = \sum_{i=0}^{p+1} (-1)^i\ch{x_0,\dots,\widehat{x_i},\dots,x_{p+1}}$ then 
+        \[(\del_p \circ \del_{p+1})\ch{x_0,\dots,x_{p+1}} = \sum_{j=0, j \neq i}^{p+1} \sum_{i=0}^{p+1} (-1)^{i+j}\ch{x_0,\dots,\widehat{x_i},\dots,\widehat{x_j},\dots,x_{p+1}} = 0. \qedhere \]     
     \end{proof}
 
     The homology lemma is necessary to define the \ii{homology group}.
+    The homology group is , intuitively,  the space of cycles that are not boundaries. In fact, without the
+    homology lemma the quotient would not well defined since $im\del_{p+1} \subset ker\del_p$ would not be satisfied.
 
     \begin{defn}
         We define the \ii{p-homology group} to be 
@@ -90,8 +63,5 @@
         where $\im\del_{p+1}$ is called the group of simplicial \ii{p-cycles} and
         $\ker\del_p$ is called the group of simplicial \ii{p-boundaries}.
     \end{defn}
-
-    The homology group is therefore, intuitively,  the space of cycles that are not boundaries. Without the
-    homology lemma the quotient would not well defined since $im\del_{p+1} \subset ker\del_p$ would not be satisfied.
 
 \end{document}

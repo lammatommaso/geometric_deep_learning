@@ -10,7 +10,7 @@
     \end{defn}
 
     \begin{prop}
-        The homomorphims $\{\varphi_{\ch{\sigma_i}}:C_p \to \R\}$ such that $\varphi_{\ch{\sigma_i}}(\ch{\sigma_j}) = \delta_{ij}$
+        The homomorphims $\{\varphi_{\ch{\sigma_i}}:C_p \to \R\}$ such that $\varphi_{\ch{\sigma_i}}(\ch{\sigma_j}) = \delta_{ij}$,
         form a basis of $C^p$.
     \end{prop}
 
@@ -33,41 +33,41 @@
         $ker d_p$ is the group of simplicial p-coboundaries.
     \end{defn}
 
-    To have a specular intuition of what the coboundary operator actually does, we equipe our simplicial chain groups with
-    an inner product. This finite dimensional Hilbert space structure shall allow us to represent the cochain $\varphi_{\ch{\sigma}}$ evaluated on the chain $\ch{\tau}$ 
-    as the inner product $\scal{\ch{\sigma}}{\ch{\tau}}$.
+    % To have a specular intuition of what the coboundary operator actually does, we equipe our simplicial chain groups with
+    % an inner product. This finite dimensional Hilbert space structure shall allow us to represent the cochain $\varphi_{\ch{\sigma}}$ evaluated on the chain $\ch{\tau}$ 
+    % as the inner product $\scal{\ch{\sigma}}{\ch{\tau}}$.
 
-    \begin{defn}
-        We define the scalar product $\scal{\cdot}{\cdot} : C_p \times C_p \to \R$ on the canonical basis of $C_p$ to be 
-        \[ \scal{\ch{\sigma_i}}{\ch{\sigma_j}} = \delta_{ij} ,\]  
-        where $i,j$ are any two p-simplexes in the canonical basis of $C_p$ and $\delta$ is the Kronecker Delta.
-    \end{defn}
+    % \begin{defn}
+    %     We define the scalar product $\scal{\cdot}{\cdot} : C_p \times C_p \to \R$ on the canonical basis of $C_p$ to be 
+    %     \[ \scal{\ch{\sigma_i}}{\ch{\sigma_j}} = \delta_{ij} ,\]  
+    %     where $i,j$ are any two p-simplexes in the canonical basis of $C_p$ and $\delta$ is the Kronecker Delta.
+    % \end{defn}
 
-    Another way to see this scalar product is as an integration.
+    % Another way to see this scalar product is as an integration.
 
-    \begin{defn}
-        We define $\int^p:C_p\times C^p\to\R$ to be an \ii{integration} such that
-        \[ \int^{p}_{\ch{\tau}}\varphi_{\ch{\sigma}} := \varphi_{\ch{\sigma}}(\ch{\tau}).\]
-    \end{defn}
+    % \begin{defn}
+    %     We define $\int^p:C_p\times C^p\to\R$ to be an \ii{integration} such that
+    %     \[ \int^{p}_{\ch{\tau}}\varphi_{\ch{\sigma}} := \varphi_{\ch{\sigma}}(\ch{\tau}).\]
+    % \end{defn}
 
-    From this point of view it is clear that the definition of coboundary is equivalent to a discrete generalized Stokes' theorem.
+    % From this point of view it is clear that the definition of coboundary is equivalent to a discrete generalized Stokes' theorem.
 
-    \begin{prop}
-        From the definitions $\int^{p}_{\ch{\del_{p+1}\tau}}\varphi_{\ch{\sigma}}=\int^{p+1}_{\ch{\tau}}d_{p+1}\varphi_{\ch{\sigma}}$.
-    \end{prop}
+    % \begin{prop}
+    %     From the definitions $\int^{p}_{\ch{\del_{p+1}\tau}}\varphi_{\ch{\sigma}}=\int^{p+1}_{\ch{\tau}}d_{p+1}\varphi_{\ch{\sigma}}$.
+    % \end{prop}
 
-    One can therefore think of the coboundary operator as a discrete exterior derivative acting on cochains. 
-    Furthermore the choice of a measure of integration is equivalent to a choice of a basis for the chain group.
+    % One can therefore think of the coboundary operator as a discrete exterior derivative acting on cochains. 
+    % Furthermore the choice of a measure of integration is equivalent to a choice of a basis for the chain group.
 
-    The same Hilbert space structure allows us to represent the coboundary operator $d$ acting on a cochain with its cochain representative.
+    % The same Hilbert space structure allows us to represent the coboundary operator $d$ acting on a cochain with its cochain representative.
 
-    \begin{defn}
-        Let $d_{p+1} : C^p \to C^{p+1}$ be the coboundary operator, then for any \\ $\varphi_{\ch{\sigma}} \in C^p, \ch{\tau} \in C_{p+1}$ we can define its dual representation $\del^\dagger_{p+1}:C_p \to C_{p+1}$ by
-        \[d_{p+1}\varphi_{\ch{\sigma}}(\ch{\tau}) = \varphi_{\del^\dagger_{p+1}\ch{\sigma}},\]
-        where $\del_{p+1}^\dagger$ is the adjoint of $\del_{p+1}$ w.r.t. $\scal{\cdot}{\cdot}$, 
-        namely $\scal{\ch{\sigma}}{\del_{p+1}\ch{\tau}} = \scal{\del^\dagger_{p+1} \ch{\sigma}}{\ch{\tau}}$.
-    \end{defn}
+    % \begin{defn}
+    %     Let $d_{p+1} : C^p \to C^{p+1}$ be the coboundary operator, then for any \\ $\varphi_{\ch{\sigma}} \in C^p, \ch{\tau} \in C_{p+1}$ we can define its dual representation $\del^\dagger_{p+1}:C_p \to C_{p+1}$ by
+    %     \[d_{p+1}\varphi_{\ch{\sigma}}(\ch{\tau}) = \varphi_{\del^\dagger_{p+1}\ch{\sigma}},\]
+    %     where $\del_{p+1}^\dagger$ is the adjoint of $\del_{p+1}$ w.r.t. $\scal{\cdot}{\cdot}$, 
+    %     namely $\scal{\ch{\sigma}}{\del_{p+1}\ch{\tau}} = \scal{\del^\dagger_{p+1} \ch{\sigma}}{\ch{\tau}}$.
+    % \end{defn}
 
-    One can therefore think of the coboundary operator as a discrete exterior derivative acting on cochains.
+    % One can therefore think of the coboundary operator as a discrete exterior derivative acting on cochains.
 
 \end{document}
