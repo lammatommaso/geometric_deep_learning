@@ -12,11 +12,22 @@
     \begin{defn}
         \label{chaingroup}
         Let $\mc{A}$ be a simplicial complex, we define the \ii{group of p-chains} 
-        \[ C_p(\mc{A},\R) := \{ \sum_{i \in I} \lambda_i \{\sigma_i\} : \lambda_i \in \R \}.\]
+        \[ \mc{C}_p(\mc{A},\R) := \{ \sum_{i \in I} \lambda_i \{\sigma_i\} : \lambda_i \in \R \}.\]
     \end{defn}
 
     In the definition\autoref{chaingroup} the sum $\sum_{i \in I} \lambda_i \{\sigma_i\}$ is the formal sum of the free abelian group on $\R$, see \cite{lang} at 1.7.
-    This can be generalized from $\R$ to an arbitrary abelian group, nevertheless, for the most of the applications, the groups $\Z,\R,\Z_2$ are considered. To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},\R)$.
+    This can be generalized from $\R$ to an arbitrary abelian group, nevertheless, for the most of the applications, the groups $\Z,\R,\Z_2$ are considered. 
+
+    \begin{defn}
+        \label{orientedchains}
+        Let $\mc{A}$ be a simplicial complex, we define the \ii{group of oriented p-chains} as
+        the group $\mc{C}_p(\mc{A},\R)$ subject to $ \{x_i\}_{i \in I} = sgn(\pi)\{x_i\}_{i \in \pi(I)}$, where $\pi:I \to I$ is 
+        any permutation of the index set. We shall denote this group as $C_p(\mc{A},\R)$, and its chains with the notation $\ch{x_i}_{i \in I}$.
+    \end{defn}
+
+    To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},\R)$. The constraints due to the 
+    permutations in definition\autoref{orientedchains} simply implies that whenever we swap two vertexes in the chain
+    we must multiply by $(-1)$.
     
     \begin{prop}
         $C_p$ is an abelian group.

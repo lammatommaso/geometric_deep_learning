@@ -11,24 +11,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.4}Simplicial Cohomology}{6}{section.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Laplacian Operators}{7}{section.1.5}
+\contentsline {chapter}{\numberline {2}Graphs}{7}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Graphs}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Homology and cohomology on graphs}{7}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Homology and cohomology on graphs}{8}{section.2.1}
+\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{10}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Group Equivariant Neural Networks}{10}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Group Equivariant Neural Networks}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Convolutional Neural Networks}{10}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Convolutional Neural Networks}{11}{section.3.2}
+\contentsline {section}{\numberline {3.3}Simplicial Neural Networks}{10}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Simplicial Neural Networks}{11}{section.3.3}
+\contentsline {section}{\numberline {3.4}Message Passing Neural Networks}{11}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Message Passing Neural Networks}{12}{section.3.4}
+\contentsline {chapter}{Conclusion}{12}{chapter*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusion}{13}{chapter*.2}
+\contentsline {chapter}{\numberline {A}Category Theory}{13}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{14}{Appendix.1.A}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{15}{chapter*.3}
+\contentsline {chapter}{Bibliography}{14}{chapter*.7}
