@@ -2,15 +2,19 @@
 \begin{document}
 
     In order to define data on simplicial complexes we are interested in studying the dual of the chains $\ch{\sigma}$,
-    which we shall call cochains $\varphi_{\ch{\sigma}}$.
+    which we shall call cochains $\cc{\sigma}$.
        
     \begin{defn}
         Let $C_p$ be the group p-chains, we define the group of \ii{p-cochains} to 
-        be $C^p := Hom(C_p, \R)$, i.e. the dual space of $C_p$.
+        be \[C^p := Hom(C_p, \R).\]
     \end{defn}
 
     \begin{prop}
-        The homomorphims $\{\varphi_{\ch{\sigma_i}}:C_p \to \R\}$ such that $\varphi_{\ch{\sigma_i}}(\ch{\sigma_j}) = \delta_{ij}$,
+        $C^p$ is an abelian group.
+    \end{prop}
+
+    \begin{prop}
+        The homomorphims $\{\cc{\sigma_i}:C_p \to \R\}$ such that $\braket{\sigma_i}{\sigma_j} =: \cc{\sigma_i}(\ch{\sigma_j}) = \delta_{ij}$,
         form a basis of $C^p$.
     \end{prop}
 
@@ -20,8 +24,8 @@
     \begin{defn}
         The dual of the boundary maps which we shall call
         \ii{coboundary maps}, is the group homomorphsm defined by
-        \[ d_{p+1} : C^p \to C^{p+1} \quad d_{p+1}\varphi_{\ch{\sigma}} := \varphi_{\ch{\sigma}} \circ \del_{p+1} \quad \forall \varphi_{\ch{\sigma}} \in C^p.\]
-        Therefore $d_{p+1}\varphi_{\ch{\sigma}}(\ch{\tau}) = \varphi_{\ch{\sigma}} (\del_{p+1}\ch{\tau}) \quad \forall \ch{\tau} \in C_p$.
+        \[ d_{p+1} : C^p \to C^{p+1} \quad d_{p+1}\cc{\sigma} := \cc{\sigma} \del_{p+1} \quad \forall \cc{\sigma} \in C^p.\]
+        Therefore $d_{p+1}\cc{\sigma}(\ch{\tau}) = \cc{\sigma} (\del_{p+1}\ch{\tau}) \quad \forall \ch{\tau} \in C_p$.
     \end{defn}
 
     The proof of $d_{p+1} \circ d_p = 0$ follow directly from the homology lemma. The cohomology lemma allows us to define the \ii{cohomology group}.
