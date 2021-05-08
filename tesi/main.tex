@@ -25,6 +25,10 @@
 \usepackage{appendix}
 \usepackage[style=numeric, backend=biber, sorting=nty]{biblatex}
 \usepackage{chngcntr}
+
+\definecolor{SAEblue}{rgb}{0, .62, .91}
+\renewcommand\theequation{{\color{SAEblue}\arabic{equation}}}
+
 \addbibresource{bibliography.bib}
 
 \setlength{\parindent}{0pt}
@@ -44,7 +48,7 @@
 \newtheorem{exa}[thm]{Example}
 
 \theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
+\newtheorem*{rem}{Remark}
 
 % \AtAppendix{
 %     \renewtheorem{thm}{Theorem}[chapter]
@@ -105,25 +109,7 @@
     \end{chapter}
     \begin{chapter}{Graphs}
         An important branch of geometric deep learning is graph representation learning. In this section we will therefore
-        introduce graphs and graphs laplacians to build a mathematical background for graph neural networks.
-        Graphs can be used to encode a wide variety of data, from social networks friendships to maps. An interesting example
-        comes from the beginning of topology itself in Koningsberg. Euler noticed that in Koningsberg, there was no path that 
-        allowed to cross all seven bridges just once, therefore he started to simplify the problem to approach it in a more mathematical 
-        way.
-        \begin{figure}[H]
-            \begin{minipage}{.5\textwidth}
-                \centering
-                \includegraphics[width=6cm, height=4cm]{sections/2/Bridge}
-                \caption{The city of Konigsberg and the\\ seven bridges.}
-                \label{fig:2:1}
-            \end{minipage}
-            \begin{minipage}{.5\textwidth}
-                \centering
-                \includegraphics[width=4cm, height=3cm]{sections/2/kgraph}
-                \caption{Graph representing Konigsberg's seven bridges.}
-                \label{fig:2:2}
-            \end{minipage}
-        \end{figure}
+        introduce graphs and graphs laplacians to build a mathematical background for graph neural networks. 
         \subfile{sections/2}
     \end{chapter}
     \begin{chapter}{Geometric Deep Learning}

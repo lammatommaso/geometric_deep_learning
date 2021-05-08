@@ -1,4 +1,30 @@
 \documentclass[../2.tex]{subfiles}
 \begin{document}
+    Only one boundary $\del_1$ and one coboundary $\del_1^\dagger$ can be defined on graphs, we shall name their dual representatives  respectively gradient $d_1^\dagger$ and divergence $d_1$.
 
+    \begin{defn}
+        Let $\mc{G}$ be a graph, we define the \ii{boundary} $\del_1 : C_1 \to C_0$ by 
+        \[ \del_1\ket{i,j} := \ket{i} - \ket{j} \quad \forall \ket{i,j} \in C_1.\]
+    \end{defn}
+    
+    \begin{defn}
+        Let $\mc{G}$ be a graph, we define the \ii{coboundary} $\del^\dagger_1 : C_0 \to C_1$ by 
+        \[ \del^\dagger_1\ket{i} := \sum_{\ket{i,j} \in C_1} \ket{i,j}.\]
+    \end{defn}
+
+    % {\color{red} Disegno che mostra il cobordo di un nodo}
+
+    % The prevously defined generalizd Stokes' theorem is on graphs a discrete version of the divergence theorem.
+
+    % \begin{thm}
+    %     Let $\mc{G}$ be a graph, let $\ket{\phi} \in C_0, \ket{\psi} \in C_1$ then $\bra{\phi}\del_1\ket{\psi} = \bra{\psi}\del_1^\dagger\ket{\phi} = (d_1\bra{\phi})\ket{\psi}$.
+    % \end{thm}
+
+    % Therefore the integral of the cochain $\ket{\psi}$ over the boundary of $\ket{\phi}$ equals the integral of the divergence of $\ket{\psi}$ over $\ket{\phi}$.
+
+    % {\color{red} Disegno che mostra il teorema della divergenza discreto}
+
+    On a graph that admits non trivial gradient and divergence, we can define a non trivial laplacian operator as the gradient of the divergence.
+    Although this might sound strange, the inversion of gradient and divergence in the definition of laplacian is due to the fact that we are representing
+    the functions on the graph (cochains) by their dual chains.
 \end{document}
