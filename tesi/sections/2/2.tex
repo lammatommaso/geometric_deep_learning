@@ -4,13 +4,19 @@
 
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{boundary} $\del_1 : C_1 \to C_0$ by 
-        \[ \del_1\ket{i,j} := \ket{i} - \ket{j} \quad \forall \ket{i,j} \in C_1.\]
+        \[ \del_1\ch{i,j} := \ch{i} - \ch{j} \quad \forall \ch{i,j} \in C_1.\]
     \end{defn}
-    
+
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{coboundary} $\del^\dagger_1 : C_0 \to C_1$ by 
-        \[ \del^\dagger_1\ket{i} := \sum_{\ket{i,j} \in C_1} \ket{i,j}.\]
+        \[ \del^\dagger_1\ket{i} := \sum_{j : \ket{i,j} \in C_1} \ket{i,j}.\]
     \end{defn}
+
+    From definition \ref{dualrel} we have that the divergence satisfies the dual relation
+    \[ d_1\cc{i,j} = \cc{i,j}\del_1,\]
+    where the cochain $\cc{i,j}\del_1$ is the dual of the chain $\del_1^\dagger\ch{i,j}$, 
+    therefore we can represent the action of $d_1$ on cochain via the action of $\del_1^\dagger$ on chains.\\
+    Similarly we can represent the action of $d_1^\dagger$ with $\del_1$.
 
     % {\color{red} Disegno che mostra il cobordo di un nodo}
 
@@ -24,7 +30,4 @@
 
     % {\color{red} Disegno che mostra il teorema della divergenza discreto}
 
-    On a graph that admits non trivial gradient and divergence, we can define a non trivial laplacian operator as the gradient of the divergence.
-    Although this might sound strange, the inversion of gradient and divergence in the definition of laplacian is due to the fact that we are representing
-    the functions on the graph (cochains) by their dual chains.
 \end{document}

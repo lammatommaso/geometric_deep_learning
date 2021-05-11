@@ -37,24 +37,51 @@
     \end{defn}
 
     \begin{defn}
+        Let $\mc{G}$ be a graph, we define the \ii{adjacency matrix} $A$ of $\mc{G}$ by
+        \[a_{ij} = 
+        \begin{cases}
+            1 & \exists e \in E(\mc{G}) : \psi_\mc{G}(e) = \{i,j\} \\
+            0 & otherwise \\
+        \end{cases}. \]        
+    \end{defn}
+
+    \begin{defn}
         A graph is \ii{simple} if it has no loops nor parallel edges, i.e. there is a unique edge joining two different vertices.
     \end{defn}
     
     Much of graph theory is concerned with the study of simple graphs.
 
-    \begin{defn}
-        A \ii{simple undirected graph} is equivalent to a $1$-dimensional abstract simplicial complex.
-    \end{defn}
+    \begin{prop}
+        A \ii{simple undirected graph} $\mc{G}$ is representable with $1$-dimensional abstract simplicial complex.
+    \end{prop}
+    \begin{proof}
+        Let's construct a family of sets $\mc{A}$ in the following way.
+        \[ \mc{A} = V(\mc{G}) \cup \{ \{i,j\} \in V(\mc{G}) \times V(\mc{G}) : \exists e \in E(\mc{G}) \quad \psi_\mc{G}(e)=\{i,j\}\}. \]
+        It is easy to see that this is an abstract simplicial complex of dimension $1$.
+    \end{proof}
 
-    In a graph $\mc{G}$ the non trivial chain groups are therefore $C_0(\mc{G})$ and $C_1(\mc{G})$, also called vertex and edge spaces. 
-    The canonical basis of the vertex space is the set of vertexes $\{\ket{i}\}_{i \in I}$, and that of edges which is a subset of $\{\ket{i,j}\}_{(i,j)\in I\times I}$.
+    % In a graph $\mc{G}$ the non trivial chain groups are therefore $C_0(\mc{G})$ and $C_1(\mc{G})$, also called vertex and edge spaces. 
+    % The canonical basis of the vertex space is the set of vertexes $\{\ket{i}\}_{i \in I}$, and that of edges which is a subset of $\{\ket{i,j}\}_{(i,j)\in I\times I}$.
 
     \begin{defn}
-        Let $\mc{G}$ be a graph, we define the \ii{adjacency matrix} $A$ of $\mc{G}$ on the canical vertex basis by
+        Let $\mc{G}$ be a simple undirected graph, we define the \ii{adjacency matrix} $A$ of $\mc{G}$ on the canonical vertex basis by
         \[a_{ij} = 
         \begin{cases}
             1 & \ket{i,j} \in C_1 \\
             0 & otherwise \\
-        \end{cases} \]        
+        \end{cases}. \]        
     \end{defn}
+
+    Since $C_1$ is a group, whenever $\ket{i,j} \in C_1$ then also $\ket{j,i} = -\ket{i,j} \in C_1$. In order to represent simple directed
+    graphs we need to choose a canonical basis $B_1$ of oriented $p$-simplices.
+
+    \begin{defn}
+        Let $\mc{G}$ be a simple directed graph w.r.t. $B_1$, we define the \ii{adjacency matrix} $A$ of $\mc{G}$ on the canonical vertex basis by
+        \[a_{ij} = 
+        \begin{cases}
+            1 & \ket{i,j} \in B_1 \\
+            0 & otherwise \\
+        \end{cases}. \]  
+    \end{defn}
+
 \end{document}

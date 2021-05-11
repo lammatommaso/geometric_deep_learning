@@ -17,7 +17,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Homology and Cohomology on Graphs}{8}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Laplacian Operators on Graphs}{8}{section.2.3}
+\contentsline {section}{\numberline {2.3}Laplacian Operators on Graphs}{9}{section.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Geometric Deep Learning}{11}{chapter.3}
 \defcounter {refsection}{0}\relax 
