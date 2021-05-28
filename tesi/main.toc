@@ -19,18 +19,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Laplacian Operators on Graphs}{9}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{11}{chapter.3}
+\contentsline {section}{\numberline {2.4}Heat Equation on Graphs}{11}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Group Equivariant Neural Networks}{11}{section.3.1}
+\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{13}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Convolutional Neural Networks}{11}{section.3.2}
+\contentsline {section}{\numberline {3.1}Group Equivariant Neural Networks}{13}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Simplicial Neural Networks}{11}{section.3.3}
+\contentsline {section}{\numberline {3.2}Convolutional Neural Networks}{13}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Message Passing Neural Networks}{12}{section.3.4}
+\contentsline {section}{\numberline {3.3}Simplicial Neural Networks}{13}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusion}{13}{chapter*.7}
+\contentsline {section}{\numberline {3.4}Message Passing Neural Networks}{14}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{14}{Appendix.1.A}
+\contentsline {chapter}{Conclusion}{15}{chapter*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{15}{chapter*.8}
+\contentsline {chapter}{\numberline {A}Category Theory}{16}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Dirac Notation}{17}{Appendix.1.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{18}{chapter*.8}

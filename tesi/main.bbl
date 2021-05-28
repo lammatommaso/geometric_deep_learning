@@ -19,6 +19,35 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{bondy}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6391bf23abeccb31ec5bc5d82311d54f}{%
+           family={Bondy},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=b4ac94ede8a7b1b29472cb06b5c1c380}{%
+           family={Murty},
+           familyi={M\bibinitperiod},
+           given={U.\bibnamedelimi S.\bibnamedelimi R.},
+           giveni={U\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5818ef8fde5256d5c548ef9704eea431}
+      \strng{fullhash}{5818ef8fde5256d5c548ef9704eea431}
+      \strng{bibnamehash}{5818ef8fde5256d5c548ef9704eea431}
+      \strng{authorbibnamehash}{5818ef8fde5256d5c548ef9704eea431}
+      \strng{authornamehash}{5818ef8fde5256d5c548ef9704eea431}
+      \strng{authorfullhash}{5818ef8fde5256d5c548ef9704eea431}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Graph Theory with Applications}
+      \field{year}{1976}
+    \endentry
     \entry{gcnn}{misc}{}
       \name{author}{2}{}{%
         {{hash=0b1aedbf6412c5f6de619d2d9974b158}{%
@@ -128,32 +157,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Algebraic Topology}
       \field{year}{2000}
-    \endentry
-    \entry{laplacian}{misc}{}
-      \name{author}{2}{}{%
-        {{hash=3493db22ce6eaad9626a9b10529869ba}{%
-           family={Horak},
-           familyi={H\bibinitperiod},
-           given={Danijela},
-           giveni={D\bibinitperiod}}}%
-        {{hash=0da1cd02a83e8af4aa26b2ee24fa2850}{%
-           family={Jost},
-           familyi={J\bibinitperiod},
-           given={Juergen},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{fullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{bibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{authorbibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{authornamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{authorfullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \field{sortinit}{H}
-      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Spectra of combinatorial Laplace operators on simplicial complexes}
-      \field{year}{2011}
     \endentry
     \entry{lang}{book}{}
       \name{author}{1}{}{%
