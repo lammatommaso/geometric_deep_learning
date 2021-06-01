@@ -37,24 +37,26 @@
         of $e$. A graph where the ordering of the ends of an edge is meaningful is said to be a \ii{directed} graph.
     \end{defn}
 
+    Fig. \ref{fig:2:3} represents an undirected graph with nine vertices and seven edges.
+
     \begin{defn}
-        Let $\mc{G}$ be a graph, we define the \ii{adjacency matrix} $A$ of $\mc{G}$ as follows,
-        $A$ is a $n \times n$ matrix, where $n$ is the number of vertices, such that
+        Let $\mc{G}$ be an undirected graph, we define the \ii{adjacency matrix} $A$ of $\mc{G}$ as follows,
+        $A$ is a $n \times n$ symmetric matrix, where $n$ is the number of vertices, such that
         \[a_{ij} = 
         \begin{cases}
-            1 & \text{if there exists an edge joining $i$ to $j$} \\
+            1 & \text{if there exists an edge joining $i$ with $j$} \\
             0 & \text{otherwise} \\
         \end{cases}. \]        
     \end{defn}
 
     \begin{rem}
-        We used "to" instead of "with" in the previous definition in order to consider directed graphs.
-        In fact for a directed graph the adjacency matrix is not symmetric.
+        We can also define the adjacency matrix for directed graphs.
+        For a directed graph the adjacency matrix is not symmetric.
     \end{rem}
 
     \begin{defn}
-        A graph is \ii{simple} if it has neither parallel edges nor loops, i.e. there is a unique edge joining two different vertices
-        and no vertex is joined to itself by an edge. This implies $a_ii = 0$ in the adjacency matrix.
+        A graph is \ii{simple} if it has neither different edges connecting the same pair of verices nor loops, i.e. there is a unique edge joining two different vertices
+        and no vertex is joined to itself by an edge. This implies $a_{ii} = 0$ in the adjacency matrix.
     \end{defn}
     
     Much of graph theory is concerned with the study of simple graphs.
@@ -63,14 +65,14 @@
         We can view a \ii{simple undirected graph} $\mc{G}$ as $1$-dimensional abstract simplicial complex.
         In fact we can construct a family of sets $\mc{A}$ as in definition \ref{def:1:2:1} in the following way.
         \[ \mc{A} = V(\mc{G}) \cup \{ \{i,j\} \in V(\mc{G}) \times V(\mc{G}) : \exists e \in E(\mc{G}) \quad \psi_\mc{G}(e)=\{i,j\}\}. \]
-        It is easy to see that this is an abstract simplicial complex of dimension $1$.
+        It is easy to see that this is an abstract simplicial complex of dimension $1$, one can readily verify the properties in def. \ref{def:1:2:1}.
     \end{obs}
 
     % In a graph $\mc{G}$ the non trivial chain groups are therefore $C_0(\mc{G})$ and $C_1(\mc{G})$, also called vertex and edge spaces. 
     % The canonical basis of the vertex space is the set of vertexes $\{\ket{i}\}_{i \in I}$, and that of edges which is a subset of $\{\ket{i,j}\}_{(i,j)\in I\times I}$.
 
-    We recall that $C_0$ and $C_1$ are the groups of $0$ and $1$-chains respectively. We therefore denote by $\ch{i}$
-    the vertex $i$ as a group element of $C_0$, and we denote $\ch{i,j}$ the edge joinig $\ch{i}$ to $\ch{j}$.
+    Viewing $\mc{G}$ as a simplicial complex we recall that $C_0$ and $C_1$ are the groups of $0$ and $1$-chains respectively. We denote by $\ch{i}$
+    the vertex $i$ as a group element of $C_0$, and we denote $\ch{i,j}$ the edge joining $\ch{i}$ to $\ch{j}$.
     Since $C_1$ is a group, whenever $\ket{i,j} \in C_1$ then also $\ket{j,i} = -\ket{i,j} \in C_1$. 
     
     A canonical basis for $C_0$ is the set of oriented $0$-chains consisting on only one oriented $0$-simplex, 
