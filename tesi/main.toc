@@ -37,4 +37,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {B}Dirac Notation}{17}{Appendix.1.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{18}{chapter*.8}
+\contentsline {chapter}{\numberline {C}Laplacian Operators}{18}{Appendix.1.C}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{20}{chapter*.8}

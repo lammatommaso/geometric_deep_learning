@@ -158,6 +158,32 @@
       \field{title}{Algebraic Topology}
       \field{year}{2000}
     \endentry
+    \entry{laplacian}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=3493db22ce6eaad9626a9b10529869ba}{%
+           family={Horak},
+           familyi={H\bibinitperiod},
+           given={Danijela},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0da1cd02a83e8af4aa26b2ee24fa2850}{%
+           family={Jost},
+           familyi={J\bibinitperiod},
+           given={Juergen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{fullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{bibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{authorbibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{authornamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{authorfullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Spectra of combinatorial Laplace operators on simplicial complexes}
+      \field{year}{2011}
+    \endentry
     \entry{lang}{book}{}
       \name{author}{1}{}{%
         {{hash=88c92ddced8d93c4ed4df52ee477b0c6}{%

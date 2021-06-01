@@ -1937,6 +1937,7 @@
     <bcf:citekey order="12">gcnn</bcf:citekey>
     <bcf:citekey order="13">rotman</bcf:citekey>
     <bcf:citekey order="14">mclane</bcf:citekey>
+    <bcf:citekey order="15">laplacian</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
