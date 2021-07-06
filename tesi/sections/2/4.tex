@@ -54,17 +54,19 @@
         For the block of $\{\ch{1},\ch{2},\ch{3}\}$, we have 
         \[ \Delta_0 \frac{\ch{1}+\ch{2}+\ch{3}}{\sqrt{3}} = 0 , \;
         \Delta_0 \frac{\ch{3}-\ch{1}}{\sqrt{2}} = 3 \frac{\ch{3}-\ch{1}}{\sqrt{2}}, \;
-         \Delta_0 \frac{\ch{2}-\ch{1}}{\sqrt{2}} = 3 \frac{\ch{2}-\ch{1}}{\sqrt{2}}. \]
-         {\color{red} Not orthonormal !} \\
+        \Delta_0 \frac{\ch{2}-\ch{1}}{\sqrt{2}} = 3 \frac{\ch{2}-\ch{1}}{\sqrt{2}}. \]
+        The two dimensional eigenspace of eigenvalue $3$ can be equipped with an orthonormal basis 
+        \[ \left\{ \frac{\ch{3}-\ch{1}}{\sqrt{2}}, \frac{2\ch{2}-\ch{1}-\ch{3}}{\sqrt{2}\sqrt{3}} \right\}, \]
+        via the Gram-Schmidt algorithm.
         For the block of $\{\ch{8},\ch{9}\}$, we have 
         \[ \Delta_0 \frac{\ch{8}+\ch{9}}{\sqrt{2}} = 0, \;
         \Delta_0 \frac{\ch{8}-\ch{9}}{\sqrt{2}} = 2 \frac{\ch{8}-\ch{9}}{\sqrt{2}}. \]
         Hence the solution takes the form
         \[ \ch{\psi} = \frac{\ch{1}+\ch{2}+\ch{3}}{\sqrt{3}}\frac{\cc{1}+\cc{2}+\cc{3}}{\sqrt{3}}(\ch{2}+\ch{8}) + 
-        \frac{\ch{2}-\ch{1}}{\sqrt{2}} e^{-3t}  \frac{\cc{2}-\cc{1}}{\sqrt{2}}(\ch{2}+\ch{8}) + \]
+        \frac{2\ch{2}-\ch{1}-\ch{3}}{\sqrt{2}\sqrt{3}} e^{-3t}  \frac{2\cc{2}-\cc{1}-\cc{3}}{\sqrt{2}\sqrt{3}}(\ch{2}+\ch{8}) + \]
         \[ \frac{\ch{8}+\ch{9}}{\sqrt{2}}\frac{\cc{8}+\cc{9}}{\sqrt{2}}(\ch{2}+\ch{8}) +
         \frac{\ch{8}-\ch{9}}{\sqrt{2}}e^{-2t}\frac{\cc{8}-\cc{9}}{\sqrt{2}}(\ch{2}+\ch{8}) =\]
-        \[ = \frac{\ch{1}+\ch{2}+\ch{3}}{3}+ \frac{\ch{2}-\ch{1}}{2} e^{-3t} + \frac{\ch{8}+\ch{9}}{2} + \frac{\ch{8}-\ch{9}}{2}e^{-2t}. \]
+        \[ = \frac{\ch{1}+\ch{2}+\ch{3}}{3}+ \frac{2\ch{2}-\ch{1}-\ch{3}}{3} e^{-3t} + \frac{\ch{8}+\ch{9}}{2} + \frac{\ch{8}-\ch{9}}{2}e^{-2t}. \]
         In the limit 
         \[ \lim_{t \to \infty} \ch{\psi} = \frac{\ch{1}+\ch{2}+\ch{3}}{3}+\frac{\ch{8}+\ch{9}}{2}, \]
         we see that the conserved quantity that initally was $1$ on both those connected components is in this 

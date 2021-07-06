@@ -165,18 +165,18 @@
            familyi={H\bibinitperiod},
            given={Danijela},
            giveni={D\bibinitperiod}}}%
-        {{hash=0da1cd02a83e8af4aa26b2ee24fa2850}{%
+        {{hash=866eb4ff647f16f3f342118039c7978e}{%
            family={Jost},
            familyi={J\bibinitperiod},
-           given={Juergen},
+           given={J{ü}rgen},
            giveni={J\bibinitperiod}}}%
       }
-      \strng{namehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{fullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{bibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{authorbibnamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{authornamehash}{0b8319fcae676d6cad98e3e8a7e790b9}
-      \strng{authorfullhash}{0b8319fcae676d6cad98e3e8a7e790b9}
+      \strng{namehash}{34fad9d113866166a94efc4281564d27}
+      \strng{fullhash}{34fad9d113866166a94efc4281564d27}
+      \strng{bibnamehash}{34fad9d113866166a94efc4281564d27}
+      \strng{authorbibnamehash}{34fad9d113866166a94efc4281564d27}
+      \strng{authornamehash}{34fad9d113866166a94efc4281564d27}
+      \strng{authorfullhash}{34fad9d113866166a94efc4281564d27}
       \field{sortinit}{H}
       \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
       \field{labelnamesource}{author}
