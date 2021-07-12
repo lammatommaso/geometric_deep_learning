@@ -48,6 +48,51 @@
       \field{title}{Graph Theory with Applications}
       \field{year}{1976}
     \endentry
+    \entry{bronstein}{article}{}
+      \name{author}{5}{}{%
+        {{hash=a55f31e19939af212d8e498666602095}{%
+           family={Bronstein},
+           familyi={B\bibinitperiod},
+           given={Michael\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=c83b564e32475f10dcc91be7e66d3e81}{%
+           family={Bruna},
+           familyi={B\bibinitperiod},
+           given={Joan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b31b3f03b1e1ee0eec6ff58f9a9df960}{%
+           family={Szlam},
+           familyi={S\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b4945596e71bcffbc9d1b4af0d5e16f1}{%
+           family={Vandergheynst},
+           familyi={V\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Electrical}%
+        {Electronics Engineers (IEEE)}%
+      }
+      \strng{namehash}{f38eb180001bb1568340defd4697457d}
+      \strng{fullhash}{c4861387404630c24671fc7a0b3489d2}
+      \strng{bibnamehash}{f38eb180001bb1568340defd4697457d}
+      \strng{authorbibnamehash}{f38eb180001bb1568340defd4697457d}
+      \strng{authornamehash}{f38eb180001bb1568340defd4697457d}
+      \strng{authorfullhash}{c4861387404630c24671fc7a0b3489d2}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Geometric Deep Learning: Going beyond Euclidean data}
+      \field{year}{2017}
+    \endentry
     \entry{gcnn}{misc}{}
       \name{author}{2}{}{%
         {{hash=0b1aedbf6412c5f6de619d2d9974b158}{%
@@ -133,6 +178,35 @@
       \field{labeltitlesource}{title}
       \field{title}{Computational Topology - an Introduction.}
       \field{year}{2010}
+    \endentry
+    \entry{fomin}{book}{}
+      \name{author}{2}{}{%
+        {{hash=9dba35aa053130aa3675dc6ad8cd1ee9}{%
+           family={Gelfand},
+           familyi={G\bibinitperiod},
+           given={I.\bibnamedelimi M.},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=2155f440ea6d16462ef4dd9f3a232a51}{%
+           family={Fomin},
+           familyi={F\bibinitperiod},
+           given={S.\bibnamedelimi V.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Dover}%
+      }
+      \strng{namehash}{85298e740d14a0ec2eb0122ae0f3b813}
+      \strng{fullhash}{85298e740d14a0ec2eb0122ae0f3b813}
+      \strng{bibnamehash}{85298e740d14a0ec2eb0122ae0f3b813}
+      \strng{authorbibnamehash}{85298e740d14a0ec2eb0122ae0f3b813}
+      \strng{authornamehash}{85298e740d14a0ec2eb0122ae0f3b813}
+      \strng{authorfullhash}{85298e740d14a0ec2eb0122ae0f3b813}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Calculus of Variations}
+      \field{year}{1963}
     \endentry
     \entry{hatcher}{book}{}
       \name{author}{1}{}{%

@@ -1931,13 +1931,15 @@
     <bcf:citekey order="6">hatcher</bcf:citekey>
     <bcf:citekey order="7">lang</bcf:citekey>
     <bcf:citekey order="8">bondy</bcf:citekey>
-    <bcf:citekey order="9">gcnn</bcf:citekey>
-    <bcf:citekey order="10">simplicialNN</bcf:citekey>
-    <bcf:citekey order="11">simplicialNN</bcf:citekey>
-    <bcf:citekey order="12">gcnn</bcf:citekey>
-    <bcf:citekey order="13">rotman</bcf:citekey>
-    <bcf:citekey order="14">mclane</bcf:citekey>
-    <bcf:citekey order="15">laplacian</bcf:citekey>
+    <bcf:citekey order="9">bronstein</bcf:citekey>
+    <bcf:citekey order="10">fomin</bcf:citekey>
+    <bcf:citekey order="11">gcnn</bcf:citekey>
+    <bcf:citekey order="12">simplicialNN</bcf:citekey>
+    <bcf:citekey order="13">simplicialNN</bcf:citekey>
+    <bcf:citekey order="14">gcnn</bcf:citekey>
+    <bcf:citekey order="15">rotman</bcf:citekey>
+    <bcf:citekey order="16">mclane</bcf:citekey>
+    <bcf:citekey order="17">laplacian</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
