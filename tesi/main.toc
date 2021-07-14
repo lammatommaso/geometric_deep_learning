@@ -21,24 +21,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Properties of the Laplacian Eigenfunctions}{11}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Heat Equation on Graphs}{12}{section.2.5}
+\contentsline {section}{\numberline {2.5}Heat Equation on Graphs}{13}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{14}{chapter.3}
+\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{15}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Group Equivariant Neural Networks}{14}{section.3.1}
+\contentsline {section}{\numberline {3.1}Group Equivariant Neural Networks}{15}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Convolutional Neural Networks}{14}{section.3.2}
+\contentsline {section}{\numberline {3.2}Convolutional Neural Networks}{15}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Simplicial Neural Networks}{14}{section.3.3}
+\contentsline {section}{\numberline {3.3}Simplicial Neural Networks}{15}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Message Passing Neural Networks}{15}{section.3.4}
+\contentsline {section}{\numberline {3.4}Message Passing Neural Networks}{16}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusion}{16}{chapter*.7}
+\contentsline {chapter}{Conclusion}{17}{chapter*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{17}{Appendix.1.A}
+\contentsline {chapter}{\numberline {A}Category Theory}{18}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Dirac Notation}{18}{Appendix.1.B}
+\contentsline {chapter}{\numberline {B}Dirac Notation}{19}{Appendix.1.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Laplacian Operators}{19}{Appendix.1.C}
+\contentsline {chapter}{\numberline {C}Laplacian Operators}{20}{Appendix.1.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{21}{chapter*.8}
+\contentsline {chapter}{Bibliography}{22}{chapter*.8}

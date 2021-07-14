@@ -1,70 +1,95 @@
 \documentclass[../2.tex]{subfiles}
 \begin{document}
 In this section we will present some properties of the eigenfunctions of the previously defined laplacian operator.
-The laplacian eigenfunction are the solution of the variational problem for an action called \ii{Dirichlet energy}, as shown in \cite{bronstein}.
+The laplacian eigenfunction are the solution of a constrained variational problem for an action called \ii{Dirichlet energy}, as shown in \cite{bronstein}.
 
 \begin{defn}
-    Let $f:M\to\R$ be a sufficiently regular funcion, we define the \ii{Dirichlet energy functional} to be
-    \[ D[f] := \int_{M} dx |\nabla f(x)|^2 = \int_{M} dx f(x)\Delta f(x) .\]
-    {\color{red} La seconda uguaglianza è vera solo se f si annulla sul bordo.}
+    Let $f:\R^n \to \R$ be a compact support differentiable funcion, we define the \ii{Dirichlet energy functional} to be
+    \[ D[f] := \int_{\R^n} dx |\nabla f|^2 .\]
 \end{defn}
 
+\begin{prop}
+    If $f:M\to\R$ vanishes on the boundary $\del M$ of the manifold, then we have that
+    \[ D[f] := \int_{\R^n} dx |\nabla f|^2 = \int_{\R^n} dx f\Delta f .\]
+\end{prop}
+\begin{proof}
+    By recalling the definition of laplacian in $\R^n$ as $\Delta f := -\nabla \cdot \nabla f$, and we integrate by parts
+    \[ \int_{\R^n} dx \nabla \cdot (f \nabla f) = \int_{\R^n} dx \nabla f \cdot \nabla f + \int_{\R^n} dx f \nabla \cdot \nabla f = \int_{\R^n} dx \nabla f \cdot \nabla f - \int_{\R^n} dx f \Delta f = 0, \]
+    hence the thesis. \qedhere
+\end{proof}
+
 The variational problem for the Dirichlet energy leads to the Euler-Lagrange equations when it is restricted to those functions which
-vanish on the boundary of the domain of integration. In order to solve the variational problem subject to constraints we need a variational 
-version of the Lagrange multipliers theorem, a proof of which can be found in \cite{fomin}.
+vanish on the boundary of the domain of integration, which is true in the case of compact support functions.
 
-{\color{red}
 \begin{prop}
-    Let $f \in L^2(M)$ the variational problem minimizing the Dirichlet energy functional $\int_M dx (gradf)^2$, 
-    admit as solution the kernel of the laplacian. Otherwise if we wish to have normalized functions only
-    to avoid uniformly vanishing functions i.e. $\int_M dx f^2 = 1$ we get as solution the eigenfunction of the laplacian
-    relative to its lowest eigenvalue. After this the same process can be applied to graphs.
+    Let $f:\R^n \to \R$ be a sufficiently regular compact support function, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a sufficiently regular lagrangian,
+    then the solutions of the variational problem 
+    \[ \delta\int_{\R^n} dx \mc{L}(f,\nabla f) = 0 \]
+    are the solutions of the differential equation 
+    \[ \nabla \cdot \frac{\del \mc{L}}{\del(\nabla f)} - \frac{\del\mc{L}}{\del f} = 0. \]
 \end{prop}
-\begin{proof} \hfill \\
-    \begin{itemize}
-        \item 
-	$\int f \Delta f = \int (gradf)^2$, the problem $\delta \int (gradf)^2 = 0$ is solved with the
-	Euler-Lagrange equations $div \pder{\mc{L}}{(gradf)}=\pder{\mc{L}}{f}$, which give $\Delta f = 0$.
-	\item
-	This time we have $\delta[\int (gradf)^2 - \lambda (\int f^2 -1)]=0$, which using the same equations
-	leads to $\Delta f = \lambda f$, and since for those functions $\int f \Delta f = \lambda$, we want to find
-	the minumum eigenvalue of the laplacian.
-    \end{itemize}
+
+In order to solve the variational problem subject to constraints we need a variational 
+version of the Lagrange multipliers theorem.
+
+\begin{prop}
+    Let $f:\R^n \to \R$ be a sufficiently regular compact support function, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a sufficiently regular lagrangian,
+    then the solutions of the variational problem 
+    \[ \delta\int_{\R^n} dx \mc{L}(f,\nabla f) = 0 \]
+    constrained to the functions such that 
+    \[ \int_{\R^n} dx f^2 = 1 \]
+    are the solutions of the Euler-Lagrange equations for the lagrangian
+    \[ \mc{L}(f,\nabla f) - \lambda f^2, \]
+    where $\lambda$ is a Lagrange multiplier.
+\end{prop}
+
+Further details and proofs of the previous two propositions can be found in \cite{fomin} at $35$ and $12$ respectively.
+
+\begin{prop}
+    The solution of the variational problem for the Dirichlet energy
+    \[ \delta\int_{\R^n} dx | \nabla f |^2 = 0 \]
+    constrained to the functions such that 
+    \[ \int_{\R^n} dx f^2 = 1 \]
+    are the eigenfunctions of the laplacian.
+\end{prop}
+\begin{proof}
+    For this lagrangian the Euler-Lagrange equation reads as $ 2 \Delta f - 2\lambda f = 0$,
+    hence 
+    \[ \Delta f = \lambda f . \qedhere \]
+
 \end{proof}
 
-\begin{prop}
-    \underline{Discrete optimization problems related to the laplacian}\\
-    Let $\phi$ be an $k \times k$ matrix, the variational problem minimizing the Dirichlet energy $Tr(\phi^T \Delta \phi)$ is equivalent to
-    the problem $\Delta \phi = 0$, while if we normalize the functions we get $\Delta \phi = \Lambda \phi$, where $\Lambda = diag(\lambda)$ with 
-    the k lowest eigenvalues.
-\end{prop}
-\begin{proof} \hfill \\
-    \begin{itemize}
-        \item
-	Let $min_{\phi}Tr(\phi^T \Delta \phi) = \phi_{li}\Delta_{lk}\phi_{ki} = \sum_i \phi_i^T \Delta \phi_i $ (Einstein notation) be our optimization problem,
-	since $\Delta > 0$ we can simply solve for all $\phi_i$ and minimize $\pder{\mc{L}_i}{\phi_j} = \pder{\phi_i^T \Delta \phi_i}{\phi_j}
-	 = 2\Delta\phi_i=0$.
-	 \item
-	Let $min_{\phi}Tr(\phi^T \Delta \phi) = \phi_{li}\Delta_{lk}\phi_{ki} = \sum_i \phi_i^T \Delta \phi_i $ (Einstein notation) be our optimization problem,
-        under the constraint $\phi^T \phi = I$(orthonormal) since $\Delta > 0$ we can simply solve for all $\phi_i$ and minimize 
-	$\pder{\mc{L}_i}{\phi_j} = \pder{(\phi_i^T \Delta \phi_i -\lambda_i(\phi_i^T\phi_i -1))}{\phi_j}$(non sostituisco l'1 perché non posso sostituire il vincolo 
-	nel vincolo)$ = 2\Delta\phi_i-2\lambda_i\phi_i=0$. And since the initial trace is equal to the sum of our k positive eigenvalues we shall take the
-	k lowest eigenvalues. The problem can be shown to be $\Delta \phi = \Lambda \phi$.
-   \end{itemize}
-\end{proof}
+Obviously, the eigenfunction that truly minimizes the Dirichlet energy is the one corresponding to the lowest eigenvalue,
+since for the eigenfunctions $D[f] = \int_{\R^n} dx f \Delta f = \lambda \int_{\R^n} dx f^2 = \lambda$.
+\hfill \\
+We can define a \ii{discrete Dirichlet energy} on graphs, using the laplacian matrix written on the canonical basis.
+
+\begin{defn}
+    Let $A,\Phi$ be to $n\times n$ matrices, we define the \ii{discrete Dirichlet energy} to be 
+    \[ D[\Phi] = \tr(\Phi^T \Delta \Phi). \]
+\end{defn}
+
+The minimization of the discrete Dirichlet energy is not a variational problem, rather a simple minimization in $\Phi$ in which we can 
+use the standard Lagrange multipliers theorem.
 
 \begin{prop}
-    \underline{Continuous spectrum of the laplacian in $\R^3$}\\
-    Let $f \in L^2(\Omega)$, in particular in a Schwartz space where the Fourier Transform is invertible and selfadjoint,
-    then we have that $\Delta \phi_p = p^2 \phi_p$, where $\forall f \in L^2$ we can write $f = \int_\Omega dp c_p \phi_p$
-    and $\int_\Omega dx \phi_p \phi_{p'} = \delta(p-p')$, that is generalized Hilbert Base up to normalization.
+    The minimum for the Dirichlet energy $ \tr(\Phi^T \Delta \Phi)$ constrained to the $\Phi$ such that $\Phi^T \Phi = 1$ is reached when the
+    rows of $\Phi$ are the laplacian eigenfunctions.
 \end{prop}
-\begin{proof} \hfill  \\
-    So if the Fourier transform is invertible we have that $f(x') = \int_\Omega dp e^{i\scal{x'}{p}}\int_\Omega dx e^{-i\scal{x}{p}}f(x)$, 
-    then by the definition of the shift functional we can represent it with its integral kernel $\int_\Omega dp e^{i\scal{x'-x}{p}}$, which
-    is equal to $\delta(x-x') = \delta(x'-x)$. Trivially we have that our laplacian eigenfunctions are $\phi_p = e^{i\scal{x}{p}}$ of eigenvalue $p^2$, since 
-    $f(x) = \mc{F}^\dag \mc{F}f = \int_\Omega dp (\mc{F}f)(p)e^{i\scal{x}{p}}$ we define our coefficients $c_p$. We just have to show that
-    $\int dx e^{i\scal{x}{p'-p}} = \delta(p'-p)$ that is true by definition.\\
-\end{proof}}
+\begin{proof}
+    The constrained action can also be written as
+    \[ D[\Phi] = \sum_{i,j,k} \Phi_{ik} \Delta_{ij} \Phi_{jk} - \sum_{i,j,k} \Lambda_{ij} \Phi_{kj} \Phi_{ki}, \]
+    where $\Lambda$ is a diagonal matrix with the Lagrange multipliers as eigenvalues.\\ We then minimize this action 
+    \[ \frac{\del \mc{L}}{\del \Phi_{mn}} = \sum_{i,j,k} \delta_{im}\delta_{nk}\Delta_{ij} \Phi_{jk} + \sum_{i,j,k} \Phi_{ik} \Delta_{ij}\delta_{jm}\delta_{nk}
+    - \sum_{i,j,k} \Lambda_{ij} \delta_{mk}\delta_{nj}\Phi_{ki} - \sum_{i,j,k} \Lambda_{ij} \Phi_{kj} \delta_{mk}\delta_{ni} =  \]
+    \[ = \sum_{j} \Delta_{mj} \Phi_{jn} + \sum_{i} \Phi_{in} \Delta_{im} - \sum_{i} \Lambda_{in} \Phi_{mi} - \sum_{j} \Lambda_{nj} \Phi_{mj} = 0, \]
+    which using the symmetry of $\Lambda$ and $A$ can be written as
+    \[ \sum_{j} \Delta_{mj} \Phi_{jn} + \sum_{i}  \Delta_{mi} \Phi_{in} - \sum_{i} \Phi_{mi}\Lambda_{in} - \sum_{j} \Phi_{mj} \Lambda_{jn} =  \]
+    \[ 2\Delta\Phi - 2\Phi\Lambda = 0. \]
+    We then obtain 
+    \[ \Delta\Phi = \Phi\Lambda, \]
+    which for every row of $\Phi$ is an eigenvalue equation. \qedhere
+\end{proof}
+
     
 \end{document}
