@@ -1,4 +1,12 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
-    Convolutional neural networks are today one of the most efficient deep learning technique.
+    Convolutional neural networks or CNN's are today one of the most common deep learing architectures, especially successful at classifying images.
+    Image classifiction is not the only task they can be used for, rather an intuitive task that we will use to introduce CNN's.
+
+    The input of a CNN is data defined on some domain, in the case of image recognition it is a grid sampling a compact subset of $\R^2$.
+    The convolutional layers are a collection of convolutional operators and non linearities defined by parameters that are learned during the training
+    of the network. The output in this case is an abstract representation of the input that can be then classified.
+
+    Every classifying task has an intrinsic invariance. For instance classification of an image should be shift-invariant, since shifting the objects in the
+    image shouldn't affect their classification and identity.
 \end{document}

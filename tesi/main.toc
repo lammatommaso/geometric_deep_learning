@@ -33,12 +33,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Spectral Convolution}{15}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusion}{16}{chapter*.7}
+\contentsline {chapter}{Conclusion}{17}{chapter*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{17}{Appendix.1.A}
+\contentsline {chapter}{\numberline {A}Category Theory}{18}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Dirac Notation}{18}{Appendix.1.B}
+\contentsline {chapter}{\numberline {B}Dirac Notation}{19}{Appendix.1.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Laplacian Operators}{19}{Appendix.1.C}
+\contentsline {chapter}{\numberline {C}Laplacian Operators}{20}{Appendix.1.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{21}{chapter*.8}
+\contentsline {chapter}{Bibliography}{22}{chapter*.9}
