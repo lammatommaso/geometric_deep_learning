@@ -6,14 +6,14 @@
     Since we are going to represent it on chains we have that
     \[ d_1d_1^\dagger \cc{i} = \cc{i}\del_1^\dagger\del_1, \]
     which is the adjoint of $\del_1\del_1^\dagger\ch{i}$.
+    Again we are fixing a canonical basis as above.
 
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{$0$-laplacian} $\Delta_0 : C_0 \to C_0$ by 
         \[ \Delta_0 := \del_1 \del^\dagger_1.\]
     \end{defn}
 
-    One interesting propertiy of the $1$-laplacian is that the dimension of its kernel equals the connected components of the graph.
-    More details on laplacian kernels can b found in App. \ref{app:C}.
+    One interesting propertiy of the $0$-laplacian, see Appendix \ref{app:C}, is that the dimension of its kernel equals the connected components of the graph.\\
     To illustrate some of the properties of graphs we will refer to the graph in Fig. \ref{fig:2:3}.
 
     \begin{figure}[H]
@@ -57,11 +57,11 @@
             \end{pmatrix}. \] 
 
         The laplacian matrix is calculated as follows
-        \[ \Delta_0 \ket{1} = \del_1\ket{1,2} + \del_1\ket{1,3} = 2\ket{1}-\ket{2}-\ket{3},\]
-        \[ \Delta_0 \ket{2} = \del_1\ket{2,1} + \del_1\ket{2,3} = -\ket{1}+2\ket{2}-\ket{3},\]
-        \[ \Delta_0 \ket{3} = \del_1\ket{3,1} + \del_1\ket{3,2} = -\ket{1}+-\ket{2}+2\ket{3},\]
+        \[ \Delta_0 \ket{1} = \del_1\ket{1,2} + \del_1\ket{1,3} = 2\cdot\ket{1}-\ket{2}-\ket{3},\]
+        \[ \Delta_0 \ket{2} = \del_1\ket{2,1} + \del_1\ket{2,3} = -\ket{1}+2\cdot\ket{2}-\ket{3},\]
+        \[ \Delta_0 \ket{3} = \del_1\ket{3,1} + \del_1\ket{3,2} = -\ket{1}-\ket{2}+2\cdot\ket{3},\]
         \[ \Delta_0 \ket{4} = \del_1\ket{4,5} = \ket{4}-\ket{5},\]
-        \[ \Delta_0 \ket{5} = \del_1\ket{5,4}+\del_1\ket{5,6}+\del_1\ket{5,7} = -\ket{4}+3\ket{5}-\ket{6}-\ket{7},\]
+        \[ \Delta_0 \ket{5} = \del_1\ket{5,4}+\del_1\ket{5,6}+\del_1\ket{5,7} = -\ket{4}+3\cdot\ket{5}-\ket{6}-\ket{7},\]
         \[ \Delta_0 \ket{6} = \del_1\ket{6,5} = -\ket{5}+\ket{6},\]
         \[ \Delta_0 \ket{7} = \del_1\ket{7,5} = -\ket{5}+\ket{7},\]
         \[ \Delta_0 \ket{8} = \del_1\ket{8,9} = \ket{8}-\ket{9},\]
@@ -116,7 +116,7 @@
         \[ \Delta_1 := \del_1^\dagger \del_1.\]
     \end{defn}
 
-    One intersting propertiy of the $1$-laplacian is that the dimension of its kernel equals the number of independent cycles.
+    One intersting property of the $1$-laplacian, see Appendix \ref{app:C}, is that the dimension of its kernel equals the number of independent cycles.
 
     \begin{exa}
         In fact we can expand $\Delta_1^\mc{A} := \del_1^\dagger\del_1$ the basis $\{\ket{1,2},\ket{2,3},\ket{3,1}\}$ as
@@ -126,9 +126,9 @@
             -1& -1 & 2 
         \end{pmatrix}.\] 
         The laplacian matrix is calculated as follows
-        \[\Delta_1^\mc{A}\ket{1,2} = \del_1^\dagger(\ket{1}-\ket{2}) = 2\ket{1,2}-\ket{3,1}-\ket{2,3},\]
-        \[\Delta_1^\mc{A}\ket{2,3} = \del_1^\dagger(\ket{2}-\ket{3}) = -\ket{1,2}+2\ket{2,3}-\ket{3,1},\]
-        \[\Delta_1^\mc{A}\ket{3,1} = \del_1^\dagger(\ket{3}-\ket{1}) = -\ket{1,2}+2\ket{3,1}-\ket{2,3}.\]
+        \[\Delta_1^\mc{A}\ket{1,2} = \del_1^\dagger(\ket{1}-\ket{2}) = 2\cdot\ket{1,2}-\ket{3,1}-\ket{2,3},\]
+        \[\Delta_1^\mc{A}\ket{2,3} = \del_1^\dagger(\ket{2}-\ket{3}) = -\ket{1,2}+2\cdot\ket{2,3}-\ket{3,1},\]
+        \[\Delta_1^\mc{A}\ket{3,1} = \del_1^\dagger(\ket{3}-\ket{1}) = -\ket{1,2}+2\cdot\ket{3,1}-\ket{2,3}.\]
 
         We can notice that $\Delta_2$ has a $1$-dimensional kernel.
 

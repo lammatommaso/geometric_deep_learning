@@ -49,7 +49,7 @@
 
 \theoremstyle{remark}
 \newtheorem*{rem}{Remark}
-\newtheorem*{obs}{Observation}
+\newtheorem{obs}[thm]{Observation}
 
 % \AtAppendix{
 %     \renewtheorem{thm}{Theorem}[chapter]
@@ -69,6 +69,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\eval}[1]{\Big{|}_{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
@@ -110,11 +111,12 @@
         \subfile{sections/1}
     \end{chapter}
     \begin{chapter}{Graphs}
+        \label{ch:2}
         An important branch of geometric deep learning is graph representation learning. In this section we will therefore
         introduce graphs and graphs laplacians to build a mathematical background for graph neural networks. 
         \subfile{sections/2}
     \end{chapter}
-    \begin{chapter}{Geometric Deep Learning}
+    \begin{chapter}{Convolutional Neural Networks}
         \label{ch:3}
         \subfile{sections/3}
     \end{chapter}

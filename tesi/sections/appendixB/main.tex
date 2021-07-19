@@ -4,10 +4,17 @@
     In the Dirac notation we use the kets $\ch{\psi}$ as vectors (group elements) and the bras $\cc{\psi}$ as their dual.
     The bra-ket product $\braket{\psi}{\varphi} = \cc{\psi}(\varphi)$ is the bra evaluated on the ket,
     this is an inner product of $\ch{\psi}$ and $\ch{\varphi}$.
-    In this notation the spectral theorem for selfadjoint operators reads as
+    In this notation the spectral theorem for selfadjoint operators with a discrete spectrum reads as
     \[ A = \sum_i \ch{a_i}a_i\cc{a_i}, \]
     where $A \ch{a_i} = a_i \ch{a_i}, \; \braket{a_i}{a_j} = \delta_ij$ and $\sum_i \ch{a_i} \cc{a_i} = 1$.
     The relation $\sum_i \ch{a_i} \cc{a_i} = 1$ is called completeness relation and
     is valid only if $\{ \ch{a_i}\}$ is an orthonormal basis, $1$ is the identity operator.
+    An extension of the concept of orthonormal basis is the concept of generalized orthonormal basis.
+    Generalized orthonomal eigenfunctions allows us to diagonalize an operator with a continuous spectrum as follows
+    \[ A = \int da \ch{a}a\cc{a}, \]
+    where $A \ch{a} = a\ch{a}, \; \braket{a}{a'} = \delta(a-a')$ and $\int da \ch{a} \cc{a} = 1$.
+    The relation $\int da \ch{a} \cc{a} = 1$ is called generalized completeness relation and
+    is valid only if $\{ \ch{a}\}$ is a generalized orthonormal basis, $1$ is again the identity operator.
+
 
 \end{document}

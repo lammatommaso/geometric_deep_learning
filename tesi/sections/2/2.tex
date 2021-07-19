@@ -1,22 +1,25 @@
 \documentclass[../2.tex]{subfiles}
 \begin{document}
     
-    SInce a graph is a $1$-dimensional simplicial complex we can define only one boundary $\del_1$ and one coboundary $\del_1^\dagger$.
+    Since a graph is a $1$-dimensional simplicial complex, we can define only one boundary $\del_1$ and one coboundary $\del_1^\dagger$.
     We briefly recall the definitions in this context.
 
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{boundary} $\del_1 : C_1 \to C_0$ by 
-        \[ \del_1\ch{i,j} := \ch{i} - \ch{j} \quad \forall \ch{i,j} \in C_1.\]
+        \[ \del_1\ch{i,j} := \ch{i} - \ch{j} \quad \forall \ch{i,j} \in C_1,\]
+        then extended by linearity.\\
         We define the \ii{coboundary} $\del^\dagger_1 : C_0 \to C_1$ by 
-        \[ \del^\dagger_1\ket{i} := \sum_{j : \ket{i,j} \in C_1} \ket{i,j}.\]
-        We define the \ii{divergence} $d_1 : C^0 \to C^1$ by
-        \[ d_1\cc{i} = \cc{i}\del_1,\]
-        where the cochain $\cc{i}\del_1$ is the dual of the chain $\del_1^\dagger\ch{i}$,
-        therefore we can represent $d_1$ on cochain via $\del_1^\dagger$ on chains.
+        \[ \del^\dagger_1\ket{i} := \sum_{j : \ket{i,j} \in C_1} \ket{i,j},\]
+        also extended by linearity.\\
+        We define the \ii{divergence} $d_1 : C^0 \to C^1$ and the \ii{gradient} respectively as
+        \[ d_1 = (\del_1)^* \quad \text{and} \quad d_1^\dagger = (\del_1^\dagger)^* .\]
     \end{defn}
 
-    We define $d_1 = (\del_1)^*$ and $d_1^\dagger = (\del_1^\dagger)^*$ and we identify $C_p = C^p$ with the above choice of
+    Here we identify $C_p = C^p$ with the above choice of
     canonical basis.
+
+    Notice that $d_1\bra{i} = \bra{i}\del_1$,
+    where the cochain $\cc{i}\del_1$ is the dual of the chain $\del_1^\dagger\ch{i}$.
 
     % {\color{red} Disegno che mostra il cobordo di un nodo}
 

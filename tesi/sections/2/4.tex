@@ -4,25 +4,26 @@ In this section we will present some properties of the eigenfunctions of the pre
 The laplacian eigenfunction are the solution of a constrained variational problem for an action called \ii{Dirichlet energy}, as shown in \cite{bronstein}.
 
 \begin{defn}
-    Let $f:\R^n \to \R$ be a compact support differentiable funcion, we define the \ii{Dirichlet energy functional} to be
+    Let $f:\R^n \to \R$ be a differentiable funcion with compact support, we define the \ii{Dirichlet energy functional} to be
     \[ D[f] := \int_{\R^n} dx |\nabla f|^2 .\]
 \end{defn}
 
 \begin{prop}
-    If $f:M\to\R$ vanishes on the boundary $\del M$ of the manifold, then we have that
+    If $f:\R^n \to\R$ has compact support or vanishes at infinity we have that
     \[ D[f] := \int_{\R^n} dx |\nabla f|^2 = \int_{\R^n} dx f\Delta f .\]
 \end{prop}
 \begin{proof}
     By recalling the definition of laplacian in $\R^n$ as $\Delta f := -\nabla \cdot \nabla f$, and we integrate by parts
-    \[ \int_{\R^n} dx \nabla \cdot (f \nabla f) = \int_{\R^n} dx \nabla f \cdot \nabla f + \int_{\R^n} dx f \nabla \cdot \nabla f = \int_{\R^n} dx \nabla f \cdot \nabla f - \int_{\R^n} dx f \Delta f = 0, \]
+    \[ 0 = \int_{\R^n} dx \nabla \cdot (f \nabla f) = \int_{\R^n} dx \nabla f \cdot \nabla f + \int_{\R^n} dx f \nabla \cdot \nabla f = \int_{\R^n} dx \nabla f \cdot \nabla f - \int_{\R^n} dx f \Delta f, \]
     hence the thesis. \qedhere
 \end{proof}
 
 The variational problem for the Dirichlet energy leads to the Euler-Lagrange equations when it is restricted to those functions which
-vanish on the boundary of the domain of integration, which is true in the case of compact support functions.
+vanish on the boundary of the domain of integration, which is true in the case of functions with compact support.
+Further details and proofs of the following two propositions can be found in \cite{fomin} at $35$ and $12$ respectively.
 
 \begin{prop}
-    Let $f:\R^n \to \R$ be a sufficiently regular compact support function, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a sufficiently regular lagrangian,
+    Let $f:\R^n \to \R$ be a sufficiently regular function with compact support, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a sufficiently regular lagrangian,
     then the solutions of the variational problem 
     \[ \delta\int_{\R^n} dx \mc{L}(f,\nabla f) = 0 \]
     are the solutions of the differential equation 
@@ -33,7 +34,7 @@ In order to solve the variational problem subject to constraints we need a varia
 version of the Lagrange multipliers theorem.
 
 \begin{prop}
-    Let $f:\R^n \to \R$ be a sufficiently regular compact support function, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a sufficiently regular lagrangian,
+    Let $f:\R^n \to \R$ be a sufficiently regular function with compact support, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a sufficiently regular lagrangian,
     then the solutions of the variational problem 
     \[ \delta\int_{\R^n} dx \mc{L}(f,\nabla f) = 0 \]
     constrained to the functions such that 
@@ -43,7 +44,7 @@ version of the Lagrange multipliers theorem.
     where $\lambda$ is a Lagrange multiplier.
 \end{prop}
 
-Further details and proofs of the previous two propositions can be found in \cite{fomin} at $35$ and $12$ respectively.
+We now apply this to the Dirichlet energy.
 
 \begin{prop}
     The solution of the variational problem for the Dirichlet energy
@@ -60,36 +61,37 @@ Further details and proofs of the previous two propositions can be found in \cit
 \end{proof}
 
 Obviously, the eigenfunction that truly minimizes the Dirichlet energy is the one corresponding to the lowest eigenvalue,
-since for the eigenfunctions $D[f] = \int_{\R^n} dx f \Delta f = \lambda \int_{\R^n} dx f^2 = \lambda$.
+since for the eigenfunctions $D[f] = \int_{\R^n} dx f \Delta f = \lambda \int_{\R^n} dx f^2 = \lambda$.\\
 \hfill \\
-We can define a \ii{discrete Dirichlet energy} on graphs, using the laplacian matrix written on the canonical basis.
 
-\begin{defn}
-    Let $A,\Phi$ be to $n\times n$ matrices, we define the \ii{discrete Dirichlet energy} to be 
-    \[ D[\Phi] = \tr(\Phi^T \Delta \Phi). \]
-\end{defn}
-
-The minimization of the discrete Dirichlet energy is not a variational problem, rather a simple minimization in $\Phi$ in which we can 
-use the standard Lagrange multipliers theorem.
+Another interesting property of the laplacian eigenfunctions comes from quantum mechanical considerations.
+In fact, the laplacian, neglecting the constants, is the hamiltonian of the free particle in the Schr\"{o}dinger representation.
 
 \begin{prop}
-    The minimum for the Dirichlet energy $ \tr(\Phi^T \Delta \Phi)$ constrained to the $\Phi$ such that $\Phi^T \Phi = 1$ is reached when the
-    rows of $\Phi$ are the laplacian eigenfunctions.
+    The functions $e^{ip\cdot x} : \R^n \to \C$, where $p \in R^n$, are a generalized orthogonal basis of laplacian eigenfunctions.
 \end{prop}
-\begin{proof}
-    The constrained action can also be written as
-    \[ D[\Phi] = \sum_{i,j,k} \Phi_{ik} \Delta_{ij} \Phi_{jk} - \sum_{i,j,k} \Lambda_{ij} \Phi_{kj} \Phi_{ki}, \]
-    where $\Lambda$ is a diagonal matrix with the Lagrange multipliers as eigenvalues.\\ We then minimize this action 
-    \[ \frac{\del \mc{L}}{\del \Phi_{mn}} = \sum_{i,j,k} \delta_{im}\delta_{nk}\Delta_{ij} \Phi_{jk} + \sum_{i,j,k} \Phi_{ik} \Delta_{ij}\delta_{jm}\delta_{nk}
-    - \sum_{i,j,k} \Lambda_{ij} \delta_{mk}\delta_{nj}\Phi_{ki} - \sum_{i,j,k} \Lambda_{ij} \Phi_{kj} \delta_{mk}\delta_{ni} =  \]
-    \[ = \sum_{j} \Delta_{mj} \Phi_{jn} + \sum_{i} \Phi_{in} \Delta_{im} - \sum_{i} \Lambda_{in} \Phi_{mi} - \sum_{j} \Lambda_{nj} \Phi_{mj} = 0, \]
-    which using the symmetry of $\Lambda$ and $A$ can be written as
-    \[ \sum_{j} \Delta_{mj} \Phi_{jn} + \sum_{i}  \Delta_{mi} \Phi_{in} - \sum_{i} \Phi_{mi}\Lambda_{in} - \sum_{j} \Phi_{mj} \Lambda_{jn} =  \]
-    \[ 2\Delta\Phi - 2\Phi\Lambda = 0. \]
-    We then obtain 
-    \[ \Delta\Phi = \Phi\Lambda, \]
-    which for every row of $\Phi$ is an eigenvalue equation. \qedhere
+\begin{proof} 
+    First we see that $\Delta e^{ip\cdot x} = \nabla \cdot (ipe^{ip\cdot x}) = -p^2 e^{ip\cdot x}$.
+    Then, in a suitable space where the Fourier transform is invertible we have that $f(x') = \int_{\R^n} dp e^{i\scal{x'}{p}}\int_{\R^n} dx e^{-i\scal{x}{p}}f(x)$, 
+    \\where $\int_{\R^n} dp e^{i\scal{x'-x}{p}} = \delta(x-x')$ up to constants that can be reabsorbed in the eigenfunctions, hence the generalized completness relation. \qedhere
 \end{proof}
 
+In this approach the Fourier transorm is nothing more than a change of generalized basis into the basis of the eigenfunctions of the laplacian.
+
+Let's recall the definition of convolution in $\R^n$.
+
+\begin{defn}
+    Let $f,g : \R^n \to \C$ be sufficiently regular functions we define the \ii{convolution} of $f$ with $g$ as
+    \[ (f * g)(x) = \int_{\R^n} dx' f(x')g(x-x').\]
+\end{defn}
+
+The well known theorem that follows states that the Fourier transform, as a change of generalized basis, diagonalizes the convolution.
+
+\begin{thm}
+    Let $\mc{F}$ denote the fourier transform, then for sufficiently regular functions $f,g : \R^n \to \C$ we have that
+    \[ \mc{F}(f * g) = (\mc{F}f)(\mc{F}g).\]
+\end{thm}
+
+This approach will allow us in Chapter \ref{ch:3} to define a similar convolution as an operator which is diagonalized by the laplacian eigenfunctions.
     
 \end{document}
