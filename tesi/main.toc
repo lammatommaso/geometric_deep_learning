@@ -29,9 +29,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Generalities on Convolution}{15}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Group Equivariant Convolution}{15}{section.3.2}
+\contentsline {section}{\numberline {3.2}Group Equivariant Convolution}{16}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Spectral Convolution}{15}{section.3.3}
+\contentsline {section}{\numberline {3.3}Spectral Convolution}{16}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Conclusion}{17}{chapter*.8}
 \defcounter {refsection}{0}\relax 

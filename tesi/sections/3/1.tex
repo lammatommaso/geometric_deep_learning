@@ -1,12 +1,36 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
-    Convolutional neural networks or CNN's are today one of the most common deep learing architectures, especially successful at classifying images.
-    Image classifiction is not the only task they can be used for, rather an intuitive task that we will use to introduce CNN's.
-
-    The input of a CNN is data defined on some domain, in the case of image recognition it is a grid sampling a compact subset of $\R^2$.
-    The convolutional layers are a collection of convolutional operators and non linearities defined by parameters that are learned during the training
-    of the network. The output in this case is an abstract representation of the input that can be then classified.
-
-    Every classifying task has an intrinsic invariance. For instance classification of an image should be shift-invariant, since shifting the objects in the
-    image shouldn't affect their classification and identity.
+    In Chapter \ref{ch:2} we defined the convolution of $f:\R^n \to \R$ with $g:\R^n \to \R$ as
+    \[ (f * g)(x) = \int_{\R^n} dx' f(x')g(x-x'), \]
+    in the literature of convolutional neural networks the function $f$ is called the \ii{input} of the
+    convolutional layer, the functions $g$ is called \ii{filter} and the output $f*g$ is called \ii{feature map}.
+    To give an interpretation of convolution we will discuss an example from \cite{deep}.
+    Suppose we are tracking the location of a spaceship with a laser sensor. Our
+    sensor gives a single output $x : \R \to \R^3$, where $x(t)$ is the position read by the sensor at the time t.
+    Now suppose that our laser sensor is somewhat noisy. To obtain a less noisy
+    measurement of the spaceship’s position, we average several measurements.
+    Of course, more recent measurements are more relevant, so we will want this to
+    be a weighted average that gives more weight to recent measurements. We can
+    do this with a weighting function $w:\R \to \R$. If
+    we apply such a weighted average operation at every moment, we obtain a new
+    function s providing a smoothed estimate of the position of the spaceship:
+    \[ s(t) = \int_\R da \, x(a)w(t-a), \]
+    where $w(t-a)$ is the shifted weighting function.
+    Since the aquisition rate of any instrument is not infinite, we need to see this convolution as discrete, by sampling it in a 1D grid,
+    \[ s(t) = \sum_{a \in \Z} x(a)w(t-a), \]
+    where $t$ is now an integer.
+    Infinite measurements, even if countable, require an infinite amount of time to be completed, therefore a restriction of $\Z$
+    into a subset $I$ is necessary. But what happens at the boundary of $I$?\\
+    The translation of the weighting function has no meaning on the boundary of the time interval that we sampled, it is thus 
+    a common practice to identify the two edges of the interval to restore the shift invariance of the domain.
+    This might look as a pragmatic solution but it also tells us some truth about the symmetries of the task.
+    If I need to classify a signal, e.g. voice recognition, the task is independent of the time when the signal was recorded,
+    we can say that the classification is invariant under translations of the signal over time. In order to have a convolutional network that
+    doesn't distinguish two time-shifted copies of the same signal we need a time-shift invariant \footnote{ Or equivariant.} convolution, and for this
+    convolution to be well defined we need the domain of definition to be time-shift invariant too.
+    Let's now go back to our example, where $I = {0,\ddots, n}$ we now write the convolution as
+    \[ s_i = \sum_{j = 0}^n x_j w_{(i-j) \, \text{mod} \, n},\]
+    where the "$\mod$" comes from the identification of the two edges of the interval.
+    It looks like we are summing over the cyclic group $\Z_n$, which not by coincidence is also the symmetry group of our classification task.
+    This gives rise to the question about the extensibility of convolution to general symmetry groups, as we shall see in the next section.
 \end{document}
