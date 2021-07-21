@@ -96,6 +96,16 @@
     \begin{titlepage}
         \subfile{sections/front}
     \end{titlepage}
+    \chapter*{Abstract}
+    La maggior parte delle architetture di deep learning sono costruite su modelli che imparano una partizione in classi d'equivalenza comprensibili agli umani
+    dell'insieme delle funzioni lisce definite su domini euclidei.
+    Sebben questo approccio abbia successo in molte applicazioni, è limitato a una piccola classe di domini.
+    Lo scopo del geometric deep learning è quello di estendere questo approccio a domini non euclidei come i grafi e i complessi simpliciali.
+    \chapter*{Abstract}
+    Most of the deep learning techniques used today are based on models which learn a partition of the set of smooth functions defined on euclidean 
+    domains into human friendly equivalence classes. Although this approach has been successful in modern machine learning, it only deals with a really 
+    small set of domains. The goal of geometric deep learning is to extend this method to data defined on non euclidean domains such as graphs and simplicial
+    complexes.
     \pagenumbering{roman}
     %   \subfile{sections/abstract_ita}
     %    \newpage
@@ -123,21 +133,11 @@
         \subfile{sections/3}
     \end{chapter}
     \newpage
-   \chapter*{Conclusion}
-        Most of the deep learning techniques used today are based on models which learn a partition of the set of smooth functions defined on euclidean 
-        domains into human friendly equivalence classes. Although this approach has been successful in modern machine learning, it only deals with a really 
-        small set of domains. The goal of geometric deep learning is to extend this method to data defined on manifolds and simplicial complexes.\\
-        Convolution on euclidean domains is itself based on the translation invariance of such domains. In fact the convolution of a function $f : \R^n \to \R$,
-        with some filter $g:\R^n \to \R$ is \[(f * g)(x) = \scal{f}{g \circ T^{-1}}_{L^2},\] where $T:\R^n \to \R^n$ is a translation represented by the vector $x$.
-        Moreover, one could also consider such a convolution to be defined on the translation group itself, represented by some $\R^n$. 
-        In the same way one can define a convolution on the group $(\Z,+)$ as $(a * b)_n = \sum_{i \in \Z}a_i b_{n-i}$.
-        Similarly an intersting example is that of images, which are samples ad grids, any image can be thought as a function defined on the group $(\Z \times \Z, +)$.
-        Such definitions of convolution operators are equivariant with respect to the action of the group they are defined upon.
-        In image recognition translation equivariance is necessary, nevertheless the most common CNN's need to learn the rotations of the same filter as different 
-        filters in order to become rotation equivariant. Although manifolds and simplicial complexes are not in general groups, G-equivariant CNN's (see \cite{gcnn})
-        could be the key to reveal the secrets behind the success of such architectures.
-    \addcontentsline{toc}{chapter}{Conclusion}
-    % \begin{appendices}
+%    \chapter*{Conclusion}
+%         Most of the deep learning techniques used today are based on models which learn a partition of the set of smooth functions defined on euclidean 
+%         domains into human friendly equivalence classes. Although this approach has been successful in modern machine learning, it only deals with a really 
+%         small set of domains. The goal of geometric deep learning is to extend this method to data defined on manifolds and simplicial complexes.\\
+%     \addcontentsline{toc}{chapter}{Conclusion}
     \begin{appendices}
     \counterwithin{thm}{chapter}
         \begin{chapter}{Category Theory}

@@ -23,17 +23,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Laplacian Eigenfunctions on Graphs}{13}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Heat Equation on Graphs}{13}{section.2.6}
+\contentsline {section}{\numberline {2.6}Heat Equation on Graphs}{14}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Convolutional Neural Networks}{15}{chapter.3}
+\contentsline {chapter}{\numberline {3}Convolutional Neural Networks}{16}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Generalities on Convolution}{15}{section.3.1}
+\contentsline {section}{\numberline {3.1}Generalities on Convolution}{16}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Group Equivariant Convolution}{16}{section.3.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Spectral Convolution}{16}{section.3.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusion}{17}{chapter*.8}
+\contentsline {section}{\numberline {3.2}Spectral Convolution}{17}{section.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Category Theory}{18}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
@@ -41,4 +37,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {C}Laplacian Operators}{20}{Appendix.1.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{22}{chapter*.9}
+\contentsline {chapter}{Bibliography}{22}{chapter*.10}
