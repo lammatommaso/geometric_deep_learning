@@ -1933,12 +1933,13 @@
     <bcf:citekey order="8">bondy</bcf:citekey>
     <bcf:citekey order="9">bronstein</bcf:citekey>
     <bcf:citekey order="10">fomin</bcf:citekey>
-    <bcf:citekey order="11">deep</bcf:citekey>
-    <bcf:citekey order="12">gcnn</bcf:citekey>
-    <bcf:citekey order="13">simplicialNN</bcf:citekey>
-    <bcf:citekey order="14">rotman</bcf:citekey>
-    <bcf:citekey order="15">mclane</bcf:citekey>
-    <bcf:citekey order="16">laplacian</bcf:citekey>
+    <bcf:citekey order="11">2021geo</bcf:citekey>
+    <bcf:citekey order="12">deep</bcf:citekey>
+    <bcf:citekey order="13">gcnn</bcf:citekey>
+    <bcf:citekey order="14">simplicialNN</bcf:citekey>
+    <bcf:citekey order="15">rotman</bcf:citekey>
+    <bcf:citekey order="16">mclane</bcf:citekey>
+    <bcf:citekey order="17">laplacian</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

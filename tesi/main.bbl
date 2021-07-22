@@ -93,6 +93,47 @@
       \field{title}{Geometric Deep Learning: Going beyond Euclidean data}
       \field{year}{2017}
     \endentry
+    \entry{2021geo}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=a55f31e19939af212d8e498666602095}{%
+           family={Bronstein},
+           familyi={B\bibinitperiod},
+           given={Michael\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=c83b564e32475f10dcc91be7e66d3e81}{%
+           family={Bruna},
+           familyi={B\bibinitperiod},
+           given={Joan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f9073aa7e4e4e473ab8161f05ad4b05f}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Taco},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b1208a71c9b067bcef8fb29c15a09b5d}{%
+           family={Veličković},
+           familyi={V\bibinitperiod},
+           given={Petar},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f38eb180001bb1568340defd4697457d}
+      \strng{fullhash}{2c578b48a1eb7466609f953907fe93f4}
+      \strng{bibnamehash}{f38eb180001bb1568340defd4697457d}
+      \strng{authorbibnamehash}{f38eb180001bb1568340defd4697457d}
+      \strng{authornamehash}{f38eb180001bb1568340defd4697457d}
+      \strng{authorfullhash}{2c578b48a1eb7466609f953907fe93f4}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2104.13478
+      \endverb
+    \endentry
     \entry{gcnn}{misc}{}
       \name{author}{2}{}{%
         {{hash=0b1aedbf6412c5f6de619d2d9974b158}{%

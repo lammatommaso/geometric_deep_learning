@@ -25,16 +25,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.6}Heat Equation on Graphs}{14}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Convolutional Neural Networks}{16}{chapter.3}
+\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{16}{chapter.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Generalities on Convolution}{16}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Spectral Convolution}{17}{section.3.2}
+\contentsline {section}{\numberline {3.2}The Space of Signals}{17}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{18}{Appendix.1.A}
+\contentsline {section}{\numberline {3.3}Symmetry}{18}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Dirac Notation}{19}{Appendix.1.B}
+\contentsline {section}{\numberline {3.4}Scale Separation}{18}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Laplacian Operators}{20}{Appendix.1.C}
+\contentsline {section}{\numberline {3.5}Spectral Convolution}{18}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{22}{chapter*.10}
+\contentsline {chapter}{\numberline {A}Category Theory}{20}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Dirac Notation}{21}{Appendix.1.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {C}Laplacian Operators}{22}{Appendix.1.C}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{24}{chapter*.10}

@@ -1,4 +1,42 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
-{\color{red} Li metto o non li metto?}
+    While a linear combination of points of a domain is not necessarily defined, the space of signals on that domain can be equipped with a vector space
+    structure. More formally we can define the space of $V$-valued signals on the domain $\Omega$.
+
+    \begin{defn}
+        Let $\Omega$ be a set, possibily with additional structure
+        \footnote{For instance $\Omega$ is a smooth manifold.}
+        , and $V$ a vector space over $\K$, we define the \ii{signal set}
+        \[ \mc{S}(\Omega,V) = \{ \phi : \Omega \to V \}, \]
+        where the dimensions of $V$ are called \ii{channels}.
+    \end{defn}
+
+    In particular cases such as when $\Omega$ is a smooth manifold we might also require the signals to be smooth.
+    Let us now equip the signal set with a vector space structure.
+
+    \begin{prop}
+        The signal set equipped with the operations
+        \[ \cdot : \K \times \mc{S}(\Omega,V) \to \mc{S}(\Omega,V)   \quad \text{such that} \; (\lambda \phi)(x) = \lambda \phi(x), \; \text{and} \]
+        \[ + : \mc{S}(\Omega,V) \times \mc{S}(\Omega,V) \to \mc{S}(\Omega,V) \quad \text{such that} \; (\phi + \eta)(x) = \phi(x) + \eta(x), \]
+        where $x \in \Omega$, is a vector space over $\K$. 
+    \end{prop}
+
+    We shall call this vector space \ii{signal space}, and denote it just by $\mc{S}$ for
+    a lighter notation.
+
+    Given an inner product $\langle \, , \, \rangle_V$ in $V$ and a measure $\mu$ on $\Omega$ the signal space can be equipped with a Hilbert space structure.
+
+    \begin{defn}
+        Let $\langle \, , \, \rangle_V : V \times V \to \K$ be an inner product and let $\mu$ be a measure on $\Omega$, then for any two signals
+        $\phi, \eta \in \mc{S}$ we define their inner product $\langle \, , \, \rangle : \mc{S} \times \mc{S} \to \K$ as
+        \[ \langle \phi, \eta \rangle := \int_\Omega d\mu(x) \langle \phi(x), \eta(x) \rangle_V .\]
+    \end{defn}
+
+    \begin{prop}
+        The space $\mc{S}$ equipped with $\langle \, , \, \rangle$ is a Hilbert space.
+    \end{prop}
+    {\color{red} Non vorrei dimostrarlo ma in teoria non devo imporre che $\K$ sia completo per avere la completezza di $\mc{S}$?}
+
+    When the domain $\Omega$ is discrete we can choose $\mu$ to be the counting measure, therefore turning the integral into a sum.
+
 \end{document}

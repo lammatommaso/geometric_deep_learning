@@ -1,30 +1,35 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
-
-    Another approach that can be used to define a convolution is the spectral convolution with respect to a laplacian operator, in this section
-    we shall see this abstract and general method on graphs.
-    In order to construct a convolutional neural network that classifies data defined on a graph we need a definition of convolution on graphs.
-    To do this we recall that in Chapter \ref{ch:2} we saw that the Fourier tranform diagonalizes the convolution. Here we want to define a convolution on graphs
-    based on this fact. First we introduce what we call \ii{graph Fourier transform}.
-    
-    \begin{defn}
-        Let $\ket{f} \in C_0$ and $dimC_0 = n_0$, we define the \ii{graph Fourier transform}\\
-        $\mc{F}_0 : \R^{n_0} \to \R^{n_0}$ to be
-        \[ (\braket{i}{f})_{i \in I} \mapsto (\braket{e_i}{f})_{i \in I},\]
-        where $I = \{1,...,n_0\}$ and $\ch{e_i}$ are the eigenfunctions of the $0$-laplacian.
-    \end{defn}
-
-    This transform only defines a change of basis since $\ket{f} = \sum_{i \in I}\braket{i}{f}\ket{i} = \sum_{i \in I}\braket{e_i}{f}\ket{e_i}$, and therefore is invertible.
-    We can in fact represent the graph Fourier transform with the matrix $F^{-1}_{ij} = F^\dagger_{ij} := \braket{e_i}{j}$, and its inverse $F_{ij} := \braket{i}{e_j}$.
-    To define a convolution between two $0$-chains we use the famous convolution theorem $\mc{F}(f * \psi) = \mc{F}(f)\mc{F}(\psi)$. 
+    The symmetries of an object are colloquially transformations that leave
+    a certain \ii{classification} of said object unchanged or invariant. 
 
     \begin{defn}
-        Let $\{\ket{e_i}\}_{i \in I}$ be a basis such that $\Delta_p\ket{e_i} = \lambda_i\ket{e_i}$, let $\ket{f},\ket{\psi} \in C_p$, we define the representatives of $\ket{f * \psi}$ on
-        the laplacian eigenchains to be 
-        \[ \braket{e_i}{f * \psi} := \braket{e_i}{f}\braket{e_i}{\psi} \quad \forall i \in I.\]
-        Therefore $\ket{f * \psi} = \sum_{i \in I}\braket{e_i}{f}\braket{e_i}{\psi}\ket{e_i}$.
+        We define a \ii{classification} to be a function $C : \mc{S} \to \mc{L}$ from the signal space into some set $\mc{L}$.
     \end{defn}
 
-    This can be trivially extended to simplicial complexes \footnote{Actually on any chain complex.} using the eigenfunctions of higher dimensional laplacians, as done in \cite{simplicialNN}.
+    In many classifications task the set $\mc{L}$ is a label set.
 
+    Using the concept of classification we could give a more formal definition of symmetry.
+
+    \begin{defn}
+        Let $C : \mc{S} \to \mc{L}$ be a classification we define a \ii{symmetry} of $C$ to be an invertible function
+        $g : \mc{S} \to \mc{S}$ such that 
+        \[ C[g(\phi)] = C[\phi] \quad \forall \phi \in \mc{S}. \]
+    \end{defn}
+
+    We will denite the set of these symmetries as $S_C := \{ g : \mc{S} \to \mc{S} \; : \; C[g(\phi)] = C[\phi] \;  \forall \phi \in \mc{S}\}$
+
+    \begin{prop}
+        Let $\circ$ be the composition of functions from $\mc{S}$ to itself, then $(S_C, \circ)$ is a group.
+    \end{prop} 
+    \begin{proof}
+        We shall prove that this set with respect to $\circ$ satisfies all the group properties.
+        \begin{enumerate}[(i)]
+            \item The operation $\circ$ is already associative.
+            \item Let $\text{id}_\mc{S} : \mc{S} \to \mc{S}$ be the identity on $\mc{S}$, namely $\text{id}_\mc{S}(\phi) = \phi$ for all $\phi \in \mc{S}$,
+                then $\text{id}_\mc{S} \in S_C$.
+            \item Let $g,g' \in S_C$, we have that $C[(g\circ g')(\phi)] = C[\phi]$, therefore $(g \circ g') \in S_C$.
+            \item Let $g \in S_C$ then $C[g^{-1}(\phi)] = C[\phi]$, since $C[(g \circ g^{-1})(\phi)] = C[(\phi)] = C[g^{-1}(\phi)]$. \qedhere
+        \end{enumerate}
+    \end{proof}
 \end{document}

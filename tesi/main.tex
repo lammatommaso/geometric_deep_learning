@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper,twoside]{report}
 \usepackage[english]{babel}
 \usepackage{newlfont}
 \usepackage{color}
@@ -25,6 +25,23 @@
 \usepackage{appendix}
 \usepackage[style=numeric, backend=biber, sorting=nty]{biblatex}
 \usepackage{chngcntr}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\nouppercase \leftmark}
+\fancyhead[RO]{\nouppercase \rightmark}
+\fancyfoot[LE,RO]{\thepage}
+
+\fancypagestyle{plain}
+{
+    \fancyfoot[LE,RO]{\thepage}
+    \fancyhead{}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+% \renewcommand{\chaptermark}[1]{%
+% \markboth{#1}{}}
 
 \definecolor{SAEblue}{rgb}{0, .62, .91}
 \renewcommand\theequation{{\color{SAEblue}\arabic{equation}}}
@@ -68,6 +85,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
@@ -116,20 +134,14 @@
     \pagenumbering{arabic}
     \begin{chapter}{Preliminaries on topology}
         \label{ch:1}
-        The essential idea in algebraic topology is to convert problems about topological spaces and continuous functions into
-        problems about algebraic objects and their homomorphisms, this way one hopes to end up with an easier problem to solve. 
         \subfile{sections/1}
     \end{chapter}
     \begin{chapter}{Graphs}
         \label{ch:2}
-        An important branch of geometric deep learning is graph representation learning. In this section we will therefore
-        introduce graphs and graphs laplacians to build a mathematical background for graph neural networks. 
         \subfile{sections/2}
     \end{chapter}
-    \begin{chapter}{Convolutional Neural Networks}
-        \label{ch:3}
-        Convolutional neural networks or CNN's are today one of the most common deep learing architectures, especially successful at processing
-        that has a known grid-like topology. For instance time series, or signals can be sampled in a 1D grid, while images can be thought as a 2D grid.
+    \begin{chapter}{Geometric Deep Learning}
+        \label{ch:3}      
         \subfile{sections/3}
     \end{chapter}
     \newpage
