@@ -34,13 +34,54 @@
     \end{proof}
 
     It is important to notice that in order to define a symmetry we need to choose a classification, namely there is no a priori symmetry in the data until
-    we specify what we want to do with it.
+    we specify what we want to do with it.\\
 
-    In order to deal with groups in an efficient way we need to define what the \ii{generators} of the group are.
+    % In order to deal with groups in an efficient way we need to define what the \ii{generators} of the group are.
+
+    % \begin{defn}
+    %     Let $G$ be a group, and let $S \subset G$, if every element of $G$ can be written as composition of elements of $S$ and their inverses,
+    %     then the elements of $S$ are called \ii{generators} of the group $G$.
+    % \end{defn}
+    \hfill \\
+    Another way to see how the group acts on data is to see the group itself as an abstract object and define an \ii{action} of this group on the domain
+    of the signals.
 
     \begin{defn}
-        Let $G$ be a group, and let $S \subset G$, if every element of $G$ can be written as composition of elements of $S$ and their invereses,
-        then the elements of $S$ are called \ii{generators} of the group $G$.
+        Let $G$ be a group and $\Omega$ a set, then we define \ii{action} of $G$ on $\Omega$ a mapping $. \; : G \times \Omega \to \Omega$, such that
+        $(g,x) \mapsto g.x$ and for all $g,h \in G$ $g.(h.x) = (g \circ h).x$, i.e. it is compatible with the group operation.
     \end{defn}
+
+    From a group action on the domain $\Omega$ we can obtain a group action on the signal space.
+
+    \begin{prop}
+        Let $G$ be a group and let $\mc{S}$ be the space of signals from $\Omega$ to $V$, then for all $\phi \in \mc{S}$ and for all $g \in G$ we have that
+        \[ (g.\phi)(x) := \phi(g^{-1}.x), \]
+        where $x \in \Omega$, is an action of $G$ on $\mc{S}$.
+    \end{prop}
+    \begin{proof}
+        We can see that $g.(h.\phi)(x) = g.\phi(h^{-1}.x) = \phi((g^{-1} \circ h^{-1}).x) = ((g \circ h).\phi)(x). \qedhere$
+    \end{proof}
+
+    An important class of group actions is that of \ii{linear} group actions, also called \ii{group representations}.
+    A linear group action has the additional property $g.(\lambda \phi + \mu \psi) = \lambda g.\phi + \mu g.\psi$, for all $\phi,\psi$ in the set
+    on which the group acts. A linear group action allows us to associate to an element $g$ of $G$ a $n \times n$ invertible matrix.
+
+    \begin{defn}
+        Let $G$ be a group, we define an $n$-dimensional representation of $G$ to be a homomorphism $\rho : G \to GL(n)$\footnote{GL(n) is the group of $n \times n$ invertible matrices}.
+    \end{defn}
+
+    An important role in geometric deep learning is played by the so called \ii{group equivariant} and \ii{group invariant} functions.
+
+    \begin{defn}
+        Let $\mc{C}$ be some set, a function $f : \mc{S} \to \mc{C}$, is called \ii{$G$-invariant} if
+        \[ f(\rho(g)\phi) = f(\phi) \quad \forall g \in G, \]
+        where $\phi \in \mc{S}$.
+   \end{defn}
+
+   \begin{defn}
+       A function $f : \mc{S} \to \mc{S}$ is called \ii{$G$-equivariant} if 
+       \[ f(\rho(g)\phi) = \rho(g)f(\phi) \quad \forall g \in G, \]
+       where $\phi \in \mc{S}$.
+   \end{defn}
 
 \end{document}

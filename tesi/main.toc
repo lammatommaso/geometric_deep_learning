@@ -31,11 +31,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}The Space of Signals}{17}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Symmetry}{18}{section.3.3}
+\contentsline {section}{\numberline {3.3}Symmetries, Invariance and Equivariance}{18}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Scale Separation}{18}{section.3.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Spectral Convolution}{18}{section.3.5}
+\contentsline {section}{\numberline {3.4}Spectral Convolution}{19}{section.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Category Theory}{20}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
