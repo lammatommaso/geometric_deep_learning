@@ -29,13 +29,13 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE]{\nouppercase \leftmark}
-\fancyhead[RO]{\nouppercase \rightmark}
-\fancyfoot[LE,RO]{\thepage}
+% \fancyhead[LE]{\nouppercase \leftmark}
+\fancyhead[R]{\nouppercase \rightmark}
+\fancyfoot[R]{\thepage}
 
 \fancypagestyle{plain}
 {
-    \fancyfoot[LE,RO]{\thepage}
+    \fancyfoot[R]{\thepage}
     \fancyhead{}
     \renewcommand{\headrulewidth}{0pt}
 }
@@ -114,16 +114,18 @@
     \begin{titlepage}
         \subfile{sections/front}
     \end{titlepage}
-    \chapter*{Abstract}
-    La maggior parte delle architetture di deep learning sono costruite su modelli che imparano una partizione in classi d'equivalenza comprensibili agli umani
-    dell'insieme delle funzioni lisce definite su domini euclidei.
-    Sebben questo approccio abbia successo in molte applicazioni, è limitato a una piccola classe di domini.
-    Lo scopo del geometric deep learning è quello di estendere questo approccio a domini non euclidei come i grafi e i complessi simpliciali.
-    \chapter*{Abstract}
+    \begin{abstract}
+        La maggior parte delle architetture di deep learning sono costruite su modelli che imparano una partizione in classi d'equivalenza comprensibili agli umani
+        dell'insieme delle funzioni lisce definite su domini euclidei.
+        Sebbene questo approccio abbia successo in molte applicazioni, è limitato a una piccola classe di domini.
+        Lo scopo del geometric deep learning è quello di estendere questo approccio a domini non euclidei come i grafi e i complessi simpliciali.
+    \end{abstract}
+    \begin{abstract}
     Most of the deep learning techniques used today are based on models which learn a partition of the set of smooth functions defined on euclidean 
     domains into human friendly equivalence classes. Although this approach has been successful in modern machine learning, it only deals with a really 
     small set of domains. The goal of geometric deep learning is to extend this method to data defined on non euclidean domains such as graphs and simplicial
     complexes.
+    \end{abstract}
     \pagenumbering{roman}
     %   \subfile{sections/abstract_ita}
     %    \newpage
@@ -167,4 +169,9 @@
     \end{appendices}
     \newpage
     \printbibliography[heading = bibintoc]
+    % \chapter*{Ringraziamenti}
+    % \begin{flushright}
+    %     \vspace{8cm}
+    %     Vorrei ringraziare la mia famiglia per la possibilità,\\ i miei colleghi per il supporto\\ e il relatore per la pazienza.
+    % \end{flushright}
 \end{document}
