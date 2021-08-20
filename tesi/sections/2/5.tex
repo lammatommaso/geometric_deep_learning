@@ -1,7 +1,8 @@
 \documentclass[../2.tex]{subfiles}
 \begin{document}
 
-We can also define a \ii{discrete Dirichlet energy} on graphs, using the laplacian matrix written on the canonical basis.
+We now proceed by analogy with the previous section and define a \ii{discrete Dirichlet energy} on graphs, using the laplacian matrix written on the canonical basis, as
+in definition \ref{lapdef}.
 
 \begin{defn}
     Let $A,\Phi$ be to $n\times n$ matrices, we define the \ii{discrete Dirichlet energy} to be 
@@ -9,11 +10,12 @@ We can also define a \ii{discrete Dirichlet energy} on graphs, using the laplaci
 \end{defn}
 
 The minimization of the discrete Dirichlet energy is not a variational problem, rather a simple minimization in $\Phi$ in which we can 
-use the standard Lagrange multipliers theorem.
+use the standard Lagrange multipliers theorem. Here the $0$-laplacian is a matrix instead of a differential operator. The analogies between
+this matrix and the differential operator is due to the chain complex structure.
 
 \begin{prop}
     The minimum for the Dirichlet energy $ \tr(\Phi^T \Delta \Phi)$ constrained to the $\Phi$ such that $\Phi^T \Phi = 1$ is reached when the
-    rows of $\Phi$ are the laplacian eigenfunctions.
+    rows of $\Phi$ are the laplacian eigenvectors.
 \end{prop}
 \begin{proof}
     The constrained action can also be written as
@@ -36,6 +38,9 @@ use the standard Lagrange multipliers theorem.
     \caption{A graphical representation of the first laplacian eigenchains.}
     \label{fig:2:5}
 \end{figure}
+
+In figure \ref{fig:2:5} we can see some of the $0$-laplacian eigenfunctions. We notice that the eigenfunction corresponding to the eigenvalue $0$ is uniform as expected 
+Eckmann's theorem for any connected component of the graph.
 
     
 \end{document}

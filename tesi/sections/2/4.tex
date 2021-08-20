@@ -1,32 +1,39 @@
 \documentclass[../2.tex]{subfiles}
 \begin{document}
-In this section we will present some properties of the eigenfunctions of the previously defined laplacian operator.
-The laplacian eigenfunction are the solution of a constrained variational problem for an action called \ii{Dirichlet energy}, as shown in \cite{bronstein}.
+In this section we will present some properties of the eigenfunctions of the classical laplacian operator.
+The laplacian eigenfunctions, i.e. functions $f: \R^n \to \R$ such that $\Delta f = \lambda f$ with $\lambda \in \R$ , are the solution of a constrained variational problem for an action called \ii{Dirichlet energy}, as shown in \cite{bronstein}.
+Let's first define the laplacian for smooth functions from $\R^n$ to $\R$. 
 
 \begin{defn}
-    Let $f:\R^n \to \R$ be a differentiable funcion with compact support, we define the \ii{Dirichlet energy functional} to be
+    Let $f : \R^n \to \R$ be a smooth function, then the laplacian of $f$ is a function $\Delta f : \R^n \to \R$ defined as
+    \[ \Delta f(x) := - \sum_{i=1}^n \frac{\del f}{\del x_i}(x), \]
+    where the $\frac{\del}{\del x_i}$ are the directional derivatives with respect to the basis of $\R^n$.
+\end{defn}
+
+\begin{defn}
+    Let $f:\R^n \to \R$ be a smooth funcion with compact support, we define the \ii{Dirichlet energy functional} to be
     \[ D[f] := \int_{\R^n} dx |\nabla f|^2 .\]
 \end{defn}
 
 \begin{prop}
-    If $f:\R^n \to\R$ has compact support or vanishes at infinity we have that
+    If $f:\R^n \to\R$ is a smooth function with compact support then 
     \[ D[f] := \int_{\R^n} dx |\nabla f|^2 = \int_{\R^n} dx f\Delta f .\]
 \end{prop}
 \begin{proof}
-    By recalling the definition of laplacian in $\R^n$ as $\Delta f := -\nabla \cdot \nabla f$, and we integrate by parts
+    Recall the definition of laplacian in $\R^n$ as $\Delta f := -\nabla \cdot \nabla f$, and we integrate by parts
     \[ 0 = \int_{\R^n} dx \nabla \cdot (f \nabla f) = \int_{\R^n} dx \nabla f \cdot \nabla f + \int_{\R^n} dx f \nabla \cdot \nabla f = \int_{\R^n} dx \nabla f \cdot \nabla f - \int_{\R^n} dx f \Delta f, \]
     hence the thesis. \qedhere
 \end{proof}
 
 The variational problem for the Dirichlet energy leads to the Euler-Lagrange equations when it is restricted to those functions which
 vanish on the boundary of the domain of integration, which is true in the case of functions with compact support.
-Further details and proofs of the following two propositions can be found in \cite{fomin} at $35$ and $12$ respectively.
+Further details and proofs of the following two propositions can be found in \cite{fomin} at chapters $35$ and $12$ respectively.
 
 \begin{prop}
-    Let $f:\R^n \to \R$ be a sufficiently regular function with compact support, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a sufficiently regular lagrangian,
+    Let $f:\R^n \to \R$ be a smooth function with compact support, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a lagrangian,
     then the solutions of the variational problem 
     \[ \delta\int_{\R^n} dx \mc{L}(f,\nabla f) = 0 \]
-    are the solutions of the differential equation 
+    are the solutions of the Euler-Lagrange equations
     \[ \nabla \cdot \frac{\del \mc{L}}{\del(\nabla f)} - \frac{\del\mc{L}}{\del f} = 0. \]
 \end{prop}
 
@@ -34,10 +41,10 @@ In order to solve the variational problem subject to constraints we need a varia
 version of the Lagrange multipliers theorem.
 
 \begin{prop}
-    Let $f:\R^n \to \R$ be a sufficiently regular function with compact support, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a sufficiently regular lagrangian,
+    Let $f:\R^n \to \R$ be a smooth function with compact support, and $\mc{L}(f,\nabla f) : \R^n \to \R$ a sufficiently regular lagrangian,
     then the solutions of the variational problem 
     \[ \delta\int_{\R^n} dx \mc{L}(f,\nabla f) = 0 \]
-    constrained to the functions such that 
+    with constraint
     \[ \int_{\R^n} dx f^2 = 1 \]
     are the solutions of the Euler-Lagrange equations for the lagrangian
     \[ \mc{L}(f,\nabla f) - \lambda f^2, \]
@@ -61,7 +68,8 @@ We now apply this to the Dirichlet energy.
 \end{proof}
 
 Obviously, the eigenfunction that truly minimizes the Dirichlet energy is the one corresponding to the lowest eigenvalue,
-since for the eigenfunctions $D[f] = \int_{\R^n} dx f \Delta f = \lambda \int_{\R^n} dx f^2 = \lambda$.\\
+since for the eigenfunctions $D[f] = \int_{\R^n} dx f \Delta f = \lambda \int_{\R^n} dx f^2 = \lambda$. We can also see how the Dirichlet energy
+measures the smoothness of a function. As pointed out in \cite{2021geo} the deformation stability of the data is related to its Dirichlet energy.\\
 \hfill \\
 
 Another interesting property of the laplacian eigenfunctions comes from quantum mechanical considerations.
