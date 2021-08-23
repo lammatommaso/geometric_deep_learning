@@ -72,34 +72,34 @@ since for the eigenfunctions $D[f] = \int_{\R^n} dx f \Delta f = \lambda \int_{\
 measures the smoothness of a function. As pointed out in \cite{2021geo} the deformation stability of the data is related to its Dirichlet energy.\\
 \hfill \\
 
-Another interesting property of the laplacian eigenfunctions comes from quantum mechanical considerations.
-In fact, the laplacian, neglecting the constants, is the hamiltonian of the free particle in the Schr\"{o}dinger representation.
+% Another interesting property of the laplacian eigenfunctions comes from quantum mechanical considerations.
+% In fact, the laplacian, neglecting the constants, is the hamiltonian of the free particle in the Schr\"{o}dinger representation.
 
-\begin{prop}
-    The functions $e^{ip\cdot x} : \R^n \to \C$, where $p \in R^n$, are a generalized orthogonal basis of laplacian eigenfunctions.
-\end{prop}
-\begin{proof} 
-    First we see that $\Delta e^{ip\cdot x} = \nabla \cdot (ipe^{ip\cdot x}) = -p^2 e^{ip\cdot x}$.
-    Then, in a suitable space where the Fourier transform is invertible we have that $f(x') = \int_{\R^n} dp e^{i\scal{x'}{p}}\int_{\R^n} dx e^{-i\scal{x}{p}}f(x)$, 
-    \\where $\int_{\R^n} dp e^{i\scal{x'-x}{p}} = \delta(x-x')$ up to constants that can be reabsorbed in the eigenfunctions, hence the generalized completness relation (see App. \ref{app:B}). \qedhere
-\end{proof}
+% \begin{prop}
+%     The functions $e^{ip\cdot x} : \R^n \to \C$, where $p \in R^n$, are a generalized orthogonal basis of laplacian eigenfunctions.
+% \end{prop}
+% \begin{proof} 
+%     First we see that $\Delta e^{ip\cdot x} = \nabla \cdot (ipe^{ip\cdot x}) = -p^2 e^{ip\cdot x}$.
+%     Then, in a suitable space where the Fourier transform is invertible we have that $f(x') = \int_{\R^n} dp e^{i\scal{x'}{p}}\int_{\R^n} dx e^{-i\scal{x}{p}}f(x)$, 
+%     \\where $\int_{\R^n} dp e^{i\scal{x'-x}{p}} = \delta(x-x')$ up to constants that can be reabsorbed in the eigenfunctions, hence the generalized completness relation (see App. \ref{app:B}). \qedhere
+% \end{proof}
 
-In this approach the Fourier transorm is nothing more than a change of generalized basis into the basis of the eigenfunctions of the laplacian.
+% In this approach the Fourier transorm is nothing more than a change of generalized basis into the basis of the eigenfunctions of the laplacian.
 
-Let's recall the definition of convolution in $\R^n$.
+% Let's recall the definition of convolution in $\R^n$.
 
-\begin{defn}
-    Let $f,g : \R^n \to \C$ be sufficiently regular functions we define the \ii{convolution} of $f$ with $g$ as
-    \[ (f * g)(x) = \int_{\R^n} dx' f(x')g(x-x').\]
-\end{defn}
+% \begin{defn}
+%     Let $f,g : \R^n \to \C$ be sufficiently regular functions we define the \ii{convolution} of $f$ with $g$ as
+%     \[ (f * g)(x) = \int_{\R^n} dx' f(x')g(x-x').\]
+% \end{defn}
 
-The well known theorem that follows states that the Fourier transform, as a change of generalized basis, diagonalizes the convolution.
+% The well known theorem that follows states that the Fourier transform, as a change of generalized basis, diagonalizes the convolution.
 
-\begin{thm}
-    Let $\mc{F}$ denote the fourier transform, then for sufficiently regular functions $f,g : \R^n \to \C$ we have that
-    \[ \mc{F}(f * g) = (\mc{F}f)(\mc{F}g).\]
-\end{thm}
+% \begin{thm}
+%     Let $\mc{F}$ denote the fourier transform, then for sufficiently regular functions $f,g : \R^n \to \C$ we have that
+%     \[ \mc{F}(f * g) = (\mc{F}f)(\mc{F}g).\]
+% \end{thm}
 
-This approach will allow us in Chapter \ref{ch:3} to define a similar convolution as an operator which is diagonalized by the laplacian eigenfunctions.
+% This approach will allow us in Chapter \ref{ch:3} to define a similar convolution as an operator which is diagonalized by the laplacian eigenfunctions.
     
 \end{document}

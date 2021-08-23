@@ -1,15 +1,14 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
-    The symmetries of an object are colloquially transformations that leave
-    a certain \ii{classification} of said object unchanged or invariant. 
+   In this section we discuss the symmetries of a classification $C$ from the space of signals $\mc{S}$ to some space $\mc{L}$.
+   For instance in image classification the space of signals are the possible images where a possible classification is the object in the image and 
+   $\mc{L}$ is therefore a label space.
 
     \begin{defn}
         We define a \ii{classification} to be a function $C : \mc{S} \to \mc{L}$ from the signal space into some set $\mc{L}$.
     \end{defn}
 
-    In many classifications task the set $\mc{L}$ is a label set.
-
-    Using the concept of classification we could give a more formal definition of symmetry.
+   We now want give a more formal definition of symmetry of a classification.
 
     \begin{defn}
         Let $C : \mc{S} \to \mc{L}$ be a classification we define a \ii{symmetry} of $C$ to be an invertible function
@@ -48,7 +47,8 @@
 
     \begin{defn}
         Let $G$ be a group and $\Omega$ a set, then we define \ii{action} of $G$ on $\Omega$ a mapping $. \; : G \times \Omega \to \Omega$, such that
-        $(g,x) \mapsto g.x$ and for all $g,h \in G$ $g.(h.x) = (g \circ h).x$, i.e. it is compatible with the group operation.
+        $(g,x) \mapsto g.x$ and for all $g,h \in G$ $g.(h.x) = (g \circ h).x$, i.e. it is compatible with the group operation, and such that
+        $1.x = x$ for all $x \in \Omega$, where $1$ is the group identity.
     \end{defn}
 
     From a group action on the domain $\Omega$ we can obtain a group action on the signal space.

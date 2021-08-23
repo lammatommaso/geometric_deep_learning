@@ -21,24 +21,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Laplacian Eigenfunctions in $\math@bb {R}^n$}{11}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Laplacian Eigenfunctions on Graphs}{13}{section.2.5}
+\contentsline {section}{\numberline {2.5}Laplacian Eigenfunctions on Graphs}{12}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Heat Equation on Graphs}{14}{section.2.6}
+\contentsline {section}{\numberline {2.6}Heat Equation on Graphs}{13}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{16}{chapter.3}
+\contentsline {chapter}{\numberline {3}Geometric Deep Learning}{15}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Generalities on Convolution}{16}{section.3.1}
+\contentsline {section}{\numberline {3.1}Generalities on Convolution}{15}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}The Space of Signals}{17}{section.3.2}
+\contentsline {section}{\numberline {3.2}The Space of Signals}{16}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Symmetries, Invariance and Equivariance}{18}{section.3.3}
+\contentsline {section}{\numberline {3.3}Symmetries, Invariance and Equivariance}{17}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Spectral Convolution}{19}{section.3.4}
+\contentsline {section}{\numberline {3.4}Spectral Convolution}{18}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{20}{Appendix.1.A}
+\contentsline {chapter}{\numberline {A}Category Theory}{19}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Dirac Notation}{21}{Appendix.1.B}
+\contentsline {chapter}{\numberline {B}Dirac Notation}{20}{Appendix.1.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Laplacian Operators}{22}{Appendix.1.C}
+\contentsline {chapter}{\numberline {C}Laplacian Operators}{21}{Appendix.1.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{24}{chapter*.8}
+\contentsline {chapter}{Bibliography}{23}{chapter*.8}
