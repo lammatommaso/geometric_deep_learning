@@ -2,10 +2,10 @@
 \begin{document}
 
     On a graph that admits non trivial gradient and divergence,
-    we can define a non trivial laplacian operator on cochains as the gradient of the divergence.
-    Since we are going to represent it on chains we have that
-    \[ d_1d_1^\dagger \cc{i} = \cc{i}\del_1^\dagger\del_1, \]
-    which is the adjoint of $\del_1\del_1^\dagger\ch{i}$.
+    we can define a non trivial laplacian operator on cochains as the divergence of the gradient.
+    Since we are going to work on chains we exloit the dual relation to define a laplacian on chains
+    \[d_1d_1^\dagger \cc{i} = \cc{i} \del_1 \del_1^\dagger\],
+    where the operator $\del_1 \del_1^\dagger$ is the dual of $d_1d_1^\dagger$.
     Again we are fixing a canonical basis as above.
 
     \begin{defn}
@@ -14,9 +14,8 @@
         \label{lapdef}
     \end{defn}
 
-    One interesting propertiy of the $0$-laplacian is that the dimension of its kernel equals the number of connected components of the graph.\\
-    To illustrate some of the properties of graphs we will refer to the graph in Fig. \ref{fig:2:3}. This is the Eckmann's theorem for $0$-chains, for a proof see \ref{app:C}.
-
+    One interesting propertiy of the $0$-laplacian is that the dimension of its kernel equals the number of connected components of the graph.This is the Eckmann's theorem for $0$-chains, for a proof see appendix \ref{app:C}.
+    We see an example. To illustrate some of the properties of graphs we will refer to the graph in fig. \ref{fig:2:3}. 
     \begin{figure}[H]
         \begin{minipage}{.5\textwidth}
             \centering
@@ -110,7 +109,7 @@
         \end{pmatrix} = 2-1 = 1.\]
     \end{exa}
 
-    We can also define an higher dimensional laplacian on the graph.
+    We can also define an higher dimensional laplacian on the graph, se appendix \ref{app:C} for more details.
 
     \begin{defn}
         Let $\mc{G}$ be a graph, we define the \ii{$1$-laplacian} $\Delta_1 : C_1 \to C_1$ by 
@@ -118,7 +117,7 @@
     \end{defn}
 
     One intersting property of the $1$-laplacian is that the dimension of its kernel equals the number of independent cycles.
-    This, instead, is the Eckmann's theorem for $1$-chains.
+    This, again, is the Eckmann's theorem this time for $1$-chains.
 
     \begin{exa}
         In fact we can expand $\Delta_1^\mc{A} := \del_1^\dagger\del_1$ the basis $\{\ket{1,2},\ket{2,3},\ket{3,1}\}$ as
@@ -147,5 +146,6 @@
             \end{pmatrix} = 3 - 2 =  1. \]
 
         Since the sum of the three raws is $0$ we can say that the only linearly independent $1$-cycle is $\ket{1,2}+\ket{2,3}+\ket{3,1}$.
+        \label{ex:2:3:2}
     \end{exa}
 \end{document}

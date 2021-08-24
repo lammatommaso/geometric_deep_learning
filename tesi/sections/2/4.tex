@@ -1,7 +1,7 @@
 \documentclass[../2.tex]{subfiles}
 \begin{document}
 In this section we will present some properties of the eigenfunctions of the classical laplacian operator.
-The laplacian eigenfunctions, i.e. functions $f: \R^n \to \R$ such that $\Delta f = \lambda f$ with $\lambda \in \R$ , are the solution of a constrained variational problem for an action called \ii{Dirichlet energy}, as shown in \cite{bronstein}.
+So we momentarily leave the discrete setting and we recall some well known facts about the continuous one.
 Let's first define the laplacian for smooth functions from $\R^n$ to $\R$. 
 
 \begin{defn}
@@ -9,6 +9,8 @@ Let's first define the laplacian for smooth functions from $\R^n$ to $\R$.
     \[ \Delta f(x) := - \sum_{i=1}^n \frac{\del f}{\del x_i}(x), \]
     where the $\frac{\del}{\del x_i}$ are the directional derivatives with respect to the basis of $\R^n$.
 \end{defn}
+
+The laplacian eigenfunctions, i.e. functions $f: \R^n \to \R$ such that $\Delta f = \lambda f$ with $\lambda \in \R$ , are the solution of a constrained variational problem for an action called \ii{Dirichlet energy}, as shown in \cite{bronstein}.
 
 \begin{defn}
     Let $f:\R^n \to \R$ be a smooth funcion with compact support, we define the \ii{Dirichlet energy functional} to be
@@ -18,6 +20,7 @@ Let's first define the laplacian for smooth functions from $\R^n$ to $\R$.
 \begin{prop}
     If $f:\R^n \to\R$ is a smooth function with compact support then 
     \[ D[f] := \int_{\R^n} dx |\nabla f|^2 = \int_{\R^n} dx f\Delta f .\]
+    \label{prop:2:4:3}
 \end{prop}
 \begin{proof}
     Recall the definition of laplacian in $\R^n$ as $\Delta f := -\nabla \cdot \nabla f$, and we integrate by parts
@@ -61,9 +64,8 @@ We now apply this to the Dirichlet energy.
     are the eigenfunctions of the laplacian.
 \end{prop}
 \begin{proof}
-    For this lagrangian the Euler-Lagrange equation reads as $ 2 \Delta f - 2\lambda f = 0$,
-    hence 
-    \[ \Delta f = \lambda f . \qedhere \]
+    Namely for $\mc{L} = |\nabla f|^2-\lambda f^2$ the Euler-Lagrange equation reads as $ 2 \Delta f - 2\lambda f = 0$,
+    hence \[ \Delta f = \lambda f . \qedhere \]
 
 \end{proof}
 
