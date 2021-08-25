@@ -1,6 +1,10 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
 
+    In this appendix we review few notions of category theory.
+    This theory is very useful to stduy homology and cohomology theory, however in this thesis we employ this language only marginally.
+    We refer the reader to \cite{mclane} for a full account of category theory.
+
     \begin{defn}
         A \ii{category} $\bb{C}$ consists of three ingredients:
         \begin{enumerate}[1.]
@@ -47,9 +51,25 @@
     A category that will be used in the following section is the category of topological spaces and continuous functions.
 
     \begin{prop}
-        Topological spaces and continuous functions are a category \bb{Top}, whose equivalences are called homeomorphisms.
+        Topological spaces and continuous functions between them are a category \bb{Top}, whose equivalences are called homeomorphisms.
+    \end{prop}
+
+    {\color{blue}
+    \begin{prop}
+        Abelian groups and group homomorphisms between them are a category \bb{Ab}, whose equiavlences are called homomorphism.
     \end{prop}
 
     Other examples of categories can be found in \cite{rotman} at 0.3 and in \cite{mclane}.
 
+    An important example of functor comes from the theory of homology.
+    When we defined the homology groups we focused on simplicial complexes, however if a simplicial complex $K$ is a triangulation of a topological space $X$
+    we can identify $H_i(X) := H_i(K)$. This is possible because withing the category \bb{Top} any two homeomorphic spaces are equivalent, and every merely topological consideration
+    about a particular topological space is also valid for spaces homeomorphic to the one in object.
+
+    \begin{thm}
+        For $i \geq 0$, $H_i : \bb{Top} \to \bb{Ab}$ is a functor called \ii{homology functor}.
+    \end{thm}
+
+    We already know how the homology functor acts on the objects, the way it acts on morphisms will be excluded from this appendix and can be found in 
+    \cite{rotman} at $4.3$.}
 \end{document}

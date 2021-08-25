@@ -1938,9 +1938,11 @@
     <bcf:citekey order="13">deep</bcf:citekey>
     <bcf:citekey order="14">gcnn</bcf:citekey>
     <bcf:citekey order="15">simplicialNN</bcf:citekey>
-    <bcf:citekey order="16">rotman</bcf:citekey>
-    <bcf:citekey order="17">mclane</bcf:citekey>
-    <bcf:citekey order="18">laplacian</bcf:citekey>
+    <bcf:citekey order="16">mclane</bcf:citekey>
+    <bcf:citekey order="17">rotman</bcf:citekey>
+    <bcf:citekey order="18">mclane</bcf:citekey>
+    <bcf:citekey order="19">rotman</bcf:citekey>
+    <bcf:citekey order="20">laplacian</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
