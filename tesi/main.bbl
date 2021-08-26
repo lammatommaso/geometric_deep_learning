@@ -160,6 +160,32 @@
       \field{title}{Group Equivariant Convolutional Networks}
       \field{year}{2016}
     \endentry
+    \entry{circulant}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4dcdce023b3b974213696b790b915900}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Philip\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {John Wiley}%
+        {Sons Inc}%
+      }
+      \strng{namehash}{4dcdce023b3b974213696b790b915900}
+      \strng{fullhash}{4dcdce023b3b974213696b790b915900}
+      \strng{bibnamehash}{4dcdce023b3b974213696b790b915900}
+      \strng{authorbibnamehash}{4dcdce023b3b974213696b790b915900}
+      \strng{authornamehash}{4dcdce023b3b974213696b790b915900}
+      \strng{authorfullhash}{4dcdce023b3b974213696b790b915900}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Pure and Applied Mathematics}
+      \field{title}{Circulant Matrices}
+      \field{year}{1979}
+    \endentry
     \entry{simplicialNN}{misc}{}
       \name{author}{3}{}{%
         {{hash=2571ca5855ae04e0f17f7ea73a4669af}{%
@@ -280,7 +306,6 @@
       \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{\url{http://www.deeplearningbook.org}}
       \field{title}{Deep Learning}
       \field{year}{2016}
     \endentry

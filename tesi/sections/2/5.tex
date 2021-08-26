@@ -20,14 +20,14 @@ this matrix and the differential operator is due to the chain complex structure.
     rows of $\Phi$ are the laplacian eigenvectors.
 \end{prop}
 \begin{proof}
-    The constrained action can also be written as
+    The Lagrange multipliers' theorem allows us to use costraints by minimizing the following constrained Dirichlet energy
     \[ D[\Phi] = \sum_{i,j,k} \Phi_{ik} \Delta_{ij} \Phi_{jk} - \sum_{i,j,k} \Lambda_{ij} \Phi_{kj} \Phi_{ki}, \]
     where $\Lambda$ is a diagonal matrix with the Lagrange multipliers as eigenvalues.\\
     {\color{blue}In fact the constraints $\Phi^T \Phi = 1$ can be written as $\sum_k \Phi_{kj} \Phi{ki} = \delta_{ij}$, therefore I need to subtract from my lagrangian
     the quantity $\sum_{i,j} \sum_k \Lambda_{ij} \Phi_{kj} \Phi{ki}$. Actually because of the constraint itself I already now that for $i \neq j$ the quantity
     I am substracting from the lagrangian vanishes, therefore we can see $\Lambda$ as a diagonal matrix of lagrange multipliers. }  
 
-    We then minimize this action 
+    We then minimize this energy
     \[ \frac{\del D[\Phi]}{\del \Phi_{mn}} = \sum_{i,j,k} \delta_{im}\delta_{nk}\Delta_{ij} \Phi_{jk} + \sum_{i,j,k} \Phi_{ik} \Delta_{ij}\delta_{jm}\delta_{nk}
     - \sum_{i,j,k} \Lambda_{ij} \delta_{mk}\delta_{nj}\Phi_{ki} - \sum_{i,j,k} \Lambda_{ij} \Phi_{kj} \delta_{mk}\delta_{ni} =  \]
     \[ = \sum_{j} \Delta_{mj} \Phi_{jn} + \sum_{i} \Phi_{in} \Delta_{im} - \sum_{i} \Lambda_{in} \Phi_{mi} - \sum_{j} \Lambda_{nj} \Phi_{mj} = 0, \]

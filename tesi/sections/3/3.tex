@@ -1,17 +1,20 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
    In this section we discuss the symmetries of a classification $C$ from the space of signals $\mc{S}$ to some space $\mc{L}$.
-   For instance in image classification the space of signals are the possible images where a possible classification is the object in the image and 
-   $\mc{L}$ is therefore a label space.
+   For instance in image classification the space of signals is the space of functions defined on im two dimensional grid,
+   and a possible and popular classification task is the recognition of the object in the image.
+ 
 
     \begin{defn}
         We define a \ii{classification} to be a function $C : \mc{S} \to \mc{L}$ from the signal space into some set $\mc{L}$.
     \end{defn}
 
-   We now want give a more formal definition of symmetry of a classification.
+    In the case of image classification $\mc{L}$ is a finite set of labels.
+
+    We now want give a more formal definition of symmetry of a classification.
 
     \begin{defn}
-        Let $C : \mc{S} \to \mc{L}$ be a classification we define a \ii{symmetry} of $C$ to be an invertible function
+        Let $C : \mc{S} \to \mc{L}$ be a classification, we define a \ii{symmetry} of $C$ to be an invertible function
         $g : \mc{S} \to \mc{S}$ such that 
         \[ C[g(\phi)] = C[\phi] \quad \forall \phi \in \mc{S}. \]
     \end{defn}
@@ -19,12 +22,12 @@
     We will denite the set of these symmetries as $S_C := \{ g : \mc{S} \to \mc{S} \; : \; C[g(\phi)] = C[\phi] \;  \forall \phi \in \mc{S}\}$
 
     \begin{prop}
-        Let $\circ$ be the composition of functions from $\mc{S}$ to itself, then $(S_C, \circ)$ is a group.
+        The set of symmetries $S_C$ of the classification $C$ is a group with the usual function composition.
     \end{prop} 
     \begin{proof}
         We shall prove that this set with respect to $\circ$ satisfies all the group properties.
         \begin{enumerate}[(i)]
-            \item The operation $\circ$ is already associative.
+            \item The operation $\circ$ is associative.
             \item Let $\text{id}_\mc{S} : \mc{S} \to \mc{S}$ be the identity on $\mc{S}$, namely $\text{id}_\mc{S}(\phi) = \phi$ for all $\phi \in \mc{S}$,
                 then $\text{id}_\mc{S} \in S_C$.
             \item Let $g,g' \in S_C$, we have that $C[(g\circ g')(\phi)] = C[\phi]$, therefore $(g \circ g') \in S_C$.
@@ -55,8 +58,8 @@
 
     \begin{prop}
         Let $G$ be a group and let $\mc{S}$ be the space of signals from $\Omega$ to $V$, then for all $\phi \in \mc{S}$ and for all $g \in G$ we have that
-        \[ (g.\phi)(x) := \phi(g^{-1}.x), \]
-        where $x \in \Omega$, is an action of $G$ on $\mc{S}$.
+        \[ (g.\phi)(x) := \phi(g^{-1}.x) \quad \forall x \in \Omega, \]
+        is an action of $G$ on $\mc{S}$.
     \end{prop}
     \begin{proof}
         We can see that $g.(h.\phi)(x) = g.\phi(h^{-1}.x) = \phi((g^{-1} \circ h^{-1}).x) = ((g \circ h).\phi)(x). \qedhere$
@@ -69,7 +72,7 @@
     \begin{defn}
         Let $G$ be a group, we define an $n$-dimensional representation of $G$ to be a homomorphism $\rho : G \to GL(n)$\footnote{GL(n) is the group of $n \times n$ invertible matrices.}.
     \end{defn}
-
+    $\text{circ}(0,1,0,\dots,0)$
     An important role in geometric deep learning is played by the so called \ii{group equivariant} and \ii{group invariant} functions.
 
     \begin{defn}
@@ -83,5 +86,14 @@
        \[ f(\rho(g)\phi) = \rho(g)f(\phi) \quad \forall g \in G, \]
        where $\phi \in \mc{S}$.
    \end{defn}
+
+   An example of equivariance can be seen recalling example \ref{exa:circ}.
+
+   {\color{red}
+   \begin{exa}
+        Se c'è tempo faccio l'esempio di equivarianza utilizzando tutta la teoria della sezione, con un intervallo I che ha 
+        equivariante rispetto al gruppo ciclico, ma non so se ci resco
+   \end{exa}
+   }
 
 \end{document}

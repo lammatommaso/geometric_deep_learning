@@ -2,38 +2,82 @@
 \begin{document}
 
     Convolutional neural networks or CNN's are today one of the most common deep learing architectures, especially successful at processing
-    that has a known grid-like topology. For instance time series, or signals can be sampled in a 1D grid, while images can be thought as a 2D grid.
+    data with a known grid-like topology. For instance time series, or signals can be sampled in a one dimensional grid, while images can be thought as a two dimensional grid.
     
     In Chapter \ref{ch:2} we defined the convolution of $f:\R^n \to \R$ with $g:\R^n \to \R$ as
-    \[ (f * g)(x) = \int_{\R^n} dx' f(x')g(x-x'), \]
-    in the literature of convolutional neural networks the function $f$ is called the \ii{input} of the
+    \[ (f * g)(x) = \int_{\R^n} dx' f(x')g(x-x'). \]
+    In the literature of convolutional neural networks the function $f$ is called the \ii{input} of the
     convolutional layer, the functions $g$ is called \ii{filter} and the output $f*g$ is called \ii{feature map}.
 
     To give an interpretation of convolution we will discuss an example from \cite{deep}.
 
-    Suppose we are tracking the location of a spaceship with a laser sensor. Our
-    sensor gives a single output $x : \R \to \R^3$, where $x(t)$ is the position read by the sensor at the time t.
-    Now suppose that our laser sensor is somewhat noisy. To obtain a less noisy
-    measurement of the spaceship’s position, we need to average several measurements.
-    Considering that more recent measurements are more relevant, we will want this average to
-    be a weighted average that gives more weight to recent measurements. 
-    We can do this with a normalized weighting function $w:\R \to \R$. If
-    we apply such a weighted average operation at every moment, we obtain a new
-    function s providing a smoothed estimate of the position of the spaceship:
-    \[ s(t) = \int_\R da \, x(a)w(t-a), \]
-    where $w(t-a)$ is the time-shifted weighting function.
-    Since the aquisition rate of any measurement apparatus is not infinite, we need to see this convolution as discrete, representing time as a 1D grid,
-    \[ s_i = \sum_{j \in \Z} x_j w_{(i-j)}, \]
-    where $w_{(i-j)}$ is still the weighting function shifted by an integer.
-    Let us see for a moment $(\Z,+)$ as a group, since by definition it is closed under the addition this convolution is well defined.
-    The representation of this convolution is given by an infinite circulant matrix, therefore a restriction of $\Z$
-    into a subset $I$ is necessary. But what happens to $(i-j)$ at the boundary of $I$?\\
-    The problem is that a finite interval $I$ is not closed under the addition in this case, namely it is not a group.
-    Standard addition is therefore not qualified to be the group operation, yet if $I = \{ 0,\dots,n-1 \}$, we could use
-    addition modulo $n$, i.e. 
-    \[ s_i = \sum_{j = 0}^{n-1} x_j w_{(i-j) \, \text{mod} \, n},\]
-    which can be seen as the product of a finite circulant matrix $C_ij$ with the vector $x_j$.
-    This matrix being circulant has an important constraint on the number of independent components, this reflects the compact support of the filter.
+    \begin{exa}
+        \label{exa:circ}
+        Suppose we are tracking the location of a spaceship with a laser sensor. Our
+        sensor gives a single output $x : \R \to \R^3$, where $x(t)$ is the position read by the sensor at the time t.
+        Now suppose that our laser sensor is somewhat noisy. To obtain a less noisy
+        measurement of the spaceship’s position, we need to average several measurements.
+        Considering that more recent measurements are more relevant, we will want this average to
+        be a weighted average that gives more weight to recent measurements. 
+        We can do this with a normalized weighting function $w:\R \to \R$. If
+        we apply such a weighted average operation at every moment, we obtain a new
+        function s providing a smoothed estimate of the position of the spaceship:
+        \[ s(t) = \int_\R da \, x(a)w(t-a), \]
+        where $w(t-a)$ is the time-shifted weighting function.
+
+        We will now extend the example in \cite{deep}.
+
+        Since the aquisition rate of any measurement apparatus is not infinite, we need to see this convolution as discrete, representing time as a 1D grid,
+        \[ s_i = \sum_{j \in \Z} x_j w_{(i-j)}, \]
+        where $w_{(i-j)}$ is still the weighting function shifted by an integer.
+        Let us see for a moment $(\Z,+)$ as a group, since by definition it is closed under the addition this convolution is well defined.
+        The representation of this convolution is given by an infinite circulant matrix, therefore a restriction of $\Z$
+        into a subset $I$ is necessary. But what happens to $(i-j)$ at the boundary of $I$?\\
+        The problem is that a finite interval $I$ is not closed under the addition in this case, namely it is not a group.
+        Standard addition is therefore not qualified to be the group operation, yet if $I = \{ 0,\dots,n-1 \}$, we could use
+        addition modulo $n$, i.e. 
+        \[ s_i = \sum_{j = 0}^{n-1} x_j w_{(i-j) \, \text{mod} \, n},\]
+        which can be seen as the product of a finite circulant matrix $C_{ij}$ with the vector $x_j$.
+    \end{exa}
+
+    {\color{blue}
+    In order to discuss the previous example we need to define what a circulant matrix is, for further details about circulant matrices see \cite{circulant} at chapter 3.
+    
+    \begin{defn}
+        Let a matrix $C \in M_{n \times n}(\R)$, then $C$ is said to be \ii{circulant} if it has the form 
+        \[ C = \text{circ}(c_1, \dots, c_n) := 
+        \begin{pmatrix}
+            c_1 & c_2 & \dots & c_n \\
+            c_n & c_1 & \dots & c_{n-1}\\
+            \vdots & \vdots &  & \vdots \\
+            c_2 & c_3 & \dots & c_1 \\
+        \end{pmatrix}, \] 
+        where $M_{n \times n}(\R)$ is the set of real-valued $n \times n$ matrices.
+    \end{defn}
+
+    \begin{rem}
+        In the previous definition I chose the matrix to be real-valued, however, it is important to know that a circulant matrix is not
+        diagonalizable on the real field.
+    \end{rem}
+
+    A relevant theorem for our discussion is the following.
+
+    \begin{thm}
+        Let $C \in M_{n \times n}(\R)$ and let $\pi := \text{circ}(0,1,0,\dots,0)$, then $C$ is circulant if and only if
+        \[ [\pi, C] := \pi C - C \pi = 0 . \]
+        \label{thm:circ}
+    \end{thm}
+    
+    For a proof of this theorem see \cite{circulant} at 3.
+
+    From theorem \ref{thm:circ} we know that a sufficient and necessary condition for a matrix $C$ to be circulant is that it has to commute
+    with $\text{circ}(0,1,0,\dots,0)$, but what does this mean?
+    The matrix $\text{circ}(0,1,0,\dots,0)$ is often known as shift operator, in that it circularly shifts the components of the vector on which it acts.
+    This fact will be discussed in an example in section \cite{sec:3:3}.
+    The commutation relation tells us that a circulant matrix is shift equivariant, more details about equivariance will be given in the third section
+    of this chapter.}
+
+    This matrix being circulant is also an important constraint on the number of independent components, this reflects the compact support of the filter.
     This might look as a pragmatic solution but it also tells us some truth about the symmetries of the task.
     In some cases the classification of a signal, e.g. voice recognition, is independent of the time when the signal was recorded,
     we can say that the classification is invariant under translations of the signal over time. This is reflected in the fact that if I 

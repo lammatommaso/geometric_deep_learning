@@ -4,22 +4,21 @@
     structure. More formally we can define the space of $V$-valued signals on the domain $\Omega$.
 
     \begin{defn}
-        Let $\Omega$ be a set, possibily with additional structure
-        \footnote{For instance $\Omega$ is a smooth manifold.}
+        Let $\Omega$ be a set
         , and $V$ a vector space over $\K$, we define the \ii{signal set}
         \[ \mc{S}(\Omega,V) = \{ \phi : \Omega \to V \}, \]
         where the dimensions of $V$ are called \ii{channels}.
     \end{defn}
 
     In particular cases such as when $\Omega$ is a smooth manifold we might also require the signals to be smooth.
+    Notice that often $\Omega$ has an additional structure, for instance it is a manifold.
     Let us now equip the signal set with a vector space structure.
 
-    \begin{prop}
-        The signal set equipped with the operations
-        \[ \cdot : \K \times \mc{S}(\Omega,V) \to \mc{S}(\Omega,V)   \quad \text{such that} \; (\lambda \phi)(x) = \lambda \phi(x), \; \text{and} \]
-        \[ + : \mc{S}(\Omega,V) \times \mc{S}(\Omega,V) \to \mc{S}(\Omega,V) \quad \text{such that} \; (\phi + \eta)(x) = \phi(x) + \eta(x), \]
-        where $x \in \Omega$, is a vector space over $\K$. 
-    \end{prop}
+    The signal set equipped with the operations
+    \[ \cdot : \K \times \mc{S}(\Omega,V) \to \mc{S}(\Omega,V)   \quad \text{such that} \; (\lambda \phi)(x) = \lambda \phi(x), \; \text{and} \]
+    \[ + : \mc{S}(\Omega,V) \times \mc{S}(\Omega,V) \to \mc{S}(\Omega,V) \quad \text{such that} \; (\phi + \eta)(x) = \phi(x) + \eta(x), \]
+    where $x \in \Omega$, is a vector space over $\K$. We leave to the reader the straight forward verification.
+
 
     We shall call this vector space \ii{signal space}, and denote it just by $\mc{S}$ for
     a lighter notation.
@@ -33,10 +32,12 @@
     \end{defn}
 
     \begin{prop}
-        The space $\mc{S}$ equipped with $\langle \, , \, \rangle$ is a Hilbert space.
+        The completion of the space $\mc{S}$ equipped with $\langle \, , \, \rangle$ is a Hilbert space.
     \end{prop}
-    {\color{red} Non vorrei dimostrarlo ma in teoria non devo imporre che $\K$ sia completo per avere la completezza di $\mc{S}$?}
 
-    When the domain $\Omega$ is discrete we can choose $\mu$ to be the counting measure, therefore turning the integral into a sum.
+    \begin{rem}
+        When the domain $\Omega$ is discrete we can choose $\mu$ to be the counting measure, therefore turning the integral into a sum.
+        Furthermore, if $\Omega$ is finite we do not need to take the completion in teh previous proposition.
+    \end{rem}
 
 \end{document}
