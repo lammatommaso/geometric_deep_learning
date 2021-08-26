@@ -1,11 +1,27 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
 
-    Another approach that can be used to define a convolution is the spectral convolution with respect to a laplacian operator, in this section
-    we shall see this abstract and general method on graphs.
+    Another approach that can be used to define a convolution is defining spectral convolution with respect to a laplacian operator, in this section
+    we will see this abstract and general method on graphs.
+
+    {\color{blue}
+
+    To understand why the laplacian operator plays such an important role in convolution we will review the laplacian eigenfunctions in one dimension.
+    Let's consider the space of complex-valued functions defined on the real line. We cannot find an orthonormal basis for this space out of laplacian
+    eigenfunctions, nevertheless we can find an generalized orthonormal basis.
+
+    The basis we are looking for is $\phi_k(x) = C e^{ikx}$ where $k \in \R$ is a parameter that can be used to label the eigenfunctions
+    and $C \in \C$ is fixed by the conditions in app. \ref{app:B}.
+    The position operator $x$ is defined by the spactral relation $\cc{x}x = x\cc{x}$, where $x \in \R$ on the right side is the eigenvalue of the position operator
+    on $\ch{x}$. When defining the position operator we also require $\{ \ch{x} : x \in \R\}$ to be a generalized orthonormal basis.
+    Using the Dirac notation $\braket{x}{k} = \phi_k(x)$, and since it is a generalized orthonormal basis we also have that
+    $\int_\R dk \ch{k}\cc{k} = 1$ and $\braket{m}{k} = \delta(m-k)$ if $\ch{m}$ is also an eigenfunction of the laplacian.
+    We shall not prove here that this is an orthonormal generalized basis for our space.
+
+    }
+
     In order to construct a convolutional neural network that classifies data defined on a graph we need a definition of convolution on graphs.
-    To do this we recall that in Chapter \ref{ch:2} we saw that the Fourier tranform diagonalizes the convolution. Here we want to define a convolution on graphs
-    based on this fact. First we introduce what we call \ii{graph Fourier transform}.
+    Here we want to define a convolution on graphs based on this fact. First we introduce what we call \ii{graph Fourier transform}.
     
     \begin{defn}
         Let $\ket{f} \in C_0$ and $dimC_0 = n_0$, we define the \ii{graph Fourier transform}\\
