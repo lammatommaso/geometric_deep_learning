@@ -1,4 +1,38 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
+    { \color{blue}
+    In this section we will give an overview on modern geometric deep learning using the considerations of the previous section.
+    Let $\mc{S}(\Omega,V),\Lambda$ and $\mc{S}(\Omega',V')$ be two signal spaces and $\Omega'$ is a more compact version of $\Omega$.
+    From this setting we introduce the building blocks of geometric deep learning.
+
+    \begin{itemize}
+        \item A \ii{linear $G$-invariant layer} $B : \mc{S}(\Omega,V) \to \mc{S}(\Lambda,V')$ such that
+            $B(g.\phi) = g.B(\phi)$ for all $g \in G$ and $\phi \in \mc{S}(\Omega,V)$.
+        \item A \ii{nonlinearity} $\sigma : \mc{S}(\Omega,V) \to \mc{S}(\Lambda,V')$ which is applied element-wise 
+            $(\sigma(\phi))(x) = \sigma'(\phi(x))$ where $\sigma' : V \to V'$ is a non linear function.
+        \item A \ii{$G$-equivariant local pooling} $P : \mc{S}(\Omega,V) \to \mc{S}(\Omega',V)$.
+        \item A \ii{$G$-invariant global pooling} $P : \mc{S}(\Omega,V) \to \mc{C}$ such that $A(g.\phi) = A(\phi)$ for all $g \in G$ 
+        and $\phi \in \mc{S}(\Omega,V)$, where $\mc{C}$ is a set.
+    \end{itemize}
+
+    Using these blocks we can define $G$-invariant functions $f : \mc{S}(\Omega,V) \to \mc{C}$ of the kind
+    \[ f := A \circ \sigma_{i+1} \circ B_{i+1} \circ (\bigcirc_{j = 1}^i P_j \circ \sigma_j \circ B_j ) , \]
+    where the input and output spaces need to be appropriately matched.
+
+    An immediate observation could be that a $G$-invariant function could also only consist of one layer.
+    For instance let $f : \mc{S}(\Omega,V) \to \mc{C}$ be a linear $G$-invariant layer, because of the $G$-invariance we can write
+    $f(g.\phi) = f(\phi)$ and since $\frac{1}{\mu(G)} \int_G d\mu(g) = 1$\footnote{Here $\mu(g)$ is known as Haar measure on the group G.} we have that
+    \[ f(\phi) = f(g.\phi) = (\frac{1}{\mu(G)} \int_G d\mu(g)) f(g.\phi),  \]
+    the invariance allows us to insert $f$ inside the integral
+    \[ f(\phi) = \frac{1}{\mu(G)} \int_G d\mu(g) f(g.\phi) = f(\frac{1}{\mu(G)} \int_G d\mu(g) (g.\phi)), \]
+    where in the last equivalence we used the linearity of $f$.
+
+    This means that $f$ depends on $\phi$ through the $G$-average.
+    In the case of images with the translation group this would imply that $f$ only depends on the average $RGB$ value of the image.
+    Linear invariants are therefore really limited, linear equivariants are a bigger family of operators that allows the network to reach a good approximation
+    power.{\color{red} Quest'ultima frase è un po' mistica ma anche quello che hanno scritto loro per me è impossibile da interpretare.}
+    
+    Here we are not giving a recipe for an architecture, we are rather listing the necessary conditions for the network to behave well w.r.t. the symmetries.
+    }   
 
 \end{document}

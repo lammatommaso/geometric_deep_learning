@@ -33,12 +33,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Symmetries, Invariance and Equivariance}{18}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Spectral Convolution}{20}{section.3.4}
+\contentsline {section}{\numberline {3.4}The Blueprint of Geometric Deep Learning}{20}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Category Theory}{22}{Appendix.1.A}
+\contentsline {section}{\numberline {3.5}Spectral Convolution}{20}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Dirac's Notation}{24}{Appendix.1.B}
+\contentsline {chapter}{\numberline {A}Category Theory}{23}{Appendix.1.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Laplacian Operators}{25}{Appendix.1.C}
+\contentsline {chapter}{\numberline {B}Dirac's Notation}{25}{Appendix.1.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{27}{chapter*.8}
+\contentsline {chapter}{\numberline {C}Laplacian Operators}{26}{Appendix.1.C}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{28}{chapter*.8}
