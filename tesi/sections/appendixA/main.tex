@@ -54,23 +54,25 @@
         Topological spaces and continuous functions between them are a category \bb{Top}, whose equivalences are called homeomorphisms.
     \end{prop}
 
-    {\color{blue}
     \begin{prop}
-        Abelian groups and group homomorphisms between them are a category \bb{Ab}, whose equiavlences are called homomorphism.
+        Abelian groups and group homomorphisms between them are a category \bb{Ab}, whose equivalences are called homomorphism.
     \end{prop}
 
     Other examples of categories can be found in \cite{rotman} at 0.3 and in \cite{mclane}.
 
     An important example of functor comes from the theory of homology.
     When we defined the homology groups we focused on simplicial complexes, however if a simplicial complex $K$ is a triangulation of a topological space $X$
-    we can identify $H_i(X) := H_i(K)$. This is possible because withing the category \bb{Top} any two homeomorphic spaces are equivalent, and every merely topological consideration
-    about a particular topological space is also valid for spaces homeomorphic to the one in object.
+    we can identify $H_i(X) := H_i(K)$.
 
     \begin{thm}
         For $i \geq 0$, $H_i : \bb{Top} \to \bb{Ab}$ is a functor called \ii{homology functor}.
     \end{thm}
 
-    We already know how the homology functor acts on the objects, the way it acts on morphisms will be excluded from this appendix and can be found in 
-    \cite{rotman} at $4.3$. As we saw, we know that functors preserve the equivalence between the objects of the categories, therefore if two topological spaces are isomorphic
-    their homology groups will be isomorphic.}
+    We already know how the homology functor acts on the objects, the way it acts on morphisms can be found in 
+    \cite{rotman} at $4.3$. 
+    \begin{rem}
+        If two topological spaces are homeomorphic
+        their homology groups will be isomorphic.
+    \end{rem}
+    
 \end{document}

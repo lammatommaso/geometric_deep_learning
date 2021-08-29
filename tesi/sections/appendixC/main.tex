@@ -3,6 +3,7 @@
     \label{app:C}
     An important role in the definition of a convolution on simplicial complexes is played by the Laplacian operator,
     especially by its eigenfunctions and spectrum. A more thorough discussion of this operator can be found in \cite{laplacian}.
+    We give here the general treatment and definition of the $p$-laplacian. The $0$-laplacian and the $1$-laplacian are discussed in section \ref{sec:2:3}.
     
     \begin{defn}
         We define the \ii{p-Laplacian} operator to be 
@@ -42,7 +43,7 @@
     is isomorphic to the p-homology group.
 
     \begin{thm}
-        Let $\Delta_p$ be a laplacian operator, then $\ker\Delta_p \simeq H_p$.
+        (Eckmann's Theorem) Let $\Delta_p$ be a laplacian operator, then $\ker\Delta_p \simeq H_p$.
     \end{thm}
     \begin{proof}
         We recall the definition of laplacian $\Delta_p =: \del_{p+1}\del^\dagger_{p+1} + \del^\dagger_p\del_p$.\\
@@ -55,6 +56,4 @@
         therefore $\ker\Delta_p \subset \ker\del^\dagger_{p+1} \cap \ker\del_p $. Now, since $\ker\Delta_p = \ker\del^\dagger_{p+1} \cap \ker\del_p$, we conclude that 
         $\ker\Delta_p = (\im\del_{p+1}^\dagger)^\perp \cap \ker\del_p \simeq H_p$. \qedhere
     \end{proof}
-
-    We shall refer to this theorem simply by Eckmann's theorem.
 \end{document}
