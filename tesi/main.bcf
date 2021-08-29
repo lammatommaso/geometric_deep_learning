@@ -1934,19 +1934,20 @@
     <bcf:citekey order="9">bronstein</bcf:citekey>
     <bcf:citekey order="10">fomin</bcf:citekey>
     <bcf:citekey order="11">2021geo</bcf:citekey>
-    <bcf:citekey order="12">2021geo</bcf:citekey>
-    <bcf:citekey order="13">deep</bcf:citekey>
+    <bcf:citekey order="12">bronstein</bcf:citekey>
+    <bcf:citekey order="13">2021geo</bcf:citekey>
     <bcf:citekey order="14">deep</bcf:citekey>
-    <bcf:citekey order="15">circulant</bcf:citekey>
+    <bcf:citekey order="15">deep</bcf:citekey>
     <bcf:citekey order="16">circulant</bcf:citekey>
-    <bcf:citekey order="17">gcnn</bcf:citekey>
-    <bcf:citekey order="18">fourier</bcf:citekey>
-    <bcf:citekey order="19">simplicialNN</bcf:citekey>
-    <bcf:citekey order="20">mclane</bcf:citekey>
-    <bcf:citekey order="21">rotman</bcf:citekey>
-    <bcf:citekey order="22">mclane</bcf:citekey>
-    <bcf:citekey order="23">rotman</bcf:citekey>
-    <bcf:citekey order="24">laplacian</bcf:citekey>
+    <bcf:citekey order="17">circulant</bcf:citekey>
+    <bcf:citekey order="18">gcnn</bcf:citekey>
+    <bcf:citekey order="19">fourier</bcf:citekey>
+    <bcf:citekey order="20">simplicialNN</bcf:citekey>
+    <bcf:citekey order="21">mclane</bcf:citekey>
+    <bcf:citekey order="22">rotman</bcf:citekey>
+    <bcf:citekey order="23">mclane</bcf:citekey>
+    <bcf:citekey order="24">rotman</bcf:citekey>
+    <bcf:citekey order="25">laplacian</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

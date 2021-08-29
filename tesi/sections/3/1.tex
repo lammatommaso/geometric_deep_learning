@@ -40,7 +40,6 @@
         which can be seen as the product of a finite circulant matrix $C_{ij}$ with the vector $x_j$.
     \end{exa}
 
-    {\color{blue}
     In order to discuss the previous example we need to define what a circulant matrix is, for further details about circulant matrices see \cite{circulant} at chapter 3.
     
     \begin{defn}
@@ -56,7 +55,7 @@
     \end{defn}
 
     \begin{rem}
-        In the previous definition I chose the matrix to be real-valued, however, it is important to know that a circulant matrix is not
+        In the previous definition we chose the matrix to be real-valued, however, it is important to know that a circulant matrix is not
         diagonalizable on the real field.
     \end{rem}
 
@@ -71,16 +70,16 @@
     For a proof of this theorem see \cite{circulant} at 3.
 
     From theorem \ref{thm:circ} we know that a sufficient and necessary condition for a matrix $C$ to be circulant is that it has to commute
-    with $\text{circ}(0,1,0,\dots,0)$, but what does this mean?
+    with $\text{circ}(0,1,0,\dots,0)$.
     The matrix $\text{circ}(0,1,0,\dots,0)$ is often known as shift operator, in that it circularly shifts the components of the vector on which it acts.
     This fact will be discussed in an example in section \ref{sec:3:3}.
     The commutation relation tells us that a circulant matrix is shift equivariant, more details about equivariance will be given in the third section
-    of this chapter.}
+    of this chapter.
 
     This matrix being circulant is also an important constraint on the number of independent components, this reflects the compact support of the filter.
     This might look as a pragmatic solution but it also tells us some truth about the symmetries of the task.
     In some cases the classification of a signal, e.g. voice recognition, is independent of the time when the signal was recorded,
-    we can say that the classification is invariant under translations of the signal over time. This is reflected in the fact that if I 
+    we can say that the classification is invariant under translations of the signal over time. This is reflected in the fact that if we 
     shift the whole cyclic group the matrix representing the convolution will still be circulant.
     At this point, we could see our filter as a function defined on the cyclic group itself, rather than a filter whose symmetry group is the cyclic group.
     This subtle distinction allowed M. Welling and T. S. Cohen to define in \cite{gcnn} a group equivariant convolution on an arbitrary group.
