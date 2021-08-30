@@ -430,6 +430,33 @@
       \field{title}{Categories for the Working Mathematician}
       \field{year}{1971}
     \endentry
+    \entry{axqft}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8b037fa2360e6e24611a8f1f519c7a1e}{%
+           family={N.N.\bibnamedelimi Bogolubov},
+           familyi={N\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={I.T.\bibnamedelimi Todorov},
+           giveni={I\bibinitperiod\bibinitdelim T\bibinitperiod},
+           suffix={A.A.\bibnamedelimi Logunov},
+           suffixi={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {W.A. Benjamin, Inc.}%
+      }
+      \strng{namehash}{8b037fa2360e6e24611a8f1f519c7a1e}
+      \strng{fullhash}{8b037fa2360e6e24611a8f1f519c7a1e}
+      \strng{bibnamehash}{8b037fa2360e6e24611a8f1f519c7a1e}
+      \strng{authorbibnamehash}{8b037fa2360e6e24611a8f1f519c7a1e}
+      \strng{authornamehash}{8b037fa2360e6e24611a8f1f519c7a1e}
+      \strng{authorfullhash}{8b037fa2360e6e24611a8f1f519c7a1e}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Mathematical Physics Monograph Series, 18}
+      \field{title}{Introduction to Axiomatic Quantum Field Theory}
+      \field{year}{1975}
+    \endentry
     \entry{rotman}{book}{}
       \name{author}{1}{}{%
         {{hash=9c0331116e9475d360c20810da1e70f4}{%
