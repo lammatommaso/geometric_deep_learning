@@ -1,7 +1,7 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
 
-    Convolutional neural networks or CNN's are today one of the most common deep learing architectures, especially successful at processing
+    Convolutional neural networks or CNN's are today one of the most common deep learning architectures, especially successful at processing
     data with a known grid-like topology. For instance time series, or signals can be sampled in a one dimensional grid, while images can be thought as a two dimensional grid.
     
     In Chapter \ref{ch:2} we defined the convolution of $f:\R^n \to \R$ with $g:\R^n \to \R$ as
@@ -14,7 +14,7 @@
     \begin{exa}
         \label{exa:circ}
         Suppose we are tracking the location of a spaceship with a laser sensor. Our
-        sensor gives a single output $x : \R \to \R^3$, where $x(t)$ is the position read by the sensor at the time t.
+        sensor gives a single output $x : \R \to \R^3$, where $x(t)$ is the position read by the sensor at the time $t$.
         Now suppose that our laser sensor is somewhat noisy. To obtain a less noisy
         measurement of the spaceship’s position, we need to average several measurements.
         Considering that more recent measurements are more relevant, we will want this average to
@@ -27,7 +27,7 @@
 
         We will now extend the example in \cite{deep}.
 
-        Since the aquisition rate of any measurement apparatus is not infinite, we need to see this convolution as discrete, representing time as a 1D grid,
+        Since the acquisition rate of any measurement apparatus is not infinite, we need to see this convolution as discrete, representing time as a one dimensional grid,
         \[ s_i = \sum_{j \in \Z} x_j w_{(i-j)}, \]
         where $w_{(i-j)}$ is still the weighting function shifted by an integer.
         Let us see for a moment $(\Z,+)$ as a group, since by definition it is closed under the addition this convolution is well defined.
@@ -77,8 +77,8 @@
     of this chapter. This matrix being circulant is also an important constraint on the number of independent components, this reflects the compact support of the filter.
     This might look as a pragmatic solution but it also tells us some truth about the symmetries of the task.
     In some cases the classification of a signal, e.g. voice recognition, is independent of the time when the signal was recorded,
-    we can say that the classification is invariant under translations of the signal over time. This is reflected in the fact that if we 
-    shift the whole cyclic group the matrix representing the convolution will still be circulant.
+    we can say that the classification is invariant under translations of the signal over time. {\color{red}This is reflected in the fact that if we 
+    shift the whole cyclic group the matrix representing the convolution will still be circulant.}
     At this point, we could see our filter as a function defined on the cyclic group itself, rather than a filter whose symmetry group is the cyclic group.
     This subtle distinction allowed M. Welling and T. S. Cohen to define in \cite{gcnn} a group equivariant convolution on an arbitrary group.
     
