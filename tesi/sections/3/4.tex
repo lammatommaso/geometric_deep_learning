@@ -1,7 +1,14 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
     In this section we will give an overview on modern geometric deep learning using the considerations of the previous section.
-    Let $\mc{S}(\Omega,V)$,$\mc{S}(\Lambda,W)$ and $\mc{S}(\Omega',V')$ be signal spaces where {\color{red} $\Omega'$ is a more compact version of $\Omega$}.
+    Let $\mc{S}(\Omega,V)$,$\mc{S}(\Omega',V)$ and $\mc{S}(\Lambda,W)$.
+    {\color{blue}
+    As we did for graphs we can define the signal space as a free abelian group on $\Omega$ therefore every signal can be expressed as 
+    \[ \ch{\psi} = \sum_{i \in \Omega} \psi_i\ch{i}, \]
+    where the sum is the formal sum of the free abelian group.
+    If we choose the generators $\Omega' = \{\ch{j}\}$ of a proper subgroup of this free abelian 
+    group as the basis for our signals, we are restricting the signals into a lower dimensional signal space.
+    In the following exposition we will consider $\mc{S}(\Omega',V)$ to be a lower dimensional version of $\mc{S}(\Omega,V)$.}
     From this setting we introduce the building blocks of geometric deep learning.
 
     \begin{itemize}
