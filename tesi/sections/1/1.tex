@@ -77,8 +77,8 @@
             our statement is proven.
 
             \item $[\sigma] \subset C$.\\
-            If all but one the $\lambda_i$ are zero certaintly $\sum_{i \in I} \lambda_i x_i \in C$, since $C$ contains all the vertexes.
-            The inuctive hypothesis, by relabeling, is that if the first $\lambda_0,...,\lambda_{n-1}$ are non-zero, hence not even $1$, then $\sum_{i \in I} \lambda_i x_i \in C$.
+            If all but one the $\lambda_i$ are zero certainly $\sum_{i \in I} \lambda_i x_i \in C$, since $C$ contains all the vertexes.
+            The inductive hypothesis, by relabeling, is that if the first $\lambda_0,...,\lambda_{n-1}$ are non-zero, hence not even $1$, then $\sum_{i \in I} \lambda_i x_i \in C$.
             We want to show that whenever $\lambda_0,...,\lambda_n$ are non-zero then also $\sum_{i \in I} \lambda_i x_i \in C$, since $\lambda_n \neq 1$ we have that
             \[ \sum_{i \in I} \lambda_i x_i =  \sum_{i = 0}^n \lambda_i x_i = \lambda_n x_n + \sum_{i = 0}^{n-1} \lambda_i x_i =
                \lambda_n x_n + (1 - \lambda_n) \sum_{i = 0}^{n-1} \frac{\lambda_i}{1 - \lambda_n} x_i.\]
@@ -89,7 +89,7 @@
 
             \item $\sum_{i \in I} \lambda_i x_i = \sum_{i \in I} \mu_i x_i \then \lambda_i = \mu_i \forall i \in I$.\\
             Let $\sum_{i \in I} \lambda_i x_i = \sum_{i \in I} \mu_i x_i$, then also $x_0\sum_{i \in I} \lambda_i + \sum_{i \in I} \lambda_i(x_i-x_0) = 
-            x_0\sum_{i \in I} \mu_i +\sum_{i \in I} \mu_i (x_i - x_0)$, and since both $\lambda_i$ and $\mu_i$ are normalised we have that
+            x_0\sum_{i \in I} \mu_i +\sum_{i \in I} \mu_i (x_i - x_0)$, and since both $\lambda_i$ and $\mu_i$ are normalized we have that
             \[ \sum_{i \in I} (\lambda_i - \mu_i) (x_0 - x_i) = \sum_{i \in I \m \{0\}} (\lambda_i - \mu_i) (x_0 - x_i) = 0 \then \lambda_i = \mu_i \quad \forall i \in I \m \{0\},\]
             because of the affine independence. \qedhere
         \end{enumerate}
@@ -101,7 +101,7 @@
     \end{defn}
 
     Theorem \ref{thm:1} gives us the possibility to represent a point in a simplex $[\sigma]$ via a finite set of real parameters defined in the range $[0,1]$
-    and satisfying the normalisation condition $\sum_{i \in I } \lambda_i = 1$. Such parameters are called \ii{baricentric coordinates} of $[\sigma]$.\\
+    and satisfying the normalization condition $\sum_{i \in I } \lambda_i = 1$. Such parameters are called \ii{baricentric coordinates} of $[\sigma]$.\\
     \hfill \\
     The points in $\sigma$ are called \ii{vertexes} of the simplex $[\sigma]$, accordingly we define the vertex set of a simplex $[\sigma]$ to be 
     $Vert([\sigma]) = \sigma$.

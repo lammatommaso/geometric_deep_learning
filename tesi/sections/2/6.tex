@@ -31,12 +31,12 @@
         Let $\mc{G}$ be a simple undirected graph and let $\ch{\psi}$ be a time dependent $0$-chain, which is differentiable w.r.t. time.
         If this $\ch{\psi}$ satisfies the heat equation $\frac{d}{dt}\ch{\psi} = -\Delta_0 \ch{\psi}$ with initial condition $\ch{\psi}|_{t = 0} = \ch{\psi_0}$, then
         \[ \ch{\psi} = \sum_i\ch{e_i}e^{-\lambda_i t}\braket{e_i}{\psi_0}, \]
-        where $\ch{e_i}$ and $\lambda_i$ are the orthonornmal eigenchains and the eigenvalues of the $0$-laplacian respectively,
+        where $\ch{e_i}$ and $\lambda_i$ are the orthonormal eigenchains and the eigenvalues of the $0$-laplacian respectively,
         i.e. $\Delta_0\ch{e_i} =\ch{e_i}\lambda_i$.
     \end{prop}
     \begin{proof}
-        Since $\Delta_0$ is selfadjoint and therefore admits the expansion $\Delta_0 = \sum_i \ch{e_i}\lambda_i\cc{e_i}$,
-        where $\ch{e_i}$ and $\lambda_i$ are the orthonornmal eigenchains and the eigenvalues of the $0$-laplacian respectively,
+        Since $\Delta_0$ is self-adjoint and therefore admits the expansion $\Delta_0 = \sum_i \ch{e_i}\lambda_i\cc{e_i}$,
+        where $\ch{e_i}$ and $\lambda_i$ are the orthonormal eigenchains and the eigenvalues of the $0$-laplacian respectively,
         i.e. $\Delta_0\ch{e_i} =\ch{e_i}\lambda_i$. The discrete heat equation is linear and with constant coefficients and therefore
         it admits a solution of the type $\ch{\psi} = e^{-\Delta_0 t}\ch{\psi_0}$.
         Since $[\Delta_0, e^{-\Delta_0 t}] = 0$, these two operators share the eigenchains and therefore we also have that
@@ -70,7 +70,7 @@
         \[ = \frac{\ch{1}+\ch{2}+\ch{3}}{3}+ \frac{2\ch{2}-\ch{1}-\ch{3}}{3} e^{-3t} + \frac{\ch{8}+\ch{9}}{2} + \frac{\ch{8}-\ch{9}}{2}e^{-2t}. \]
         In the limit 
         \[ \lim_{t \to \infty} \ch{\psi} = \frac{\ch{1}+\ch{2}+\ch{3}}{3}+\frac{\ch{8}+\ch{9}}{2}, \]
-        we see that the conserved quantity that initally was $1$ on both those connected components is in this 
+        we see that the conserved quantity that initially was $1$ on both those connected components is in this 
         limit equally shared among the vertices.
     \end{exa}
     

@@ -1,7 +1,7 @@
 \documentclass[../1.tex]{subfiles}
 \begin{document}
    
-    The so called bra-ket notation was indroduced by Paul Dirac as an effective language in quantum mechanics.
+    The so called bra-ket notation was introduced by Paul Dirac as an effective language in quantum mechanics.
     Mathematically, if $V$ is any vector space, we call \ii{ket} $\ch{\psi}$ an element of $V$ and \ii{bra} $\cc{\phi}$ an element of $V^*$.
     We will now see some operations on bras and kets.
     A bra $\cc{\phi} : V \to \K$ acts on a ket in the so called \ii{bra-ket product} $\braket{\phi}{\psi} \in \K$, which is the evaluation of
@@ -13,13 +13,13 @@
     However, in Dirac notation, we see the matrix $A$ acting on the left as a $V$ endomorphism and on the right as a $V^*$ endomorphism,
     hence no transpose is needed.
     Since a bra maps a ket to a scalar and $A\ch{\psi}$ is also a ket, we can write the \ii{bra-operator-ket product} as $\cc{\phi}A\ch{\psi} \in \K$.
-    In this notation the spectral theorem for selfadjoint operators with a discrete spectrum reads as
+    In this notation the spectral theorem for self-adjoint operators with a discrete spectrum reads as
     \[ A = \sum_i \ch{a_i}a_i\cc{a_i}, \]
     where $A \ch{a_i} = a_i \ch{a_i}, \; \braket{a_i}{a_j} = \delta_ij$ and $\sum_i \ch{a_i} \cc{a_i} = 1$.
     The relation $\sum_i \ch{a_i} \cc{a_i} = 1$ is called completeness relation and
     is valid only if $\{ \ch{a_i}\}$ is an orthonormal basis, $1$ is the identity operator.
     An extension of the concept of orthonormal basis is the concept of generalized orthonormal basis.
-    Generalized orthonomal eigenfunctions allows us to diagonalize an operator with a continuous spectrum as follows
+    Generalized orthonormal eigenfunctions allows us to diagonalize an operator with a continuous spectrum as follows
     \[ A = \int da \ch{a}a\cc{a}, \]
     where $A \ch{a} = a\ch{a}, \; \braket{a}{a'} = \delta(a-a')$ and $\int da \ch{a} \cc{a} = 1$.
     The relation $\int da \ch{a} \cc{a} = 1$ is called generalized completeness relation and
