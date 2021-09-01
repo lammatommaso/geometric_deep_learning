@@ -1,15 +1,14 @@
 \documentclass[../3.tex]{subfiles}
 \begin{document}
-    { \color{blue}
     In this section we will give an overview on modern geometric deep learning using the considerations of the previous section.
-    Let $\mc{S}(\Omega,V),\Lambda$ and $\mc{S}(\Omega',V')$ be two signal spaces and $\Omega'$ is a more compact version of $\Omega$.
+    Let $\mc{S}(\Omega,V)$,$\mc{S}(\Lambda,W)$ and $\mc{S}(\Omega',V')$ be signal spaces where {\color{red} $\Omega'$ is a more compact version of $\Omega$}.
     From this setting we introduce the building blocks of geometric deep learning.
 
     \begin{itemize}
-        \item A \ii{linear $G$-invariant layer} $B : \mc{S}(\Omega,V) \to \mc{S}(\Lambda,V')$ such that
+        \item A \ii{linear $G$-invariant layer} $B : \mc{S}(\Omega,V) \to \mc{S}(\Lambda,W)$ such that
             $B(g.\phi) = g.B(\phi)$ for all $g \in G$ and $\phi \in \mc{S}(\Omega,V)$.
-        \item A \ii{nonlinearity} $\sigma : \mc{S}(\Omega,V) \to \mc{S}(\Lambda,V')$ which is applied element-wise 
-            $(\sigma(\phi))(x) = \sigma'(\phi(x))$ where $\sigma' : V \to V'$ is a non linear function.
+        \item A \ii{nonlinearity} $\sigma : \mc{S}(\Omega,V) \to \mc{S}(\Lambda,W)$ which is applied element-wise 
+            $(\sigma(\phi))(x) = \sigma'(\phi(x))$ where $\sigma' : V \to W$ is a non linear function.
         \item A \ii{$G$-equivariant local pooling} $P : \mc{S}(\Omega,V) \to \mc{S}(\Omega',V)$.
         \item A \ii{$G$-invariant global pooling} $P : \mc{S}(\Omega,V) \to \mc{C}$ such that $A(g.\phi) = A(\phi)$ for all $g \in G$ 
         and $\phi \in \mc{S}(\Omega,V)$, where $\mc{C}$ is a set.
@@ -33,6 +32,5 @@
     power.{\color{red} Quest'ultima frase è un po' mistica ma anche quello che hanno scritto loro per me è impossibile da interpretare.}
     
     Here we are not giving a recipe for an architecture, we are rather listing the necessary conditions for the network to behave well w.r.t. the symmetries.
-    }   
 
 \end{document}

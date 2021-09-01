@@ -3,46 +3,19 @@
 
     Another approach that can be used to define a convolution is defining spectral convolution with respect to a laplacian operator, in this section
     we will see this abstract and general method on graphs.
-    {\color{red} Loro non danno una motivazione matematica per definire la convoluzione in questo modo, a me è venuta in mente l'analogia con 
-    la meccanica quanistica ma non è una spiegazione, però pensavo di mettere una cosa del genere.}
 
-    {\color{blue}
-
-    To understand why the laplacian operator plays such an important role in convolution we will review the laplacian eigenfunctions in one dimension.
-    Let's consider the space of complex-valued functions defined on the real line. We cannot find an orthonormal basis for this space out of laplacian
-    eigenfunctions, nevertheless we can find an generalized orthonormal basis.
-
-    The basis we are looking for is $\phi_k(x) = C e^{ikx}$ where $k \in \R$ is a parameter that can be used to label the eigenfunctions
-    and $C \in \C$ is fixed by the conditions in app. \ref{app:B}.
-    The position operator $x$ is defined by the spactral relation $\cc{x}x = x\cc{x}$, where $x \in \R$ on the right side is the eigenvalue of the position operator
-    on $\ch{x}$. When defining the position operator we also require $\{ \ch{x} : x \in \R\}$ to be a generalized orthonormal basis.
-    Using the Dirac notation $\braket{x}{k} = \phi_k(x)$, and since it is a generalized orthonormal basis we also have that
-    $\int_\R dk \ch{k}\cc{k} = 1$ and $\braket{m}{k} = \delta(m-k)$ if $\ch{m}$ is also an eigenfunction of the laplacian.
-    We shall not prove here that this is an orthonormal generalized basis for our space.
-
-    Since also $\int_\R dx \ch{x}\cc{x} = 1$ any ket $\ch{\psi}$ can be expanded as $\ch{\psi} = \int_\R dx \ch{x}\braket{x}{\psi}$.
-    Furthermore since also $\int_\R dk \ch{k} \cc{k} = 1$ we can apply the identity operator twice on $\ch{\psi}$ to obtain 
-    \[ \ch{\psi} = \int_\R dk \ch{k} c_k \int_\R dk \ch{k} \int_\R dx \braket{k}{x} \braket{x}{\psi}. \]
-    From this last equation we can see that the coefficients $c_k$ in the expansion w.r.t the basis $\ch{k}$ are 
-    \[ c_k = \int_\R dx \braket{k}{x} \braket{x}{\psi} = C \int_\R dx e^{-ikx} \psi(x). \]
-    Notice that $c_k = c(k)$ is the Fourier transform of $\psi(x)$.
-
-    This little excursus was just to see that the coefficient with respect to the laplacian eigenfunctions in the expansion of a ket $\ch{\psi}$ 
-    is the Fourier transform of $\psi(x) = \braket{x}{\psi}$. From this analogy we will define a convolution on graphs.
-
-    To do this we need another theorem whose proof can be found in \cite{fourier}, this theorem is often known as \ii{convolution theorem}.
+    We start by recalling a classical result in Fourier analysis, the \ii{convolution theorem}.
+    A proof of the theorem can be found in \cite{fourier} at chapter $7$.
 
     \begin{thm}
-        Let $f,g : \R \to \C$, and let $\mc{F}(f), \mc{F}(g) : \R \to \C$ be their respective Fourier transforms, then the fourier tranform of the convolution of $f$ anfd $g$ is equal to
+        Let $f,g \in L^1(\R,\C)$, and let $\mc{F}(f), \mc{F}(g) : \R \to \C$ be their respective Fourier transforms, then the fourier transform of the convolution of $f$ and $g$ is equal to
         \[ \mc{F}(f * g) = \mc{F}(f)\mc{F}(g) . \]
     \end{thm}  
     
     Let's now see how to use this analogy on graphs.
-    
-    }
 
     In order to construct a convolutional neural network that classifies data defined on a graph we need a definition of convolution on graphs.
-    Here we want to define a convolution on graphs based on this fact. First we introduce what we call \ii{graph Fourier transform}.
+    First we introduce what we call \ii{graph Fourier transform}.
     
     \begin{defn}
         Let $\ket{f} \in C_0$ and $dimC_0 = n_0$, we define the \ii{graph Fourier transform}\\
@@ -56,12 +29,12 @@
     To define a convolution between two $0$-chains we use the famous convolution theorem $\mc{F}(f * \psi) = \mc{F}(f)\mc{F}(\psi)$. 
 
     \begin{defn}
-        Let $\{\ket{e_i}\}_{i \in I}$ be a basis such that $\Delta_p\ket{e_i} = \lambda_i\ket{e_i}$, let $\ket{f},\ket{\psi} \in C_p$, we define the representatives of $\ket{f * \psi}$ on
+        Let $\{\ket{e_i}\}_{i \in I}$ be a basis of $0$-laplacian eigenchains, let $\ket{f},\ket{\psi} \in C_0$, we define the representatives of $\ket{f * \psi}$ on
         the laplacian eigenchains to be 
         \[ \braket{e_i}{f * \psi} := \braket{e_i}{f}\braket{e_i}{\psi} \quad \forall i \in I.\]
         Therefore $\ket{f * \psi} = \sum_{i \in I}\braket{e_i}{f}\braket{e_i}{\psi}\ket{e_i}$.
     \end{defn}
 
-    This can be trivially extended to simplicial complexes \footnote{Actually on any chain complex.} using the eigenfunctions of higher dimensional laplacians, as done in \cite{simplicialNN}.
+    This can be trivially extended to simplicial complexes and more generally on chain complexes using the eigenfunctions of higher dimensional laplacians, as done in \cite{simplicialNN}.
 
 \end{document}

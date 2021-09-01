@@ -48,32 +48,6 @@
       \field{title}{Graph Theory with Applications}
       \field{year}{1976}
     \endentry
-    \entry{fourier}{book}{}
-      \name{author}{1}{}{%
-        {{hash=bf5d9929bbd9629946d3da0d48a4ed81}{%
-           family={Bracewell},
-           familyi={B\bibinitperiod},
-           given={Ronald},
-           giveni={R\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {McGraw Hill}%
-      }
-      \strng{namehash}{bf5d9929bbd9629946d3da0d48a4ed81}
-      \strng{fullhash}{bf5d9929bbd9629946d3da0d48a4ed81}
-      \strng{bibnamehash}{bf5d9929bbd9629946d3da0d48a4ed81}
-      \strng{authorbibnamehash}{bf5d9929bbd9629946d3da0d48a4ed81}
-      \strng{authornamehash}{bf5d9929bbd9629946d3da0d48a4ed81}
-      \strng{authorfullhash}{bf5d9929bbd9629946d3da0d48a4ed81}
-      \field{sortinit}{B}
-      \field{sortinithash}{276475738cc058478c1677046f857703}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{3rd ed}
-      \field{series}{McGraw-Hill series in electrical and computer engineering. Circuits and systems}
-      \field{title}{The Fourier Transform and Its Applications}
-      \field{year}{2000}
-    \endentry
     \entry{bronstein}{article}{}
       \name{author}{5}{}{%
         {{hash=a55f31e19939af212d8e498666602095}{%
@@ -271,6 +245,27 @@
       \field{labeltitlesource}{title}
       \field{title}{Computational Topology - an Introduction.}
       \field{year}{2010}
+    \endentry
+    \entry{fourier}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c88dfa319f251681ccdf51d6dd3cfc09}{%
+           family={Folland},
+           familyi={F\bibinitperiod},
+           given={Gerald\bibnamedelima B.},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{c88dfa319f251681ccdf51d6dd3cfc09}
+      \strng{fullhash}{c88dfa319f251681ccdf51d6dd3cfc09}
+      \strng{bibnamehash}{c88dfa319f251681ccdf51d6dd3cfc09}
+      \strng{authorbibnamehash}{c88dfa319f251681ccdf51d6dd3cfc09}
+      \strng{authornamehash}{c88dfa319f251681ccdf51d6dd3cfc09}
+      \strng{authorfullhash}{c88dfa319f251681ccdf51d6dd3cfc09}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fourier analysis and its applications}
+      \field{year}{1992}
     \endentry
     \entry{fomin}{book}{}
       \name{author}{2}{}{%

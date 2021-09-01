@@ -33,10 +33,10 @@ According to this definition the degree of a vertex of a graph is the number of 
     This proposition is an immediate consequence of definition \ref{def:2:2:2}. \qedhere
 \end{proof}
 
-The connstruction of this same matrix in the example \ref{ex:2:3:2} was presented to become aquainted with the abstract definition of laplacian operators.
+The construction of this same matrix in the example \ref{ex:2:3:2} was presented to become acquainted with the abstract definition of laplacian operators.
 Proposition \ref{prop:d-a} actually gives the most efficient way to write the $0$-laplacian matrix for any simple undirected graph.
 
-It is easy to see that graphs with multiple connected componets the $0$-laplacian matrix is a block matrix whose blocks are the laplacians of the connected components.
+It is easy to see that graphs with multiple connected components the $0$-laplacian matrix is a block matrix whose blocks are the laplacians of the connected components.
 
 Let us now focus on a connected graph or in alternative on a single connected component of an unconnected graph. 
 The $i$-th column of the matrix $\Delta$ has $\dg{(i)}$ on the $i$-th row and $-1$ on the $j$-th row if $\ch{i,j} \in C_1$. If we recall the definition of degree of a vertex
@@ -48,10 +48,10 @@ we derive the following proposition.
     \[ \sum_{C_0} \ch{i} \in \ker\Delta. \]
 \end{prop}
 
-Since according to Eckmann's theorem the dimension of the kernel of the $0$-laplacian for a simple connected graph should be one, 
+Since according to Eckmann's theorem the dimension of the kernel of the $0$-laplacian for a simple connected graph is one, 
 we have that $\sum_{C_0} \ch{i}$ is the only linearly independent chain in the kernel, therefore the unique $0$-laplacian eigenfunction
 with eigenvalue zero up to scalar multiplication. Since the coefficients in the formal sum of the basis $0$-chains are all equal, we have that the $0$-laplacian eigenchain
-of a simple undrected connected graph is always uniform as in fig. \ref{fig:2:5}.\\
+of a simple undirected connected graph is always uniform as in fig. \ref{fig:2:5}.\\
 \hfill \\
 
 The minimization of the discrete Dirichlet energy is not a variational problem, rather a simple minimization in $\Phi$ in which we can 
@@ -61,7 +61,7 @@ use the standard Lagrange multipliers theorem. Here the $0$-laplacian is a matri
     rows of $\Phi$ are the laplacian eigenvectors.
 \end{prop}
 \begin{proof}
-    The Lagrange multipliers' theorem allows us to use costraints by minimizing the following constrained Dirichlet energy
+    The Lagrange multipliers' theorem allows us to use constraints by minimizing the following constrained Dirichlet energy
     \[ D[\Phi] = \sum_{i,j,k} \Phi_{ik} \Delta_{ij} \Phi_{jk} - \sum_{i,j,k} \Lambda_{ij} \Phi_{kj} \Phi_{ki}, \]
     where $\Lambda$ is a diagonal matrix with the Lagrange multipliers as eigenvalues.\\
     In fact the constraints $\Phi^T \Phi = 1$ can be written as $\sum_k \Phi_{kj} \Phi{ki} = \delta_{ij}$, therefore we need to subtract from the lagrangian
