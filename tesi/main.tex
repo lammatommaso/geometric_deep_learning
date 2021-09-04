@@ -116,16 +116,16 @@
         \subfile{sections/front}
     \end{titlepage}
     \begin{abstract}
-        La maggior parte delle architetture di deep learning permettono alla macchian di imparare una partizione in classi d'equivalenza
-        dell'insieme delle funzioni lisce definite su domini euclidei.
-        Sebbene questo approccio abbia successo in molte applicazioni, è limitato a una piccola classe di domini.
-        Lo scopo del geometric deep learning è quello di estendere questo approccio a domini non euclidei come i grafi e i complessi simpliciali.
+        Lo scopo del geometric deep learning è quello di estendere l'algoritmo di deep learning sviluppato per la classificazione di immagini a domini
+        non euclidei come grafi e complessi simpliciali.
+        In questa tesi ci proponiamo di dare una definizione matematica dei concetti cardine utilizzati nel geometric deep learning quali equivarianza e convoluzione sui grafi.
+        Vedremo inoltre come definire una rete convoluzionale invariante rispetto all'azione di gruppi.
     \end{abstract}
     \begin{abstract}
-    Most of the deep learning techniques used today allow the machine to learn a partition of the set of smooth functions defined on euclidean 
-    domains into task-related equivalence classes. Although this approach has been successful in modern machine learning, it only deals with a really 
-    small set of domains. The goal of geometric deep learning is to extend this method to data defined on non euclidean domains such as graphs and simplicial
-    complexes.
+        The aim of geometric deep learning is to extend the deep learning algorithm developed for image classification to non euclidean domains such as graphs
+        and simplicial complexes.
+        In this thesis we try to give a mathematical definition of the main concepts used in geometric deep learning, e.g. graph convolution and equivariance.
+        Furthermore we'll see how to define neural network which is invariant under the action of a group.
     \end{abstract}
     \pagenumbering{roman}
     %   \subfile{sections/abstract_ita}
@@ -135,6 +135,31 @@
     \tableofcontents
     \newpage
     \pagenumbering{arabic}
+    \begin{chapter}{Introduction}
+        The last decade machine learning has witnessed an experimental revolution and
+        many problems we thought to be computationally unsolvable are now feasible due to deep learning.
+        Among these problems we have computer vision, playing Go and protein folding.
+        Geometric deep learning appears to be a really efficient way to solve problems on non grid-like domains.
+        The last formulation of geometric deep learning also provides us with necessary conditions for a convolutional
+        network to be invariant w.r.t. some task-related symmetries.
+        In this thesis we define the basic concepts needed for understanding the foundations of geometric deep learning,
+        and we will analyze how symmetries can be used to reduce the number of parameters to be learnt.
+        \medskip
+        This work is organized as follows.
+
+        \medskip
+        In chapter 1 we recall some notions of topology, like
+        simplicial complexes, homology and cohomology, which are needed
+        for a sound treatment of the graph modeling of neural networks.
+        Then in chapter 2 we introduce the notion of graph, together
+        with graph homology and cohomology, necessary to properly
+        introduce the Laplacian operator on graph. This operator
+        is fundamental for a mathematically sound definition of convolutions on
+        graph.
+        Finally, in chapter 3 we describe geometric deep learning
+        based on convolution on graph and the concepts of symmetry
+        and invariance in this context.
+    \end{chapter}
     \begin{chapter}{Preliminaries on topology}
         \label{ch:1}
         \subfile{sections/1}

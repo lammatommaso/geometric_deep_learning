@@ -14,7 +14,6 @@
         Let $\mc{A}$ be a simplicial complex, we define the \ii{group of p-chains} 
         \[ \mc{C}_p(\mc{A},\R) := \{ \sum_{i \in I} \lambda_i \{\sigma_i\} : \lambda_i \in \R \}.\]
     \end{defn}
-    \footnote{Actually on any chain complex.}
     In the definition\autoref{chaingroup} the sum $\sum_{i \in I} \lambda_i \{\sigma_i\}$ is the formal sum of the free abelian group on $\R$, see \cite{lang} at 1.7.
     This can be generalized from $\R$ to an arbitrary abelian group, nevertheless, for the most of the applications, the groups $\Z,\R,\Z_2$ are considered. 
 
@@ -25,9 +24,9 @@
         any permutation of the index set. We shall denote this group as $C_p(\mc{A},\R)$, and its chains with the notation $\ch{\sigma}$.
     \end{defn}
 
-    To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},\R)$. The constraints due to the 
+    To keep our notation light we shall write $C_p$ instead of $C_p(\mc{A},\R)$. The constraint due to the 
     permutations in definition\autoref{orientedchains} simply implies that whenever we swap two vertexes in the simplex
-    we must multiply by $(-1)$. 
+    we must multiply by $-1$. 
     
     \begin{prop}
         $C_p$ is an abelian group.
@@ -65,8 +64,7 @@
     \end{proof}
 
     The homology lemma is necessary to define the \ii{homology group}.
-    The homology group is , intuitively,  the space of cycles that are not boundaries. In fact, without the
-    homology lemma the quotient would not well defined since $im\del_{p+1} \subset ker\del_p$ would not be satisfied.
+    The homology group is , intuitively,  the space of cycles that are not boundaries.
 
     \begin{defn}
         We define the \ii{p-homology group} to be 
@@ -74,5 +72,8 @@
         where $\im\del_{p+1}$ is called the group of simplicial \ii{p-cycles} and
         $\ker\del_p$ is called the group of simplicial \ii{p-boundaries}.
     \end{defn}
+
+    Notice that without the
+    homology lemma the quotient in the previous definition would not well defined since $im\del_{p+1} \subset ker\del_p$ would not be satisfied.
 
 \end{document}
