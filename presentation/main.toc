@@ -1,7 +1,6 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\beamer@sectionintoc {1}{Introduzione}{1}{0}{1}
-\beamer@sectionintoc {2}{Reti Convoluzionali}{3}{0}{2}
-\beamer@sectionintoc {3}{Convoluzione su Domini Euclidei}{4}{0}{3}
-\beamer@sectionintoc {4}{Convoluzione Spettrale}{10}{0}{4}
-\beamer@sectionintoc {5}{Convoluzione Equivariante}{11}{0}{5}
+\beamer@sectionintoc {1}{Reti Convoluzionali}{3}{0}{1}
+\beamer@sectionintoc {2}{Convoluzione su Domini Euclidei}{4}{0}{2}
+\beamer@sectionintoc {3}{Convoluzione su Domini \textbf {non} Euclidei}{8}{0}{3}
+\beamer@sectionintoc {4}{Equivarianza}{13}{0}{4}

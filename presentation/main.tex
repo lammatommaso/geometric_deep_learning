@@ -10,6 +10,7 @@
 \usepackage{booktabs} % Allows the 
 
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\ii}[1]{\textit{#1}}
@@ -24,13 +25,9 @@
 
 \begin{document}
 
-\titlepage
-
-\tableofcontents
-
-\section{Introduzione}
-
 \frame{\titlepage}
+
+\frame{\tableofcontents}
 
 \section{Reti Convoluzionali}
 
@@ -47,26 +44,56 @@
 
 \begin{frame}
     \frametitle{Convoluzione su Domini Euclidei}    
-    Siano $f:\R^n \to \R$ e $g:\R^n \to \R$,
-    \[ (f * g)(x) = \int_{\R^n} dx' f(x')g(x-x'). \]
+    Siano $f:\R \to \R$ e $g:\R \to \R$,
+    \[ (f * g)(x) = \int_{\R} dx' f(x')g(x-x'). \]
     \hfill \\
     \hfill \\
-    { \large Cosa significa $(x - x')$ in un dominio diverso da $\R^n$ ?}
+    { \large Cosa significa $(x - x')$ in un dominio diverso da $\R$ ?}
 \end{frame}
 
 \begin{frame}
-    \frametitle{ \large Cosa significa $(x - x')$ \textbf{in} $\R^n$ ?}
+    \frametitle{ \large Cosa significa $(x - x')$ \textbf{in} $\R$ ?}
     \hfill \\
     \hfill \\
-    Possiamo vedere $( x - x')$ come l'azione dell'elemento $(-x')$ del gruppo delle traslazioni $(\R^n, +)$
-    sul dominio $\R^n$(A priori della struttura di spazio vettoriale).
+    Possiamo vedere $( x - x')$ come l'azione dell'elemento $(-x')$ del gruppo delle traslazioni $(\R, +)$
+    sul dominio $\R$(A priori della struttura di spazio vettoriale).
     \begin{block}{Notare:}
-        Il gruppo $(\R^n, +)$ è una simmetria globale del dominio $\R^n$.  
+        Il gruppo $(\R, +)$ è una simmetria globale del dominio $\R$.  
     \end{block}
     \hfill \\
     \hfill \\
     {\large Possiamo definire una convoluzione su un dominio a partire dalla simmetria globale del dominio?}
 \end{frame}
+
+\begin{frame}
+    \begin{block}{Operatore Posizione}
+        Definiamo spettralmente l'operatore posizione $\widehat{x}|x\rangle = x | x \rangle$, tale che
+        \[ \langle x | x' \rangle = \delta(x-x'), \quad
+    \int_{\R} dx | x \rangle \langle x | = \widehat{1} .\]
+    \end{block}
+    \begin{block}{Operatore Impulso}
+    Il generatore delle traslazioni $(\R^n,+)$ è l'operatore impulso $\widehat{p}$, tale che
+    \[ \widehat{p} | p \rangle = p | p \rangle, \]
+    che verifica
+    \[ \langle p | p' \rangle = \delta(p-p'), \quad
+    \int_{\R} dp | p \rangle \langle p | = \widehat{1} .\]
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Trasformata di Fourier}
+        Definiamo la trasformata di Fourier come $\langle x | \psi \rangle \mapsto \langle p | \psi \rangle$, 
+        che può essere calcolata nel seguente modo
+        \[ \langle p | \psi \rangle = \langle p | \left( \int_{\R} dx | x \rangle \langle x| \right) | \psi \rangle = 
+         \int_{\R} dx \langle p | x \rangle \langle x | \psi \rangle. \]
+    \end{block}
+    \begin{block}{Teorema della Convoluzione}
+        Definiamo la convoluzione a partire dal teorema della convoluzione
+        \[ \langle p | \psi * \phi \rangle = \langle p | \psi \rangle \langle p | \phi \rangle . \]
+    \end{block}
+\end{frame}
+
+\section{Convoluzione su Domini \textbf{non} Euclidei}
 
 \begin{frame}
     \begin{figure}[H]
@@ -90,48 +117,48 @@
     Una simmetria di questo spazio è il gruppo ciclico $(\Z_6,+)$ rispetto all'azione che segue.
     \begin{block}{Azione di $\Z_6$ su $\mc{S}$ }
         Un'azione di $\Z_6$ sullo spazio dei segnali è data da
-        \[ . : \Z_6 \times \mc{S} \to \mc{S}\] \[ (j,| \psi \rangle) \mapsto j.| \psi \rangle = \sum_{i \in \Z_6} \psi_{i + j} | i + j \rangle \in \mc{S} .\]        
+        \[ . : \Z_6 \times \mc{S} \to \mc{S}\] \[ (j,| \psi \rangle) \mapsto j.| \psi \rangle = \sum_{i \in \Z_6} \psi_i | i + j \rangle \in \mc{S} .\]        
     \end{block}   
 \end{frame}
 
 \begin{frame}
-Vediamo come agisce il generatore del gruppo
+Vediamo come agisce il generatore del gruppo $\widehat{S} | i \rangle  = | i+1 \rangle$.
     \begin{block}{Azione del generatore}
-        \[ 1.| \psi \rangle = \sum_{i \in \Z_6} \psi_{i + 1} | i + 1 \rangle.\]
-        Le componenti trasformano nel seguente modo
-        \[ \langle i | \psi \rangle =  \psi_i \mapsto \sum_{i,j \in \Z_6} S_{ij} \psi_j = \sum_{i,j \in \Z_6} \langle i | \widehat{S} | j \rangle  \langle j | \psi \rangle, \]
-        dove $ S_{ij} = circ(0,1,0,0,0,0) =: \begin{pmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0
+        \[ \widehat{S}| \psi \rangle = \sum_{j \in \Z_6} \psi_{i} | j + 1 \rangle.\]
+        Le componenti del nuovo segnale saranno
+        \[ \langle i | \widehat{S} | \psi \rangle =  \sum_{j \in \Z_6} \psi_j \delta_{i,j+1} = \psi_{i-1} = \langle i-1 | \psi \rangle, \]
+        dove $ \delta_{i,j+1} = circ(0,1,0,0,0,0) =: \begin{pmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0
         \\ 0 & 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 & 0 & 0 \\ 
     \end{pmatrix} $.
-    \end{block}    
+    \end{block}  
+    L'operatore $\widehat{S}$ è diagonalizzabile in $\mc{C}$ con una base \textbf{ortonormale} $\widehat{S}|s_i \rangle = s_i | s_i \rangle$.  
 \end{frame}
 
-\section{Convoluzione Spettrale}
-
 \begin{frame}
-    \frametitle{Convoluzione Spettrale}
-    Data la simmetria avremo che per qualsiasi osservabile $\widehat{O}$
-    \[ [\widehat{S}, \widehat{O}] = 0 . \]
-    L'operatore $\widehat{S}$ è diagonalizzabile $\widehat{S} |s_i \rangle = s_i | s_i \rangle$ in $\C$,\\ sfruttando l'analogia con $\R^n$ otteniamo una trasformata.
-    \begin{block}{Trasformata di Fourier in $\mc{S}$}
-        \[ \langle i | \psi \rangle \mapsto \langle s_i | \psi \rangle. \]
+    \begin{block}{Trasformata di Fourier}
+        Definiamo la trasformata di Fourier come $\langle i | \psi \rangle \mapsto \langle s_i | \psi \rangle $, 
+        che può essere calcolata nel seguente modo
+        \[ \langle s_i | \psi \rangle = \langle s_i | \left( \sum_{j \in \Z_6} | j \rangle \langle j| \right) | \psi \rangle = 
+        \sum_{j \in \Z_6} \langle s_i| j \rangle \langle j | \psi \rangle. \]
     \end{block}
-    Dalla traformata definiamo per le componenti una convoluzione in analogia con $\R^n$.
-    \begin{block}{Convoluzione su $\mc{S}$}
-        \[ \langle s_i | \psi * \phi \rangle = \langle s_i | \psi \rangle \langle s_i | \phi \rangle . \]
-    \end{block}   
+    \begin{block}{Teorema della Convoluzione}
+        Definiamo la convoluzione a partire dal teorema della convoluzione
+        \[\langle s_i | \psi * \phi \rangle = \langle s_i | \psi \rangle \langle s_i | \phi \rangle . \]
+    \end{block}
 \end{frame}
 
-\section{Convoluzione Equivariante}
+\section{Equivarianza}
 
 \begin{frame}
-    \frametitle{Convoluzione Equivariante}
-    Sia $\widehat{C}_\phi | \psi \rangle = | \psi * \phi \rangle$, possiamo decidere di definire questa convoluzione solo a partire da
-    \[ [\widehat{S}, \widehat{C}_\phi] = 0, \]
-    ciò implica che la matrice associata a $\widehat{C}_\phi$ è circolante.
-
-    \begin{block}{Notare:}
-        In entrambi i casi abbiamo ridotto il numero di parametri \\ da imparare da \textbf{36} a \textbf{6}.
+    \frametitle{Equivarianza}
+    Dall'ultima equazione notiamo che se definiamo l'operatore $\widehat{C}_\phi$ in modo che
+    \[ \widehat{C}_\phi | \psi \rangle = | \psi * \phi \rangle, \]
+    abbiamo che se definiamo $\widehat{C}_\phi = \sum_{j \in \Z_6} | s_j \rangle \langle s_j | \phi \rangle \langle s_j | $ otteniamo
+    \[\langle s_i | \widehat{C}_\phi |\psi \rangle = \langle s_i | \sum_{j \in \Z_6} | s_j\rangle \langle s_j | \phi \rangle \langle s_j |\psi \rangle 
+    = \sum_{j \in \Z_6} \delta_{ij} \langle s_j | \phi \rangle \langle s_j |\psi \rangle = \langle s_i | \psi \rangle \langle s_i | \phi \rangle. \]
+    \begin{block}{Notare}
+        Essendo $\widehat{C}_\phi$ definito spettralmente sulle autofunzioni di $\widehat{S}$, avremo che
+        \[ [ \widehat{S}, \widehat{C}_\phi] = 0 .\]
     \end{block}
 \end{frame}
 
