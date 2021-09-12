@@ -55,8 +55,6 @@
     \frametitle{ \large Cosa significa $(x - x')$ \textbf{in} $\R$ ?}
     \hfill \\
     \hfill \\
-    Possiamo vedere $( x - x')$ come l'azione dell'elemento $(-x')$ del gruppo delle traslazioni $(\R, +)$
-    sul dominio $\R$(A priori della struttura di spazio vettoriale).
     \begin{block}{Notare:}
         Il gruppo $(\R, +)$ è una simmetria globale del dominio $\R$.  
     \end{block}
@@ -89,13 +87,34 @@
     \end{block}
     \begin{block}{Teorema della Convoluzione}
         Definiamo la convoluzione a partire dal teorema della convoluzione
-        \[ \langle p | \psi * \phi \rangle = \langle p | \psi \rangle \langle p | \phi \rangle . \]
+        \[ \langle p | \psi * \phi \rangle = \sqrt{2\pi} \langle p | \psi \rangle \langle p | \phi \rangle . \]
     \end{block}
+\end{frame}
+
+\begin{frame}
+    Operatore di Convoluzione : $ | \psi * \phi \rangle = \widehat{C}_\phi | \psi \rangle$.
+    \begin{block}{Definizione di Convoluzione}
+        \[ \widehat{C}_\phi = \sqrt{2\pi} \int_\R dp | p \rangle \langle p | \phi \rangle \langle p | . \]
+    \end{block}
+    Tale definizione soddisfa il teorema della convoluzione:
+    \[ \langle p | \widehat{C}_\phi | \psi \rangle = \sqrt{2\pi} \int_\R dp' \langle p | p' \rangle \langle p' | \phi \rangle \langle p' | \psi \rangle  =
+    \sqrt{2\pi} \langle p | \phi \rangle \langle p | \psi \rangle .  \]
+\end{frame}
+
+\begin{frame}
+    Inoltre 
+     \[ \langle x | \widehat{C}_\phi | \psi \rangle = \sqrt{2\pi} \int_\R dp \langle x | p \rangle \langle p | \phi \rangle \langle p | \psi \rangle = \] \[
+      = \sqrt{2\pi} \int_\R dx' \int_\R dy \left( \int_\R dp \langle x | p \rangle \langle p | x' \rangle \langle p | y \rangle \right) \langle x' | \phi \rangle 
+     \langle y | \psi \rangle = \] \[ =  \sqrt{2\pi} \int_\R dx' \int_\R dy \frac{\delta(x - x' - y)}{\sqrt{2\pi}} \langle x' | \phi \rangle \langle y | \psi \rangle = 
+     \int_\R dx' \langle x - x' | \phi \rangle \langle x' | \psi \rangle . \]
+     Da cui
+     {\color{blue}\[ \langle x | \psi * \phi \rangle = \int_\R dx' \langle x - x' | \phi \rangle \langle x' | \psi \rangle. \] }  
 \end{frame}
 
 \section{Convoluzione su Domini \textbf{non} Euclidei}
 
 \begin{frame}
+    \frametitle{Convoluzione su Domini non Euclidei}
     \begin{figure}[H]
         \centering
         \includegraphics[width=5cm, height=5cm]{graph}
@@ -118,20 +137,20 @@
     \begin{block}{Azione di $\Z_6$ su $\mc{S}$ }
         Un'azione di $\Z_6$ sullo spazio dei segnali è data da
         \[ . : \Z_6 \times \mc{S} \to \mc{S}\] \[ (j,| \psi \rangle) \mapsto j.| \psi \rangle = \sum_{i \in \Z_6} \psi_i | i + j \rangle \in \mc{S} .\]        
-    \end{block}   
+    \end{block}  
+    Generatore di $\Z_6$ : $\widehat{S} | i \rangle  = | i+1 \rangle$. 
 \end{frame}
 
 \begin{frame}
-Vediamo come agisce il generatore del gruppo $\widehat{S} | i \rangle  = | i+1 \rangle$.
     \begin{block}{Azione del generatore}
-        \[ \widehat{S}| \psi \rangle = \sum_{j \in \Z_6} \psi_{i} | j + 1 \rangle.\]
+        \[ \widehat{S}| \psi \rangle = \sum_{j \in \Z_6} \psi_{j} | j + 1 \rangle.\]
         Le componenti del nuovo segnale saranno
         \[ \langle i | \widehat{S} | \psi \rangle =  \sum_{j \in \Z_6} \psi_j \delta_{i,j+1} = \psi_{i-1} = \langle i-1 | \psi \rangle, \]
         dove $ \delta_{i,j+1} = circ(0,1,0,0,0,0) =: \begin{pmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0
         \\ 0 & 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 & 0 & 0 \\ 
     \end{pmatrix} $.
     \end{block}  
-    L'operatore $\widehat{S}$ è diagonalizzabile in $\mc{C}$ con una base \textbf{ortonormale} $\widehat{S}|s_i \rangle = s_i | s_i \rangle$.  
+    L'operatore $\widehat{S}$ è diagonalizzabile in $\C$ con una base \textbf{ortonormale} $\widehat{S}|s_i \rangle = s_i | s_i \rangle$.  
 \end{frame}
 
 \begin{frame}
@@ -151,20 +170,16 @@ Vediamo come agisce il generatore del gruppo $\widehat{S} | i \rangle  = | i+1 \
 
 \begin{frame}
     \frametitle{Equivarianza}
-    Dall'ultima equazione notiamo che se definiamo l'operatore $\widehat{C}_\phi$ in modo che
-    \[ \widehat{C}_\phi | \psi \rangle = | \psi * \phi \rangle, \]
-    abbiamo che se definiamo $\widehat{C}_\phi = \sum_{j \in \Z_6} | s_j \rangle \langle s_j | \phi \rangle \langle s_j | $ otteniamo
+    \begin{block}{Definizione di Convoluzione}
+        \[\widehat{C}_\phi = \sum_{j \in \Z_6} | s_j \rangle \langle s_j | \phi \rangle \langle s_j |.\]
+    \end{block} 
+    Tale definizione verifica
     \[\langle s_i | \widehat{C}_\phi |\psi \rangle = \langle s_i | \sum_{j \in \Z_6} | s_j\rangle \langle s_j | \phi \rangle \langle s_j |\psi \rangle 
     = \sum_{j \in \Z_6} \delta_{ij} \langle s_j | \phi \rangle \langle s_j |\psi \rangle = \langle s_i | \psi \rangle \langle s_i | \phi \rangle. \]
-    \begin{block}{Notare}
-        Essendo $\widehat{C}_\phi$ definito spettralmente sulle autofunzioni di $\widehat{S}$, avremo che
+    \begin{block}{Convoluzione $\Z_6$-Equivariante}
+        \Large
         \[ [ \widehat{S}, \widehat{C}_\phi] = 0 .\]
     \end{block}
 \end{frame}
-
-
-
-
-
 
 \end{document}
