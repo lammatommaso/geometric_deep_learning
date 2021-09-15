@@ -3,4 +3,4 @@
 \beamer@sectionintoc {1}{Reti Convoluzionali}{3}{0}{1}
 \beamer@sectionintoc {2}{Convoluzione su Domini Euclidei}{4}{0}{2}
 \beamer@sectionintoc {3}{Convoluzione su Domini \textbf {non} Euclidei}{10}{0}{3}
-\beamer@sectionintoc {4}{Equivarianza}{15}{0}{4}
+\beamer@sectionintoc {4}{Equivarianza}{16}{0}{4}

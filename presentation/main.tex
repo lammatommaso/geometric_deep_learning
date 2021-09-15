@@ -20,8 +20,8 @@
 \newcommand{\braket}[2]{\langle #1 | #2 \rangle}
 
 \title{Geometric Deep Learning}
-\author{Tommaso Lamma}
-\date{2021}
+% \author{Tommaso Lamma}
+\date{17 settembre 2021}
 
 \begin{document}
 
@@ -60,49 +60,55 @@
     \end{block}
     \hfill \\
     \hfill \\
-    {\large Possiamo definire una convoluzione su un dominio a partire dalla simmetria globale del dominio?}
+    {\large Possiamo definire una convoluzione a partire da una simmetria?}
 \end{frame}
 
 \begin{frame}
+    \frametitle{Impostazione del problema}
     \begin{block}{Operatore Posizione}
-        Definiamo spettralmente l'operatore posizione $\widehat{x}|x\rangle = x | x \rangle$, tale che
+        \[ \widehat{x}|x\rangle = x | x \rangle \quad x \in \R \]
         \[ \langle x | x' \rangle = \delta(x-x'), \quad
     \int_{\R} dx | x \rangle \langle x | = \widehat{1} .\]
     \end{block}
     \begin{block}{Operatore Impulso}
-    Il generatore delle traslazioni $(\R^n,+)$ è l'operatore impulso $\widehat{p}$, tale che
     \[ \widehat{p} | p \rangle = p | p \rangle, \]
-    che verifica
     \[ \langle p | p' \rangle = \delta(p-p'), \quad
     \int_{\R} dp | p \rangle \langle p | = \widehat{1} .\]
     \end{block}
+    L'operatore $\widehat{p}$ genera le traslazioni
+        \[ \langle x | e^{-i \widehat{p} x'} | p \rangle = \langle x | p \rangle \langle -x' | p \rangle \sqrt{2 \pi} = \langle x-x' | p \rangle, \]
+        \[ \langle x | e^{-i \widehat{p} x'} = \langle x-x' | .  \]
 \end{frame}
 
 \begin{frame}
+    \frametitle{Teorema della Convoluzione}
     \begin{block}{Trasformata di Fourier}
-        Definiamo la trasformata di Fourier come $\langle x | \psi \rangle \mapsto \langle p | \psi \rangle$, 
-        che può essere calcolata nel seguente modo
         \[ \langle p | \psi \rangle = \langle p | \left( \int_{\R} dx | x \rangle \langle x| \right) | \psi \rangle = 
          \int_{\R} dx \langle p | x \rangle \langle x | \psi \rangle. \]
     \end{block}
+    Dove $\langle x | p \rangle = \frac{e^{ipx}}{\sqrt{2 \pi} }$ e $\langle x | \psi \rangle := \psi(x) $.
     \begin{block}{Teorema della Convoluzione}
-        Definiamo la convoluzione a partire dal teorema della convoluzione
         \[ \langle p | \psi * \phi \rangle = \sqrt{2\pi} \langle p | \psi \rangle \langle p | \phi \rangle . \]
     \end{block}
+   \[ \widehat{C}_\phi | \psi \rangle  := | \psi * \phi \rangle . \]
+    Il teorema della convoluzione piò essere visto come
+    \[ \langle p | \psi * \phi \rangle =: \langle p | \widehat{C}_\phi |\psi \rangle = \sqrt{2\pi} \langle p | \psi \rangle \langle p | \phi \rangle \]
+   \[ {\color{blue} \langle p | \widehat{C}_\phi = \sqrt{2\pi} \langle p | \psi \rangle \langle p | }\]
 \end{frame}
 
 \begin{frame}
-    Operatore di Convoluzione : $ | \psi * \phi \rangle = \widehat{C}_\phi | \psi \rangle$.
+    \frametitle{Definizione di Convoluzione}
     \begin{block}{Definizione di Convoluzione}
         \[ \widehat{C}_\phi = \sqrt{2\pi} \int_\R dp | p \rangle \langle p | \phi \rangle \langle p | . \]
     \end{block}
-    Tale definizione soddisfa il teorema della convoluzione:
-    \[ \langle p | \widehat{C}_\phi | \psi \rangle = \sqrt{2\pi} \int_\R dp' \langle p | p' \rangle \langle p' | \phi \rangle \langle p' | \psi \rangle  =
-    \sqrt{2\pi} \langle p | \phi \rangle \langle p | \psi \rangle .  \]
+    \begin{block}{Convoluzione $\R$-Equivariante}
+        \Large
+        \[ [ \widehat{p}, \widehat{C}_\phi] = 0 .\]
+    \end{block}
 \end{frame}
 
 \begin{frame}
-    Inoltre 
+    \frametitle{Recuperiamo l'altra definizione}
      \[ \langle x | \widehat{C}_\phi | \psi \rangle = \sqrt{2\pi} \int_\R dp \langle x | p \rangle \langle p | \phi \rangle \langle p | \psi \rangle = \] \[
       = \sqrt{2\pi} \int_\R dx' \int_\R dy \left( \int_\R dp \langle x | p \rangle \langle p | x' \rangle \langle p | y \rangle \right) \langle x' | \phi \rangle 
      \langle y | \psi \rangle = \] \[ =  \sqrt{2\pi} \int_\R dx' \int_\R dy \frac{\delta(x - x' - y)}{\sqrt{2\pi}} \langle x' | \phi \rangle \langle y | \psi \rangle = 
@@ -123,46 +129,64 @@
 \end{frame}
 
 \begin{frame}
-    \begin{block}{Spazio dei Segnali su $\mc{G}$}
-        Lo spazio dei segnali a valori reali definiti su questo dominio può essere rappresentato come
-        \[ \mc{S} =\{ | \psi \rangle =  \sum_{i \in \Z_6} \psi_i | i \rangle \; : \psi_i \in \R \} ,\] 
-        dove devono valere 
-        \[ \langle i | j \rangle = \delta_{ij}, \] 
-        \[ \sum_{i \in \Z_6} | i \rangle \langle i | = \widehat{1} .\]      
+    \frametitle{Impostazione del problema}
+    \begin{block}{Operatore Posizione}
+        \[ \widehat{x}|i\rangle = i | i \rangle \quad i \in C_0 \]
+        \[ \langle i | j \rangle = \delta_{ij}, \quad
+    \sum_{i \in \Z_6} | i \rangle \langle i | = \widehat{1} .\]
+    \end{block}
+    \begin{block}{Operatore impulso che genera $\Z_6$}
+    \[  \langle i | \widehat{S}  = \langle i+1 |, \]
     \end{block}
 \end{frame}
 
 \begin{frame}
-    Una simmetria di questo spazio è il gruppo ciclico $(\Z_6,+)$ rispetto all'azione che segue.
-    \begin{block}{Azione di $\Z_6$ su $\mc{S}$ }
-        Un'azione di $\Z_6$ sullo spazio dei segnali è data da
-        \[ . : \Z_6 \times \mc{S} \to \mc{S}\] \[ (j,| \psi \rangle) \mapsto j.| \psi \rangle = \sum_{i \in \Z_6} \psi_i | i + j \rangle \in \mc{S} .\]        
-    \end{block}  
-    Generatore di $\Z_6$ : $\widehat{S} | i \rangle  = | i+1 \rangle$. 
-\end{frame}
-
-\begin{frame}
-    \begin{block}{Azione del generatore}
-        \[ \widehat{S}| \psi \rangle = \sum_{j \in \Z_6} \psi_{j} | j + 1 \rangle.\]
-        Le componenti del nuovo segnale saranno
-        \[ \langle i | \widehat{S} | \psi \rangle =  \sum_{j \in \Z_6} \psi_j \delta_{i,j+1} = \psi_{i-1} = \langle i-1 | \psi \rangle, \]
-        dove $ \delta_{i,j+1} = circ(0,1,0,0,0,0) =: \begin{pmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0
+    \begin{block}{Azione del generatore sulle componenti}
+        \[ \langle i | \widehat{S} | \psi \rangle =  \sum_{j \in \Z_6} \langle i+1 | j \rangle \langle j | \psi \rangle = \psi_{i+1} = \langle i+1 | \psi \rangle, \]
+        dove $ \langle i | \widehat{S} | j \rangle = \langle i+1 | j \rangle = circ(0,1,0,0,0,0) =: \begin{pmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0
         \\ 0 & 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 & 0 & 0 \\ 
-    \end{pmatrix} $.
+    \end{pmatrix}$.
     \end{block}  
-    L'operatore $\widehat{S}$ è diagonalizzabile in $\C$ con una base \textbf{ortonormale} $\widehat{S}|s_i \rangle = s_i | s_i \rangle$.  
+    L'operatore $\widehat{S}$ è diagonalizzabile in $\C$ con una base \textbf{ortonormale} \[ \widehat{S}|s_i \rangle = s_i | s_i \rangle, \]
+    \[ \langle s_i | s_j \rangle = \delta_{ij}, \quad
+    \sum_{i \in \Z_6} | s_i \rangle \langle s_i | = \widehat{1} .\]  
 \end{frame}
 
 \begin{frame}
+    \frametitle{Teorema della Convoluzione}
     \begin{block}{Trasformata di Fourier}
-        Definiamo la trasformata di Fourier come $\langle i | \psi \rangle \mapsto \langle s_i | \psi \rangle $, 
-        che può essere calcolata nel seguente modo
         \[ \langle s_i | \psi \rangle = \langle s_i | \left( \sum_{j \in \Z_6} | j \rangle \langle j| \right) | \psi \rangle = 
         \sum_{j \in \Z_6} \langle s_i| j \rangle \langle j | \psi \rangle. \]
     \end{block}
     \begin{block}{Teorema della Convoluzione}
-        Definiamo la convoluzione a partire dal teorema della convoluzione
-        \[\langle s_i | \psi * \phi \rangle = \langle s_i | \psi \rangle \langle s_i | \phi \rangle . \]
+        \[ \langle s_i | \psi * \phi \rangle = \langle s_i | \psi \rangle \langle s_i | \phi \rangle . \]
+    \end{block}
+    \[ \widehat{C}_\phi | \psi \rangle  := | \psi * \phi \rangle . \]
+    Il teorema della convoluzione piò essere visto come
+    \[ \langle s_i | \psi * \phi \rangle =: \langle s_i | \widehat{C}_\phi |\psi \rangle =\langle s_i | \psi \rangle \langle s_i | \phi \rangle \]
+   \[ {\color{blue} \langle s_i | \widehat{C}_\phi = \langle s_i | \psi \rangle \langle s_i | }\]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Definizione di Convoluzione}
+    \begin{block}{Definizione di Convoluzione}
+        \[\widehat{C}_\phi = \sum_{j \in \Z_6} | s_j \rangle \langle s_j | \phi \rangle \langle s_j |.\]
+    \end{block} 
+    \begin{block}{Convoluzione $\Z_6$-Equivariante}
+        \Large
+        \[ [ \widehat{S}, \widehat{C}_\phi] = 0 .\]
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Un'Altra Simmetria}
+    \begin{block}{Equazione del Calore}
+        \[ \frac{d}{dt} | \psi \rangle = -\widehat{\Delta} | \psi \rangle , \]
+        dove $\widehat{\Delta} = \text{diag}(\text{deg}(i))-A$.
+    \end{block}
+    \begin{block}{Convoluzione Equivariante Rispetto alla Diffusione}
+        \[ \widehat{C}_\phi = \sum_{i = 1}^{\text{dim} C_0} | e_i \rangle \langle e_i | \phi \rangle \langle e_i |,  \]
+        dove $\widehat{\Delta} | e_i \rangle = \lambda_i | e_i \rangle $.
     \end{block}
 \end{frame}
 
@@ -170,16 +194,22 @@
 
 \begin{frame}
     \frametitle{Equivarianza}
-    \begin{block}{Definizione di Convoluzione}
-        \[\widehat{C}_\phi = \sum_{j \in \Z_6} | s_j \rangle \langle s_j | \phi \rangle \langle s_j |.\]
-    \end{block} 
-    Tale definizione verifica
-    \[\langle s_i | \widehat{C}_\phi |\psi \rangle = \langle s_i | \sum_{j \in \Z_6} | s_j\rangle \langle s_j | \phi \rangle \langle s_j |\psi \rangle 
-    = \sum_{j \in \Z_6} \delta_{ij} \langle s_j | \phi \rangle \langle s_j |\psi \rangle = \langle s_i | \psi \rangle \langle s_i | \phi \rangle. \]
-    \begin{block}{Convoluzione $\Z_6$-Equivariante}
-        \Large
-        \[ [ \widehat{S}, \widehat{C}_\phi] = 0 .\]
+    \begin{block}{Simmetrie di una classificazione $ \mc{C} : \mc{S} \to \mc{L}$ }
+       \[ \text{Sym}(\mc{C}) := \{ g : \mc{S} \to \mc{S} \; : \; \mc{C}(f) = \mc{C}(f \circ g) \; \forall f \in \mc{S} \} .\]
     \end{block}
+    \begin{center}
+    \Large $(\text{Sym}(\mc{C}), \circ)$ è un gruppo. 
+    \end{center}
+    % \begin{block}{Rete Convoluzionale Invariante}
+    %     \[ \widehat{R} := \widehat{I} \left( \prod_i \widehat{E}_i \right)\]
+    % \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \Huge
+        Grazie per l'attenzione
+    \end{center}
 \end{frame}
 
 \end{document}

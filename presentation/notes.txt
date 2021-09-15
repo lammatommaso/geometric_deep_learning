@@ -1,0 +1,77 @@
+1) Buongiorno a tutti
+
+2) Ho deciso di organizzare la presentazione nei seguenti punti:
+prima di tutto mostrerò molto velocemente un esempio di rete convoluzionale,
+poi vedremo come la convoluzione è definita in un dominio euclideo e come può essere estesa ad un dominio non euclideo,
+infine tratterò l'importanza dell'equivarianza nelle classificazioni.
+Essendo la tesi molto astratta per questa presentazione ho deciso di utilizzare esempi invece che enunciare i risultati generali.
+
+3) In questa pagina possiamo vedere l'illustrazione di una rete convoluzionale.
+Una rete convoluzionale è una collezione ordinata di operatori che è in grado di approssimare una classificazione.
+Lo scopo del geometric deep learning è quello di estendere le reti convoluzionali per dati definiti su domini non euclidei.
+In particolare nella mia tesi ho trattato l'esensione della convooluzione a domini non euclidei, quindi ora vediamo come
+la convoluzione è definita su un dominio euclideo.
+
+4) Questa è utilizzata come definizione di convouzione, ma la somma di due elementi del dominio non è in generale definita per domini non euclidei.
+Cerchiamo di trovare una definizione più astratta di convoluzione che ci permetta di recuperare questa definizione come una conseguenza.
+
+5) Se pensiamo che le traslazioni siano un sottogruppo delle simmetrie della classificazione, di cui parlerò alla fine, se abbiamo un dominio simmetrico, possiamo
+usare il generatore di queste traslazioni per definire una convoluzione.
+
+6) Per definire questa convoluzione utilizzeremo concetti presi dalla meccanica quantistica con la notazione di Dirac.
+Definiamo spettralmente gli operatori posizione e impulso, immaginando una particella libera sul nostro dominio R.
+Qui ho riportato le relazioni di ornormalità e completezza generalizzate, perché verranno utilizzate nel corso della presentazione.
+In fondo alla pagina vediamo come l'operatore impulso sia il generatore delle traslazioni.
+
+7) Una volta determinate le autofunzioni dell'impulso siamo in grado di definire la trasformata di Fourier, che associa alla rappresentazione spaziale del segnale
+la sua rappresentazione sullo spazio degli impulsi. 
+A questo punto richiamiamo un risultato noto nell'analisi come teorema della convoluzione, il quale afferma che la trasformata di Fourier della convoluzione di 
+due funzioni è il prodotto delle trasformate, a meno di quella costante, che potrebbe essere assorbita nella definizione di convoluzione.
+Se poi definiamo l'operatore di convoluzione con il filtro phi in questo modo, notiamo che il teorema della convoluzione non è che un problema agli autovalori.
+Quindi dire che la nostra convoluzione debba soddisfare il teorema della convoluzione è equivalente a dire che l'operatore di convoluzione ha come autofunzioni
+le autofunzioni dell'impulso e come autovalori la trasformata di Fourier del filtro.
+
+8) Date le consierazioni appena fatte definiamo spettralmente l'operatore di convoluzione e notiamo che essendo diagonale sulle autofunzioni dell'impulso deve
+soddisfare questa relazione di commutazione. Chiameremo questa convoluzione R-equivariante, poi alla fine discuterò la necessità di questa equivarianza.
+
+9) Vediamo in fine come possiamo recuperare l'usuale definizione di convoluzione da questa definizione. ***
+Ripensiamo a cosa è successo, abbiamo scelto una simmetria del dominio, abbimo risolto il problema agli autovalori per il generatore della simmetria e
+questo è tutto ciò che ci è servito per definire questa convoluzione.
+
+10) Ora proviamo a fare lo stesso per segnali definiti su questo dominio. Questo è un grafo indiretto semplice ed ha come simmetria il gruppo Z_6.
+Scegliamo questa simmetria come simmetria del nostro spazio dei segnali e cerchiamo di impostare il problema come prima.
+
+11) Quindi come prima definiamo spettralemente un'operatore posizione le cui autofunzioni soddisfano le relazioni di ortonormalità e completezza, 
+e poi definiamo il generatore di questo gruppo ciclico tramite la sua azione sulle autofunzioni della posizione.
+
+12) Fatto ciò vediamo come cambiano le componenti di un segnale a cui è applicato. Vediamo infatti che l'i-esima componente del segnale traslato è l'i+1-esima 
+componente del segnale non traslato. In questa pagina ho anche riportato la matrice associata a questo operatore usando come base le autofunzioni della posizione.
+Non lo proverò qui, ma è mostrato in un testo che ho riportato in bibliografia, che nei complessi è possibile trovare una base ortonarmale di autovettori per questa
+matrice. A me in questo momento non serve calcolarli quindi li lascerò indicati in questo modo.
+
+13) Trovata questa base posso come prima definire una trasformata di Fourier, in questo caso è detta DFT, e posso enunciare un equivalente 
+teorema della convoluzione senza la costante che lascio nella definizione di convoluzione.
+Come prima questo teorema è equivalente ad un problema agli autovalori per l'operatore di convoluzione.
+
+14) Gli stessi ragionamenti fatti prima ci permettono di scrivere in forma diagonale l'operatore di convoluzione e di dedurre la stessa relazione di commutazione.
+In questo esempio abbiamo utilizzato come simmetria il gruppo Z_6 e per farlo abbiamo trovato un'azione di tale gruppo sul nostro spazio dei segnali.
+Vediamo ora brevemente un altro esempio.
+
+15) In questa pagina ho riportato l'equazione del calore sui grafi, che è discussa più dettagliatamente nella tesi.
+L'operatore delta è l'operatore laplaciano che è definito come *** .
+Se un segnale è soluzione di questa equazione possiamo considerare come simmetria l'evoluzione temporale di tale segnale.
+Tale simmetria è generata dal laplaciano che è simmetrico e dunque ci permette come prima di definire un corrispondente operatore di convoluzione.
+
+16) Perché per noi questa equiavarianza è così importante? 
+Pensiamo ad una classificazione qualsiasi che questa rete deve imparare.
+E definiamo il seguente insieme di trasformazioni sullo spazio dei segnali. ***
+Si può mostrare che tale insieme è un gruppo rispetto alla composizione di funzioni.
+A ogni classificazione dunque possiamo associare un gruppo di simmetrie e quello che fa la rete, 
+in un qualche modo, è imparare ad approssimare questo gruppo di simmetrie. 
+Quello che noi possiamo fare per aiutarla, se crediamo di conoscere un sottogruppo di queste simmetrie è di definire
+gli operatori dei vari layer in maniera equiavriante rispetto a questo sottogruppo in modo da ridurre il numero di parametri indipendenti che la
+rete deve imparare.
+
+17) Grazie per l'attenzione
+
+
