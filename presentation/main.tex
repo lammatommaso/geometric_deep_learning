@@ -93,7 +93,7 @@
    \[ \widehat{C}_\phi | \psi \rangle  := | \psi * \phi \rangle . \]
     Il teorema della convoluzione piò essere visto come
     \[ \langle p | \psi * \phi \rangle =: \langle p | \widehat{C}_\phi |\psi \rangle = \sqrt{2\pi} \langle p | \psi \rangle \langle p | \phi \rangle \]
-   \[ {\color{blue} \langle p | \widehat{C}_\phi = \sqrt{2\pi} \langle p | \psi \rangle \langle p | }\]
+   \[ {\color{blue} \langle p | \widehat{C}_\phi = \sqrt{2\pi} \langle p | \phi \rangle \langle p | }\]
 \end{frame}
 
 \begin{frame}
@@ -124,16 +124,16 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=5cm, height=5cm]{graph}
-        \caption{Un dominio non euclideo $\mc{G}$.}
+        \caption{Un dominio non euclideo $\mc{G}$ con simmetria $\Z_6$.}
     \end{figure}    
 \end{frame}
 
 \begin{frame}
     \frametitle{Impostazione del problema}
     \begin{block}{Operatore Posizione}
-        \[ \widehat{x}|i\rangle = i | i \rangle \quad i \in C_0 \]
+        \[ \widehat{x}|i\rangle = i | i \rangle \quad i \in I = {0,1,2,3,4,5} \]
         \[ \langle i | j \rangle = \delta_{ij}, \quad
-    \sum_{i \in \Z_6} | i \rangle \langle i | = \widehat{1} .\]
+    \sum_{i \in I} | i \rangle \langle i | = \widehat{1} .\]
     \end{block}
     \begin{block}{Operatore impulso che genera $\Z_6$}
     \[  \langle i | \widehat{S}  = \langle i+1 |, \]
@@ -200,9 +200,6 @@
     \begin{center}
     \Large $(\text{Sym}(\mc{C}), \circ)$ è un gruppo. 
     \end{center}
-    % \begin{block}{Rete Convoluzionale Invariante}
-    %     \[ \widehat{R} := \widehat{I} \left( \prod_i \widehat{E}_i \right)\]
-    % \end{block}
 \end{frame}
 
 \begin{frame}
